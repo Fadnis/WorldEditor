@@ -35,7 +35,7 @@ namespace World_Editor.DBC
         //public static DBCFile<CharVariationsEntry> CharVariations { get; private set; }
         //public static DBCFile<ChatChannelsEntry> ChatChannels { get; private set; }
         //public static DBCFile<ChatProfanityEntry> ChatProfanity { get; private set; }
-        //public static DBCFile<ChrClassesEntry> ChrClasses { get; private set; }
+        public static DBCFile<ChrClassesEntry> ChrClasses { get; private set; }
         public static DBCFile<ChrRacesEntry> ChrRaces { get; private set; }
         //public static DBCFile<CinematicCameraEntry> CinematicCamera { get; private set; }
         //public static DBCFile<CinematicSequencesEntry> CinematicSequences { get; private set; }

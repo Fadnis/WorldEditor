@@ -50,6 +50,12 @@
     <Compile Include="DBC\DBCStores.cs" />
     <Compile Include="DBC\DBCWriter.cs" />
     <Compile Include="DBC\Structures.cs" />
+    <Compile Include="Dialogs\MaskClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MaskClasses.Designer.cs">
+      <DependentUpon>MaskClasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\MaskRaces.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\MaskClasses.resx">
+      <DependentUpon>MaskClasses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MaskRaces.resx">
       <DependentUpon>MaskRaces.cs</DependentUpon>
     </EmbeddedResource>
