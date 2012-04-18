@@ -15,5 +15,13 @@ namespace World_Editor
         {
             InitializeComponent();
         }
+
+        private void btnTitlesEditor_Click(object sender, EventArgs e)
+        {
+            TitlesEditor.MainForm d = new TitlesEditor.MainForm();
+            this.Hide();
+            d.ShowDialog();
+            this.Show();
+        }
     }
 }

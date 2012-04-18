@@ -31,7 +31,7 @@ namespace World_Editor.DBC
         //public static DBCFile<CharHairTexturesEntry> CharHairTextures { get; private set; }
         //public static DBCFile<CharSectionsEntry> CharSections { get; private set; }
         //public static DBCFile<CharStartOutfitEntry> CharStartOutfit { get; private set; }
-        //public static DBCFile<CharTitlesEntry> CharTitles { get; private set; }
+        public static DBCFile<CharTitlesEntry> CharTitles { get; private set; }
         //public static DBCFile<CharVariationsEntry> CharVariations { get; private set; }
         //public static DBCFile<ChatChannelsEntry> ChatChannels { get; private set; }
         //public static DBCFile<ChatProfanityEntry> ChatProfanity { get; private set; }
@@ -752,6 +752,13 @@ namespace World_Editor.DBC
             //WowError_Strings.LoadData();
             //ZoneIntroMusicTable.LoadData();
             //ZoneMusic.LoadData();
+        }
+
+        public static void LoadTitlesEditorFiles()
+        {
+            CharTitles = new DBCFile<CharTitlesEntry>(folder + "CharTitles.dbc");
+
+            CharTitles.LoadData();
         }
     }
 }
