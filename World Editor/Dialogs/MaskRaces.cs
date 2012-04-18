@@ -12,7 +12,7 @@ namespace World_Editor.Dialogs
 {
     public partial class MaskRaces : Form
     {
-        private uint maskRacesValue;
+        public uint MaskRacesValue { get; set; }
 
         public MaskRaces()
         {
@@ -28,22 +28,20 @@ namespace World_Editor.Dialogs
                 listRaces.Items.Add(r);
                 int maskRace = (int)Math.Pow(2, (double)(r.RaceId - 1));
 
-                if (((int)maskRacesValue & maskRace) == maskRace)
+                if (((int)MaskRacesValue & maskRace) == maskRace)
                     listRaces.SetItemChecked(listRaces.Items.Count - 1, true);
             }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            maskRacesValue = 0;
+            MaskRacesValue = 0;
 
-            foreach (ChrRacesEntry c in listRaces.CheckedItems)
-                maskRacesValue |= (uint)Math.Pow(2, (double)(c.RaceId - 1));
+            foreach (ChrRacesEntry r in listRaces.CheckedItems)
+                MaskRacesValue |= (uint)Math.Pow(2, (double)(r.RaceId - 1));
 
             this.Close();
         }
-
-        public uint MaskRacesValue { get { return maskRacesValue; } set { maskRacesValue = value; } }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
