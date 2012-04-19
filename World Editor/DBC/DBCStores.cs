@@ -254,7 +254,7 @@ namespace World_Editor.DBC
         //public static DBCFile<ZoneIntroMusicTableEntry> ZoneIntroMusicTable { get; private set; }
         //public static DBCFile<ZoneMusicEntry> ZoneMusic { get; private set; }
 
-        private static string folder = "dbc\\";
+        public static string folder = "dbc\\";
 
         public static void LoadFiles()
         {

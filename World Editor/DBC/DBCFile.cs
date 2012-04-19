@@ -208,6 +208,7 @@ namespace World_Editor.DBC
             if (mRecords.ContainsKey(id))
                 throw new Exception("Cette clé existe déjà !");
 
+            IsEdited = true;
             mRecords.Add(id, value);
         }
 
@@ -216,6 +217,7 @@ namespace World_Editor.DBC
             if (!mRecords.ContainsKey(id))
                 throw new Exception("Cette clé n'existe pas !");
 
+            IsEdited = true;
             mRecords[id] = value;
         }
 
@@ -224,11 +226,15 @@ namespace World_Editor.DBC
             if (!mRecords.ContainsKey(id))
                 throw new Exception("Cette clé n'existe pas !");
 
+            IsEdited = true;
             mRecords.Remove(id);
         }
 
         public void SaveDBC(string path)
         {
+            if (IsEdited)
+                return;
+
             DBCWriter<T> wr = new DBCWriter<T>();
             wr.WriteDBC(this, path);
         }
@@ -249,6 +255,7 @@ namespace World_Editor.DBC
         public string FileName { get; private set; }
         public uint LocalePosition { get; private set; }
         private bool IsLoaded = false;
+        private bool IsEdited = false;
     }
 
     [AttributeUsage(AttributeTargets.Field)]
