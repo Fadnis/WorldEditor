@@ -15,7 +15,7 @@ namespace World_Editor.DBC
     {
         public DBCFile(string path)
         {
-            mReader = new System.IO.BinaryReader(System.IO.File.Open(path, System.IO.FileMode.Open));
+            mReader = new System.IO.BinaryReader(System.IO.File.OpenRead(path));
             FileName = path;
             mCreationType = typeof(T);
         }

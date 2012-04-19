@@ -78,20 +78,49 @@ namespace World_Editor
             catch (Exception) { }
         }
 
-        private void listProjects_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnValidateProject_Click(object sender, EventArgs e)
         {
-            foreach (Project p in projects)
+            if (btnValidateProject.Text == "Valider")
             {
-                p.IsLast = false;
-
-                if (listProjects.Items[listProjects.SelectedIndex] == p)
+                foreach (Project p in projects)
                 {
-                    p.IsLast = true;
-                    DBCStores.folder = p.Path;
+                    p.IsLast = false;
+
+                    if (listProjects.Items[listProjects.SelectedIndex] == p)
+                    {
+                        p.IsLast = true;
+                        DBCStores.ProjectFolder = p.Path;
+                    }
                 }
+                projConf.Projects = projects;
+                projConf.Save();
+
+                try
+                {
+                    DBCStores.InitFiles();
+
+                    ChangeEnableEditors(true);
+                    listProjects.Enabled = false;
+                    btnValidateProject.Text = "Modifier";
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            projConf.Projects = projects;
-            projConf.Save();
+            else if (btnValidateProject.Text == "Modifier")
+            {
+                ChangeEnableEditors(false);
+                listProjects.Enabled = true;
+                btnValidateProject.Text = "Valider";
+            }
+        }
+
+        /// <summary>
+        /// Permet d'activer/désactiver tous les boutons des éditeurs selon la valeur de "value".
+        /// Utilisé lorsque le projet est chargé ou non.
+        /// </summary>
+        /// <param name="value">True pour activier, False pour les désactiver</param>
+        private void ChangeEnableEditors(bool value)
+        {
+            btnTitlesEditor.Enabled = value;
         }
     }
 }

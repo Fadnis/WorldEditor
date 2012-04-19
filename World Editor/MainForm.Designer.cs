@@ -32,10 +32,12 @@
             this.btnProjectsEditor = new System.Windows.Forms.Button();
             this.listProjects = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnValidateProject = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTitlesEditor
             // 
+            this.btnTitlesEditor.Enabled = false;
             this.btnTitlesEditor.Location = new System.Drawing.Point(89, 85);
             this.btnTitlesEditor.Name = "btnTitlesEditor";
             this.btnTitlesEditor.Size = new System.Drawing.Size(106, 30);
@@ -60,9 +62,8 @@
             this.listProjects.FormattingEnabled = true;
             this.listProjects.Location = new System.Drawing.Point(15, 25);
             this.listProjects.Name = "listProjects";
-            this.listProjects.Size = new System.Drawing.Size(257, 21);
+            this.listProjects.Size = new System.Drawing.Size(180, 21);
             this.listProjects.TabIndex = 2;
-            this.listProjects.SelectedIndexChanged += new System.EventHandler(this.listProjects_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -73,11 +74,22 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Projet de travail :";
             // 
+            // btnValidateProject
+            // 
+            this.btnValidateProject.Location = new System.Drawing.Point(201, 25);
+            this.btnValidateProject.Name = "btnValidateProject";
+            this.btnValidateProject.Size = new System.Drawing.Size(71, 21);
+            this.btnValidateProject.TabIndex = 4;
+            this.btnValidateProject.Text = "Valider";
+            this.btnValidateProject.UseVisualStyleBackColor = true;
+            this.btnValidateProject.Click += new System.EventHandler(this.btnValidateProject_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.btnValidateProject);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listProjects);
             this.Controls.Add(this.btnProjectsEditor);
@@ -98,6 +110,7 @@
         private System.Windows.Forms.Button btnProjectsEditor;
         private System.Windows.Forms.ComboBox listProjects;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnValidateProject;
     }
 }
 
