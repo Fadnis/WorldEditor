@@ -113,8 +113,7 @@ namespace World_Editor.TitlesEditor
         {
             try
             {
-                System.IO.Directory.CreateDirectory("out");
-                DBCStores.CharTitles.SaveDBC("out\\CharTitles.dbc");
+                DBCStores.SaveTitlesEditorFiles();
             }
             catch (Exception)
             {

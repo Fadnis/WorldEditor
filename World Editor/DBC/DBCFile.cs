@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -15,7 +16,7 @@ namespace World_Editor.DBC
     {
         public DBCFile(string path)
         {
-            mReader = new System.IO.BinaryReader(System.IO.File.OpenRead(path));
+            mReader = new BinaryReader(File.OpenRead(path));
             FileName = path;
             mCreationType = typeof(T);
         }
@@ -193,7 +194,7 @@ namespace World_Editor.DBC
         }
 
         private Dictionary<uint, T> mRecords = new Dictionary<uint, T>();
-        private System.IO.BinaryReader mReader;
+        private BinaryReader mReader;
         private Type mCreationType;
         private IDBCRowConverter<T> mConverter = null;
 
@@ -230,10 +231,12 @@ namespace World_Editor.DBC
             mRecords.Remove(id);
         }
 
-        public void SaveDBC(string path)
+        public void SaveDBC()
         {
-            if (IsEdited)
+            if (!IsEdited)
                 return;
+
+            string path = DBCStores.ProjectFolder + "\\out\\" + Path.GetFileName(FileName);
 
             DBCWriter<T> wr = new DBCWriter<T>();
             wr.WriteDBC(this, path);

@@ -7,6 +7,7 @@ namespace World_Editor.DBC
 {
     public static class DBCStores
     {
+        #region Déclarations des DBCs
         //public static DBCFile<AchievementEntry> Achievement { get; private set; }
         //public static DBCFile<AchievementCategoryEntry> AchievementCategory { get; private set; }
         //public static DBCFile<AchievementCriteriaEntry> AchievementCriteria { get; private set; }
@@ -253,6 +254,7 @@ namespace World_Editor.DBC
         //public static DBCFile<WowErrorStringsEntry> WowErrorStrings { get; private set; }
         //public static DBCFile<ZoneIntroMusicTableEntry> ZoneIntroMusicTable { get; private set; }
         //public static DBCFile<ZoneMusicEntry> ZoneMusic { get; private set; }
+        #endregion
 
         public static string ProjectFolder = "";
 
@@ -260,6 +262,7 @@ namespace World_Editor.DBC
         {
             string DbcFolder = ProjectFolder + "\\dbc\\";
 
+            #region Initialisation des DBCs
             //Achievement = new DBCFile<AchievementEntry>(DbcFolder + "Achievement.dbc");
             //AchievementCategory = new DBCFile<AchievementCategoryEntry>(DbcFolder + "Achievement_Category.dbc");
             //AchievementCriteria = new DBCFile<AchievementCriteriaEntry>(DbcFolder + "Achievement_Criteria.dbc");
@@ -506,11 +509,17 @@ namespace World_Editor.DBC
             //WowErrorStrings = new DBCFile<WowErrorStringsEntry>(DbcFolder + "WowError_Strings.dbc");
             //ZoneIntroMusicTable = new DBCFile<ZoneIntroMusicTableEntry>(DbcFolder + "ZoneIntroMusicTable.dbc");
             //ZoneMusic = new DBCFile<ZoneMusicEntry>(DbcFolder + "ZoneMusic.dbc");
+            #endregion
         }
 
         public static void LoadTitlesEditorFiles()
         {
             CharTitles.LoadData();
+        }
+
+        public static void SaveTitlesEditorFiles()
+        {
+            CharTitles.SaveDBC();
         }
     }
 }
