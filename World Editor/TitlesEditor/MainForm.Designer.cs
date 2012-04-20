@@ -30,7 +30,6 @@
         {
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNameFemale = new System.Windows.Forms.TextBox();
@@ -46,39 +45,29 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(276, 203);
+            this.btnSave.Location = new System.Drawing.Point(190, 203);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 22);
+            this.btnSave.Size = new System.Drawing.Size(170, 22);
             this.btnSave.TabIndex = 26;
-            this.btnSave.Text = "Sauvegarder";
+            this.btnSave.Text = "Sauvegarder les fichiers";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(190, 203);
+            this.btnDelete.Location = new System.Drawing.Point(101, 203);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 22);
+            this.btnDelete.Size = new System.Drawing.Size(83, 22);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Supprimer";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(104, 203);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(80, 22);
-            this.btnEdit.TabIndex = 19;
-            this.btnEdit.Text = "Modifier";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(18, 203);
+            this.btnAdd.Location = new System.Drawing.Point(12, 203);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(80, 22);
+            this.btnAdd.Size = new System.Drawing.Size(83, 22);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Ajouter";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -100,6 +89,7 @@
             this.txtNameFemale.Name = "txtNameFemale";
             this.txtNameFemale.Size = new System.Drawing.Size(166, 20);
             this.txtNameFemale.TabIndex = 15;
+            this.txtNameFemale.TextChanged += new System.EventHandler(this.txtNameFemale_TextChanged);
             // 
             // txtID2
             // 
@@ -123,6 +113,7 @@
             this.txtNameMale.Name = "txtNameMale";
             this.txtNameMale.Size = new System.Drawing.Size(166, 20);
             this.txtNameMale.TabIndex = 13;
+            this.txtNameMale.TextChanged += new System.EventHandler(this.txtNameMale_TextChanged);
             // 
             // label4
             // 
@@ -176,7 +167,6 @@
             this.ClientSize = new System.Drawing.Size(374, 236);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNameFemale);
@@ -201,7 +191,6 @@
 
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNameFemale;

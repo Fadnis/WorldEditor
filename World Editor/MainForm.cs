@@ -58,21 +58,21 @@ namespace World_Editor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            projConf.Reload();
-            listProjects.Items.Clear();
-
-            projects = projConf.Projects;
-
-            foreach (Project p in projects)
-            {
-                listProjects.Items.Add(p);
-
-                if (p.IsLast)
-                    lastproject = p;
-            }
-
             try
             {
+                projConf.Reload();
+                listProjects.Items.Clear();
+
+                projects = projConf.Projects;
+
+                foreach (Project p in projects)
+                {
+                    listProjects.Items.Add(p);
+
+                    if (p.IsLast)
+                        lastproject = p;
+                }
+
                 listProjects.SelectedItem = lastproject;
             }
             catch (Exception) { }

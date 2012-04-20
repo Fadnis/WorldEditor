@@ -73,32 +73,13 @@ namespace World_Editor.TitlesEditor
             }
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                CharTitlesEntry t = (CharTitlesEntry)listTitles.Items[listTitles.SelectedIndex];
-
-                t.NameMale = txtNameMale.Text;
-                t.NameFemale = txtNameFemale.Text;
-
-                DBCStores.CharTitles.ReplaceEntry(t.Id, t);
-                listTitles.Items[listTitles.SelectedIndex] = t;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erreur lors de l'édition du titre");
-            }
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
                 CharTitlesEntry t = (CharTitlesEntry)listTitles.Items[listTitles.SelectedIndex];
 
-                listTitles.SelectedIndex = listTitles.SelectedIndex - 1;
+                --listTitles.SelectedIndex;
 
                 DBCStores.CharTitles.RemoveEntry(t.Id);
                 listTitles.Items.Remove(t);
@@ -119,6 +100,26 @@ namespace World_Editor.TitlesEditor
             {
                 MessageBox.Show("Erreur lors de la sauvegarde du fichier.");
             }
+        }
+
+        private void txtNameMale_TextChanged(object sender, EventArgs e)
+        {
+            CharTitlesEntry t = (CharTitlesEntry)listTitles.Items[listTitles.SelectedIndex];
+
+            t.NameMale = txtNameMale.Text;
+
+            DBCStores.CharTitles.ReplaceEntry(t.Id, t);
+            listTitles.Items[listTitles.SelectedIndex] = t;
+        }
+
+        private void txtNameFemale_TextChanged(object sender, EventArgs e)
+        {
+            CharTitlesEntry t = (CharTitlesEntry)listTitles.Items[listTitles.SelectedIndex];
+
+            t.NameFemale = txtNameFemale.Text;
+
+            DBCStores.CharTitles.ReplaceEntry(t.Id, t);
+            listTitles.Items[listTitles.SelectedIndex] = t;
         }
     }
 }
