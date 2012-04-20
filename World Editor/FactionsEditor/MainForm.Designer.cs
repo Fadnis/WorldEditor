@@ -38,24 +38,20 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblFactionParentName = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSpilloverRateIn = new System.Windows.Forms.TextBox();
             this.txtSpilloverMaxRkIn = new System.Windows.Forms.TextBox();
             this.txtSpilloverRateOut = new System.Windows.Forms.TextBox();
             this.txtFactionParentId = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnHelpClasse = new System.Windows.Forms.Button();
-            this.btnHelpRace = new System.Windows.Forms.Button();
-            this.txtOptions = new System.Windows.Forms.TextBox();
+            this.btnHelpClass0 = new System.Windows.Forms.Button();
+            this.btnHelpRace0 = new System.Windows.Forms.Button();
+            this.txtOptions0 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBaseRep = new System.Windows.Forms.TextBox();
+            this.txtBaseRep0 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnHelpFactionFlags = new System.Windows.Forms.Button();
-            this.listPropRep = new System.Windows.Forms.ComboBox();
-            this.txtClasse = new System.Windows.Forms.TextBox();
-            this.txtRace = new System.Windows.Forms.TextBox();
+            this.btnHelpFactionFlags0 = new System.Windows.Forms.Button();
+            this.txtClass0 = new System.Windows.Forms.TextBox();
+            this.txtRace0 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFactionDescription = new System.Windows.Forms.TextBox();
@@ -112,13 +108,53 @@
             this.txtFriendGrp = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtEnyGrp = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtRace1 = new System.Windows.Forms.TextBox();
+            this.btnHelpRace1 = new System.Windows.Forms.Button();
+            this.txtClass1 = new System.Windows.Forms.TextBox();
+            this.btnHelpClass1 = new System.Windows.Forms.Button();
+            this.txtBaseRep1 = new System.Windows.Forms.TextBox();
+            this.txtOptions1 = new System.Windows.Forms.TextBox();
+            this.btnHelpFactionFlags1 = new System.Windows.Forms.Button();
+            this.txtRace3 = new System.Windows.Forms.TextBox();
+            this.btnHelpRace3 = new System.Windows.Forms.Button();
+            this.txtClass3 = new System.Windows.Forms.TextBox();
+            this.btnHelpClass3 = new System.Windows.Forms.Button();
+            this.txtBaseRep3 = new System.Windows.Forms.TextBox();
+            this.txtOptions3 = new System.Windows.Forms.TextBox();
+            this.btnHelpFactionFlags3 = new System.Windows.Forms.Button();
+            this.txtRace2 = new System.Windows.Forms.TextBox();
+            this.btnHelpRace2 = new System.Windows.Forms.Button();
+            this.txtClass2 = new System.Windows.Forms.TextBox();
+            this.btnHelpClass2 = new System.Windows.Forms.Button();
+            this.txtBaseRep2 = new System.Windows.Forms.TextBox();
+            this.txtOptions2 = new System.Windows.Forms.TextBox();
+            this.btnHelpFactionFlags2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.tabFactions.SuspendLayout();
             this.tabFaction.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabFactionTemplate.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.grpBoxEnemies.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabFactions
@@ -128,11 +164,15 @@
             this.tabFactions.Location = new System.Drawing.Point(1, 1);
             this.tabFactions.Name = "tabFactions";
             this.tabFactions.SelectedIndex = 0;
-            this.tabFactions.Size = new System.Drawing.Size(507, 426);
+            this.tabFactions.Size = new System.Drawing.Size(555, 426);
             this.tabFactions.TabIndex = 1;
             // 
             // tabFaction
             // 
+            this.tabFaction.Controls.Add(this.groupBox6);
+            this.tabFaction.Controls.Add(this.groupBox5);
+            this.tabFaction.Controls.Add(this.groupBox4);
+            this.tabFaction.Controls.Add(this.groupBox1);
             this.tabFaction.Controls.Add(this.btnSave);
             this.tabFaction.Controls.Add(this.btnDelete);
             this.tabFaction.Controls.Add(this.btnAdd);
@@ -140,14 +180,12 @@
             this.tabFaction.Controls.Add(this.label12);
             this.tabFaction.Controls.Add(this.label11);
             this.tabFaction.Controls.Add(this.label10);
+            this.tabFaction.Controls.Add(this.txtSpilloverMaxRkIn);
             this.tabFaction.Controls.Add(this.label9);
-            this.tabFaction.Controls.Add(this.lblFactionParentName);
             this.tabFaction.Controls.Add(this.label8);
             this.tabFaction.Controls.Add(this.txtSpilloverRateIn);
-            this.tabFaction.Controls.Add(this.txtSpilloverMaxRkIn);
             this.tabFaction.Controls.Add(this.txtSpilloverRateOut);
             this.tabFaction.Controls.Add(this.txtFactionParentId);
-            this.tabFaction.Controls.Add(this.groupBox1);
             this.tabFaction.Controls.Add(this.txtFactionDescription);
             this.tabFaction.Controls.Add(this.txtFactionName);
             this.tabFaction.Controls.Add(this.label2);
@@ -157,7 +195,7 @@
             this.tabFaction.Location = new System.Drawing.Point(4, 22);
             this.tabFaction.Name = "tabFaction";
             this.tabFaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFaction.Size = new System.Drawing.Size(499, 400);
+            this.tabFaction.Size = new System.Drawing.Size(547, 400);
             this.tabFaction.TabIndex = 1;
             this.tabFaction.Text = "Faction";
             this.tabFaction.UseVisualStyleBackColor = true;
@@ -170,6 +208,7 @@
             this.btnSave.TabIndex = 29;
             this.btnSave.Text = "Sauvegarder DBCs";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -179,6 +218,7 @@
             this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "-";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -188,18 +228,20 @@
             this.btnAdd.TabIndex = 26;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtSpilloverUnk
             // 
-            this.txtSpilloverUnk.Location = new System.Drawing.Point(436, 344);
+            this.txtSpilloverUnk.Location = new System.Drawing.Point(488, 110);
             this.txtSpilloverUnk.Name = "txtSpilloverUnk";
             this.txtSpilloverUnk.Size = new System.Drawing.Size(50, 20);
             this.txtSpilloverUnk.TabIndex = 25;
+            this.txtSpilloverUnk.TextChanged += new System.EventHandler(this.txtSpilloverUnk_TextChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(351, 347);
+            this.label12.Location = new System.Drawing.Point(396, 113);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 13);
             this.label12.TabIndex = 24;
@@ -208,7 +250,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(198, 347);
+            this.label11.Location = new System.Drawing.Point(396, 87);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 13);
             this.label11.TabIndex = 23;
@@ -217,7 +259,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(198, 321);
+            this.label10.Location = new System.Drawing.Point(396, 35);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 13);
             this.label10.TabIndex = 22;
@@ -226,176 +268,137 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(351, 321);
+            this.label9.Location = new System.Drawing.Point(396, 64);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "SpilloverRateIn";
             // 
-            // lblFactionParentName
-            // 
-            this.lblFactionParentName.Location = new System.Drawing.Point(351, 288);
-            this.lblFactionParentName.Name = "lblFactionParentName";
-            this.lblFactionParentName.Size = new System.Drawing.Size(137, 20);
-            this.lblFactionParentName.TabIndex = 19;
-            this.lblFactionParentName.Text = "lblFactionName";
-            this.lblFactionParentName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(198, 291);
+            this.label8.Location = new System.Drawing.Point(438, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Faction parente";
+            this.label8.Text = "Parente";
             // 
             // txtSpilloverRateIn
             // 
-            this.txtSpilloverRateIn.Location = new System.Drawing.Point(436, 318);
+            this.txtSpilloverRateIn.Location = new System.Drawing.Point(488, 61);
             this.txtSpilloverRateIn.Name = "txtSpilloverRateIn";
             this.txtSpilloverRateIn.Size = new System.Drawing.Size(50, 20);
             this.txtSpilloverRateIn.TabIndex = 17;
+            this.txtSpilloverRateIn.TextChanged += new System.EventHandler(this.txtSpilloverRateIn_TextChanged);
             // 
             // txtSpilloverMaxRkIn
             // 
-            this.txtSpilloverMaxRkIn.Location = new System.Drawing.Point(295, 344);
+            this.txtSpilloverMaxRkIn.Location = new System.Drawing.Point(488, 84);
             this.txtSpilloverMaxRkIn.Name = "txtSpilloverMaxRkIn";
             this.txtSpilloverMaxRkIn.Size = new System.Drawing.Size(50, 20);
             this.txtSpilloverMaxRkIn.TabIndex = 16;
+            this.txtSpilloverMaxRkIn.TextChanged += new System.EventHandler(this.txtSpilloverMaxRkIn_TextChanged);
             // 
             // txtSpilloverRateOut
             // 
-            this.txtSpilloverRateOut.Location = new System.Drawing.Point(295, 318);
+            this.txtSpilloverRateOut.Location = new System.Drawing.Point(488, 32);
             this.txtSpilloverRateOut.Name = "txtSpilloverRateOut";
             this.txtSpilloverRateOut.Size = new System.Drawing.Size(50, 20);
             this.txtSpilloverRateOut.TabIndex = 15;
+            this.txtSpilloverRateOut.TextChanged += new System.EventHandler(this.txtSpilloverRateOut_TextChanged);
             // 
             // txtFactionParentId
             // 
-            this.txtFactionParentId.Location = new System.Drawing.Point(285, 288);
+            this.txtFactionParentId.Location = new System.Drawing.Point(488, 6);
             this.txtFactionParentId.Name = "txtFactionParentId";
-            this.txtFactionParentId.Size = new System.Drawing.Size(60, 20);
+            this.txtFactionParentId.Size = new System.Drawing.Size(50, 20);
             this.txtFactionParentId.TabIndex = 14;
+            this.txtFactionParentId.TextChanged += new System.EventHandler(this.txtFactionParentId_TextChanged);
             // 
-            // groupBox1
+            // btnHelpClass0
             // 
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.btnHelpClasse);
-            this.groupBox1.Controls.Add(this.btnHelpRace);
-            this.groupBox1.Controls.Add(this.txtOptions);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtBaseRep);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.btnHelpFactionFlags);
-            this.groupBox1.Controls.Add(this.listPropRep);
-            this.groupBox1.Controls.Add(this.txtClasse);
-            this.groupBox1.Controls.Add(this.txtRace);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(201, 106);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(287, 176);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Propriétés de réputation";
+            this.btnHelpClass0.Location = new System.Drawing.Point(137, 45);
+            this.btnHelpClass0.Name = "btnHelpClass0";
+            this.btnHelpClass0.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpClass0.TabIndex = 18;
+            this.btnHelpClass0.Text = "+";
+            this.btnHelpClass0.UseVisualStyleBackColor = true;
+            this.btnHelpClass0.Click += new System.EventHandler(this.btnHelpClass0_Click);
             // 
-            // label7
+            // btnHelpRace0
             // 
-            this.label7.Location = new System.Drawing.Point(150, 44);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 117);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "La réputation de départ (0 = Neutre) et les options seront appliquées uniquement " +
-    "pour les combinaisons races/classes choisis.\r\nVous pouvez paramétrer jusqu\'à 4 l" +
-    "ots de combinaisons.";
+            this.btnHelpRace0.Location = new System.Drawing.Point(137, 17);
+            this.btnHelpRace0.Name = "btnHelpRace0";
+            this.btnHelpRace0.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpRace0.TabIndex = 17;
+            this.btnHelpRace0.Text = "+";
+            this.btnHelpRace0.UseVisualStyleBackColor = true;
+            this.btnHelpRace0.Click += new System.EventHandler(this.btnHelpRace0_Click);
             // 
-            // btnHelpClasse
+            // txtOptions0
             // 
-            this.btnHelpClasse.Location = new System.Drawing.Point(122, 70);
-            this.btnHelpClasse.Name = "btnHelpClasse";
-            this.btnHelpClasse.Size = new System.Drawing.Size(22, 22);
-            this.btnHelpClasse.TabIndex = 18;
-            this.btnHelpClasse.Text = "+";
-            this.btnHelpClasse.UseVisualStyleBackColor = true;
-            // 
-            // btnHelpRace
-            // 
-            this.btnHelpRace.Location = new System.Drawing.Point(122, 44);
-            this.btnHelpRace.Name = "btnHelpRace";
-            this.btnHelpRace.Size = new System.Drawing.Size(22, 22);
-            this.btnHelpRace.TabIndex = 17;
-            this.btnHelpRace.Text = "+";
-            this.btnHelpRace.UseVisualStyleBackColor = true;
-            // 
-            // txtOptions
-            // 
-            this.txtOptions.Location = new System.Drawing.Point(56, 146);
-            this.txtOptions.Name = "txtOptions";
-            this.txtOptions.Size = new System.Drawing.Size(60, 20);
-            this.txtOptions.TabIndex = 16;
+            this.txtOptions0.Location = new System.Drawing.Point(70, 97);
+            this.txtOptions0.Name = "txtOptions0";
+            this.txtOptions0.Size = new System.Drawing.Size(61, 20);
+            this.txtOptions0.TabIndex = 16;
+            this.txtOptions0.TextChanged += new System.EventHandler(this.txtOptions0_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 149);
+            this.label6.Location = new System.Drawing.Point(6, 100);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 15;
             this.label6.Text = "Options";
             // 
-            // txtBaseRep
+            // txtBaseRep0
             // 
-            this.txtBaseRep.Location = new System.Drawing.Point(9, 120);
-            this.txtBaseRep.Name = "txtBaseRep";
-            this.txtBaseRep.Size = new System.Drawing.Size(135, 20);
-            this.txtBaseRep.TabIndex = 14;
+            this.txtBaseRep0.Location = new System.Drawing.Point(71, 71);
+            this.txtBaseRep0.Name = "txtBaseRep0";
+            this.txtBaseRep0.Size = new System.Drawing.Size(88, 20);
+            this.txtBaseRep0.TabIndex = 14;
+            this.txtBaseRep0.TextChanged += new System.EventHandler(this.txtBaseRep0_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 104);
+            this.label5.Location = new System.Drawing.Point(6, 74);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 13);
+            this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Réputation de départ";
+            this.label5.Text = "Réputation";
             // 
-            // btnHelpFactionFlags
+            // btnHelpFactionFlags0
             // 
-            this.btnHelpFactionFlags.Location = new System.Drawing.Point(122, 144);
-            this.btnHelpFactionFlags.Name = "btnHelpFactionFlags";
-            this.btnHelpFactionFlags.Size = new System.Drawing.Size(22, 22);
-            this.btnHelpFactionFlags.TabIndex = 6;
-            this.btnHelpFactionFlags.Text = "+";
-            this.btnHelpFactionFlags.UseVisualStyleBackColor = true;
+            this.btnHelpFactionFlags0.Location = new System.Drawing.Point(137, 95);
+            this.btnHelpFactionFlags0.Name = "btnHelpFactionFlags0";
+            this.btnHelpFactionFlags0.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpFactionFlags0.TabIndex = 6;
+            this.btnHelpFactionFlags0.Text = "+";
+            this.btnHelpFactionFlags0.UseVisualStyleBackColor = true;
+            this.btnHelpFactionFlags0.Click += new System.EventHandler(this.btnHelpFactionFlags0_Click);
             // 
-            // listPropRep
+            // txtClass0
             // 
-            this.listPropRep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listPropRep.FormattingEnabled = true;
-            this.listPropRep.Location = new System.Drawing.Point(9, 19);
-            this.listPropRep.Name = "listPropRep";
-            this.listPropRep.Size = new System.Drawing.Size(135, 21);
-            this.listPropRep.TabIndex = 12;
+            this.txtClass0.Location = new System.Drawing.Point(71, 45);
+            this.txtClass0.Name = "txtClass0";
+            this.txtClass0.Size = new System.Drawing.Size(60, 20);
+            this.txtClass0.TabIndex = 11;
+            this.txtClass0.TextChanged += new System.EventHandler(this.txtClass0_TextChanged);
             // 
-            // txtClasse
+            // txtRace0
             // 
-            this.txtClasse.Location = new System.Drawing.Point(56, 72);
-            this.txtClasse.Name = "txtClasse";
-            this.txtClasse.Size = new System.Drawing.Size(60, 20);
-            this.txtClasse.TabIndex = 11;
-            // 
-            // txtRace
-            // 
-            this.txtRace.Location = new System.Drawing.Point(56, 46);
-            this.txtRace.Name = "txtRace";
-            this.txtRace.Size = new System.Drawing.Size(60, 20);
-            this.txtRace.TabIndex = 9;
+            this.txtRace0.Location = new System.Drawing.Point(71, 19);
+            this.txtRace0.Name = "txtRace0";
+            this.txtRace0.Size = new System.Drawing.Size(60, 20);
+            this.txtRace0.TabIndex = 9;
+            this.txtRace0.TextChanged += new System.EventHandler(this.txtRace0_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 75);
+            this.label4.Location = new System.Drawing.Point(6, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 10;
@@ -404,7 +407,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 49);
+            this.label3.Location = new System.Drawing.Point(6, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 7;
@@ -415,40 +418,42 @@
             this.txtFactionDescription.Location = new System.Drawing.Point(201, 32);
             this.txtFactionDescription.Multiline = true;
             this.txtFactionDescription.Name = "txtFactionDescription";
-            this.txtFactionDescription.Size = new System.Drawing.Size(287, 68);
+            this.txtFactionDescription.Size = new System.Drawing.Size(192, 98);
             this.txtFactionDescription.TabIndex = 5;
+            this.txtFactionDescription.TextChanged += new System.EventHandler(this.txtFactionDescription_TextChanged);
             // 
             // txtFactionName
             // 
-            this.txtFactionName.Location = new System.Drawing.Point(317, 6);
+            this.txtFactionName.Location = new System.Drawing.Point(299, 6);
             this.txtFactionName.Name = "txtFactionName";
-            this.txtFactionName.Size = new System.Drawing.Size(171, 20);
+            this.txtFactionName.Size = new System.Drawing.Size(133, 20);
             this.txtFactionName.TabIndex = 4;
+            this.txtFactionName.TextChanged += new System.EventHandler(this.txtFactionName_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(276, 9);
+            this.label2.Location = new System.Drawing.Point(264, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Nom :";
+            this.label2.Text = "Nom";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(198, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 13);
+            this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "ID :";
+            this.label1.Text = "ID";
             // 
             // txtFactionId
             // 
             this.txtFactionId.Enabled = false;
-            this.txtFactionId.Location = new System.Drawing.Point(228, 6);
+            this.txtFactionId.Location = new System.Drawing.Point(222, 6);
             this.txtFactionId.Name = "txtFactionId";
-            this.txtFactionId.Size = new System.Drawing.Size(42, 20);
+            this.txtFactionId.Size = new System.Drawing.Size(36, 20);
             this.txtFactionId.TabIndex = 1;
             // 
             // listFactions
@@ -458,6 +463,7 @@
             this.listFactions.Name = "listFactions";
             this.listFactions.Size = new System.Drawing.Size(184, 355);
             this.listFactions.TabIndex = 0;
+            this.listFactions.SelectedIndexChanged += new System.EventHandler(this.listFactions_SelectedIndexChanged);
             // 
             // tabFactionTemplate
             // 
@@ -469,7 +475,7 @@
             this.tabFactionTemplate.Controls.Add(this.groupBox2);
             this.tabFactionTemplate.Location = new System.Drawing.Point(4, 22);
             this.tabFactionTemplate.Name = "tabFactionTemplate";
-            this.tabFactionTemplate.Size = new System.Drawing.Size(499, 400);
+            this.tabFactionTemplate.Size = new System.Drawing.Size(547, 400);
             this.tabFactionTemplate.TabIndex = 2;
             this.tabFactionTemplate.Text = "Propriétés de faction";
             this.tabFactionTemplate.UseVisualStyleBackColor = true;
@@ -482,6 +488,7 @@
             this.btnFactTplRemove.TabIndex = 27;
             this.btnFactTplRemove.Text = "Supprimer";
             this.btnFactTplRemove.UseVisualStyleBackColor = true;
+            this.btnFactTplRemove.Click += new System.EventHandler(this.btnFactTplRemove_Click);
             // 
             // btnFctTplAdd
             // 
@@ -491,6 +498,7 @@
             this.btnFctTplAdd.TabIndex = 26;
             this.btnFctTplAdd.Text = "Ajouter";
             this.btnFctTplAdd.UseVisualStyleBackColor = true;
+            this.btnFctTplAdd.Click += new System.EventHandler(this.btnFctTplAdd_Click);
             // 
             // groupBox3
             // 
@@ -508,43 +516,43 @@
             this.groupBox3.Controls.Add(this.txtFriend3);
             this.groupBox3.Location = new System.Drawing.Point(201, 263);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(289, 128);
+            this.groupBox3.Size = new System.Drawing.Size(337, 128);
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Factions amies";
             // 
             // lblFriend3
             // 
-            this.lblFriend3.Location = new System.Drawing.Point(122, 97);
+            this.lblFriend3.Location = new System.Drawing.Point(128, 97);
             this.lblFriend3.Name = "lblFriend3";
-            this.lblFriend3.Size = new System.Drawing.Size(156, 20);
+            this.lblFriend3.Size = new System.Drawing.Size(203, 20);
             this.lblFriend3.TabIndex = 31;
             this.lblFriend3.Text = "lblFriend3";
             this.lblFriend3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblFriend2
             // 
-            this.lblFriend2.Location = new System.Drawing.Point(122, 71);
+            this.lblFriend2.Location = new System.Drawing.Point(128, 71);
             this.lblFriend2.Name = "lblFriend2";
-            this.lblFriend2.Size = new System.Drawing.Size(156, 20);
+            this.lblFriend2.Size = new System.Drawing.Size(203, 20);
             this.lblFriend2.TabIndex = 30;
             this.lblFriend2.Text = "lblFriend2";
             this.lblFriend2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblFriend1
             // 
-            this.lblFriend1.Location = new System.Drawing.Point(122, 45);
+            this.lblFriend1.Location = new System.Drawing.Point(128, 45);
             this.lblFriend1.Name = "lblFriend1";
-            this.lblFriend1.Size = new System.Drawing.Size(156, 20);
+            this.lblFriend1.Size = new System.Drawing.Size(203, 20);
             this.lblFriend1.TabIndex = 29;
             this.lblFriend1.Text = "lblFriend1";
             this.lblFriend1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblFriend0
             // 
-            this.lblFriend0.Location = new System.Drawing.Point(122, 19);
+            this.lblFriend0.Location = new System.Drawing.Point(128, 19);
             this.lblFriend0.Name = "lblFriend0";
-            this.lblFriend0.Size = new System.Drawing.Size(156, 20);
+            this.lblFriend0.Size = new System.Drawing.Size(203, 20);
             this.lblFriend0.TabIndex = 28;
             this.lblFriend0.Text = "lblFriend0";
             this.lblFriend0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -587,31 +595,35 @@
             // 
             // txtFriend0
             // 
-            this.txtFriend0.Location = new System.Drawing.Point(73, 19);
+            this.txtFriend0.Location = new System.Drawing.Point(79, 19);
             this.txtFriend0.Name = "txtFriend0";
             this.txtFriend0.Size = new System.Drawing.Size(43, 20);
             this.txtFriend0.TabIndex = 17;
+            this.txtFriend0.TextChanged += new System.EventHandler(this.txtFriend0_TextChanged);
             // 
             // txtFriend1
             // 
-            this.txtFriend1.Location = new System.Drawing.Point(73, 45);
+            this.txtFriend1.Location = new System.Drawing.Point(79, 45);
             this.txtFriend1.Name = "txtFriend1";
             this.txtFriend1.Size = new System.Drawing.Size(43, 20);
             this.txtFriend1.TabIndex = 15;
+            this.txtFriend1.TextChanged += new System.EventHandler(this.txtFriend1_TextChanged);
             // 
             // txtFriend2
             // 
-            this.txtFriend2.Location = new System.Drawing.Point(73, 71);
+            this.txtFriend2.Location = new System.Drawing.Point(79, 71);
             this.txtFriend2.Name = "txtFriend2";
             this.txtFriend2.Size = new System.Drawing.Size(43, 20);
             this.txtFriend2.TabIndex = 13;
+            this.txtFriend2.TextChanged += new System.EventHandler(this.txtFriend2_TextChanged);
             // 
             // txtFriend3
             // 
-            this.txtFriend3.Location = new System.Drawing.Point(73, 97);
+            this.txtFriend3.Location = new System.Drawing.Point(79, 97);
             this.txtFriend3.Name = "txtFriend3";
             this.txtFriend3.Size = new System.Drawing.Size(43, 20);
             this.txtFriend3.TabIndex = 19;
+            this.txtFriend3.TextChanged += new System.EventHandler(this.txtFriend3_TextChanged);
             // 
             // grpBoxEnemies
             // 
@@ -629,43 +641,43 @@
             this.grpBoxEnemies.Controls.Add(this.txtEnemy3);
             this.grpBoxEnemies.Location = new System.Drawing.Point(201, 130);
             this.grpBoxEnemies.Name = "grpBoxEnemies";
-            this.grpBoxEnemies.Size = new System.Drawing.Size(289, 127);
+            this.grpBoxEnemies.Size = new System.Drawing.Size(337, 127);
             this.grpBoxEnemies.TabIndex = 24;
             this.grpBoxEnemies.TabStop = false;
             this.grpBoxEnemies.Text = "Factions ennemies";
             // 
             // lblEnemy3
             // 
-            this.lblEnemy3.Location = new System.Drawing.Point(122, 93);
+            this.lblEnemy3.Location = new System.Drawing.Point(126, 93);
             this.lblEnemy3.Name = "lblEnemy3";
-            this.lblEnemy3.Size = new System.Drawing.Size(156, 20);
+            this.lblEnemy3.Size = new System.Drawing.Size(205, 20);
             this.lblEnemy3.TabIndex = 27;
             this.lblEnemy3.Text = "lblEnemy3";
             this.lblEnemy3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblEnemy2
             // 
-            this.lblEnemy2.Location = new System.Drawing.Point(122, 71);
+            this.lblEnemy2.Location = new System.Drawing.Point(126, 71);
             this.lblEnemy2.Name = "lblEnemy2";
-            this.lblEnemy2.Size = new System.Drawing.Size(156, 20);
+            this.lblEnemy2.Size = new System.Drawing.Size(205, 20);
             this.lblEnemy2.TabIndex = 26;
             this.lblEnemy2.Text = "lblEnemy2";
             this.lblEnemy2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblEnemy1
             // 
-            this.lblEnemy1.Location = new System.Drawing.Point(122, 45);
+            this.lblEnemy1.Location = new System.Drawing.Point(126, 45);
             this.lblEnemy1.Name = "lblEnemy1";
-            this.lblEnemy1.Size = new System.Drawing.Size(156, 20);
+            this.lblEnemy1.Size = new System.Drawing.Size(205, 20);
             this.lblEnemy1.TabIndex = 25;
             this.lblEnemy1.Text = "lblEnemy1";
             this.lblEnemy1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblEnemy0
             // 
-            this.lblEnemy0.Location = new System.Drawing.Point(122, 19);
+            this.lblEnemy0.Location = new System.Drawing.Point(126, 19);
             this.lblEnemy0.Name = "lblEnemy0";
-            this.lblEnemy0.Size = new System.Drawing.Size(156, 20);
+            this.lblEnemy0.Size = new System.Drawing.Size(205, 20);
             this.lblEnemy0.TabIndex = 24;
             this.lblEnemy0.Text = "lblEnemy0";
             this.lblEnemy0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -699,17 +711,19 @@
             // 
             // txtEnemy0
             // 
-            this.txtEnemy0.Location = new System.Drawing.Point(73, 19);
+            this.txtEnemy0.Location = new System.Drawing.Point(77, 19);
             this.txtEnemy0.Name = "txtEnemy0";
             this.txtEnemy0.Size = new System.Drawing.Size(43, 20);
             this.txtEnemy0.TabIndex = 16;
+            this.txtEnemy0.TextChanged += new System.EventHandler(this.txtEnemy0_TextChanged);
             // 
             // txtEnemy1
             // 
-            this.txtEnemy1.Location = new System.Drawing.Point(73, 45);
+            this.txtEnemy1.Location = new System.Drawing.Point(77, 45);
             this.txtEnemy1.Name = "txtEnemy1";
             this.txtEnemy1.Size = new System.Drawing.Size(43, 20);
             this.txtEnemy1.TabIndex = 14;
+            this.txtEnemy1.TextChanged += new System.EventHandler(this.txtEnemy1_TextChanged);
             // 
             // label19
             // 
@@ -722,17 +736,19 @@
             // 
             // txtEnemy2
             // 
-            this.txtEnemy2.Location = new System.Drawing.Point(73, 71);
+            this.txtEnemy2.Location = new System.Drawing.Point(77, 71);
             this.txtEnemy2.Name = "txtEnemy2";
             this.txtEnemy2.Size = new System.Drawing.Size(43, 20);
             this.txtEnemy2.TabIndex = 12;
+            this.txtEnemy2.TextChanged += new System.EventHandler(this.txtEnemy2_TextChanged);
             // 
             // txtEnemy3
             // 
-            this.txtEnemy3.Location = new System.Drawing.Point(73, 97);
+            this.txtEnemy3.Location = new System.Drawing.Point(77, 97);
             this.txtEnemy3.Name = "txtEnemy3";
             this.txtEnemy3.Size = new System.Drawing.Size(43, 20);
             this.txtEnemy3.TabIndex = 18;
+            this.txtEnemy3.TextChanged += new System.EventHandler(this.txtEnemy3_TextChanged);
             // 
             // listFactionTemplate
             // 
@@ -741,6 +757,7 @@
             this.listFactionTemplate.Name = "listFactionTemplate";
             this.listFactionTemplate.Size = new System.Drawing.Size(184, 355);
             this.listFactionTemplate.TabIndex = 23;
+            this.listFactionTemplate.SelectedIndexChanged += new System.EventHandler(this.listFactionTemplate_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -763,14 +780,14 @@
             this.groupBox2.Controls.Add(this.txtEnyGrp);
             this.groupBox2.Location = new System.Drawing.Point(200, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(289, 107);
+            this.groupBox2.Size = new System.Drawing.Size(338, 107);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Propriétés";
             // 
             // btnGroupsEditor
             // 
-            this.btnGroupsEditor.Location = new System.Drawing.Point(153, 46);
+            this.btnGroupsEditor.Location = new System.Drawing.Point(176, 44);
             this.btnGroupsEditor.Name = "btnGroupsEditor";
             this.btnGroupsEditor.Size = new System.Drawing.Size(130, 22);
             this.btnGroupsEditor.TabIndex = 16;
@@ -780,7 +797,7 @@
             // 
             // btnFctTplEnyMask
             // 
-            this.btnFctTplEnyMask.Location = new System.Drawing.Point(261, 72);
+            this.btnFctTplEnyMask.Location = new System.Drawing.Point(284, 70);
             this.btnFctTplEnyMask.Name = "btnFctTplEnyMask";
             this.btnFctTplEnyMask.Size = new System.Drawing.Size(22, 22);
             this.btnFctTplEnyMask.TabIndex = 15;
@@ -790,7 +807,7 @@
             // 
             // btnFctTplFrMask
             // 
-            this.btnFctTplFrMask.Location = new System.Drawing.Point(122, 72);
+            this.btnFctTplFrMask.Location = new System.Drawing.Point(145, 70);
             this.btnFctTplFrMask.Name = "btnFctTplFrMask";
             this.btnFctTplFrMask.Size = new System.Drawing.Size(22, 22);
             this.btnFctTplFrMask.TabIndex = 14;
@@ -800,7 +817,7 @@
             // 
             // btnFctTplFacMask
             // 
-            this.btnFctTplFacMask.Location = new System.Drawing.Point(122, 46);
+            this.btnFctTplFacMask.Location = new System.Drawing.Point(145, 44);
             this.btnFctTplFacMask.Name = "btnFctTplFacMask";
             this.btnFctTplFacMask.Size = new System.Drawing.Size(22, 22);
             this.btnFctTplFacMask.TabIndex = 13;
@@ -810,17 +827,18 @@
             // 
             // btnFctTplFlags
             // 
-            this.btnFctTplFlags.Location = new System.Drawing.Point(261, 20);
+            this.btnFctTplFlags.Location = new System.Drawing.Point(284, 18);
             this.btnFctTplFlags.Name = "btnFctTplFlags";
             this.btnFctTplFlags.Size = new System.Drawing.Size(22, 22);
             this.btnFctTplFlags.TabIndex = 12;
             this.btnFctTplFlags.Text = "+";
             this.btnFctTplFlags.UseVisualStyleBackColor = true;
+            this.btnFctTplFlags.Click += new System.EventHandler(this.btnFctTplFlags_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(77, 25);
+            this.label14.Location = new System.Drawing.Point(100, 23);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(42, 13);
             this.label14.TabIndex = 2;
@@ -829,7 +847,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 25);
+            this.label13.Location = new System.Drawing.Point(29, 23);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(16, 13);
             this.label13.TabIndex = 0;
@@ -838,7 +856,7 @@
             // txtFactionTemplateId
             // 
             this.txtFactionTemplateId.Enabled = false;
-            this.txtFactionTemplateId.Location = new System.Drawing.Point(28, 22);
+            this.txtFactionTemplateId.Location = new System.Drawing.Point(51, 20);
             this.txtFactionTemplateId.Name = "txtFactionTemplateId";
             this.txtFactionTemplateId.Size = new System.Drawing.Size(43, 20);
             this.txtFactionTemplateId.TabIndex = 1;
@@ -846,7 +864,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(174, 25);
+            this.label15.Location = new System.Drawing.Point(197, 23);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(32, 13);
             this.label15.TabIndex = 3;
@@ -855,7 +873,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 51);
+            this.label16.Location = new System.Drawing.Point(29, 49);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(68, 13);
             this.label16.TabIndex = 4;
@@ -864,7 +882,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 77);
+            this.label17.Location = new System.Drawing.Point(29, 75);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(62, 13);
             this.label17.TabIndex = 5;
@@ -873,36 +891,39 @@
             // txtFactionTemplateFaction
             // 
             this.txtFactionTemplateFaction.Enabled = false;
-            this.txtFactionTemplateFaction.Location = new System.Drawing.Point(125, 22);
+            this.txtFactionTemplateFaction.Location = new System.Drawing.Point(148, 20);
             this.txtFactionTemplateFaction.Name = "txtFactionTemplateFaction";
             this.txtFactionTemplateFaction.Size = new System.Drawing.Size(43, 20);
             this.txtFactionTemplateFaction.TabIndex = 6;
             // 
             // txtFactionTemplateFlags
             // 
-            this.txtFactionTemplateFlags.Location = new System.Drawing.Point(212, 22);
+            this.txtFactionTemplateFlags.Location = new System.Drawing.Point(235, 20);
             this.txtFactionTemplateFlags.Name = "txtFactionTemplateFlags";
             this.txtFactionTemplateFlags.Size = new System.Drawing.Size(43, 20);
             this.txtFactionTemplateFlags.TabIndex = 7;
+            this.txtFactionTemplateFlags.TextChanged += new System.EventHandler(this.txtFactionTemplateFlags_TextChanged);
             // 
             // txtFactGrp
             // 
-            this.txtFactGrp.Location = new System.Drawing.Point(76, 48);
+            this.txtFactGrp.Location = new System.Drawing.Point(99, 46);
             this.txtFactGrp.Name = "txtFactGrp";
             this.txtFactGrp.Size = new System.Drawing.Size(40, 20);
             this.txtFactGrp.TabIndex = 8;
+            this.txtFactGrp.TextChanged += new System.EventHandler(this.txtFactGrp_TextChanged);
             // 
             // txtFriendGrp
             // 
-            this.txtFriendGrp.Location = new System.Drawing.Point(76, 74);
+            this.txtFriendGrp.Location = new System.Drawing.Point(99, 72);
             this.txtFriendGrp.Name = "txtFriendGrp";
             this.txtFriendGrp.Size = new System.Drawing.Size(40, 20);
             this.txtFriendGrp.TabIndex = 9;
+            this.txtFriendGrp.TextChanged += new System.EventHandler(this.txtFriendGrp_TextChanged);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(150, 77);
+            this.label18.Location = new System.Drawing.Point(173, 75);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(65, 13);
             this.label18.TabIndex = 10;
@@ -910,16 +931,391 @@
             // 
             // txtEnyGrp
             // 
-            this.txtEnyGrp.Location = new System.Drawing.Point(215, 74);
+            this.txtEnyGrp.Location = new System.Drawing.Point(238, 72);
             this.txtEnyGrp.Name = "txtEnyGrp";
             this.txtEnyGrp.Size = new System.Drawing.Size(40, 20);
             this.txtEnyGrp.TabIndex = 11;
+            this.txtEnyGrp.TextChanged += new System.EventHandler(this.txtEnyGrp_TextChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtRace0);
+            this.groupBox1.Controls.Add(this.btnHelpRace0);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtClass0);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.btnHelpClass0);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtBaseRep0);
+            this.groupBox1.Controls.Add(this.txtOptions0);
+            this.groupBox1.Controls.Add(this.btnHelpFactionFlags0);
+            this.groupBox1.Location = new System.Drawing.Point(202, 136);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(165, 124);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Propriétés n°1";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.txtRace1);
+            this.groupBox4.Controls.Add(this.label27);
+            this.groupBox4.Controls.Add(this.txtOptions1);
+            this.groupBox4.Controls.Add(this.label28);
+            this.groupBox4.Controls.Add(this.label29);
+            this.groupBox4.Controls.Add(this.btnHelpRace1);
+            this.groupBox4.Controls.Add(this.btnHelpFactionFlags1);
+            this.groupBox4.Controls.Add(this.txtClass1);
+            this.groupBox4.Controls.Add(this.txtBaseRep1);
+            this.groupBox4.Controls.Add(this.btnHelpClass1);
+            this.groupBox4.Location = new System.Drawing.Point(376, 136);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(165, 124);
+            this.groupBox4.TabIndex = 34;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Propriétés n°2";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label34);
+            this.groupBox5.Controls.Add(this.txtRace2);
+            this.groupBox5.Controls.Add(this.label35);
+            this.groupBox5.Controls.Add(this.txtOptions2);
+            this.groupBox5.Controls.Add(this.label36);
+            this.groupBox5.Controls.Add(this.label37);
+            this.groupBox5.Controls.Add(this.btnHelpRace2);
+            this.groupBox5.Controls.Add(this.btnHelpFactionFlags2);
+            this.groupBox5.Controls.Add(this.txtClass2);
+            this.groupBox5.Controls.Add(this.txtBaseRep2);
+            this.groupBox5.Controls.Add(this.btnHelpClass2);
+            this.groupBox5.Location = new System.Drawing.Point(202, 266);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(165, 124);
+            this.groupBox5.TabIndex = 35;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Propriétés n°3";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label30);
+            this.groupBox6.Controls.Add(this.txtRace3);
+            this.groupBox6.Controls.Add(this.label31);
+            this.groupBox6.Controls.Add(this.txtOptions3);
+            this.groupBox6.Controls.Add(this.label32);
+            this.groupBox6.Controls.Add(this.label33);
+            this.groupBox6.Controls.Add(this.btnHelpRace3);
+            this.groupBox6.Controls.Add(this.btnHelpFactionFlags3);
+            this.groupBox6.Controls.Add(this.txtClass3);
+            this.groupBox6.Controls.Add(this.txtBaseRep3);
+            this.groupBox6.Controls.Add(this.btnHelpClass3);
+            this.groupBox6.Location = new System.Drawing.Point(376, 266);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(165, 124);
+            this.groupBox6.TabIndex = 36;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Propriétés n°4";
+            // 
+            // txtRace1
+            // 
+            this.txtRace1.Location = new System.Drawing.Point(66, 15);
+            this.txtRace1.Name = "txtRace1";
+            this.txtRace1.Size = new System.Drawing.Size(60, 20);
+            this.txtRace1.TabIndex = 20;
+            this.txtRace1.TextChanged += new System.EventHandler(this.txtRace1_TextChanged);
+            // 
+            // btnHelpRace1
+            // 
+            this.btnHelpRace1.Location = new System.Drawing.Point(132, 13);
+            this.btnHelpRace1.Name = "btnHelpRace1";
+            this.btnHelpRace1.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpRace1.TabIndex = 24;
+            this.btnHelpRace1.Text = "+";
+            this.btnHelpRace1.UseVisualStyleBackColor = true;
+            this.btnHelpRace1.Click += new System.EventHandler(this.btnHelpRace1_Click);
+            // 
+            // txtClass1
+            // 
+            this.txtClass1.Location = new System.Drawing.Point(66, 41);
+            this.txtClass1.Name = "txtClass1";
+            this.txtClass1.Size = new System.Drawing.Size(60, 20);
+            this.txtClass1.TabIndex = 21;
+            this.txtClass1.TextChanged += new System.EventHandler(this.txtClass1_TextChanged);
+            // 
+            // btnHelpClass1
+            // 
+            this.btnHelpClass1.Location = new System.Drawing.Point(132, 41);
+            this.btnHelpClass1.Name = "btnHelpClass1";
+            this.btnHelpClass1.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpClass1.TabIndex = 25;
+            this.btnHelpClass1.Text = "+";
+            this.btnHelpClass1.UseVisualStyleBackColor = true;
+            this.btnHelpClass1.Click += new System.EventHandler(this.btnHelpClass1_Click);
+            // 
+            // txtBaseRep1
+            // 
+            this.txtBaseRep1.Location = new System.Drawing.Point(66, 67);
+            this.txtBaseRep1.Name = "txtBaseRep1";
+            this.txtBaseRep1.Size = new System.Drawing.Size(88, 20);
+            this.txtBaseRep1.TabIndex = 22;
+            this.txtBaseRep1.TextChanged += new System.EventHandler(this.txtBaseRep1_TextChanged);
+            // 
+            // txtOptions1
+            // 
+            this.txtOptions1.Location = new System.Drawing.Point(65, 93);
+            this.txtOptions1.Name = "txtOptions1";
+            this.txtOptions1.Size = new System.Drawing.Size(61, 20);
+            this.txtOptions1.TabIndex = 23;
+            this.txtOptions1.TextChanged += new System.EventHandler(this.txtOptions1_TextChanged);
+            // 
+            // btnHelpFactionFlags1
+            // 
+            this.btnHelpFactionFlags1.Location = new System.Drawing.Point(132, 91);
+            this.btnHelpFactionFlags1.Name = "btnHelpFactionFlags1";
+            this.btnHelpFactionFlags1.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpFactionFlags1.TabIndex = 19;
+            this.btnHelpFactionFlags1.Text = "+";
+            this.btnHelpFactionFlags1.UseVisualStyleBackColor = true;
+            this.btnHelpFactionFlags1.Click += new System.EventHandler(this.btnHelpFactionFlags1_Click);
+            // 
+            // txtRace3
+            // 
+            this.txtRace3.Location = new System.Drawing.Point(67, 20);
+            this.txtRace3.Name = "txtRace3";
+            this.txtRace3.Size = new System.Drawing.Size(60, 20);
+            this.txtRace3.TabIndex = 27;
+            this.txtRace3.TextChanged += new System.EventHandler(this.txtRace3_TextChanged);
+            // 
+            // btnHelpRace3
+            // 
+            this.btnHelpRace3.Location = new System.Drawing.Point(133, 18);
+            this.btnHelpRace3.Name = "btnHelpRace3";
+            this.btnHelpRace3.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpRace3.TabIndex = 31;
+            this.btnHelpRace3.Text = "+";
+            this.btnHelpRace3.UseVisualStyleBackColor = true;
+            this.btnHelpRace3.Click += new System.EventHandler(this.btnHelpRace3_Click);
+            // 
+            // txtClass3
+            // 
+            this.txtClass3.Location = new System.Drawing.Point(67, 46);
+            this.txtClass3.Name = "txtClass3";
+            this.txtClass3.Size = new System.Drawing.Size(60, 20);
+            this.txtClass3.TabIndex = 28;
+            this.txtClass3.TextChanged += new System.EventHandler(this.txtClass3_TextChanged);
+            // 
+            // btnHelpClass3
+            // 
+            this.btnHelpClass3.Location = new System.Drawing.Point(133, 46);
+            this.btnHelpClass3.Name = "btnHelpClass3";
+            this.btnHelpClass3.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpClass3.TabIndex = 32;
+            this.btnHelpClass3.Text = "+";
+            this.btnHelpClass3.UseVisualStyleBackColor = true;
+            this.btnHelpClass3.Click += new System.EventHandler(this.btnHelpClass3_Click);
+            // 
+            // txtBaseRep3
+            // 
+            this.txtBaseRep3.Location = new System.Drawing.Point(67, 72);
+            this.txtBaseRep3.Name = "txtBaseRep3";
+            this.txtBaseRep3.Size = new System.Drawing.Size(88, 20);
+            this.txtBaseRep3.TabIndex = 29;
+            this.txtBaseRep3.TextChanged += new System.EventHandler(this.txtBaseRep3_TextChanged);
+            // 
+            // txtOptions3
+            // 
+            this.txtOptions3.Location = new System.Drawing.Point(66, 98);
+            this.txtOptions3.Name = "txtOptions3";
+            this.txtOptions3.Size = new System.Drawing.Size(61, 20);
+            this.txtOptions3.TabIndex = 30;
+            this.txtOptions3.TextChanged += new System.EventHandler(this.txtOptions3_TextChanged);
+            // 
+            // btnHelpFactionFlags3
+            // 
+            this.btnHelpFactionFlags3.Location = new System.Drawing.Point(133, 96);
+            this.btnHelpFactionFlags3.Name = "btnHelpFactionFlags3";
+            this.btnHelpFactionFlags3.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpFactionFlags3.TabIndex = 26;
+            this.btnHelpFactionFlags3.Text = "+";
+            this.btnHelpFactionFlags3.UseVisualStyleBackColor = true;
+            this.btnHelpFactionFlags3.Click += new System.EventHandler(this.btnHelpFactionFlags3_Click);
+            // 
+            // txtRace2
+            // 
+            this.txtRace2.Location = new System.Drawing.Point(71, 18);
+            this.txtRace2.Name = "txtRace2";
+            this.txtRace2.Size = new System.Drawing.Size(60, 20);
+            this.txtRace2.TabIndex = 34;
+            this.txtRace2.TextChanged += new System.EventHandler(this.txtRace2_TextChanged);
+            // 
+            // btnHelpRace2
+            // 
+            this.btnHelpRace2.Location = new System.Drawing.Point(137, 16);
+            this.btnHelpRace2.Name = "btnHelpRace2";
+            this.btnHelpRace2.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpRace2.TabIndex = 38;
+            this.btnHelpRace2.Text = "+";
+            this.btnHelpRace2.UseVisualStyleBackColor = true;
+            this.btnHelpRace2.Click += new System.EventHandler(this.btnHelpRace2_Click);
+            // 
+            // txtClass2
+            // 
+            this.txtClass2.Location = new System.Drawing.Point(71, 44);
+            this.txtClass2.Name = "txtClass2";
+            this.txtClass2.Size = new System.Drawing.Size(60, 20);
+            this.txtClass2.TabIndex = 35;
+            this.txtClass2.TextChanged += new System.EventHandler(this.txtClass2_TextChanged);
+            // 
+            // btnHelpClass2
+            // 
+            this.btnHelpClass2.Location = new System.Drawing.Point(137, 44);
+            this.btnHelpClass2.Name = "btnHelpClass2";
+            this.btnHelpClass2.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpClass2.TabIndex = 39;
+            this.btnHelpClass2.Text = "+";
+            this.btnHelpClass2.UseVisualStyleBackColor = true;
+            this.btnHelpClass2.Click += new System.EventHandler(this.btnHelpClass2_Click);
+            // 
+            // txtBaseRep2
+            // 
+            this.txtBaseRep2.Location = new System.Drawing.Point(71, 70);
+            this.txtBaseRep2.Name = "txtBaseRep2";
+            this.txtBaseRep2.Size = new System.Drawing.Size(88, 20);
+            this.txtBaseRep2.TabIndex = 36;
+            this.txtBaseRep2.TextChanged += new System.EventHandler(this.txtBaseRep2_TextChanged);
+            // 
+            // txtOptions2
+            // 
+            this.txtOptions2.Location = new System.Drawing.Point(70, 96);
+            this.txtOptions2.Name = "txtOptions2";
+            this.txtOptions2.Size = new System.Drawing.Size(61, 20);
+            this.txtOptions2.TabIndex = 37;
+            this.txtOptions2.TextChanged += new System.EventHandler(this.txtOptions2_TextChanged);
+            // 
+            // btnHelpFactionFlags2
+            // 
+            this.btnHelpFactionFlags2.Location = new System.Drawing.Point(137, 94);
+            this.btnHelpFactionFlags2.Name = "btnHelpFactionFlags2";
+            this.btnHelpFactionFlags2.Size = new System.Drawing.Size(22, 22);
+            this.btnHelpFactionFlags2.TabIndex = 33;
+            this.btnHelpFactionFlags2.Text = "+";
+            this.btnHelpFactionFlags2.UseVisualStyleBackColor = true;
+            this.btnHelpFactionFlags2.Click += new System.EventHandler(this.btnHelpFactionFlags2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Race";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 44);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(38, 13);
+            this.label27.TabIndex = 20;
+            this.label27.Text = "Classe";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 96);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(43, 13);
+            this.label28.TabIndex = 22;
+            this.label28.Text = "Options";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 70);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(59, 13);
+            this.label29.TabIndex = 21;
+            this.label29.Text = "Réputation";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 23);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(33, 13);
+            this.label30.TabIndex = 26;
+            this.label30.Text = "Race";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 49);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(38, 13);
+            this.label31.TabIndex = 27;
+            this.label31.Text = "Classe";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 101);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(43, 13);
+            this.label32.TabIndex = 29;
+            this.label32.Text = "Options";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(6, 75);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(59, 13);
+            this.label33.TabIndex = 28;
+            this.label33.Text = "Réputation";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 21);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(33, 13);
+            this.label34.TabIndex = 33;
+            this.label34.Text = "Race";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 47);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(38, 13);
+            this.label35.TabIndex = 34;
+            this.label35.Text = "Classe";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 99);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(43, 13);
+            this.label36.TabIndex = 36;
+            this.label36.Text = "Options";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(6, 73);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(59, 13);
+            this.label37.TabIndex = 35;
+            this.label37.Text = "Réputation";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 427);
+            this.ClientSize = new System.Drawing.Size(555, 427);
             this.Controls.Add(this.tabFactions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
@@ -929,8 +1325,6 @@
             this.tabFactions.ResumeLayout(false);
             this.tabFaction.ResumeLayout(false);
             this.tabFaction.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.tabFactionTemplate.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -938,6 +1332,14 @@
             this.grpBoxEnemies.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -954,24 +1356,20 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblFactionParentName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSpilloverRateIn;
         private System.Windows.Forms.TextBox txtSpilloverMaxRkIn;
         private System.Windows.Forms.TextBox txtSpilloverRateOut;
         private System.Windows.Forms.TextBox txtFactionParentId;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnHelpClasse;
-        private System.Windows.Forms.Button btnHelpRace;
-        private System.Windows.Forms.TextBox txtOptions;
+        private System.Windows.Forms.Button btnHelpClass0;
+        private System.Windows.Forms.Button btnHelpRace0;
+        private System.Windows.Forms.TextBox txtOptions0;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBaseRep;
+        private System.Windows.Forms.TextBox txtBaseRep0;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnHelpFactionFlags;
-        private System.Windows.Forms.ComboBox listPropRep;
-        private System.Windows.Forms.TextBox txtClasse;
-        private System.Windows.Forms.TextBox txtRace;
+        private System.Windows.Forms.Button btnHelpFactionFlags0;
+        private System.Windows.Forms.TextBox txtClass0;
+        private System.Windows.Forms.TextBox txtRace0;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFactionDescription;
@@ -1028,5 +1426,42 @@
         private System.Windows.Forms.TextBox txtFriendGrp;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtEnyGrp;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtRace3;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txtOptions3;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button btnHelpRace3;
+        private System.Windows.Forms.Button btnHelpFactionFlags3;
+        private System.Windows.Forms.TextBox txtClass3;
+        private System.Windows.Forms.TextBox txtBaseRep3;
+        private System.Windows.Forms.Button btnHelpClass3;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtRace2;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtOptions2;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button btnHelpRace2;
+        private System.Windows.Forms.Button btnHelpFactionFlags2;
+        private System.Windows.Forms.TextBox txtClass2;
+        private System.Windows.Forms.TextBox txtBaseRep2;
+        private System.Windows.Forms.Button btnHelpClass2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtRace1;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtOptions1;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button btnHelpRace1;
+        private System.Windows.Forms.Button btnHelpFactionFlags1;
+        private System.Windows.Forms.TextBox txtClass1;
+        private System.Windows.Forms.TextBox txtBaseRep1;
+        private System.Windows.Forms.Button btnHelpClass1;
     }
 }
