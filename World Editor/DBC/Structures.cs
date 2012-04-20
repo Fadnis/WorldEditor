@@ -533,7 +533,7 @@ namespace World_Editor.DBC
 
         public override string ToString()
         {
-            return Name;
+            return InternalName;
         }
     }
 

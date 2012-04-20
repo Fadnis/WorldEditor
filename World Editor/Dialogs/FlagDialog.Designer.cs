@@ -70,6 +70,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lstFlags);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FlagDialog";
             this.Text = "FlagDialog";
             this.Load += new System.EventHandler(this.FlagDialog_Load);

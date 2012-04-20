@@ -121,6 +121,15 @@ namespace World_Editor
         private void ChangeEnableEditors(bool value)
         {
             btnTitlesEditor.Enabled = value;
+            btnFactionsEditor.Enabled = value;
+        }
+
+        private void btnFactionsEditor_Click(object sender, EventArgs e)
+        {
+            FactionsEditor.MainForm d = new FactionsEditor.MainForm();
+            this.Hide();
+            d.ShowDialog();
+            this.Show();
         }
     }
 }
