@@ -646,31 +646,37 @@ namespace World_Editor.DBC
 
     }
 
+    [NoPrimary]
     public class gtBarberShopCostBaseEntry
     {
         public float Cost;                          // 0
     }
 
+    [NoPrimary]
     public class gtChanceToMeleeCritEntry
     {
         public float Ratio;                         // 0
     }
 
+    [NoPrimary]
     public class gtChanceToMeleeCritBaseEntry
     {
         public float Base;                          // 0
     }
 
+    [NoPrimary]
     public class gtChanceToSpellCritEntry
     {
         public float Ratio;                         // 0
     }
 
+    [NoPrimary]
     public class gtChanceToSpellCritBaseEntry
     {
         public float Base;                          // 0
     }
 
+    [NoPrimary]
     public class gtCombatRatingsEntry
     {
         public float Ratio;                         // 0
@@ -681,26 +687,31 @@ namespace World_Editor.DBC
 
     }
 
+    [NoPrimary]
     public class gtOCTClassCombatRatingScalarEntry
     {
         public float Ratio;                         // 0
     }
 
+    [NoPrimary]
     public class gtOCTRegenHPEntry
     {
         public float Ratio;                         // 0
     }
 
+    [NoPrimary]
     public class gtOCTRegenMPEntry
     {
         public float Ratio;                         // 0
     }
 
+    [NoPrimary]
     public class gtRegenHPPerSptEntry
     {
         public float Ratio;                         // 0
     }
 
+    [NoPrimary]
     public class gtRegenMPPerSptEntry
     {
         public float Ratio;                         // 0

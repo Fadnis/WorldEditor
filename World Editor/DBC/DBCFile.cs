@@ -181,7 +181,14 @@ namespace World_Editor.DBC
                 long posEnd = mReader.BaseStream.Position;
                 long diff = posEnd - posStart;
                 var firstVal = fields[0].GetValue(t);
-                uint id = (uint)Convert.ChangeType(firstVal, typeof(uint));
+
+                var classAttribs = typeof(T).GetCustomAttributes(typeof(NoPrimaryAttribute), false);
+                uint id;
+                if (classAttribs.Length == 0)
+                    id = (uint)Convert.ChangeType(firstVal, typeof(uint));
+                else
+                    id = (uint)mRecords.Count();
+
                 if (mConverter == null)
                     mRecords.Add(id, (T)t);
                 else
@@ -276,5 +283,10 @@ namespace World_Editor.DBC
         }
 
         public uint Length { get; private set; }
+    }
+
+    [AttributeUsage(AttributeTargets.Class)]
+    public class NoPrimaryAttribute : Attribute
+    {
     }
 }
