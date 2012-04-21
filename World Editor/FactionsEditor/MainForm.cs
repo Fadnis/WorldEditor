@@ -15,25 +15,33 @@ namespace World_Editor.FactionsEditor
         #region Enums
         enum FlagFactionTemplateEnums
         {
-            UNK1 = 1,
-            UNK2 = 2,
-            UNK3 = 4,
-            UNK4 = 8,
-            UNK5 = 16,
-            UNK6 = 32,
+            FLAG_UNK1               = 1,
+            FLAG_UNK2               = 2,
+            FLAG_UNK3               = 4,
+            FLAG_UNK4               = 8,
+            FLAG_UNK5               = 16,
+            FLAG_UNK6               = 32,
+            FLAG_UNK7               = 64,
+            FLAG_UNK8               = 128,
+            FLAG_UNK9               = 256,
+            FLAG_UNK10              = 512,
+            FLAG_UNK11              = 1024,
+            FLAG_PVP                = 2048,     // flagged for PvP
+            FLAG_CONTESTED_GUARD    = 4096,     // faction will attack players that were involved in PvP combats
+            FLAG_HOSTILE_BY_DEFAULT = 8192,
         }
 
         enum FactionFlagsEnums
         {
-            FACTION_FLAG_VISIBLE            = 1,         // makes visible in client (set or can be set at interaction with target of this faction)
-            FACTION_FLAG_AT_WAR             = 2,         // enable AtWar-button in client. player controlled (except opposition team always war state), Flag only set on initial creation
-            FACTION_FLAG_HIDDEN             = 4,         // hidden faction from reputation pane in client (player can gain reputation, but this update not sent to client)
-            FACTION_FLAG_INVISIBLE_FORCED   = 8,         // always overwrite FACTION_FLAG_VISIBLE and hide faction in rep.list, used for hide opposite team factions
-            FACTION_FLAG_PEACE_FORCED       = 16,        // always overwrite FACTION_FLAG_AT_WAR, used for prevent war with own team factions
-            FACTION_FLAG_INACTIVE           = 32,        // player controlled, state stored in characters.data ( CMSG_SET_FACTION_INACTIVE )
-            FACTION_FLAG_RIVAL              = 64,        // flag for the two competing outland factions
-            FACTION_FLAG_TEAM_REPUTATION    = 128,       // faction has own reputation standing despite teaming up sub-factions; spillover from subfactions will go this instead of other subfactions
-            FACTION_FLAG_UNK1               = 256,
+            FLAG_VISIBLE            = 1,        // makes visible in client (set or can be set at interaction with target of this faction)
+            FLAG_AT_WAR             = 2,        // enable AtWar-button in client. player controlled (except opposition team always war state), Flag only set on initial creation
+            FLAG_HIDDEN             = 4,        // hidden faction from reputation pane in client (player can gain reputation, but this update not sent to client)
+            FLAG_INVISIBLE_FORCED   = 8,        // always overwrite FACTION_FLAG_VISIBLE and hide faction in rep.list, used for hide opposite team factions
+            FLAG_PEACE_FORCED       = 16,       // always overwrite FACTION_FLAG_AT_WAR, used for prevent war with own team factions
+            FLAG_INACTIVE           = 32,       // player controlled, state stored in characters.data ( CMSG_SET_FACTION_INACTIVE )
+            FLAG_RIVAL              = 64,       // flag for the two competing outland factions
+            FLAG_TEAM_REPUTATION    = 128,      // faction has own reputation standing despite teaming up sub-factions; spillover from subfactions will go this instead of other subfactions
+            FLAG_UNK1               = 256,
         }
         #endregion
 
@@ -711,6 +719,106 @@ namespace World_Editor.FactionsEditor
         }
         #endregion
 
+        #region Tab Opérations sur factions
+        private void btnRaceMaskOld_Click(object sender, EventArgs e)
+        {
+            World_Editor.Dialogs.MaskRaces d = new World_Editor.Dialogs.MaskRaces();
+            d.MaskRacesValue = ParseToUInt(txtRaceMaskOld.Text);
+            d.ShowDialog();
+            txtRaceMaskOld.Text = d.MaskRacesValue.ToString();
+        }
+
+        private void btnRaceMaskNew_Click(object sender, EventArgs e)
+        {
+            World_Editor.Dialogs.MaskRaces d = new World_Editor.Dialogs.MaskRaces();
+            d.MaskRacesValue = ParseToUInt(txtRaceMaskNew.Text);
+            d.ShowDialog();
+            txtRaceMaskNew.Text = d.MaskRacesValue.ToString();
+        }
+
+        private void btnReplaceRaceMask_Click(object sender, EventArgs e)
+        {
+            uint oldMaskRace;
+            uint newMaskRace;
+            if (UInt32.TryParse(txtRaceMaskOld.Text, out oldMaskRace) && UInt32.TryParse(txtRaceMaskNew.Text, out newMaskRace))
+                foreach (FactionEntry f in DBCStores.Faction.Records)
+                    for (uint i = 0; i < 4; ++i)
+                        if (f.BaseRepRaceMask[i] == oldMaskRace)
+                            f.BaseRepRaceMask[i] = newMaskRace;
+
+            listFactions.Items.Clear();
+
+            foreach (FactionEntry f in DBCStores.Faction.Records)
+                listFactions.Items.Add(f);
+
+            listFactions.SelectedIndex = 0;
+        }
+
+        private void btnClassMaskOld_Click(object sender, EventArgs e)
+        {
+            World_Editor.Dialogs.MaskClasses d = new World_Editor.Dialogs.MaskClasses();
+            d.MaskClassesValue = ParseToUInt(txtClassMaskOld.Text);
+            d.ShowDialog();
+            txtClassMaskOld.Text = d.MaskClassesValue.ToString();
+        }
+
+        private void btnClassMaskNew_Click(object sender, EventArgs e)
+        {
+            World_Editor.Dialogs.MaskClasses d = new World_Editor.Dialogs.MaskClasses();
+            d.MaskClassesValue = ParseToUInt(txtClassMaskNew.Text);
+            d.ShowDialog();
+            txtClassMaskNew.Text = d.MaskClassesValue.ToString();
+        }
+
+        private void btnReplaceClassMask_Click(object sender, EventArgs e)
+        {
+            uint oldMaskClass;
+            uint newMaskClass;
+            if (UInt32.TryParse(txtClassMaskOld.Text, out oldMaskClass) && UInt32.TryParse(txtClassMaskNew.Text, out newMaskClass))
+                foreach (FactionEntry f in DBCStores.Faction.Records)
+                    for (uint i = 0; i < 4; ++i)
+                        if (f.BaseRepClassMask[i] == oldMaskClass)
+                            f.BaseRepClassMask[i] = newMaskClass;
+
+            listFactions.Items.Clear();
+
+            foreach (FactionEntry f in DBCStores.Faction.Records)
+                listFactions.Items.Add(f);
+
+            listFactions.SelectedIndex = 0;
+        }
+
+        private void btnGroupMaskOld_Click(object sender, EventArgs e)
+        {
+            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(ParseToUInt(txtGroupMaskOld.Text));
+            d.ShowDialog();
+            txtGroupMaskOld.Text = d.BitMask.ToString();
+        }
+
+        private void btnGroupMaskNew_Click(object sender, EventArgs e)
+        {
+            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(ParseToUInt(txtGroupMaskNew.Text));
+            d.ShowDialog();
+            txtGroupMaskNew.Text = d.BitMask.ToString();
+        }
+
+        private void btnReplaceGroupMask_Click(object sender, EventArgs e)
+        {
+            uint oldGroupMask;
+            uint newGroupMask;
+            if (UInt32.TryParse(txtGroupMaskOld.Text, out oldGroupMask) && UInt32.TryParse(txtGroupMaskNew.Text, out newGroupMask))
+                foreach (FactionTemplateEntry f in DBCStores.FactionTemplate.Records)
+                    if (rbFaction.Checked)
+                        if (f.OurMask == oldGroupMask)
+                            f.OurMask = newGroupMask;
+                        else if (rbFriend.Checked)
+                            if (f.FriendlyMask == oldGroupMask)
+                                f.FriendlyMask = newGroupMask;
+                            else if (rbEnemy.Checked)
+                                if (f.HostileMask == oldGroupMask)
+                                    f.HostileMask = newGroupMask;
+        }
+        #endregion
 
 
         #region Ouvertures Dialogs
