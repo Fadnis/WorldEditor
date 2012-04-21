@@ -245,6 +245,7 @@ namespace World_Editor.DBC
         public T this[uint id]
         {
             get { return mRecords[id]; }
+            set { mRecords[id] = value; }
         }
 
         public bool ContainsKey(uint id)

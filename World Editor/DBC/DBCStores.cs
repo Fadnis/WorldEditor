@@ -172,10 +172,10 @@ namespace World_Editor.DBC
         //public static DBCFile<ServerMessagesEntry> ServerMessages { get; private set; }
         //public static DBCFile<SheatheSoundLookupsEntry> SheatheSoundLookups { get; private set; }
         //public static DBCFile<SkillCostsDataEntry> SkillCostsData { get; private set; }
-        //public static DBCFile<SkillLineEntry> SkillLine { get; private set; }
-        //public static DBCFile<SkillLineAbilityEntry> SkillLineAbility { get; private set; }
+        public static DBCFile<SkillLineEntry> SkillLine { get; private set; }
+        public static DBCFile<SkillLineAbilityEntry> SkillLineAbility { get; private set; }
         //public static DBCFile<SkillLineCategoryEntry> SkillLineCategory { get; private set; }
-        //public static DBCFile<SkillRaceClassInfoEntry> SkillRaceClassInfo { get; private set; }
+        public static DBCFile<SkillRaceClassInfoEntry> SkillRaceClassInfo { get; private set; }
         //public static DBCFile<SkillTiersEntry> SkillTiers { get; private set; }
         //public static DBCFile<SoundAmbienceEntry> SoundAmbience { get; private set; }
         //public static DBCFile<SoundEmittersEntry> SoundEmitters { get; private set; }
@@ -187,7 +187,7 @@ namespace World_Editor.DBC
         //public static DBCFile<SoundSamplePreferencesEntry> SoundSamplePreferences { get; private set; }
         //public static DBCFile<SoundWaterTypeEntry> SoundWaterType { get; private set; }
         //public static DBCFile<SpamMessagesEntry> SpamMessages { get; private set; }
-        //public static DBCFile<SpellEntry> Spell { get; private set; }
+        public static DBCFile<SpellEntry> Spell { get; private set; }
         //public static DBCFile<SpellCastTimesEntry> SpellCastTimes { get; private set; }
         //public static DBCFile<SpellCategoryEntry> SpellCategory { get; private set; }
         //public static DBCFile<SpellChainEffectsEntry> SpellChainEffects { get; private set; }
@@ -196,8 +196,8 @@ namespace World_Editor.DBC
         //public static DBCFile<SpellDispelTypeEntry> SpellDispelType { get; private set; }
         //public static DBCFile<SpellDurationEntry> SpellDuration { get; private set; }
         //public static DBCFile<SpellEffectCameraShakesEntry> SpellEffectCameraShakes { get; private set; }
-        //public static DBCFile<SpellFocusObjectEntry> SpellFocusObject { get; private set; }
-        //public static DBCFile<SpellIconEntry> SpellIcon { get; private set; }
+        public static DBCFile<SpellFocusObjectEntry> SpellFocusObject { get; private set; }
+        public static DBCFile<SpellIconEntry> SpellIcon { get; private set; }
         //public static DBCFile<SpellItemEnchantmentEntry> SpellItemEnchantment { get; private set; }
         //public static DBCFile<SpellItemEnchantmentConditionEntry> SpellItemEnchantmentCondition { get; private set; }
         //public static DBCFile<SpellMechanicEntry> SpellMechanic { get; private set; }
@@ -291,8 +291,8 @@ namespace World_Editor.DBC
             //CharVariations = new DBCFile<CharVariationsEntry>(DbcFolder + "CharVariations.dbc");
             //ChatChannels = new DBCFile<ChatChannelsEntry>(DbcFolder + "ChatChannels.dbc");
             //ChatProfanity = new DBCFile<ChatProfanityEntry>(DbcFolder + "ChatProfanity.dbc");
-            //ChrClasses = new DBCFile<ChrClassesEntry>(DbcFolder + "ChrClasses.dbc");
-            //ChrRaces = new DBCFile<ChrRacesEntry>(DbcFolder + "ChrRaces.dbc");
+            ChrClasses = new DBCFile<ChrClassesEntry>(DbcFolder + "ChrClasses.dbc");
+            ChrRaces = new DBCFile<ChrRacesEntry>(DbcFolder + "ChrRaces.dbc");
             //CinematicCamera = new DBCFile<CinematicCameraEntry>(DbcFolder + "CinematicCamera.dbc");
             //CinematicSequences = new DBCFile<CinematicSequencesEntry>(DbcFolder + "CinematicSequences.dbc");
             //CreatureDisplayInfo = new DBCFile<CreatureDisplayInfoEntry>(DbcFolder + "CreatureDisplayInfo.dbc");
@@ -427,10 +427,10 @@ namespace World_Editor.DBC
             //ServerMessages = new DBCFile<ServerMessagesEntry>(DbcFolder + "ServerMessages.dbc");
             //SheatheSoundLookups = new DBCFile<SheatheSoundLookupsEntry>(DbcFolder + "SheatheSoundLookups.dbc");
             //SkillCostsData = new DBCFile<SkillCostsDataEntry>(DbcFolder + "SkillCostsData.dbc");
-            //SkillLine = new DBCFile<SkillLineEntry>(DbcFolder + "SkillLine.dbc");
-            //SkillLineAbility = new DBCFile<SkillLineAbilityEntry>(DbcFolder + "SkillLineAbility.dbc");
+            SkillLine = new DBCFile<SkillLineEntry>(DbcFolder + "SkillLine.dbc");
+            SkillLineAbility = new DBCFile<SkillLineAbilityEntry>(DbcFolder + "SkillLineAbility.dbc");
             //SkillLineCategory = new DBCFile<SkillLineCategoryEntry>(DbcFolder + "SkillLineCategory.dbc");
-            //SkillRaceClassInfo = new DBCFile<SkillRaceClassInfoEntry>(DbcFolder + "SkillRaceClassInfo.dbc");
+            SkillRaceClassInfo = new DBCFile<SkillRaceClassInfoEntry>(DbcFolder + "SkillRaceClassInfo.dbc");
             //SkillTiers = new DBCFile<SkillTiersEntry>(DbcFolder + "SkillTiers.dbc");
             //SoundAmbience = new DBCFile<SoundAmbienceEntry>(DbcFolder + "SoundAmbience.dbc");
             //SoundEmitters = new DBCFile<SoundEmittersEntry>(DbcFolder + "SoundEmitters.dbc");
@@ -442,7 +442,7 @@ namespace World_Editor.DBC
             //SoundSamplePreferences = new DBCFile<SoundSamplePreferencesEntry>(DbcFolder + "SoundSamplePreferences.dbc");
             //SoundWaterType = new DBCFile<SoundWaterTypeEntry>(DbcFolder + "SoundWaterType.dbc");
             //SpamMessages = new DBCFile<SpamMessagesEntry>(DbcFolder + "SpamMessages.dbc");
-            //Spell = new DBCFile<SpellEntry>(DbcFolder + "Spell.dbc");
+            Spell = new DBCFile<SpellEntry>(DbcFolder + "Spell.dbc");
             //SpellCastTimes = new DBCFile<SpellCastTimesEntry>(DbcFolder + "SpellCastTimes.dbc");
             //SpellCategory = new DBCFile<SpellCategoryEntry>(DbcFolder + "SpellCategory.dbc");
             //SpellChainEffects = new DBCFile<SpellChainEffectsEntry>(DbcFolder + "SpellChainEffects.dbc");
@@ -451,8 +451,8 @@ namespace World_Editor.DBC
             //SpellDispelType = new DBCFile<SpellDispelTypeEntry>(DbcFolder + "SpellDispelType.dbc");
             //SpellDuration = new DBCFile<SpellDurationEntry>(DbcFolder + "SpellDuration.dbc");
             //SpellEffectCameraShakes = new DBCFile<SpellEffectCameraShakesEntry>(DbcFolder + "SpellEffectCameraShakes.dbc");
-            //SpellFocusObject = new DBCFile<SpellFocusObjectEntry>(DbcFolder + "SpellFocusObject.dbc");
-            //SpellIcon = new DBCFile<SpellIconEntry>(DbcFolder + "SpellIcon.dbc");
+            SpellFocusObject = new DBCFile<SpellFocusObjectEntry>(DbcFolder + "SpellFocusObject.dbc");
+            SpellIcon = new DBCFile<SpellIconEntry>(DbcFolder + "SpellIcon.dbc");
             //SpellItemEnchantment = new DBCFile<SpellItemEnchantmentEntry>(DbcFolder + "SpellItemEnchantment.dbc");
             //SpellItemEnchantmentCondition = new DBCFile<SpellItemEnchantmentConditionEntry>(DbcFolder + "SpellItemEnchantmentCondition.dbc");
             //SpellMechanic = new DBCFile<SpellMechanicEntry>(DbcFolder + "SpellMechanic.dbc");
@@ -517,9 +517,31 @@ namespace World_Editor.DBC
             CharTitles.LoadData();
         }
 
+        public static void LoadProfessionEditorFiles()
+        {
+            Spell.LoadData();
+            SkillLine.LoadData();
+            SkillLineAbility.LoadData();
+            SkillRaceClassInfo.LoadData();
+            SpellFocusObject.LoadData();
+            ChrRaces.LoadData();
+            ChrClasses.LoadData();
+        }
+
+
         public static void SaveTitlesEditorFiles()
         {
             CharTitles.SaveDBC();
         }
+        
+        public static void SaveProfessionEditorFiles()
+        {
+            Spell.SaveDBC();
+            SkillLine.SaveDBC();
+            SkillLineAbility.SaveDBC();
+            SkillRaceClassInfo.SaveDBC();
+            SpellFocusObject.SaveDBC();
+        }
+
     }
 }

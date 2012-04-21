@@ -1328,6 +1328,49 @@ namespace World_Editor.DBC
 
     public class SpellEntry
     {
+        public void InitRecipe()
+        {
+            Totem = (uint[])Array.CreateInstance(typeof(uint), 2);
+            Reagent = (int[])Array.CreateInstance(typeof(int), 8);
+            ReagentCount = (uint[])Array.CreateInstance(typeof(uint), 8);
+            Effect = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectDieSides = (int[])Array.CreateInstance(typeof(int), 3);
+            EffectRealPointsPerLevel = (float[])Array.CreateInstance(typeof(float), 3);
+            EffectBasePoints = (int[])Array.CreateInstance(typeof(int), 3);
+            EffectMechanic = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectImplicitTargetA = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectImplicitTargetB = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectRadiusIndex = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectApplyAuraName = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectAmplitude = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectMultipleValue = (float[])Array.CreateInstance(typeof(float), 3);
+            EffectChainTarget = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectItemType = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectMiscValue = (int[])Array.CreateInstance(typeof(int), 3);
+            EffectMiscValueB = (int[])Array.CreateInstance(typeof(int), 3);
+            EffectTriggerSpell = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectPointsPerComboPoint = (float[])Array.CreateInstance(typeof(float), 3);
+            EffectSpellClassMask = (float[])Array.CreateInstance(typeof(float), 9);
+            SpellVisual = (uint[])Array.CreateInstance(typeof(uint), 2);
+            DmgMultiplier = (float[])Array.CreateInstance(typeof(float), 3);
+            TotemCategory = (uint[])Array.CreateInstance(typeof(uint), 2);
+            EffectBonusCoefficient = (float[])Array.CreateInstance(typeof(float), 3);
+
+            Attributes = 65584;
+            AttributesEx = 1024;
+            CastingTimeIndex = 33;
+            InterruptFlags = 15;
+            ProcChance = 101;
+            RangeIndex = 1;
+            EquippedItemClass = -1;
+            Effect[0] = 24;
+            EffectDieSides[0] = 1;
+            EffectImplicitTargetA[0] = 1;
+            SpellVisual[0] = 395;
+            DmgMultiplier[0] = 1.0f;
+            SchoolMask = 1;
+        }
+
         public uint Id;                             // 0
         public uint Category;                       // 1
         public uint Dispel;                         // 2
