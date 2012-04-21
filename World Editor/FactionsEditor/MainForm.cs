@@ -230,9 +230,6 @@ namespace World_Editor.FactionsEditor
 
             f.EnemyFaction[0] = ParseToUInt(txtEnemy0.Text);
 
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
-
             if (DBCStores.Faction.ContainsKey(ParseToUInt(txtEnemy0.Text)))
                 lblEnemy0.Text = DBCStores.Faction[ParseToUInt(txtEnemy0.Text)].Name;
             else
@@ -247,9 +244,6 @@ namespace World_Editor.FactionsEditor
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
             f.EnemyFaction[1] = ParseToUInt(txtEnemy1.Text);
-
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
 
             if (DBCStores.Faction.ContainsKey(ParseToUInt(txtEnemy1.Text)))
                 lblEnemy1.Text = DBCStores.Faction[ParseToUInt(txtEnemy1.Text)].Name;
@@ -266,9 +260,6 @@ namespace World_Editor.FactionsEditor
 
             f.EnemyFaction[2] = ParseToUInt(txtEnemy2.Text);
 
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
-
             if (DBCStores.Faction.ContainsKey(ParseToUInt(txtEnemy2.Text)))
                 lblEnemy2.Text = DBCStores.Faction[ParseToUInt(txtEnemy2.Text)].Name;
             else
@@ -283,9 +274,6 @@ namespace World_Editor.FactionsEditor
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
             f.EnemyFaction[3] = ParseToUInt(txtEnemy3.Text);
-
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
 
             if (DBCStores.Faction.ContainsKey(ParseToUInt(txtEnemy3.Text)))
                 lblEnemy3.Text = DBCStores.Faction[ParseToUInt(txtEnemy3.Text)].Name;
@@ -302,9 +290,6 @@ namespace World_Editor.FactionsEditor
 
             f.FriendFaction[0] = ParseToUInt(txtFriend0.Text);
 
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
-
             if (DBCStores.Faction.ContainsKey(ParseToUInt(txtFriend0.Text)))
                 lblFriend0.Text = DBCStores.Faction[ParseToUInt(txtFriend0.Text)].Name;
             else
@@ -319,9 +304,6 @@ namespace World_Editor.FactionsEditor
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
             f.FriendFaction[1] = ParseToUInt(txtFriend1.Text);
-
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
 
             if (DBCStores.Faction.ContainsKey(ParseToUInt(txtFriend1.Text)))
                 lblFriend1.Text = DBCStores.Faction[ParseToUInt(txtFriend1.Text)].Name;
@@ -338,9 +320,6 @@ namespace World_Editor.FactionsEditor
 
             f.FriendFaction[2] = ParseToUInt(txtFriend2.Text);
 
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
-
             if (DBCStores.Faction.ContainsKey(ParseToUInt(txtFriend2.Text)))
                 lblFriend2.Text = DBCStores.Faction[ParseToUInt(txtFriend2.Text)].Name;
             else
@@ -356,9 +335,6 @@ namespace World_Editor.FactionsEditor
 
             f.FriendFaction[3] = ParseToUInt(txtFriend3.Text);
 
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
-
             if (DBCStores.Faction.ContainsKey(ParseToUInt(txtFriend3.Text)))
                 lblFriend3.Text = DBCStores.Faction[ParseToUInt(txtFriend3.Text)].Name;
             else
@@ -373,9 +349,6 @@ namespace World_Editor.FactionsEditor
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
             f.FactionFlags = ParseToUInt(txtFactionTemplateFlags.Text);
-
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
         }
 
         private void txtFactGrp_TextChanged(object sender, EventArgs e)
@@ -386,9 +359,6 @@ namespace World_Editor.FactionsEditor
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
             f.OurMask = ParseToUInt(txtFactGrp.Text);
-
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
         }
 
         private void txtFriendGrp_TextChanged(object sender, EventArgs e)
@@ -399,9 +369,6 @@ namespace World_Editor.FactionsEditor
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
             f.FriendlyMask = ParseToUInt(txtFriendGrp.Text);
-
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
         }
 
         private void txtEnyGrp_TextChanged(object sender, EventArgs e)
@@ -412,9 +379,6 @@ namespace World_Editor.FactionsEditor
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
             f.HostileMask = ParseToUInt(txtEnyGrp.Text);
-
-            listFactionTemplate.Items[listFactionTemplate.SelectedIndex] = f;
-            DBCStores.FactionTemplate.ReplaceEntry(f.Id, f);
         }
         #endregion
 
@@ -429,7 +393,6 @@ namespace World_Editor.FactionsEditor
             f.Name = txtFactionName.Text;
 
             listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtFactionDescription_TextChanged(object sender, EventArgs e)
@@ -440,9 +403,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.Description = txtFactionDescription.Text;
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtFactionParentId_TextChanged(object sender, EventArgs e)
@@ -453,9 +413,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.ParentFactionId = ParseToUInt(txtFactionParentId.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtSpilloverRateOut_TextChanged(object sender, EventArgs e)
@@ -466,9 +423,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.SpilloverRateOut = ParseToFloat(txtSpilloverRateOut.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtSpilloverRateIn_TextChanged(object sender, EventArgs e)
@@ -479,9 +433,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.SpilloverRateIn = ParseToFloat(txtSpilloverRateIn.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtSpilloverMaxRkIn_TextChanged(object sender, EventArgs e)
@@ -492,9 +443,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.SpilloverMaxRankIn = ParseToUInt(txtSpilloverMaxRkIn.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtSpilloverUnk_TextChanged(object sender, EventArgs e)
@@ -505,9 +453,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.SpilloverRankUnk = ParseToUInt(txtSpilloverUnk.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtRace0_TextChanged(object sender, EventArgs e)
@@ -518,9 +463,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepRaceMask[0] = ParseToUInt(txtRace0.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtRace1_TextChanged(object sender, EventArgs e)
@@ -531,9 +473,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepRaceMask[1] = ParseToUInt(txtRace1.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtRace2_TextChanged(object sender, EventArgs e)
@@ -544,9 +483,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepRaceMask[2] = ParseToUInt(txtRace2.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtRace3_TextChanged(object sender, EventArgs e)
@@ -557,9 +493,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepRaceMask[3] = ParseToUInt(txtRace3.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtClass0_TextChanged(object sender, EventArgs e)
@@ -570,9 +503,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepClassMask[0] = ParseToUInt(txtClass0.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtClass1_TextChanged(object sender, EventArgs e)
@@ -583,9 +513,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepClassMask[1] = ParseToUInt(txtClass1.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtClass2_TextChanged(object sender, EventArgs e)
@@ -596,9 +523,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepClassMask[2] = ParseToUInt(txtClass2.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtClass3_TextChanged(object sender, EventArgs e)
@@ -609,9 +533,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepClassMask[3] = ParseToUInt(txtClass3.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtBaseRep0_TextChanged(object sender, EventArgs e)
@@ -622,9 +543,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepValue[0] = ParseToInt(txtBaseRep0.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtBaseRep1_TextChanged(object sender, EventArgs e)
@@ -635,9 +553,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepValue[1] = ParseToInt(txtBaseRep1.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtBaseRep2_TextChanged(object sender, EventArgs e)
@@ -648,9 +563,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepValue[2] = ParseToInt(txtBaseRep2.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtBaseRep3_TextChanged(object sender, EventArgs e)
@@ -661,9 +573,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.BaseRepValue[3] = ParseToInt(txtBaseRep3.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtOptions0_TextChanged(object sender, EventArgs e)
@@ -674,9 +583,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.ReputationFlags[0] = ParseToUInt(txtOptions0.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtOptions1_TextChanged(object sender, EventArgs e)
@@ -687,9 +593,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.ReputationFlags[1] = ParseToUInt(txtOptions1.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtOptions2_TextChanged(object sender, EventArgs e)
@@ -700,9 +603,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.ReputationFlags[2] = ParseToUInt(txtOptions2.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
 
         private void txtOptions3_TextChanged(object sender, EventArgs e)
@@ -713,9 +613,6 @@ namespace World_Editor.FactionsEditor
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
             f.ReputationFlags[3] = ParseToUInt(txtOptions3.Text);
-
-            listFactions.Items[listFactions.SelectedIndex] = f;
-            DBCStores.Faction.ReplaceEntry(f.Id, f);
         }
         #endregion
 
