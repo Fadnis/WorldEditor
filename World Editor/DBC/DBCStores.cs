@@ -66,9 +66,9 @@ namespace World_Editor.DBC
         //public static DBCFile<EmotesTextSoundEntry> EmotesTextSound { get; private set; }
         //public static DBCFile<EnvironmentalDamageEntry> EnvironmentalDamage { get; private set; }
         //public static DBCFile<ExhaustionEntry> Exhaustion { get; private set; }
-        //public static DBCFile<FactionEntry> Faction { get; private set; }
-        //public static DBCFile<FactionGroupEntry> FactionGroup { get; private set; }
-        //public static DBCFile<FactionTemplateEntry> FactionTemplate { get; private set; }
+        public static DBCFile<FactionEntry> Faction { get; private set; }
+        public static DBCFile<FactionGroupEntry> FactionGroup { get; private set; }
+        public static DBCFile<FactionTemplateEntry> FactionTemplate { get; private set; }
         //public static DBCFile<FileDataEntry> FileData { get; private set; }
         //public static DBCFile<FootprintTexturesEntry> FootprintTextures { get; private set; }
         //public static DBCFile<FootstepTerrainLookupEntry> FootstepTerrainLookup { get; private set; }
@@ -321,9 +321,9 @@ namespace World_Editor.DBC
             //EmotesTextSound = new DBCFile<EmotesTextSoundEntry>(DbcFolder + "EmotesTextSound.dbc");
             //EnvironmentalDamage = new DBCFile<EnvironmentalDamageEntry>(DbcFolder + "EnvironmentalDamage.dbc");
             //Exhaustion = new DBCFile<ExhaustionEntry>(DbcFolder + "Exhaustion.dbc");
-            //Faction = new DBCFile<FactionEntry>(DbcFolder + "Faction.dbc");
-            //FactionGroup = new DBCFile<FactionGroupEntry>(DbcFolder + "FactionGroup.dbc");
-            //FactionTemplate = new DBCFile<FactionTemplateEntry>(DbcFolder + "FactionTemplate.dbc");
+            Faction = new DBCFile<FactionEntry>(DbcFolder + "Faction.dbc");
+            FactionGroup = new DBCFile<FactionGroupEntry>(DbcFolder + "FactionGroup.dbc");
+            FactionTemplate = new DBCFile<FactionTemplateEntry>(DbcFolder + "FactionTemplate.dbc");
             //FileData = new DBCFile<FileDataEntry>(DbcFolder + "FileData.dbc");
             //FootprintTextures = new DBCFile<FootprintTexturesEntry>(DbcFolder + "FootprintTextures.dbc");
             //FootstepTerrainLookup = new DBCFile<FootstepTerrainLookupEntry>(DbcFolder + "FootstepTerrainLookup.dbc");
@@ -532,6 +532,22 @@ namespace World_Editor.DBC
         public static void SaveTitlesEditorFiles()
         {
             CharTitles.SaveDBC();
+        }
+
+        public static void LoadFactionsEditorFiles()
+        {
+            ChrClasses.LoadData();
+            ChrRaces.LoadData();
+            Faction.LoadData();
+            FactionGroup.LoadData();
+            FactionTemplate.LoadData();
+        }
+
+        public static void SaveFactionsEditorFiles()
+        {
+            Faction.SaveDBC();
+            FactionGroup.SaveDBC();
+            FactionTemplate.SaveDBC();
         }
         
         public static void SaveProfessionEditorFiles()

@@ -68,6 +68,24 @@
     <Compile Include="Dialogs\MaskRaces.Designer.cs">
       <DependentUpon>MaskRaces.cs</DependentUpon>
     </Compile>
+    <Compile Include="FactionsEditor\Dialogs\FactionGroupsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FactionsEditor\Dialogs\FactionGroupsEditor.Designer.cs">
+      <DependentUpon>FactionGroupsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FactionsEditor\Dialogs\FactionGroupsMask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FactionsEditor\Dialogs\FactionGroupsMask.Designer.cs">
+      <DependentUpon>FactionGroupsMask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FactionsEditor\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FactionsEditor\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +121,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MaskRaces.resx">
       <DependentUpon>MaskRaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactionsEditor\Dialogs\FactionGroupsEditor.resx">
+      <DependentUpon>FactionGroupsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactionsEditor\Dialogs\FactionGroupsMask.resx">
+      <DependentUpon>FactionGroupsMask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactionsEditor\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

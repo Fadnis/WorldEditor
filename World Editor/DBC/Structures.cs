@@ -533,7 +533,7 @@ namespace World_Editor.DBC
 
         public override string ToString()
         {
-            return Name;
+            return InternalName;
         }
     }
 
@@ -549,6 +549,11 @@ namespace World_Editor.DBC
         public uint[] EnemyFaction;                 // 6-9
         [Array(4)]
         public uint[] FriendFaction;                // 10-13
+
+        public override string ToString()
+        {
+            return "FactionTemplate n°" + Id;
+        }
     }
 
     public class FileDataEntry
