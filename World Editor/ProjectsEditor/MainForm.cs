@@ -45,8 +45,8 @@ namespace World_Editor.ProjectsEditor
         {
             Project p = new Project
             {
-                Name = txtProjectName.Text,
-                Path = txtProjectPath.Text,
+                Name = "Nouveau projet",
+                Path = "C:\\Dossier\\SousDossier\\DossierProjet",
             };
 
             Projects.Add(p);
@@ -83,6 +83,34 @@ namespace World_Editor.ProjectsEditor
             listProjects.Items.Remove(p);
             Projects.Remove(p);
             projConf.Projects = Projects;
+        }
+
+        private void txtProjectName_TextChanged(object sender, EventArgs e)
+        {
+            if (listProjects.SelectedItem == null)
+                return;
+
+            Project p = (Project)listProjects.Items[listProjects.SelectedIndex];
+            p.Name = txtProjectName.Text;
+            listProjects.Items[listProjects.SelectedIndex] = p;
+        }
+
+        private void txtProjectPath_TextChanged(object sender, EventArgs e)
+        {
+            if (listProjects.SelectedItem == null)
+                return;
+
+            Project p = (Project)listProjects.Items[listProjects.SelectedIndex];
+            p.Path = txtProjectPath.Text;
+            listProjects.Items[listProjects.SelectedIndex] = p;
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog d = new FolderBrowserDialog();
+            DialogResult dResult = d.ShowDialog();
+            if (dResult == DialogResult.OK)
+                txtProjectPath.Text = d.SelectedPath;
         }
     }
 
