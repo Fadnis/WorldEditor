@@ -71,6 +71,7 @@
             this.Controls.Add(this.listRaces);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MaskRaces";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Liste des races";
             this.Load += new System.EventHandler(this.MaskRaces_Load);
             this.ResumeLayout(false);
