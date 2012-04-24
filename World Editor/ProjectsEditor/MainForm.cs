@@ -47,6 +47,7 @@ namespace World_Editor.ProjectsEditor
             {
                 Name = "Nouveau projet",
                 Path = "C:\\Dossier\\SousDossier\\DossierProjet",
+                WowDir = "C:\\Programmes\\World of Warcraft",
             };
 
             Projects.Add(p);
@@ -61,6 +62,7 @@ namespace World_Editor.ProjectsEditor
 
             txtProjectName.Text = p.Name;
             txtProjectPath.Text = p.Path;
+            txtWowFolder.Text = p.WowDir;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -112,12 +114,31 @@ namespace World_Editor.ProjectsEditor
             if (dResult == DialogResult.OK)
                 txtProjectPath.Text = d.SelectedPath;
         }
+
+        private void btnWowFolder_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog d = new FolderBrowserDialog();
+            DialogResult dResult = d.ShowDialog();
+            if (dResult == DialogResult.OK)
+                txtWowFolder.Text = d.SelectedPath;
+        }
+
+        private void txtWowFolder_TextChanged(object sender, EventArgs e)
+        {
+            if (listProjects.SelectedItem == null)
+                return;
+
+            Project p = (Project)listProjects.Items[listProjects.SelectedIndex];
+            p.WowDir = txtWowFolder.Text;
+            listProjects.Items[listProjects.SelectedIndex] = p;
+        }
     }
 
     public class Project
     {
         public string Name { get; set; }
         public string Path { get; set; }
+        public string WowDir { get; set; }
         public bool IsLast { get; set; }
 
         public override string ToString()

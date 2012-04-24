@@ -243,7 +243,7 @@ namespace World_Editor.DBC
             if (!IsEdited)
                 return;
 
-            string path = DBCStores.ProjectFolder + "\\out\\" + Path.GetFileName(FileName);
+            string path = Utils.ProjectManager.ProjectDirectory + "\\out\\" + Path.GetFileName(FileName);
 
             DBCWriter<T> wr = new DBCWriter<T>();
             wr.WriteDBC(this, path);

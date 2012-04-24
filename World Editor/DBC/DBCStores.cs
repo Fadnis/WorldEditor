@@ -256,11 +256,9 @@ namespace World_Editor.DBC
         //public static DBCFile<ZoneMusicEntry> ZoneMusic { get; private set; }
         #endregion
 
-        public static string ProjectFolder = "";
-
         public static void InitFiles()
         {
-            string DbcFolder = ProjectFolder + "\\dbc\\";
+            string DbcFolder = Utils.ProjectManager.ProjectDirectory + "\\dbc\\";
 
             #region Initialisation des DBCs
             //Achievement = new DBCFile<AchievementEntry>(DbcFolder + "Achievement.dbc");

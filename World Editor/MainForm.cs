@@ -89,7 +89,9 @@ namespace World_Editor
                     if (listProjects.Items[listProjects.SelectedIndex] == p)
                     {
                         p.IsLast = true;
-                        DBCStores.ProjectFolder = p.Path;
+                        Utils.ProjectManager.ProjectName = p.Name;
+                        Utils.ProjectManager.ProjectDirectory = p.Path;
+                        Utils.ProjectManager.WowDirectory = p.WowDir;
                     }
                 }
                 projConf.Projects = projects;

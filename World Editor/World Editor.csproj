@@ -143,6 +143,7 @@
     <Compile Include="TitlesEditor\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\ProjectManager.cs" />
     <Compile Include="Utils\Singleton.cs" />
     <Compile Include="Utils\StreamedMpq.cs" />
     <EmbeddedResource Include="Dialogs\FlagDialog.resx">

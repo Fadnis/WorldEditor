@@ -36,6 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtWowFolder = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnWowFolder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listProjects
@@ -112,11 +115,41 @@
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
+            // txtWowFolder
+            // 
+            this.txtWowFolder.Location = new System.Drawing.Point(15, 132);
+            this.txtWowFolder.Name = "txtWowFolder";
+            this.txtWowFolder.Size = new System.Drawing.Size(248, 20);
+            this.txtWowFolder.TabIndex = 9;
+            this.txtWowFolder.TextChanged += new System.EventHandler(this.txtWowFolder_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(182, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Chemin du dossier World Of Warcraft";
+            // 
+            // btnWowFolder
+            // 
+            this.btnWowFolder.Location = new System.Drawing.Point(269, 130);
+            this.btnWowFolder.Name = "btnWowFolder";
+            this.btnWowFolder.Size = new System.Drawing.Size(64, 22);
+            this.btnWowFolder.TabIndex = 11;
+            this.btnWowFolder.Text = "Parcourir";
+            this.btnWowFolder.UseVisualStyleBackColor = true;
+            this.btnWowFolder.Click += new System.EventHandler(this.btnWowFolder_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 116);
+            this.ClientSize = new System.Drawing.Size(346, 166);
+            this.Controls.Add(this.btnWowFolder);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtWowFolder);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -145,5 +178,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.TextBox txtWowFolder;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnWowFolder;
     }
 }
