@@ -71,6 +71,7 @@
             this.Controls.Add(this.listClasses);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MaskClasses";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Liste des classes";
             this.Load += new System.EventHandler(this.MaskClasses_Load);
             this.ResumeLayout(false);

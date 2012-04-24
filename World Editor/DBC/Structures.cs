@@ -47,12 +47,44 @@ namespace World_Editor.DBC
 
     public class AchievementCriteriaEntry
     {
+        public uint Id;                             // 0
+        public uint ReferredAchievement;            // 1 References the achievement this criteria is needed for. 
+        public uint RequiredType;                   // 2
+        public uint ReqType0;                       // 3
+        public uint ReqValue0;                      // 4
+        public uint ReqType1;                       // 5
+        public uint ReqValue1;                      // 6
+        public uint ReqType2;                       // 7
+        public uint ReqValue2;                      // 8
+        [Localized]
+        public string Name;                         // 9-25
+        public uint Flags;                          // 26
+        public uint TimedType;                      // 27
+        public uint TimerStartEvent;                // 28
+        public uint TimeLimit;                      // 29 Complete quest in %i seconds. 
+        public uint ShowOrder;                      // 30
 
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public class AnimationDataEntry
     {
+        public uint Id;                             // 0
+        public string Name;                         // 1
+        public uint WeaponFlags;                    // 2 32 = pull weapons out during animation. 16 and 4 weapons are put back. 
+        public uint BodyFlags;                      // 3 Flags of some sort. 
+        public uint Flags;                          // 4
+        public uint FallBack;                       // 5 The animation, preceeding this one. 
+        public uint BehaviorId;                     // 6 Same as ID for normal animations.
+        public uint BehaviorTier;                   // 7 0 for normal, 3 for fly.
 
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public class AreaGroupEntry
@@ -61,11 +93,44 @@ namespace World_Editor.DBC
         [Array(6)]
         public uint[] AreaId;                       // 1-6
         public uint NextGroup;                      // 7 And if these 6 aren't enough, at this ID there are more entries
+
+        public override string ToString()
+        {
+            return AreaGroupId.ToString();
+        }
     }
 
     public class AreaPOIEntry
     {
+        public uint Id;                             // 0
+        public uint Importance;                     // 1
+        public uint NormalIcon;                     // 2 This is getting displayed normally.
+        public uint NormalIcon50p;                  // 3 Destructible building being neutral at 50%. 
+        public uint NormalIcon0p;                   // 4 Destroyed neutral building. 
+        public uint HordeIcon;                      // 5 Building at 100% captured by the horde. 
+        public uint HordeIcon50p;                   // 6 Destructible building being neutral at 50%. 
+        public uint HordeIcon0p;                    // 7 Destroyed horde building. 
+        public uint AllianceIcon;                   // 8 Building at 100% captured by the alliance. 
+        public uint AllianceIcon50p;                // 9 Destructible building being neutral at 50%. 
+        public uint AllianceIcon0p;                 // 10 Destroyed alliance building. 
+        public uint FactionId;                      // 11 This being an icon would make no sense. Walls for cities? Oo 
+        public float X;                             // 12 Coordinates of the POI. Global ones. 
+        public float Y;                             // 13
+        public float Z;                             // 14
+        public uint ContinentId;                    // 15 And on which map that POI is. 
+        public uint Flags;                          // 16 Flags defining, where this icon is shown. &4: Zone, &128: BG, &512: showInBattle(mini)Map
+        public uint Area;                           // 17
+        [Localized]
+        public string Name;                         // 18-34
+        [Localized]
+        public string Description;                  // 35-51 The alert triggered on the zone (World Event/PvP states mostly). 
+        public uint WorldState;                     // 52 Most likely the value defines the icon. 
+        public uint WorldMapLink;                   // 53
 
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public class AreaTableEntry
@@ -108,16 +173,36 @@ namespace World_Editor.DBC
         public float BoxY;                          // 7
         public float BoxZ;                          // 8
         public float BoxOrientation;                // 9
+
+        public override string ToString()
+        {
+            return Id.ToString();
+        }
     }
 
     public class AttackAnimKitsEntry
     {
+        public uint Id;                             // 0
+        public uint Animation;                      // 1 Non-combat animid most of the time. 
+        public uint Type;                           // 2
+        public uint Flags;                          // 3
+        public uint Unknown;                        // 4 Only 1 for type being OffH_*. 
 
+        public override string ToString()
+        {
+            return Id.ToString();
+        }
     }
 
     public class AttackAnimTypesEntry
     {
+        public uint Id;                             // 0
+        public string Name;                         // 1
 
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public class AuctionHouseEntry
@@ -143,7 +228,11 @@ namespace World_Editor.DBC
 
     public class BannedAddOnsEntry
     {
-
+        public uint Id;                             // 0
+        //public ? NameMD5;                         // 1
+        //public ? VersionMD5;                      // 2
+        public uint LastModified;                   // 3
+        public uint Flags;                          // 4
     }
 
     public class BarberShopStyleEntry
@@ -165,12 +254,39 @@ namespace World_Editor.DBC
 
     public class BattlemasterListEntry
     {
+        public uint Id;                             // 0
+        [Array(8)]
+        public uint[] Instance;                     // 1-8
+        public uint InstanceType;                   // 9 3 - BG, 4 - arena
+        public uint JoinAsGroup;                    // 10
+        [Localized]
+        public string Name;                         // 11-27
+        public uint MaxGroupSize;                   // 28
+        public uint HolidayWorldStateId;            // 29
+        public uint MinLevel;                       // 30
+        public uint MaxLevel;                       // 31
 
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public class CameraShakesEntry
     {
+        public uint Id;                             // 0
+        public uint ShakeType;                      // 1
+        public uint Direction;                      // 2
+        public float Amplitude;                     // 3
+        public float Frequency;                     // 4
+        public float Duration;                      // 5
+        public float Phase;                         // 6
+        public float Coefficient;                   // 7
 
+        public override string ToString()
+        {
+            return Id.ToString();
+        }
     }
 
     public class CfgCategoriesEntry
@@ -1344,49 +1460,6 @@ namespace World_Editor.DBC
 
     public class SpellEntry
     {
-        public void InitRecipe()
-        {
-            Totem = (uint[])Array.CreateInstance(typeof(uint), 2);
-            Reagent = (int[])Array.CreateInstance(typeof(int), 8);
-            ReagentCount = (uint[])Array.CreateInstance(typeof(uint), 8);
-            Effect = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectDieSides = (int[])Array.CreateInstance(typeof(int), 3);
-            EffectRealPointsPerLevel = (float[])Array.CreateInstance(typeof(float), 3);
-            EffectBasePoints = (int[])Array.CreateInstance(typeof(int), 3);
-            EffectMechanic = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectImplicitTargetA = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectImplicitTargetB = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectRadiusIndex = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectApplyAuraName = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectAmplitude = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectMultipleValue = (float[])Array.CreateInstance(typeof(float), 3);
-            EffectChainTarget = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectItemType = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectMiscValue = (int[])Array.CreateInstance(typeof(int), 3);
-            EffectMiscValueB = (int[])Array.CreateInstance(typeof(int), 3);
-            EffectTriggerSpell = (uint[])Array.CreateInstance(typeof(uint), 3);
-            EffectPointsPerComboPoint = (float[])Array.CreateInstance(typeof(float), 3);
-            EffectSpellClassMask = (float[])Array.CreateInstance(typeof(float), 9);
-            SpellVisual = (uint[])Array.CreateInstance(typeof(uint), 2);
-            DmgMultiplier = (float[])Array.CreateInstance(typeof(float), 3);
-            TotemCategory = (uint[])Array.CreateInstance(typeof(uint), 2);
-            EffectBonusCoefficient = (float[])Array.CreateInstance(typeof(float), 3);
-
-            Attributes = 65584;
-            AttributesEx = 1024;
-            CastingTimeIndex = 33;
-            InterruptFlags = 15;
-            ProcChance = 101;
-            RangeIndex = 1;
-            EquippedItemClass = -1;
-            Effect[0] = 24;
-            EffectDieSides[0] = 1;
-            EffectImplicitTargetA[0] = 1;
-            SpellVisual[0] = 395;
-            DmgMultiplier[0] = 1.0f;
-            SchoolMask = 1;
-        }
-
         public uint Id;                             // 0
         public uint Category;                       // 1
         public uint Dispel;                         // 2
@@ -1528,6 +1601,49 @@ namespace World_Editor.DBC
         {
             return SpellName;
         }
+
+        public void InitRecipe()
+        {
+            Totem = (uint[])Array.CreateInstance(typeof(uint), 2);
+            Reagent = (int[])Array.CreateInstance(typeof(int), 8);
+            ReagentCount = (uint[])Array.CreateInstance(typeof(uint), 8);
+            Effect = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectDieSides = (int[])Array.CreateInstance(typeof(int), 3);
+            EffectRealPointsPerLevel = (float[])Array.CreateInstance(typeof(float), 3);
+            EffectBasePoints = (int[])Array.CreateInstance(typeof(int), 3);
+            EffectMechanic = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectImplicitTargetA = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectImplicitTargetB = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectRadiusIndex = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectApplyAuraName = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectAmplitude = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectMultipleValue = (float[])Array.CreateInstance(typeof(float), 3);
+            EffectChainTarget = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectItemType = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectMiscValue = (int[])Array.CreateInstance(typeof(int), 3);
+            EffectMiscValueB = (int[])Array.CreateInstance(typeof(int), 3);
+            EffectTriggerSpell = (uint[])Array.CreateInstance(typeof(uint), 3);
+            EffectPointsPerComboPoint = (float[])Array.CreateInstance(typeof(float), 3);
+            EffectSpellClassMask = (float[])Array.CreateInstance(typeof(float), 9);
+            SpellVisual = (uint[])Array.CreateInstance(typeof(uint), 2);
+            DmgMultiplier = (float[])Array.CreateInstance(typeof(float), 3);
+            TotemCategory = (uint[])Array.CreateInstance(typeof(uint), 2);
+            EffectBonusCoefficient = (float[])Array.CreateInstance(typeof(float), 3);
+
+            Attributes = 65584;
+            AttributesEx = 1024;
+            CastingTimeIndex = 33;
+            InterruptFlags = 15;
+            ProcChance = 101;
+            RangeIndex = 1;
+            EquippedItemClass = -1;
+            Effect[0] = 24;
+            EffectDieSides[0] = 1;
+            EffectImplicitTargetA[0] = 1;
+            SpellVisual[0] = 395;
+            DmgMultiplier[0] = 1.0f;
+            SchoolMask = 1;
+        }
     }
 
     public class SpellCastTimesEntry
@@ -1584,7 +1700,8 @@ namespace World_Editor.DBC
 
     public class SpellIconEntry
     {
-
+        public uint Id;                             // 0
+        public string IconPath;                     // 1
     }
 
     public class SpellItemEnchantmentEntry

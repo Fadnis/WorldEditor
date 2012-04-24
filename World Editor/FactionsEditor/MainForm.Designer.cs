@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabFactions = new System.Windows.Forms.TabControl();
             this.tabFaction = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -146,15 +147,17 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtEnyGrp = new System.Windows.Forms.TextBox();
             this.tabPageOperations = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.txtRaceMaskOld = new System.Windows.Forms.TextBox();
-            this.txtRaceMaskNew = new System.Windows.Forms.TextBox();
-            this.btnRaceMaskOld = new System.Windows.Forms.Button();
-            this.btnRaceMaskNew = new System.Windows.Forms.Button();
-            this.label40 = new System.Windows.Forms.Label();
-            this.btnReplaceRaceMask = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btnReplaceGroupMask = new System.Windows.Forms.Button();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.btnGroupMaskNew = new System.Windows.Forms.Button();
+            this.btnGroupMaskOld = new System.Windows.Forms.Button();
+            this.txtGroupMaskNew = new System.Windows.Forms.TextBox();
+            this.txtGroupMaskOld = new System.Windows.Forms.TextBox();
+            this.rbEnemy = new System.Windows.Forms.RadioButton();
+            this.rbFriend = new System.Windows.Forms.RadioButton();
+            this.rbFaction = new System.Windows.Forms.RadioButton();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btnReplaceClassMask = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
@@ -164,17 +167,16 @@
             this.txtClassMaskOld = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.rbFaction = new System.Windows.Forms.RadioButton();
-            this.rbFriend = new System.Windows.Forms.RadioButton();
-            this.rbEnemy = new System.Windows.Forms.RadioButton();
-            this.txtGroupMaskOld = new System.Windows.Forms.TextBox();
-            this.txtGroupMaskNew = new System.Windows.Forms.TextBox();
-            this.btnGroupMaskOld = new System.Windows.Forms.Button();
-            this.btnGroupMaskNew = new System.Windows.Forms.Button();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.btnReplaceGroupMask = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnReplaceRaceMask = new System.Windows.Forms.Button();
+            this.label40 = new System.Windows.Forms.Label();
+            this.btnRaceMaskNew = new System.Windows.Forms.Button();
+            this.btnRaceMaskOld = new System.Windows.Forms.Button();
+            this.txtRaceMaskNew = new System.Windows.Forms.TextBox();
+            this.txtRaceMaskOld = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabFactions.SuspendLayout();
             this.tabFaction.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -186,9 +188,9 @@
             this.grpBoxEnemies.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPageOperations.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabFactions
@@ -783,7 +785,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(396, 64);
+            this.label9.Location = new System.Drawing.Point(396, 61);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 13);
             this.label9.TabIndex = 20;
@@ -800,7 +802,7 @@
             // 
             // txtSpilloverRateIn
             // 
-            this.txtSpilloverRateIn.Location = new System.Drawing.Point(488, 61);
+            this.txtSpilloverRateIn.Location = new System.Drawing.Point(488, 58);
             this.txtSpilloverRateIn.Name = "txtSpilloverRateIn";
             this.txtSpilloverRateIn.Size = new System.Drawing.Size(50, 20);
             this.txtSpilloverRateIn.TabIndex = 7;
@@ -820,6 +822,7 @@
             this.txtFactionParentId.Name = "txtFactionParentId";
             this.txtFactionParentId.Size = new System.Drawing.Size(50, 20);
             this.txtFactionParentId.TabIndex = 4;
+            this.toolTip.SetToolTip(this.txtFactionParentId, "Faction parente");
             this.txtFactionParentId.TextChanged += new System.EventHandler(this.txtFactionParentId_TextChanged);
             // 
             // txtFactionDescription
@@ -1196,9 +1199,9 @@
             // 
             // btnGroupsEditor
             // 
-            this.btnGroupsEditor.Location = new System.Drawing.Point(176, 44);
+            this.btnGroupsEditor.Location = new System.Drawing.Point(163, 44);
             this.btnGroupsEditor.Name = "btnGroupsEditor";
-            this.btnGroupsEditor.Size = new System.Drawing.Size(130, 22);
+            this.btnGroupsEditor.Size = new System.Drawing.Size(160, 22);
             this.btnGroupsEditor.TabIndex = 19;
             this.btnGroupsEditor.Text = "Gestion des groupes";
             this.btnGroupsEditor.UseVisualStyleBackColor = true;
@@ -1206,7 +1209,7 @@
             // 
             // btnFctTplEnyMask
             // 
-            this.btnFctTplEnyMask.Location = new System.Drawing.Point(284, 70);
+            this.btnFctTplEnyMask.Location = new System.Drawing.Point(301, 70);
             this.btnFctTplEnyMask.Name = "btnFctTplEnyMask";
             this.btnFctTplEnyMask.Size = new System.Drawing.Size(22, 22);
             this.btnFctTplEnyMask.TabIndex = 10;
@@ -1216,7 +1219,7 @@
             // 
             // btnFctTplFrMask
             // 
-            this.btnFctTplFrMask.Location = new System.Drawing.Point(145, 70);
+            this.btnFctTplFrMask.Location = new System.Drawing.Point(132, 71);
             this.btnFctTplFrMask.Name = "btnFctTplFrMask";
             this.btnFctTplFrMask.Size = new System.Drawing.Size(22, 22);
             this.btnFctTplFrMask.TabIndex = 8;
@@ -1226,7 +1229,7 @@
             // 
             // btnFctTplFacMask
             // 
-            this.btnFctTplFacMask.Location = new System.Drawing.Point(145, 44);
+            this.btnFctTplFacMask.Location = new System.Drawing.Point(132, 43);
             this.btnFctTplFacMask.Name = "btnFctTplFacMask";
             this.btnFctTplFacMask.Size = new System.Drawing.Size(22, 22);
             this.btnFctTplFacMask.TabIndex = 6;
@@ -1236,7 +1239,7 @@
             // 
             // btnFctTplFlags
             // 
-            this.btnFctTplFlags.Location = new System.Drawing.Point(284, 18);
+            this.btnFctTplFlags.Location = new System.Drawing.Point(301, 16);
             this.btnFctTplFlags.Name = "btnFctTplFlags";
             this.btnFctTplFlags.Size = new System.Drawing.Size(22, 22);
             this.btnFctTplFlags.TabIndex = 4;
@@ -1247,7 +1250,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(100, 23);
+            this.label14.Location = new System.Drawing.Point(78, 22);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(42, 13);
             this.label14.TabIndex = 2;
@@ -1256,7 +1259,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(29, 23);
+            this.label13.Location = new System.Drawing.Point(7, 22);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(16, 13);
             this.label13.TabIndex = 0;
@@ -1265,7 +1268,7 @@
             // txtFactionTemplateId
             // 
             this.txtFactionTemplateId.Enabled = false;
-            this.txtFactionTemplateId.Location = new System.Drawing.Point(51, 20);
+            this.txtFactionTemplateId.Location = new System.Drawing.Point(29, 19);
             this.txtFactionTemplateId.Name = "txtFactionTemplateId";
             this.txtFactionTemplateId.Size = new System.Drawing.Size(43, 20);
             this.txtFactionTemplateId.TabIndex = 1;
@@ -1273,7 +1276,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(197, 23);
+            this.label15.Location = new System.Drawing.Point(186, 22);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(32, 13);
             this.label15.TabIndex = 3;
@@ -1282,40 +1285,40 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(29, 49);
+            this.label16.Location = new System.Drawing.Point(7, 48);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(68, 13);
+            this.label16.Size = new System.Drawing.Size(47, 13);
             this.label16.TabIndex = 4;
-            this.label16.Text = "FactionMask";
+            this.label16.Text = "Groupes";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(29, 75);
+            this.label17.Location = new System.Drawing.Point(7, 75);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 13);
+            this.label17.Size = new System.Drawing.Size(73, 13);
             this.label17.TabIndex = 5;
-            this.label17.Text = "FriendMask";
+            this.label17.Text = "Groupes alliés";
             // 
             // txtFactionTemplateFaction
             // 
             this.txtFactionTemplateFaction.Enabled = false;
-            this.txtFactionTemplateFaction.Location = new System.Drawing.Point(148, 20);
+            this.txtFactionTemplateFaction.Location = new System.Drawing.Point(126, 18);
             this.txtFactionTemplateFaction.Name = "txtFactionTemplateFaction";
-            this.txtFactionTemplateFaction.Size = new System.Drawing.Size(43, 20);
+            this.txtFactionTemplateFaction.Size = new System.Drawing.Size(54, 20);
             this.txtFactionTemplateFaction.TabIndex = 6;
             // 
             // txtFactionTemplateFlags
             // 
-            this.txtFactionTemplateFlags.Location = new System.Drawing.Point(235, 20);
+            this.txtFactionTemplateFlags.Location = new System.Drawing.Point(224, 18);
             this.txtFactionTemplateFlags.Name = "txtFactionTemplateFlags";
-            this.txtFactionTemplateFlags.Size = new System.Drawing.Size(43, 20);
+            this.txtFactionTemplateFlags.Size = new System.Drawing.Size(71, 20);
             this.txtFactionTemplateFlags.TabIndex = 3;
             this.txtFactionTemplateFlags.TextChanged += new System.EventHandler(this.txtFactionTemplateFlags_TextChanged);
             // 
             // txtFactGrp
             // 
-            this.txtFactGrp.Location = new System.Drawing.Point(99, 46);
+            this.txtFactGrp.Location = new System.Drawing.Point(86, 44);
             this.txtFactGrp.Name = "txtFactGrp";
             this.txtFactGrp.Size = new System.Drawing.Size(40, 20);
             this.txtFactGrp.TabIndex = 5;
@@ -1323,7 +1326,7 @@
             // 
             // txtFriendGrp
             // 
-            this.txtFriendGrp.Location = new System.Drawing.Point(99, 72);
+            this.txtFriendGrp.Location = new System.Drawing.Point(86, 72);
             this.txtFriendGrp.Name = "txtFriendGrp";
             this.txtFriendGrp.Size = new System.Drawing.Size(40, 20);
             this.txtFriendGrp.TabIndex = 7;
@@ -1332,15 +1335,15 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(173, 75);
+            this.label18.Location = new System.Drawing.Point(160, 76);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 13);
+            this.label18.Size = new System.Drawing.Size(89, 13);
             this.label18.TabIndex = 10;
-            this.label18.Text = "EnemyMask";
+            this.label18.Text = "Groupes ennemis";
             // 
             // txtEnyGrp
             // 
-            this.txtEnyGrp.Location = new System.Drawing.Point(238, 72);
+            this.txtEnyGrp.Location = new System.Drawing.Point(255, 72);
             this.txtEnyGrp.Name = "txtEnyGrp";
             this.txtEnyGrp.Size = new System.Drawing.Size(40, 20);
             this.txtEnyGrp.TabIndex = 9;
@@ -1359,94 +1362,118 @@
             this.tabPageOperations.Text = "Opérations sur les factions";
             this.tabPageOperations.UseVisualStyleBackColor = true;
             // 
-            // groupBox7
+            // groupBox9
             // 
-            this.groupBox7.Controls.Add(this.btnReplaceRaceMask);
-            this.groupBox7.Controls.Add(this.label40);
-            this.groupBox7.Controls.Add(this.btnRaceMaskNew);
-            this.groupBox7.Controls.Add(this.btnRaceMaskOld);
-            this.groupBox7.Controls.Add(this.txtRaceMaskNew);
-            this.groupBox7.Controls.Add(this.txtRaceMaskOld);
-            this.groupBox7.Controls.Add(this.label39);
-            this.groupBox7.Controls.Add(this.label38);
-            this.groupBox7.Location = new System.Drawing.Point(32, 40);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(204, 174);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Modifier les masques de races";
+            this.groupBox9.Controls.Add(this.btnReplaceGroupMask);
+            this.groupBox9.Controls.Add(this.label45);
+            this.groupBox9.Controls.Add(this.label44);
+            this.groupBox9.Controls.Add(this.btnGroupMaskNew);
+            this.groupBox9.Controls.Add(this.btnGroupMaskOld);
+            this.groupBox9.Controls.Add(this.txtGroupMaskNew);
+            this.groupBox9.Controls.Add(this.txtGroupMaskOld);
+            this.groupBox9.Controls.Add(this.rbEnemy);
+            this.groupBox9.Controls.Add(this.rbFriend);
+            this.groupBox9.Controls.Add(this.rbFaction);
+            this.groupBox9.Location = new System.Drawing.Point(117, 244);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(302, 115);
+            this.groupBox9.TabIndex = 2;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Modifiers les masques de groupes";
             // 
-            // label38
+            // btnReplaceGroupMask
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(6, 30);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(80, 13);
-            this.label38.TabIndex = 0;
-            this.label38.Text = "Ancien masque";
+            this.btnReplaceGroupMask.Location = new System.Drawing.Point(29, 83);
+            this.btnReplaceGroupMask.Name = "btnReplaceGroupMask";
+            this.btnReplaceGroupMask.Size = new System.Drawing.Size(141, 22);
+            this.btnReplaceGroupMask.TabIndex = 9;
+            this.btnReplaceGroupMask.Text = "Remplacer les masques";
+            this.btnReplaceGroupMask.UseVisualStyleBackColor = true;
+            this.btnReplaceGroupMask.Click += new System.EventHandler(this.btnReplaceGroupMask_Click);
             // 
-            // label39
+            // label45
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 56);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(91, 13);
-            this.label39.TabIndex = 1;
-            this.label39.Text = "Nouveau masque";
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 60);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(91, 13);
+            this.label45.TabIndex = 8;
+            this.label45.Text = "Nouveau masque";
             // 
-            // txtRaceMaskOld
+            // label44
             // 
-            this.txtRaceMaskOld.Location = new System.Drawing.Point(103, 27);
-            this.txtRaceMaskOld.Name = "txtRaceMaskOld";
-            this.txtRaceMaskOld.Size = new System.Drawing.Size(67, 20);
-            this.txtRaceMaskOld.TabIndex = 2;
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 34);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(80, 13);
+            this.label44.TabIndex = 7;
+            this.label44.Text = "Ancien masque";
             // 
-            // txtRaceMaskNew
+            // btnGroupMaskNew
             // 
-            this.txtRaceMaskNew.Location = new System.Drawing.Point(103, 53);
-            this.txtRaceMaskNew.Name = "txtRaceMaskNew";
-            this.txtRaceMaskNew.Size = new System.Drawing.Size(67, 20);
-            this.txtRaceMaskNew.TabIndex = 3;
+            this.btnGroupMaskNew.Location = new System.Drawing.Point(176, 55);
+            this.btnGroupMaskNew.Name = "btnGroupMaskNew";
+            this.btnGroupMaskNew.Size = new System.Drawing.Size(22, 22);
+            this.btnGroupMaskNew.TabIndex = 6;
+            this.btnGroupMaskNew.Text = "+";
+            this.btnGroupMaskNew.UseVisualStyleBackColor = true;
+            this.btnGroupMaskNew.Click += new System.EventHandler(this.btnGroupMaskNew_Click);
             // 
-            // btnRaceMaskOld
+            // btnGroupMaskOld
             // 
-            this.btnRaceMaskOld.Location = new System.Drawing.Point(176, 25);
-            this.btnRaceMaskOld.Name = "btnRaceMaskOld";
-            this.btnRaceMaskOld.Size = new System.Drawing.Size(22, 22);
-            this.btnRaceMaskOld.TabIndex = 4;
-            this.btnRaceMaskOld.Text = "+";
-            this.btnRaceMaskOld.UseVisualStyleBackColor = true;
-            this.btnRaceMaskOld.Click += new System.EventHandler(this.btnRaceMaskOld_Click);
+            this.btnGroupMaskOld.Location = new System.Drawing.Point(176, 31);
+            this.btnGroupMaskOld.Name = "btnGroupMaskOld";
+            this.btnGroupMaskOld.Size = new System.Drawing.Size(22, 22);
+            this.btnGroupMaskOld.TabIndex = 5;
+            this.btnGroupMaskOld.Text = "+";
+            this.btnGroupMaskOld.UseVisualStyleBackColor = true;
+            this.btnGroupMaskOld.Click += new System.EventHandler(this.btnGroupMaskOld_Click);
             // 
-            // btnRaceMaskNew
+            // txtGroupMaskNew
             // 
-            this.btnRaceMaskNew.Location = new System.Drawing.Point(176, 51);
-            this.btnRaceMaskNew.Name = "btnRaceMaskNew";
-            this.btnRaceMaskNew.Size = new System.Drawing.Size(22, 22);
-            this.btnRaceMaskNew.TabIndex = 5;
-            this.btnRaceMaskNew.Text = "+";
-            this.btnRaceMaskNew.UseVisualStyleBackColor = true;
-            this.btnRaceMaskNew.Click += new System.EventHandler(this.btnRaceMaskNew_Click);
+            this.txtGroupMaskNew.Location = new System.Drawing.Point(103, 57);
+            this.txtGroupMaskNew.Name = "txtGroupMaskNew";
+            this.txtGroupMaskNew.Size = new System.Drawing.Size(67, 20);
+            this.txtGroupMaskNew.TabIndex = 4;
             // 
-            // label40
+            // txtGroupMaskOld
             // 
-            this.label40.Location = new System.Drawing.Point(6, 76);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(192, 67);
-            this.label40.TabIndex = 6;
-            this.label40.Text = "Remplace l\'ancien masque par le nouveau dans tous les champs Race de l\'onglet Fac" +
-    "tions pour toutes les factions. Utile pour le rajout d\'une race nécessitant une " +
-    "modification de masse.";
+            this.txtGroupMaskOld.Location = new System.Drawing.Point(103, 31);
+            this.txtGroupMaskOld.Name = "txtGroupMaskOld";
+            this.txtGroupMaskOld.Size = new System.Drawing.Size(67, 20);
+            this.txtGroupMaskOld.TabIndex = 3;
             // 
-            // btnReplaceRaceMask
+            // rbEnemy
             // 
-            this.btnReplaceRaceMask.Location = new System.Drawing.Point(26, 146);
-            this.btnReplaceRaceMask.Name = "btnReplaceRaceMask";
-            this.btnReplaceRaceMask.Size = new System.Drawing.Size(153, 22);
-            this.btnReplaceRaceMask.TabIndex = 7;
-            this.btnReplaceRaceMask.Text = "Remplacer les masques";
-            this.btnReplaceRaceMask.UseVisualStyleBackColor = true;
-            this.btnReplaceRaceMask.Click += new System.EventHandler(this.btnReplaceRaceMask_Click);
+            this.rbEnemy.AutoSize = true;
+            this.rbEnemy.Location = new System.Drawing.Point(213, 70);
+            this.rbEnemy.Name = "rbEnemy";
+            this.rbEnemy.Size = new System.Drawing.Size(83, 17);
+            this.rbEnemy.TabIndex = 2;
+            this.rbEnemy.Text = "EnemyMask";
+            this.rbEnemy.UseVisualStyleBackColor = true;
+            // 
+            // rbFriend
+            // 
+            this.rbFriend.AutoSize = true;
+            this.rbFriend.Location = new System.Drawing.Point(213, 47);
+            this.rbFriend.Name = "rbFriend";
+            this.rbFriend.Size = new System.Drawing.Size(80, 17);
+            this.rbFriend.TabIndex = 1;
+            this.rbFriend.Text = "FriendMask";
+            this.rbFriend.UseVisualStyleBackColor = true;
+            // 
+            // rbFaction
+            // 
+            this.rbFaction.AutoSize = true;
+            this.rbFaction.Checked = true;
+            this.rbFaction.Location = new System.Drawing.Point(213, 24);
+            this.rbFaction.Name = "rbFaction";
+            this.rbFaction.Size = new System.Drawing.Size(86, 17);
+            this.rbFaction.TabIndex = 0;
+            this.rbFaction.TabStop = true;
+            this.rbFaction.Text = "FactionMask";
+            this.rbFaction.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
@@ -1536,118 +1563,94 @@
             this.label43.TabIndex = 8;
             this.label43.Text = "Ancien masque";
             // 
-            // groupBox9
+            // groupBox7
             // 
-            this.groupBox9.Controls.Add(this.btnReplaceGroupMask);
-            this.groupBox9.Controls.Add(this.label45);
-            this.groupBox9.Controls.Add(this.label44);
-            this.groupBox9.Controls.Add(this.btnGroupMaskNew);
-            this.groupBox9.Controls.Add(this.btnGroupMaskOld);
-            this.groupBox9.Controls.Add(this.txtGroupMaskNew);
-            this.groupBox9.Controls.Add(this.txtGroupMaskOld);
-            this.groupBox9.Controls.Add(this.rbEnemy);
-            this.groupBox9.Controls.Add(this.rbFriend);
-            this.groupBox9.Controls.Add(this.rbFaction);
-            this.groupBox9.Location = new System.Drawing.Point(117, 244);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(302, 115);
-            this.groupBox9.TabIndex = 2;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Modifiers les masques de groupes";
+            this.groupBox7.Controls.Add(this.btnReplaceRaceMask);
+            this.groupBox7.Controls.Add(this.label40);
+            this.groupBox7.Controls.Add(this.btnRaceMaskNew);
+            this.groupBox7.Controls.Add(this.btnRaceMaskOld);
+            this.groupBox7.Controls.Add(this.txtRaceMaskNew);
+            this.groupBox7.Controls.Add(this.txtRaceMaskOld);
+            this.groupBox7.Controls.Add(this.label39);
+            this.groupBox7.Controls.Add(this.label38);
+            this.groupBox7.Location = new System.Drawing.Point(32, 40);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(204, 174);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Modifier les masques de races";
             // 
-            // rbFaction
+            // btnReplaceRaceMask
             // 
-            this.rbFaction.AutoSize = true;
-            this.rbFaction.Checked = true;
-            this.rbFaction.Location = new System.Drawing.Point(213, 24);
-            this.rbFaction.Name = "rbFaction";
-            this.rbFaction.Size = new System.Drawing.Size(86, 17);
-            this.rbFaction.TabIndex = 0;
-            this.rbFaction.TabStop = true;
-            this.rbFaction.Text = "FactionMask";
-            this.rbFaction.UseVisualStyleBackColor = true;
+            this.btnReplaceRaceMask.Location = new System.Drawing.Point(26, 146);
+            this.btnReplaceRaceMask.Name = "btnReplaceRaceMask";
+            this.btnReplaceRaceMask.Size = new System.Drawing.Size(153, 22);
+            this.btnReplaceRaceMask.TabIndex = 7;
+            this.btnReplaceRaceMask.Text = "Remplacer les masques";
+            this.btnReplaceRaceMask.UseVisualStyleBackColor = true;
+            this.btnReplaceRaceMask.Click += new System.EventHandler(this.btnReplaceRaceMask_Click);
             // 
-            // rbFriend
+            // label40
             // 
-            this.rbFriend.AutoSize = true;
-            this.rbFriend.Location = new System.Drawing.Point(213, 47);
-            this.rbFriend.Name = "rbFriend";
-            this.rbFriend.Size = new System.Drawing.Size(80, 17);
-            this.rbFriend.TabIndex = 1;
-            this.rbFriend.Text = "FriendMask";
-            this.rbFriend.UseVisualStyleBackColor = true;
+            this.label40.Location = new System.Drawing.Point(6, 76);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(192, 67);
+            this.label40.TabIndex = 6;
+            this.label40.Text = "Remplace l\'ancien masque par le nouveau dans tous les champs Race de l\'onglet Fac" +
+    "tions pour toutes les factions. Utile pour le rajout d\'une race nécessitant une " +
+    "modification de masse.";
             // 
-            // rbEnemy
+            // btnRaceMaskNew
             // 
-            this.rbEnemy.AutoSize = true;
-            this.rbEnemy.Location = new System.Drawing.Point(213, 70);
-            this.rbEnemy.Name = "rbEnemy";
-            this.rbEnemy.Size = new System.Drawing.Size(83, 17);
-            this.rbEnemy.TabIndex = 2;
-            this.rbEnemy.Text = "EnemyMask";
-            this.rbEnemy.UseVisualStyleBackColor = true;
+            this.btnRaceMaskNew.Location = new System.Drawing.Point(176, 51);
+            this.btnRaceMaskNew.Name = "btnRaceMaskNew";
+            this.btnRaceMaskNew.Size = new System.Drawing.Size(22, 22);
+            this.btnRaceMaskNew.TabIndex = 5;
+            this.btnRaceMaskNew.Text = "+";
+            this.btnRaceMaskNew.UseVisualStyleBackColor = true;
+            this.btnRaceMaskNew.Click += new System.EventHandler(this.btnRaceMaskNew_Click);
             // 
-            // txtGroupMaskOld
+            // btnRaceMaskOld
             // 
-            this.txtGroupMaskOld.Location = new System.Drawing.Point(103, 31);
-            this.txtGroupMaskOld.Name = "txtGroupMaskOld";
-            this.txtGroupMaskOld.Size = new System.Drawing.Size(67, 20);
-            this.txtGroupMaskOld.TabIndex = 3;
+            this.btnRaceMaskOld.Location = new System.Drawing.Point(176, 25);
+            this.btnRaceMaskOld.Name = "btnRaceMaskOld";
+            this.btnRaceMaskOld.Size = new System.Drawing.Size(22, 22);
+            this.btnRaceMaskOld.TabIndex = 4;
+            this.btnRaceMaskOld.Text = "+";
+            this.btnRaceMaskOld.UseVisualStyleBackColor = true;
+            this.btnRaceMaskOld.Click += new System.EventHandler(this.btnRaceMaskOld_Click);
             // 
-            // txtGroupMaskNew
+            // txtRaceMaskNew
             // 
-            this.txtGroupMaskNew.Location = new System.Drawing.Point(103, 57);
-            this.txtGroupMaskNew.Name = "txtGroupMaskNew";
-            this.txtGroupMaskNew.Size = new System.Drawing.Size(67, 20);
-            this.txtGroupMaskNew.TabIndex = 4;
+            this.txtRaceMaskNew.Location = new System.Drawing.Point(103, 53);
+            this.txtRaceMaskNew.Name = "txtRaceMaskNew";
+            this.txtRaceMaskNew.Size = new System.Drawing.Size(67, 20);
+            this.txtRaceMaskNew.TabIndex = 3;
             // 
-            // btnGroupMaskOld
+            // txtRaceMaskOld
             // 
-            this.btnGroupMaskOld.Location = new System.Drawing.Point(176, 31);
-            this.btnGroupMaskOld.Name = "btnGroupMaskOld";
-            this.btnGroupMaskOld.Size = new System.Drawing.Size(22, 22);
-            this.btnGroupMaskOld.TabIndex = 5;
-            this.btnGroupMaskOld.Text = "+";
-            this.btnGroupMaskOld.UseVisualStyleBackColor = true;
-            this.btnGroupMaskOld.Click += new System.EventHandler(this.btnGroupMaskOld_Click);
+            this.txtRaceMaskOld.Location = new System.Drawing.Point(103, 27);
+            this.txtRaceMaskOld.Name = "txtRaceMaskOld";
+            this.txtRaceMaskOld.Size = new System.Drawing.Size(67, 20);
+            this.txtRaceMaskOld.TabIndex = 2;
             // 
-            // btnGroupMaskNew
+            // label39
             // 
-            this.btnGroupMaskNew.Location = new System.Drawing.Point(176, 55);
-            this.btnGroupMaskNew.Name = "btnGroupMaskNew";
-            this.btnGroupMaskNew.Size = new System.Drawing.Size(22, 22);
-            this.btnGroupMaskNew.TabIndex = 6;
-            this.btnGroupMaskNew.Text = "+";
-            this.btnGroupMaskNew.UseVisualStyleBackColor = true;
-            this.btnGroupMaskNew.Click += new System.EventHandler(this.btnGroupMaskNew_Click);
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 56);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(91, 13);
+            this.label39.TabIndex = 1;
+            this.label39.Text = "Nouveau masque";
             // 
-            // label44
+            // label38
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 34);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(80, 13);
-            this.label44.TabIndex = 7;
-            this.label44.Text = "Ancien masque";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(6, 60);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(91, 13);
-            this.label45.TabIndex = 8;
-            this.label45.Text = "Nouveau masque";
-            // 
-            // btnReplaceGroupMask
-            // 
-            this.btnReplaceGroupMask.Location = new System.Drawing.Point(29, 83);
-            this.btnReplaceGroupMask.Name = "btnReplaceGroupMask";
-            this.btnReplaceGroupMask.Size = new System.Drawing.Size(141, 22);
-            this.btnReplaceGroupMask.TabIndex = 9;
-            this.btnReplaceGroupMask.Text = "Remplacer les masques";
-            this.btnReplaceGroupMask.UseVisualStyleBackColor = true;
-            this.btnReplaceGroupMask.Click += new System.EventHandler(this.btnReplaceGroupMask_Click);
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(6, 30);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(80, 13);
+            this.label38.TabIndex = 0;
+            this.label38.Text = "Ancien masque";
             // 
             // MainForm
             // 
@@ -1679,12 +1682,12 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPageOperations.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1838,5 +1841,6 @@
         private System.Windows.Forms.RadioButton rbEnemy;
         private System.Windows.Forms.RadioButton rbFriend;
         private System.Windows.Forms.RadioButton rbFaction;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

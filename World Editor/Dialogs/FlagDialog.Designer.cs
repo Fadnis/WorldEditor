@@ -72,6 +72,7 @@
             this.Controls.Add(this.lstFlags);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FlagDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FlagDialog";
             this.Load += new System.EventHandler(this.FlagDialog_Load);
             this.ResumeLayout(false);

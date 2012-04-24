@@ -72,7 +72,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FactionGroupsMask";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FactionGroupsMask";
+            this.Text = "Liste des groupes de factions";
             this.Load += new System.EventHandler(this.FactionGroupsMask_Load);
             this.ResumeLayout(false);
 

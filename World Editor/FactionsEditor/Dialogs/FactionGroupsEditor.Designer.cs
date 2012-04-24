@@ -169,7 +169,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FactionGroupsEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FactionGroupsEditor";
+            this.Text = "Editeur des groupes de factions";
             this.Load += new System.EventHandler(this.FactionGroupsEditor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

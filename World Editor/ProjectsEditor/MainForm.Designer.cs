@@ -32,10 +32,10 @@
             this.txtProjectName = new System.Windows.Forms.TextBox();
             this.txtProjectPath = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listProjects
@@ -44,7 +44,7 @@
             this.listProjects.FormattingEnabled = true;
             this.listProjects.Location = new System.Drawing.Point(12, 12);
             this.listProjects.Name = "listProjects";
-            this.listProjects.Size = new System.Drawing.Size(160, 21);
+            this.listProjects.Size = new System.Drawing.Size(266, 21);
             this.listProjects.TabIndex = 0;
             this.listProjects.SelectedIndexChanged += new System.EventHandler(this.listProjects_SelectedIndexChanged);
             // 
@@ -54,39 +54,31 @@
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.Size = new System.Drawing.Size(243, 20);
             this.txtProjectName.TabIndex = 1;
+            this.txtProjectName.TextChanged += new System.EventHandler(this.txtProjectName_TextChanged);
             // 
             // txtProjectPath
             // 
             this.txtProjectPath.Location = new System.Drawing.Point(15, 83);
             this.txtProjectPath.Name = "txtProjectPath";
-            this.txtProjectPath.Size = new System.Drawing.Size(319, 20);
+            this.txtProjectPath.Size = new System.Drawing.Size(248, 20);
             this.txtProjectPath.TabIndex = 2;
+            this.txtProjectPath.TextChanged += new System.EventHandler(this.txtProjectPath_TextChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(178, 12);
+            this.btnAdd.Location = new System.Drawing.Point(284, 12);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(22, 22);
+            this.btnAdd.Size = new System.Drawing.Size(21, 21);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(234, 12);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 22);
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.Text = "Modifier";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(206, 12);
+            this.btnRemove.Location = new System.Drawing.Point(312, 12);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(22, 22);
+            this.btnRemove.Size = new System.Drawing.Size(21, 21);
             this.btnRemove.TabIndex = 5;
             this.btnRemove.Text = "-";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -106,19 +98,29 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(297, 13);
+            this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Chemin du projet (Ex : C:\\Dossier\\SousDossier\\DossierProjet)";
+            this.label2.Text = "Chemin du projet";
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(269, 81);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(65, 22);
+            this.btnBrowse.TabIndex = 8;
+            this.btnBrowse.Text = "Parcourir";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 116);
+            this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtProjectPath);
             this.Controls.Add(this.txtProjectName);
@@ -139,9 +141,9 @@
         private System.Windows.Forms.TextBox txtProjectName;
         private System.Windows.Forms.TextBox txtProjectPath;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBrowse;
     }
 }
