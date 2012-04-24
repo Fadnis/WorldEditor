@@ -87,7 +87,6 @@ namespace World_Editor.ProfessionEditor
             {
                 lstRecipes.Items.Add(recipe);
             }
-
         }
 
         private void btnRaceMask_Click(object sender, EventArgs e)
@@ -499,11 +498,24 @@ namespace World_Editor.ProfessionEditor
 
             Recipe recipe = (Recipe)lstRecipes.SelectedItem;
 
-            loadedSkill.clear();
-            
+            loadedSkill.Recipes.Remove(recipe.spell.Id);
+            loadedSkill.Spells.Remove(recipe.spell.Id);
+            loadedSkill.Abilities.Remove(recipe.ability.Id);
+
             DBCStores.Spell.RemoveEntry(recipe.spell.Id);
             DBCStores.SkillLineAbility.RemoveEntry(recipe.ability.Id);
+            
             lstRecipes.Items.Remove(recipe);
+        }
+
+        private void tpSpell_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

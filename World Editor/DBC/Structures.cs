@@ -1599,7 +1599,7 @@ namespace World_Editor.DBC
 
         public override string ToString()
         {
-            return SpellName;
+            return Id + ", " + SpellName + " " + Rank;
         }
 
         public void InitRecipe()

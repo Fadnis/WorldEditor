@@ -252,7 +252,7 @@ namespace World_Editor.DBC
         public T this[uint id]
         {
             get { return mRecords[id]; }
-            set { mRecords[id] = value; }
+            set { mRecords[id] = value; IsEdited = true; }
         }
 
         public bool ContainsKey(uint id)

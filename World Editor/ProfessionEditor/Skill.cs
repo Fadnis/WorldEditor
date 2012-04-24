@@ -10,7 +10,7 @@ namespace World_Editor.ProfessionEditor
     {
         public override string ToString()
         {
-            return spell.SpellName;
+            return spell.Id + ", " + spell.SpellName;
         }
 
         public Recipe(SpellEntry sp, SkillLineAbilityEntry ab)
@@ -54,8 +54,7 @@ namespace World_Editor.ProfessionEditor
                 {
                     if (DBCStores.Spell[ability.SpellId].Effect[0] == 24) // recipe
                     {
-                        if(!Recipes.ContainsKey(ability.SpellId))
-                            Recipes.Add(ability.SpellId, new Recipe(DBCStores.Spell[ability.SpellId], ability));
+                        Recipes.Add(ability.SpellId, new Recipe(DBCStores.Spell[ability.SpellId], ability));
                     }
                     else
                     {
@@ -64,63 +63,6 @@ namespace World_Editor.ProfessionEditor
                     }
                 }
             }
-        }
-
-        public void SaveToDbc()
-        {
-            if (!isOpen)
-                return;
-
-            DBCStores.SkillLine.ReplaceEntry(id, Line);
-            DBCStores.SkillRaceClassInfo.ReplaceEntry(RaceClassInfo.Id, RaceClassInfo);
-
-            foreach (SkillLineAbilityEntry ability in Abilities.Values)
-            {
-                if (DBCStores.SkillLineAbility.ContainsKey(ability.Id))
-                {
-                    DBCStores.SkillLineAbility.ReplaceEntry(ability.Id, ability);
-                }
-                else
-                {
-                    DBCStores.SkillLineAbility.AddEntry(ability.Id, ability);
-                }
-            }
-
-            foreach (SpellEntry spell in Spells.Values)
-            {
-                if (DBCStores.Spell.ContainsKey(spell.Id))
-                {
-                    DBCStores.Spell.ReplaceEntry(spell.Id, spell);
-                }
-                else
-                {
-                    DBCStores.Spell.AddEntry(spell.Id, spell);
-                }
-            }
-
-            // Recettes
-
-            foreach (Recipe rec in Recipes.Values)
-            {
-                if (DBCStores.SkillLineAbility.ContainsKey(rec.ability.Id))
-                {
-                    DBCStores.SkillLineAbility.ReplaceEntry(rec.ability.Id, rec.ability);
-                }
-                else
-                {
-                    DBCStores.SkillLineAbility.AddEntry(rec.ability.Id, rec.ability);
-                }
-
-                if (DBCStores.Spell.ContainsKey(rec.spell.Id))
-                {
-                    DBCStores.Spell.ReplaceEntry(rec.spell.Id, rec.spell);
-                }
-                else
-                {
-                    DBCStores.Spell.AddEntry(rec.spell.Id, rec.spell);
-                }
-            }
-
         }
 
         public bool isOpen { get { return opened; } }
