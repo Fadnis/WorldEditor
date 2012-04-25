@@ -218,8 +218,8 @@ namespace World_Editor.DBC
         //public static DBCFile<StationeryEntry> Stationery { get; private set; }
         //public static DBCFile<StringLookupsEntry> StringLookups { get; private set; }
         //public static DBCFile<SummonPropertiesEntry> SummonProperties { get; private set; }
-        //public static DBCFile<TalentEntry> Talent { get; private set; }
-        //public static DBCFile<TalentTabEntry> TalentTab { get; private set; }
+        public static DBCFile<TalentEntry> Talent { get; private set; }
+        public static DBCFile<TalentTabEntry> TalentTab { get; private set; }
         //public static DBCFile<TaxiNodesEntry> TaxiNodes { get; private set; }
         //public static DBCFile<TaxiPathEntry> TaxiPath { get; private set; }
         //public static DBCFile<TaxiPathNodeEntry> TaxiPathNode { get; private set; }
@@ -471,8 +471,8 @@ namespace World_Editor.DBC
             //Stationery = new DBCFile<StationeryEntry>(DbcFolder + "Stationery.dbc");
             //StringLookups = new DBCFile<StringLookupsEntry>(DbcFolder + "StringLookups.dbc");
             //SummonProperties = new DBCFile<SummonPropertiesEntry>(DbcFolder + "SummonProperties.dbc");
-            //Talent = new DBCFile<TalentEntry>(DbcFolder + "Talent.dbc");
-            //TalentTab = new DBCFile<TalentTabEntry>(DbcFolder + "TalentTab.dbc");
+            Talent = new DBCFile<TalentEntry>(DbcFolder + "Talent.dbc");
+            TalentTab = new DBCFile<TalentTabEntry>(DbcFolder + "TalentTab.dbc");
             //TaxiNodes = new DBCFile<TaxiNodesEntry>(DbcFolder + "TaxiNodes.dbc");
             //TaxiPath = new DBCFile<TaxiPathEntry>(DbcFolder + "TaxiPath.dbc");
             //TaxiPathNode = new DBCFile<TaxiPathNodeEntry>(DbcFolder + "TaxiPathNode.dbc");
@@ -557,5 +557,20 @@ namespace World_Editor.DBC
             SpellFocusObject.SaveDBC();
         }
 
+        public static void LoadTalentsEditorFiles()
+        {
+            ChrClasses.LoadData();
+            ChrRaces.LoadData();
+            Spell.LoadData();
+            SpellIcon.LoadData();
+            Talent.LoadData();
+            TalentTab.LoadData();
+        }
+
+        public static void SaveTalentsEditorFiles()
+        {
+            Talent.SaveDBC();
+            TalentTab.SaveDBC();
+        }
     }
 }

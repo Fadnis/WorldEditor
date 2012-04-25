@@ -58,6 +58,7 @@ namespace World_Editor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            lblInfos.Text = "";
             try
             {
                 projConf.Reload();
@@ -101,6 +102,8 @@ namespace World_Editor
                 {
                     DBCStores.InitFiles();
 
+                    Stormlib.MPQArchiveLoader.Instance.Init();
+
                     ChangeEnableEditors(true);
                     listProjects.Enabled = false;
                     btnValidateProject.Text = "Modifier";
@@ -124,12 +127,26 @@ namespace World_Editor
         {
             btnTitlesEditor.Enabled = value;
             btnFactionsEditor.Enabled = value;
+            btnTalentsEditor.Enabled = value;
         }
 
         private void btnFactionsEditor_Click(object sender, EventArgs e)
         {
             FactionsEditor.MainForm d = new FactionsEditor.MainForm();
             this.Hide();
+            d.ShowDialog();
+            this.Show();
+        }
+
+        private void btnTalentsEditor_Click(object sender, EventArgs e)
+        {
+            TalentsEditor.MainForm d = new TalentsEditor.MainForm();
+            lblInfos.ForeColor = Color.Red;
+            lblInfos.Text = "Chargement en cours, cela peut prendre un certain temps.";
+            this.Refresh();
+            DBCStores.LoadTalentsEditorFiles();
+            this.Hide();
+            lblInfos.Text = "";
             d.ShowDialog();
             this.Show();
         }

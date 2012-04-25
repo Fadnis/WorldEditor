@@ -66,9 +66,9 @@ namespace MDS.cBlp2 {
 
         public Blp2() { }
 
-        ~Blp2() {
-            this.Dispose();
-        }
+        //~Blp2() {
+        //    this.Dispose();
+        //}
 
         /// <summary>
         /// Dispose object

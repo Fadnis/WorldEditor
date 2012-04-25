@@ -1806,12 +1806,43 @@ namespace World_Editor.DBC
 
     public class TalentEntry
     {
+        public uint Id;                             // 0
+        public uint TabId;                          // 1
+        public uint Row;                            // 2
+        public uint Col;                            // 3
+        [Array(9)]
+        public uint[] RankId;                       // 4-12
+        [Array(3)]
+        public uint[] ReqTalent;                    // 13-15
+        [Array(3)]
+        public uint[] ReqRank;                      // 16-18
+        public uint Flags;                          // 19
+        public uint RequiredSpellId;                // 20
+        [Array(2)]
+        public uint[] AllowForPetFlags;             // 21-22
 
+        public override string ToString()
+        {
+            return Id.ToString() + " (" + Row.ToString() + "," + Col.ToString() + ")";
+        }
     }
 
     public class TalentTabEntry
     {
+        public uint Id;                             // 0
+        [Localized]
+        public string Name;                         // 1-17
+        public uint SpellIcon;                      // 18
+        public uint RaceMask;                       // 19
+        public uint ClassMask;                      // 20
+        public uint PetTalentMask;                  // 21
+        public uint TabPage;                        // 22
+        public string InternalName;                 // 23
 
+        public override string ToString()
+        {
+            return InternalName;
+        }
     }
 
     public class TaxiNodesEntry
