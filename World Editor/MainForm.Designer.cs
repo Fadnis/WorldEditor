@@ -36,12 +36,13 @@
             this.btnFactionsEditor = new System.Windows.Forms.Button();
             this.lblInfos = new System.Windows.Forms.Label();
             this.btnTalentsEditor = new System.Windows.Forms.Button();
+            this.btnProfessionEditor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTitlesEditor
             // 
             this.btnTitlesEditor.Enabled = false;
-            this.btnTitlesEditor.Location = new System.Drawing.Point(89, 85);
+            this.btnTitlesEditor.Location = new System.Drawing.Point(15, 85);
             this.btnTitlesEditor.Name = "btnTitlesEditor";
             this.btnTitlesEditor.Size = new System.Drawing.Size(106, 30);
             this.btnTitlesEditor.TabIndex = 0;
@@ -90,7 +91,7 @@
             // btnFactionsEditor
             // 
             this.btnFactionsEditor.Enabled = false;
-            this.btnFactionsEditor.Location = new System.Drawing.Point(89, 121);
+            this.btnFactionsEditor.Location = new System.Drawing.Point(15, 121);
             this.btnFactionsEditor.Name = "btnFactionsEditor";
             this.btnFactionsEditor.Size = new System.Drawing.Size(106, 30);
             this.btnFactionsEditor.TabIndex = 5;
@@ -113,17 +114,29 @@
             this.btnTalentsEditor.Enabled = false;
             this.btnTalentsEditor.Location = new System.Drawing.Point(89, 157);
             this.btnTalentsEditor.Name = "btnTalentsEditor";
-            this.btnTalentsEditor.Size = new System.Drawing.Size(106, 35);
+            this.btnTalentsEditor.Size = new System.Drawing.Size(106, 37);
             this.btnTalentsEditor.TabIndex = 9;
             this.btnTalentsEditor.Text = "Editeur d\'abres de talents";
             this.btnTalentsEditor.UseVisualStyleBackColor = true;
             this.btnTalentsEditor.Click += new System.EventHandler(this.btnTalentsEditor_Click);
+            // 
+            // btnProfessionEditor
+            // 
+            this.btnProfessionEditor.Enabled = false;
+            this.btnProfessionEditor.Location = new System.Drawing.Point(166, 85);
+            this.btnProfessionEditor.Name = "btnProfessionEditor";
+            this.btnProfessionEditor.Size = new System.Drawing.Size(106, 30);
+            this.btnProfessionEditor.TabIndex = 10;
+            this.btnProfessionEditor.Text = "Editeur de métiers";
+            this.btnProfessionEditor.UseVisualStyleBackColor = true;
+            this.btnProfessionEditor.Click += new System.EventHandler(this.btnProfessionEditor_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.btnProfessionEditor);
             this.Controls.Add(this.btnTalentsEditor);
             this.Controls.Add(this.lblInfos);
             this.Controls.Add(this.btnFactionsEditor);
@@ -152,6 +165,7 @@
         private System.Windows.Forms.Button btnFactionsEditor;
         private System.Windows.Forms.Label lblInfos;
         private System.Windows.Forms.Button btnTalentsEditor;
+        private System.Windows.Forms.Button btnProfessionEditor;
     }
 }
 

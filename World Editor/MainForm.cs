@@ -128,6 +128,7 @@ namespace World_Editor
             btnTitlesEditor.Enabled = value;
             btnFactionsEditor.Enabled = value;
             btnTalentsEditor.Enabled = value;
+            btnProfessionEditor.Enabled = value;
         }
 
         private void btnFactionsEditor_Click(object sender, EventArgs e)
@@ -149,6 +150,19 @@ namespace World_Editor
             lblInfos.Text = "";
             d.ShowDialog();
             this.Show();
+        }
+
+        private void btnProfessionEditor_Click(object sender, EventArgs e)
+        {
+            ProfessionEditor.MainForm d = new ProfessionEditor.MainForm();
+            lblInfos.ForeColor = Color.Red;
+            lblInfos.Text = "Chargement en cours, cela peut prendre un certain temps.";
+            this.Refresh();
+            DBCStores.LoadProfessionEditorFiles();
+            this.Hide();
+            lblInfos.Text = "";
+            d.ShowDialog();
+            this.Show();            
         }
     }
 }

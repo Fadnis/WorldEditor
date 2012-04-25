@@ -97,22 +97,22 @@
     <Compile Include="Dialogs\MaskRaces.Designer.cs">
       <DependentUpon>MaskRaces.cs</DependentUpon>
     </Compile>
-    <Compile Include="FactionsEditor\Dialogs\FactionGroupsEditor.cs">
+    <Compile Include="Editors\FactionsEditor\Dialogs\FactionGroupsEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FactionsEditor\Dialogs\FactionGroupsEditor.Designer.cs">
+    <Compile Include="Editors\FactionsEditor\Dialogs\FactionGroupsEditor.Designer.cs">
       <DependentUpon>FactionGroupsEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FactionsEditor\Dialogs\FactionGroupsMask.cs">
+    <Compile Include="Editors\FactionsEditor\Dialogs\FactionGroupsMask.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FactionsEditor\Dialogs\FactionGroupsMask.Designer.cs">
+    <Compile Include="Editors\FactionsEditor\Dialogs\FactionGroupsMask.Designer.cs">
       <DependentUpon>FactionGroupsMask.cs</DependentUpon>
     </Compile>
-    <Compile Include="FactionsEditor\MainForm.cs">
+    <Compile Include="Editors\FactionsEditor\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FactionsEditor\MainForm.Designer.cs">
+    <Compile Include="Editors\FactionsEditor\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -121,13 +121,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProfessionEditor\MainForm.cs">
+    <Compile Include="Editors\ProfessionEditor\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfessionEditor\MainForm.Designer.cs">
+    <Compile Include="Editors\ProfessionEditor\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProfessionEditor\Skill.cs" />
+    <Compile Include="Editors\ProfessionEditor\Skill.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectsEditor\MainForm.cs">
       <SubType>Form</SubType>
@@ -137,22 +137,22 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StormLib\StormLib.cs" />
-    <Compile Include="TalentsEditor\Dialogs\TalentTabsEditor.cs">
+    <Compile Include="Editors\TalentsEditor\Dialogs\TalentTabsEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TalentsEditor\Dialogs\TalentTabsEditor.Designer.cs">
+    <Compile Include="Editors\TalentsEditor\Dialogs\TalentTabsEditor.Designer.cs">
       <DependentUpon>TalentTabsEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="TalentsEditor\MainForm.cs">
+    <Compile Include="Editors\TalentsEditor\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TalentsEditor\MainForm.Designer.cs">
+    <Compile Include="Editors\TalentsEditor\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TitlesEditor\MainForm.cs">
+    <Compile Include="Editors\TitlesEditor\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TitlesEditor\MainForm.Designer.cs">
+    <Compile Include="Editors\TitlesEditor\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\ProjectManager.cs" />
@@ -167,19 +167,19 @@
     <EmbeddedResource Include="Dialogs\MaskRaces.resx">
       <DependentUpon>MaskRaces.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FactionsEditor\Dialogs\FactionGroupsEditor.resx">
+    <EmbeddedResource Include="Editors\FactionsEditor\Dialogs\FactionGroupsEditor.resx">
       <DependentUpon>FactionGroupsEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FactionsEditor\Dialogs\FactionGroupsMask.resx">
+    <EmbeddedResource Include="Editors\FactionsEditor\Dialogs\FactionGroupsMask.resx">
       <DependentUpon>FactionGroupsMask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FactionsEditor\MainForm.resx">
+    <EmbeddedResource Include="Editors\FactionsEditor\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfessionEditor\MainForm.resx">
+    <EmbeddedResource Include="Editors\ProfessionEditor\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectsEditor\MainForm.resx">
@@ -194,13 +194,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TalentsEditor\Dialogs\TalentTabsEditor.resx">
+    <EmbeddedResource Include="Editors\TalentsEditor\Dialogs\TalentTabsEditor.resx">
       <DependentUpon>TalentTabsEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TalentsEditor\MainForm.resx">
+    <EmbeddedResource Include="Editors\TalentsEditor\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TitlesEditor\MainForm.resx">
+    <EmbeddedResource Include="Editors\TitlesEditor\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
