@@ -180,6 +180,7 @@
             this.Controls.Add(this.listTitles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Editeur de titres";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);

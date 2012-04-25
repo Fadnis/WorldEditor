@@ -44,29 +44,25 @@ namespace World_Editor.TalentsEditor
             foreach (TalentEntry t in DBCStores.Talent.Records.Where(th => th.TabId == tab.Id))
             {
                 listTalents.Items.Add(t);
-                if (Stormlib.MPQFile.HasFile(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"))
+                if (DBCStores.Spell.ContainsKey(t.RankId[0]) && 
+                    DBCStores.SpellIcon.ContainsKey(DBCStores.Spell[t.RankId[0]].SpellIconID) && 
+                    Stormlib.MPQFile.HasFile(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"))
                 {
                     blpFile = Blp2.FromStream(new Stormlib.MPQFile(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"));
                     images.Add("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString(), ResizeBlp(blpFile, 40, 40));
                 }
             }
 
-            blpFile = Blp2.FromFile("Ressources\\DefaultTalent-TopLeft.blp");
-            images.Add("BackTopLeft", (Bitmap)blpFile);
-            blpFile = Blp2.FromFile("Ressources\\DefaultTalent-TopRight.blp");
-            images.Add("BackTopRight", (Bitmap)blpFile);
-            blpFile = Blp2.FromFile("Ressources\\DefaultTalent-BottomLeft.blp");
-            images.Add("BackBottomLeft", (Bitmap)blpFile);
-            blpFile = Blp2.FromFile("Ressources\\DefaultTalent-BottomRight.blp");
-            images.Add("BackBottomRight", (Bitmap)blpFile);
+            images.Add("TalentBack", Blp2.FromFile("Ressources\\DefaultTalentBack.blp"));
 
             blpFile = Blp2.FromFile("Ressources\\UI-TalentArrows.blp");
             images.Add("TalentArrowsBottom", CropBlp((Bitmap)blpFile, new Rectangle(0, 0, 32, 32)));
             images.Add("TalentArrowsRight", CropBlp((Bitmap)blpFile, new Rectangle(32, 0, 32, 32)));
             images.Add("TalentArrowsLeft", RotateBlp(CropBlp((Bitmap)blpFile, new Rectangle(32, 0, 32, 32)), 180.0f));
 
-            blpFile = Blp2.FromFile("Ressources\\TalentFrame-RankBorder.blp");
-            images.Add("TalentRankBorder", (Bitmap)blpFile);
+            images.Add("TalentRankBorder", Blp2.FromFile("Ressources\\TalentFrame-RankBorder.blp"));
+
+            images.Add("TalentIdBorder", Blp2.FromFile("Ressources\\TalentFrame-IdBorder.blp"));
 
             blpFile = Blp2.FromFile("Ressources\\UI-TalentBranches.blp");
             images.Add("TalentBarH", CropBlp((Bitmap)blpFile, new Rectangle(32, 0, 32, 32)));
@@ -78,8 +74,7 @@ namespace World_Editor.TalentsEditor
             images.Add("TalentBarCR", bTmp);
             images.Add("TalentBarCL", CropBlp((Bitmap)blpFile, new Rectangle(128, 0, 32, 32)));
 
-            blpFile = Blp2.FromFile("Ressources\\DefaultTalentIcon.blp");
-            images.Add("SpellIconDefault", ResizeBlp((Bitmap)blpFile, 45, 45));
+            images.Add("SpellIconDefault", ResizeBlp(Blp2.FromFile("Ressources\\DefaultTalentIcon.blp"), 45, 45));
 
             LoadTalentTab();
 
@@ -132,11 +127,7 @@ namespace World_Editor.TalentsEditor
 
             using (Graphics g = Graphics.FromImage(_bitmapTemp))
             {
-                int y = talentTabScroll.Value;
-                g.DrawImageUnscaled(images["BackTopLeft"], 0, 0 + y);
-                g.DrawImageUnscaled(images["BackTopRight"], 256, 0 + y);
-                g.DrawImageUnscaled(images["BackBottomLeft"], 0, 256 + y);
-                g.DrawImageUnscaled(images["BackBottomRight"], 256, 256 + y);
+                g.DrawImageUnscaled(images["TalentBack"], 0, talentTabScroll.Value);
 
                 foreach (TalentEntry t in listTalents.Items)
                 {
@@ -207,6 +198,25 @@ namespace World_Editor.TalentsEditor
                         g.DrawImageUnscaled(images["TalentBarCL"], 35 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
                         g.DrawImageUnscaled(images["TalentBarV"], 10 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
                     }
+                }
+
+                foreach (TalentEntry t in listTalents.Items)
+                {
+                    Brush brush;
+                    if (listTalents.SelectedItem == t)
+                        brush = Brushes.Gold;
+                    else
+                        brush = Brushes.White;
+                    g.DrawImageUnscaled(images["TalentIdBorder"], 15 + 64 * (int)t.Col, 45 + 60 * (int)t.Row);
+                    if (t.Id > 999)
+                        g.DrawString(t.Id.ToString(), new Font("Arial", 7.5f, FontStyle.Regular, GraphicsUnit.Point), brush, (float)(34 + 64 * (int)t.Col), (float)(55 + 60 * (int)t.Row));
+                    else if (t.Id > 99)
+                        g.DrawString(t.Id.ToString(), new Font("Arial", 7.5f, FontStyle.Regular, GraphicsUnit.Point), brush, (float)(37 + 64 * (int)t.Col), (float)(55 + 60 * (int)t.Row));
+                    else if (t.Id > 9)
+                        g.DrawString(t.Id.ToString(), new Font("Arial", 7.5f, FontStyle.Regular, GraphicsUnit.Point), brush, (float)(40 + 64 * (int)t.Col), (float)(55 + 60 * (int)t.Row));
+                    else
+                        g.DrawString(t.Id.ToString(), new Font("Arial", 7.5f, FontStyle.Regular, GraphicsUnit.Point), brush, (float)(43 + 64 * (int)t.Col), (float)(55 + 60 * (int)t.Row));
+
                 }
             }
 

@@ -218,6 +218,7 @@
             // 
             // btnSpell4
             // 
+            this.btnSpell4.Enabled = false;
             this.btnSpell4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSpell4.Location = new System.Drawing.Point(129, 119);
             this.btnSpell4.Name = "btnSpell4";
@@ -309,6 +310,7 @@
             // 
             // btnSpell3
             // 
+            this.btnSpell3.Enabled = false;
             this.btnSpell3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSpell3.Location = new System.Drawing.Point(129, 93);
             this.btnSpell3.Name = "btnSpell3";
@@ -320,6 +322,7 @@
             // 
             // btnSpell0
             // 
+            this.btnSpell0.Enabled = false;
             this.btnSpell0.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSpell0.Location = new System.Drawing.Point(129, 15);
             this.btnSpell0.Name = "btnSpell0";
@@ -331,6 +334,7 @@
             // 
             // btnSpell2
             // 
+            this.btnSpell2.Enabled = false;
             this.btnSpell2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSpell2.Location = new System.Drawing.Point(129, 67);
             this.btnSpell2.Name = "btnSpell2";
@@ -342,6 +346,7 @@
             // 
             // btnSpell1
             // 
+            this.btnSpell1.Enabled = false;
             this.btnSpell1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSpell1.Location = new System.Drawing.Point(129, 41);
             this.btnSpell1.Name = "btnSpell1";

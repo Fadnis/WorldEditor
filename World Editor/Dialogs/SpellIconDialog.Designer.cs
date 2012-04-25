@@ -31,14 +31,14 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lvIcons = new System.Windows.Forms.ListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.path = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pbIcon = new System.Windows.Forms.PictureBox();
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.path = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +77,16 @@
             this.lvIcons.UseCompatibleStateImageBehavior = false;
             this.lvIcons.View = System.Windows.Forms.View.Details;
             this.lvIcons.SelectedIndexChanged += new System.EventHandler(this.lvIcons_SelectedIndexChanged);
+            // 
+            // id
+            // 
+            this.id.Text = "ID";
+            this.id.Width = 34;
+            // 
+            // path
+            // 
+            this.path.Text = "Chemin";
+            this.path.Width = 194;
             // 
             // label1
             // 
@@ -129,16 +139,6 @@
             this.pbIcon.TabIndex = 8;
             this.pbIcon.TabStop = false;
             // 
-            // id
-            // 
-            this.id.Text = "ID";
-            this.id.Width = 34;
-            // 
-            // path
-            // 
-            this.path.Text = "Chemin";
-            this.path.Width = 194;
-            // 
             // btnDel
             // 
             this.btnDel.Location = new System.Drawing.Point(308, 255);
@@ -166,6 +166,7 @@
             this.Controls.Add(this.btnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SpellIconDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Selection d\'icône";
             this.Load += new System.EventHandler(this.SpellIconDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).EndInit();
