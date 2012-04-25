@@ -148,6 +148,8 @@ namespace World_Editor.DBC
             bw.BaseStream.Position = 16;
             if (mStringTable.Count > 0)
                 bw.Write(mStringTable.Last().Key + Encoding.UTF8.GetByteCount(mStringTable.Last().Value) + 1);
+
+            strm.Close();
         }
 
         private int AddStringToTable(string str)

@@ -195,6 +195,8 @@ namespace World_Editor.DBC
                     mRecords.Add(id, mConverter.Convert(t));
             }
 
+            mReader.Close(); // On peut sauvegarder par dessus notre mReader :D !
+             
             IsLoaded = true;
 
             return true;
@@ -243,7 +245,7 @@ namespace World_Editor.DBC
             if (!IsEdited)
                 return;
 
-            string path = Utils.ProjectManager.ProjectDirectory + "\\out\\" + Path.GetFileName(FileName);
+            string path = FileName;
 
             DBCWriter<T> wr = new DBCWriter<T>();
             wr.WriteDBC(this, path);

@@ -97,6 +97,12 @@
     <Compile Include="Dialogs\MaskRaces.Designer.cs">
       <DependentUpon>MaskRaces.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\SpellIconDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SpellIconDialog.Designer.cs">
+      <DependentUpon>SpellIconDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\FactionsEditor\Dialogs\FactionGroupsEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MaskRaces.resx">
       <DependentUpon>MaskRaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SpellIconDialog.resx">
+      <DependentUpon>SpellIconDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editors\FactionsEditor\Dialogs\FactionGroupsEditor.resx">
       <DependentUpon>FactionGroupsEditor.cs</DependentUpon>
