@@ -50,6 +50,15 @@ namespace World_Editor.FactionsEditor
             InitializeComponent();
         }
 
+        private static FactionsEditor.MainForm m_factionsEditor;
+        public static FactionsEditor.MainForm GetChildInstance()
+        {
+            if (m_factionsEditor == null)
+                m_factionsEditor = new MainForm();
+
+            return m_factionsEditor;
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             try
@@ -888,6 +897,11 @@ namespace World_Editor.FactionsEditor
             float tmp;
             float.TryParse(value, out tmp);
             return tmp;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_factionsEditor = null;
         }
     }
 }

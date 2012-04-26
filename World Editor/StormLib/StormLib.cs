@@ -183,19 +183,6 @@ namespace World_Editor.Stormlib
             }
         }
 
-        public static bool HasFile(string filename)
-        {
-            lock (mAccessLock)
-            {
-                IntPtr fileHandle = IntPtr.Zero;
-                foreach (KeyValuePair<string, IntPtr> hArchive in MPQArchiveLoader.Instance.Archives)
-                    if (MPQArchiveLoader.SFileOpenFileEx(hArchive.Value, filename, 0, ref fileHandle))
-                        return true;
-
-                return false;
-            }
-        }
-
         private MPQFile()
         {
         }

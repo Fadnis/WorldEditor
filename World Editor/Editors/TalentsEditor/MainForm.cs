@@ -23,6 +23,15 @@ namespace World_Editor.TalentsEditor
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
         }
 
+        private static TalentsEditor.MainForm m_talentsEditor;
+        public static TalentsEditor.MainForm GetChildInstance()
+        {
+            if (m_talentsEditor == null)
+                m_talentsEditor = new MainForm();
+
+            return m_talentsEditor;
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             talentTabScroll.Maximum = panelIn.Height - panelOut.Height;
@@ -45,8 +54,8 @@ namespace World_Editor.TalentsEditor
             {
                 listTalents.Items.Add(t);
                 if (DBCStores.Spell.ContainsKey(t.RankId[0]) && 
-                    DBCStores.SpellIcon.ContainsKey(DBCStores.Spell[t.RankId[0]].SpellIconID) && 
-                    Stormlib.MPQFile.HasFile(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"))
+                    DBCStores.SpellIcon.ContainsKey(DBCStores.Spell[t.RankId[0]].SpellIconID) &&
+                    Stormlib.MPQFile.Exists(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"))
                 {
                     blpFile = Blp2.FromStream(new Stormlib.MPQFile(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"));
                     images.Add("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString(), ResizeBlp(blpFile, 40, 40));
@@ -478,6 +487,11 @@ namespace World_Editor.TalentsEditor
             uint tmp;
             UInt32.TryParse(value, out tmp);
             return tmp;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_talentsEditor = null;
         }
     }
 }

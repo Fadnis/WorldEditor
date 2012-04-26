@@ -17,6 +17,15 @@ namespace World_Editor.TitlesEditor
             InitializeComponent();
         }
 
+        private static TitlesEditor.MainForm m_titlesEditor;
+        public static TitlesEditor.MainForm GetChildInstance()
+        {
+            if (m_titlesEditor == null)
+                m_titlesEditor = new MainForm();
+
+            return m_titlesEditor;
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             try
@@ -120,6 +129,11 @@ namespace World_Editor.TitlesEditor
 
             DBCStores.CharTitles.ReplaceEntry(t.Id, t);
             listTitles.Items[listTitles.SelectedIndex] = t;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_titlesEditor = null;
         }
     }
 }

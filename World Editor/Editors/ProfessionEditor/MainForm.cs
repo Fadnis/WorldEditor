@@ -19,6 +19,15 @@ namespace World_Editor.ProfessionEditor
             InitializeComponent();
         }
 
+        private static ProfessionEditor.MainForm m_professionsEditor;
+        public static ProfessionEditor.MainForm GetChildInstance()
+        {
+            if (m_professionsEditor == null)
+                m_professionsEditor = new MainForm();
+
+            return m_professionsEditor;
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             try
@@ -516,6 +525,11 @@ namespace World_Editor.ProfessionEditor
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_professionsEditor = null;
         }
     }
 }

@@ -22,43 +22,11 @@ namespace World_Editor
             InitializeComponent();
         }
 
-        private void btnTitlesEditor_Click(object sender, EventArgs e)
-        {
-            TitlesEditor.MainForm d = new TitlesEditor.MainForm();
-            this.Hide();
-            d.ShowDialog();
-            this.Show();
-        }
-
-        private void btnProjectsEditor_Click(object sender, EventArgs e)
-        {
-            ProjectsEditor.MainForm d = new ProjectsEditor.MainForm();
-            d.ShowDialog();
-            projConf.Projects = d.Projects;
-            projConf.Save();
-
-            listProjects.Items.Clear();
-            projects = projConf.Projects;
-
-
-            foreach (Project p in projects)
-            {
-                listProjects.Items.Add(p);
-
-                if (p.IsLast)
-                    lastproject = p;
-            }
-
-            try
-            {
-                listProjects.SelectedItem = lastproject;
-            }
-            catch (Exception) { }
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             lblInfos.Text = "";
+            lblInfos.Visible = false;
+            ChangeEnableEditors(false);
             try
             {
                 projConf.Reload();
@@ -125,44 +93,89 @@ namespace World_Editor
         /// <param name="value">True pour activier, False pour les désactiver</param>
         private void ChangeEnableEditors(bool value)
         {
-            btnTitlesEditor.Enabled = value;
-            btnFactionsEditor.Enabled = value;
-            btnTalentsEditor.Enabled = value;
-            btnProfessionEditor.Enabled = value;
+            menuTalentsEditor.Enabled = value;
+            menuFactionsEditor.Enabled = value;
+            menuProfessionsEditor.Enabled = value;
+            menuTitlesEditor.Enabled = value;
+
+            menuProjectsEditor.Enabled = !value;
         }
 
-        private void btnFactionsEditor_Click(object sender, EventArgs e)
+        private void menuProjectsEditor_Click(object sender, EventArgs e)
         {
-            FactionsEditor.MainForm d = new FactionsEditor.MainForm();
-            this.Hide();
+            ProjectsEditor.MainForm d = new ProjectsEditor.MainForm();
             d.ShowDialog();
-            this.Show();
+            projConf.Projects = d.Projects;
+            projConf.Save();
+
+            listProjects.Items.Clear();
+            projects = projConf.Projects;
+
+
+            foreach (Project p in projects)
+            {
+                listProjects.Items.Add(p);
+
+                if (p.IsLast)
+                    lastproject = p;
+            }
+
+            try
+            {
+                listProjects.SelectedItem = lastproject;
+            }
+            catch (Exception) { }
         }
 
-        private void btnTalentsEditor_Click(object sender, EventArgs e)
+        private void menuTalentsEditor_Click(object sender, EventArgs e)
         {
-            TalentsEditor.MainForm d = new TalentsEditor.MainForm();
+            TalentsEditor.MainForm d = TalentsEditor.MainForm.GetChildInstance();
+            d.MdiParent = this;
             lblInfos.ForeColor = Color.Red;
+            lblInfos.Visible = true;
             lblInfos.Text = "Chargement en cours, cela peut prendre un certain temps.";
             this.Refresh();
             DBCStores.LoadTalentsEditorFiles();
-            this.Hide();
+            lblInfos.Visible = false;
             lblInfos.Text = "";
-            d.ShowDialog();
-            this.Show();
+            d.Show();
+            d.BringToFront();
         }
 
-        private void btnProfessionEditor_Click(object sender, EventArgs e)
+        private void menuFactionsEditor_Click(object sender, EventArgs e)
         {
-            ProfessionEditor.MainForm d = new ProfessionEditor.MainForm();
+            FactionsEditor.MainForm d = FactionsEditor.MainForm.GetChildInstance();
+            d.MdiParent = this;
+            d.Show();
+            d.BringToFront();
+        }
+
+        private void menuProfessionsEditor_Click(object sender, EventArgs e)
+        {
+            ProfessionEditor.MainForm d = ProfessionEditor.MainForm.GetChildInstance();
+            d.MdiParent = this;
             lblInfos.ForeColor = Color.Red;
+            lblInfos.Visible = true;
             lblInfos.Text = "Chargement en cours, cela peut prendre un certain temps.";
             this.Refresh();
             DBCStores.LoadProfessionEditorFiles();
-            this.Hide();
+            lblInfos.Visible = false;
             lblInfos.Text = "";
-            d.ShowDialog();
-            this.Show();            
+            d.Show();
+            d.BringToFront();
+        }
+
+        private void menuTitlesEditor_Click(object sender, EventArgs e)
+        {
+            TitlesEditor.MainForm d = TitlesEditor.MainForm.GetChildInstance();
+            d.MdiParent = this;
+            d.Show();
+            d.BringToFront();
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
