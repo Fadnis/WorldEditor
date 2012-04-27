@@ -36,12 +36,12 @@
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editeursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuProjectsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTalentsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFactionsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProfessionsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTitlesEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuProjectsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.topMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,7 +111,7 @@
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -125,21 +125,6 @@
             this.editeursToolStripMenuItem.Name = "editeursToolStripMenuItem";
             this.editeursToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.editeursToolStripMenuItem.Text = "Editeurs";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuProjectsEditor});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "Options";
-            // 
-            // menuProjectsEditor
-            // 
-            this.menuProjectsEditor.Name = "menuProjectsEditor";
-            this.menuProjectsEditor.Size = new System.Drawing.Size(166, 22);
-            this.menuProjectsEditor.Text = "Editeur de projets";
-            this.menuProjectsEditor.Click += new System.EventHandler(this.menuProjectsEditor_Click);
             // 
             // menuTalentsEditor
             // 
@@ -168,6 +153,21 @@
             this.menuTitlesEditor.Size = new System.Drawing.Size(210, 22);
             this.menuTitlesEditor.Text = "Editeur de titres";
             this.menuTitlesEditor.Click += new System.EventHandler(this.menuTitlesEditor_Click);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuProjectsEditor});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // menuProjectsEditor
+            // 
+            this.menuProjectsEditor.Name = "menuProjectsEditor";
+            this.menuProjectsEditor.Size = new System.Drawing.Size(166, 22);
+            this.menuProjectsEditor.Text = "Editeur de projets";
+            this.menuProjectsEditor.Click += new System.EventHandler(this.menuProjectsEditor_Click);
             // 
             // MainForm
             // 

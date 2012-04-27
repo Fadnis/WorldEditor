@@ -50,7 +50,7 @@ namespace World_Editor.FactionsEditor
             InitializeComponent();
         }
 
-        private static FactionsEditor.MainForm m_factionsEditor;
+        public static FactionsEditor.MainForm m_factionsEditor;
         public static FactionsEditor.MainForm GetChildInstance()
         {
             if (m_factionsEditor == null)
@@ -237,10 +237,10 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.EnemyFaction[0] = ParseToUInt(txtEnemy0.Text);
+            f.EnemyFaction[0] = Misc.ParseToUInt(txtEnemy0.Text);
 
-            if (DBCStores.Faction.ContainsKey(ParseToUInt(txtEnemy0.Text)))
-                lblEnemy0.Text = DBCStores.Faction[ParseToUInt(txtEnemy0.Text)].Name;
+            if (DBCStores.Faction.ContainsKey(Misc.ParseToUInt(txtEnemy0.Text)))
+                lblEnemy0.Text = DBCStores.Faction[Misc.ParseToUInt(txtEnemy0.Text)].Name;
             else
                 lblEnemy0.Text = "";
         }
@@ -252,10 +252,10 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.EnemyFaction[1] = ParseToUInt(txtEnemy1.Text);
+            f.EnemyFaction[1] = Misc.ParseToUInt(txtEnemy1.Text);
 
-            if (DBCStores.Faction.ContainsKey(ParseToUInt(txtEnemy1.Text)))
-                lblEnemy1.Text = DBCStores.Faction[ParseToUInt(txtEnemy1.Text)].Name;
+            if (DBCStores.Faction.ContainsKey(Misc.ParseToUInt(txtEnemy1.Text)))
+                lblEnemy1.Text = DBCStores.Faction[Misc.ParseToUInt(txtEnemy1.Text)].Name;
             else
                 lblEnemy1.Text = "";
         }
@@ -267,10 +267,10 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.EnemyFaction[2] = ParseToUInt(txtEnemy2.Text);
+            f.EnemyFaction[2] = Misc.ParseToUInt(txtEnemy2.Text);
 
-            if (DBCStores.Faction.ContainsKey(ParseToUInt(txtEnemy2.Text)))
-                lblEnemy2.Text = DBCStores.Faction[ParseToUInt(txtEnemy2.Text)].Name;
+            if (DBCStores.Faction.ContainsKey(Misc.ParseToUInt(txtEnemy2.Text)))
+                lblEnemy2.Text = DBCStores.Faction[Misc.ParseToUInt(txtEnemy2.Text)].Name;
             else
                 lblEnemy2.Text = "";
         }
@@ -282,10 +282,10 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.EnemyFaction[3] = ParseToUInt(txtEnemy3.Text);
+            f.EnemyFaction[3] = Misc.ParseToUInt(txtEnemy3.Text);
 
-            if (DBCStores.Faction.ContainsKey(ParseToUInt(txtEnemy3.Text)))
-                lblEnemy3.Text = DBCStores.Faction[ParseToUInt(txtEnemy3.Text)].Name;
+            if (DBCStores.Faction.ContainsKey(Misc.ParseToUInt(txtEnemy3.Text)))
+                lblEnemy3.Text = DBCStores.Faction[Misc.ParseToUInt(txtEnemy3.Text)].Name;
             else
                 lblEnemy3.Text = "";
         }
@@ -297,10 +297,10 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.FriendFaction[0] = ParseToUInt(txtFriend0.Text);
+            f.FriendFaction[0] = Misc.ParseToUInt(txtFriend0.Text);
 
-            if (DBCStores.Faction.ContainsKey(ParseToUInt(txtFriend0.Text)))
-                lblFriend0.Text = DBCStores.Faction[ParseToUInt(txtFriend0.Text)].Name;
+            if (DBCStores.Faction.ContainsKey(Misc.ParseToUInt(txtFriend0.Text)))
+                lblFriend0.Text = DBCStores.Faction[Misc.ParseToUInt(txtFriend0.Text)].Name;
             else
                 lblFriend0.Text = "";
         }
@@ -312,10 +312,10 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.FriendFaction[1] = ParseToUInt(txtFriend1.Text);
+            f.FriendFaction[1] = Misc.ParseToUInt(txtFriend1.Text);
 
-            if (DBCStores.Faction.ContainsKey(ParseToUInt(txtFriend1.Text)))
-                lblFriend1.Text = DBCStores.Faction[ParseToUInt(txtFriend1.Text)].Name;
+            if (DBCStores.Faction.ContainsKey(Misc.ParseToUInt(txtFriend1.Text)))
+                lblFriend1.Text = DBCStores.Faction[Misc.ParseToUInt(txtFriend1.Text)].Name;
             else
                 lblFriend1.Text = "";
         }
@@ -327,10 +327,10 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.FriendFaction[2] = ParseToUInt(txtFriend2.Text);
+            f.FriendFaction[2] = Misc.ParseToUInt(txtFriend2.Text);
 
-            if (DBCStores.Faction.ContainsKey(ParseToUInt(txtFriend2.Text)))
-                lblFriend2.Text = DBCStores.Faction[ParseToUInt(txtFriend2.Text)].Name;
+            if (DBCStores.Faction.ContainsKey(Misc.ParseToUInt(txtFriend2.Text)))
+                lblFriend2.Text = DBCStores.Faction[Misc.ParseToUInt(txtFriend2.Text)].Name;
             else
                 lblFriend2.Text = "";
         }
@@ -342,10 +342,10 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.FriendFaction[3] = ParseToUInt(txtFriend3.Text);
+            f.FriendFaction[3] = Misc.ParseToUInt(txtFriend3.Text);
 
-            if (DBCStores.Faction.ContainsKey(ParseToUInt(txtFriend3.Text)))
-                lblFriend3.Text = DBCStores.Faction[ParseToUInt(txtFriend3.Text)].Name;
+            if (DBCStores.Faction.ContainsKey(Misc.ParseToUInt(txtFriend3.Text)))
+                lblFriend3.Text = DBCStores.Faction[Misc.ParseToUInt(txtFriend3.Text)].Name;
             else
                 lblFriend3.Text = "";
         }
@@ -357,7 +357,7 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.FactionFlags = ParseToUInt(txtFactionTemplateFlags.Text);
+            f.FactionFlags = Misc.ParseToUInt(txtFactionTemplateFlags.Text);
         }
 
         private void txtFactGrp_TextChanged(object sender, EventArgs e)
@@ -367,7 +367,7 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.OurMask = ParseToUInt(txtFactGrp.Text);
+            f.OurMask = Misc.ParseToUInt(txtFactGrp.Text);
         }
 
         private void txtFriendGrp_TextChanged(object sender, EventArgs e)
@@ -377,7 +377,7 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.FriendlyMask = ParseToUInt(txtFriendGrp.Text);
+            f.FriendlyMask = Misc.ParseToUInt(txtFriendGrp.Text);
         }
 
         private void txtEnyGrp_TextChanged(object sender, EventArgs e)
@@ -387,7 +387,7 @@ namespace World_Editor.FactionsEditor
 
             FactionTemplateEntry f = (FactionTemplateEntry)listFactionTemplate.Items[listFactionTemplate.SelectedIndex];
 
-            f.HostileMask = ParseToUInt(txtEnyGrp.Text);
+            f.HostileMask = Misc.ParseToUInt(txtEnyGrp.Text);
         }
         #endregion
 
@@ -421,7 +421,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.ParentFactionId = ParseToUInt(txtFactionParentId.Text);
+            f.ParentFactionId = Misc.ParseToUInt(txtFactionParentId.Text);
         }
 
         private void txtSpilloverRateOut_TextChanged(object sender, EventArgs e)
@@ -431,7 +431,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.SpilloverRateOut = ParseToFloat(txtSpilloverRateOut.Text);
+            f.SpilloverRateOut = Misc.ParseToFloat(txtSpilloverRateOut.Text);
         }
 
         private void txtSpilloverRateIn_TextChanged(object sender, EventArgs e)
@@ -441,7 +441,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.SpilloverRateIn = ParseToFloat(txtSpilloverRateIn.Text);
+            f.SpilloverRateIn = Misc.ParseToFloat(txtSpilloverRateIn.Text);
         }
 
         private void txtSpilloverMaxRkIn_TextChanged(object sender, EventArgs e)
@@ -451,7 +451,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.SpilloverMaxRankIn = ParseToUInt(txtSpilloverMaxRkIn.Text);
+            f.SpilloverMaxRankIn = Misc.ParseToUInt(txtSpilloverMaxRkIn.Text);
         }
 
         private void txtSpilloverUnk_TextChanged(object sender, EventArgs e)
@@ -461,7 +461,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.SpilloverRankUnk = ParseToUInt(txtSpilloverUnk.Text);
+            f.SpilloverRankUnk = Misc.ParseToUInt(txtSpilloverUnk.Text);
         }
 
         private void txtRace0_TextChanged(object sender, EventArgs e)
@@ -471,7 +471,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepRaceMask[0] = ParseToUInt(txtRace0.Text);
+            f.BaseRepRaceMask[0] = Misc.ParseToUInt(txtRace0.Text);
         }
 
         private void txtRace1_TextChanged(object sender, EventArgs e)
@@ -481,7 +481,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepRaceMask[1] = ParseToUInt(txtRace1.Text);
+            f.BaseRepRaceMask[1] = Misc.ParseToUInt(txtRace1.Text);
         }
 
         private void txtRace2_TextChanged(object sender, EventArgs e)
@@ -491,7 +491,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepRaceMask[2] = ParseToUInt(txtRace2.Text);
+            f.BaseRepRaceMask[2] = Misc.ParseToUInt(txtRace2.Text);
         }
 
         private void txtRace3_TextChanged(object sender, EventArgs e)
@@ -501,7 +501,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepRaceMask[3] = ParseToUInt(txtRace3.Text);
+            f.BaseRepRaceMask[3] = Misc.ParseToUInt(txtRace3.Text);
         }
 
         private void txtClass0_TextChanged(object sender, EventArgs e)
@@ -511,7 +511,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepClassMask[0] = ParseToUInt(txtClass0.Text);
+            f.BaseRepClassMask[0] = Misc.ParseToUInt(txtClass0.Text);
         }
 
         private void txtClass1_TextChanged(object sender, EventArgs e)
@@ -521,7 +521,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepClassMask[1] = ParseToUInt(txtClass1.Text);
+            f.BaseRepClassMask[1] = Misc.ParseToUInt(txtClass1.Text);
         }
 
         private void txtClass2_TextChanged(object sender, EventArgs e)
@@ -531,7 +531,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepClassMask[2] = ParseToUInt(txtClass2.Text);
+            f.BaseRepClassMask[2] = Misc.ParseToUInt(txtClass2.Text);
         }
 
         private void txtClass3_TextChanged(object sender, EventArgs e)
@@ -541,7 +541,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepClassMask[3] = ParseToUInt(txtClass3.Text);
+            f.BaseRepClassMask[3] = Misc.ParseToUInt(txtClass3.Text);
         }
 
         private void txtBaseRep0_TextChanged(object sender, EventArgs e)
@@ -551,7 +551,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepValue[0] = ParseToInt(txtBaseRep0.Text);
+            f.BaseRepValue[0] = Misc.ParseToInt(txtBaseRep0.Text);
         }
 
         private void txtBaseRep1_TextChanged(object sender, EventArgs e)
@@ -561,7 +561,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepValue[1] = ParseToInt(txtBaseRep1.Text);
+            f.BaseRepValue[1] = Misc.ParseToInt(txtBaseRep1.Text);
         }
 
         private void txtBaseRep2_TextChanged(object sender, EventArgs e)
@@ -571,7 +571,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepValue[2] = ParseToInt(txtBaseRep2.Text);
+            f.BaseRepValue[2] = Misc.ParseToInt(txtBaseRep2.Text);
         }
 
         private void txtBaseRep3_TextChanged(object sender, EventArgs e)
@@ -581,7 +581,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.BaseRepValue[3] = ParseToInt(txtBaseRep3.Text);
+            f.BaseRepValue[3] = Misc.ParseToInt(txtBaseRep3.Text);
         }
 
         private void txtOptions0_TextChanged(object sender, EventArgs e)
@@ -591,7 +591,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.ReputationFlags[0] = ParseToUInt(txtOptions0.Text);
+            f.ReputationFlags[0] = Misc.ParseToUInt(txtOptions0.Text);
         }
 
         private void txtOptions1_TextChanged(object sender, EventArgs e)
@@ -601,7 +601,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.ReputationFlags[1] = ParseToUInt(txtOptions1.Text);
+            f.ReputationFlags[1] = Misc.ParseToUInt(txtOptions1.Text);
         }
 
         private void txtOptions2_TextChanged(object sender, EventArgs e)
@@ -611,7 +611,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.ReputationFlags[2] = ParseToUInt(txtOptions2.Text);
+            f.ReputationFlags[2] = Misc.ParseToUInt(txtOptions2.Text);
         }
 
         private void txtOptions3_TextChanged(object sender, EventArgs e)
@@ -621,7 +621,7 @@ namespace World_Editor.FactionsEditor
 
             FactionEntry f = (FactionEntry)listFactions.Items[listFactions.SelectedIndex];
 
-            f.ReputationFlags[3] = ParseToUInt(txtOptions3.Text);
+            f.ReputationFlags[3] = Misc.ParseToUInt(txtOptions3.Text);
         }
         #endregion
 
@@ -629,7 +629,7 @@ namespace World_Editor.FactionsEditor
         private void btnRaceMaskOld_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskRaces d = new World_Editor.Dialogs.MaskRaces();
-            d.MaskRacesValue = ParseToUInt(txtRaceMaskOld.Text);
+            d.MaskRacesValue = Misc.ParseToUInt(txtRaceMaskOld.Text);
             d.ShowDialog();
             txtRaceMaskOld.Text = d.MaskRacesValue.ToString();
         }
@@ -637,7 +637,7 @@ namespace World_Editor.FactionsEditor
         private void btnRaceMaskNew_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskRaces d = new World_Editor.Dialogs.MaskRaces();
-            d.MaskRacesValue = ParseToUInt(txtRaceMaskNew.Text);
+            d.MaskRacesValue = Misc.ParseToUInt(txtRaceMaskNew.Text);
             d.ShowDialog();
             txtRaceMaskNew.Text = d.MaskRacesValue.ToString();
         }
@@ -663,7 +663,7 @@ namespace World_Editor.FactionsEditor
         private void btnClassMaskOld_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskClasses d = new World_Editor.Dialogs.MaskClasses();
-            d.MaskClassesValue = ParseToUInt(txtClassMaskOld.Text);
+            d.MaskClassesValue = Misc.ParseToUInt(txtClassMaskOld.Text);
             d.ShowDialog();
             txtClassMaskOld.Text = d.MaskClassesValue.ToString();
         }
@@ -671,7 +671,7 @@ namespace World_Editor.FactionsEditor
         private void btnClassMaskNew_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskClasses d = new World_Editor.Dialogs.MaskClasses();
-            d.MaskClassesValue = ParseToUInt(txtClassMaskNew.Text);
+            d.MaskClassesValue = Misc.ParseToUInt(txtClassMaskNew.Text);
             d.ShowDialog();
             txtClassMaskNew.Text = d.MaskClassesValue.ToString();
         }
@@ -696,14 +696,14 @@ namespace World_Editor.FactionsEditor
 
         private void btnGroupMaskOld_Click(object sender, EventArgs e)
         {
-            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(ParseToUInt(txtGroupMaskOld.Text));
+            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(Misc.ParseToUInt(txtGroupMaskOld.Text));
             d.ShowDialog();
             txtGroupMaskOld.Text = d.BitMask.ToString();
         }
 
         private void btnGroupMaskNew_Click(object sender, EventArgs e)
         {
-            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(ParseToUInt(txtGroupMaskNew.Text));
+            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(Misc.ParseToUInt(txtGroupMaskNew.Text));
             d.ShowDialog();
             txtGroupMaskNew.Text = d.BitMask.ToString();
         }
@@ -738,7 +738,7 @@ namespace World_Editor.FactionsEditor
         // FactionTemplate
         private void btnFctTplFacMask_Click(object sender, EventArgs e)
         {
-            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(ParseToUInt(txtFactGrp.Text));
+            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(Misc.ParseToUInt(txtFactGrp.Text));
             d.ShowDialog();
             if (d.DialogResult == DialogResult.OK)
                 txtFactGrp.Text = d.BitMask.ToString();
@@ -746,7 +746,7 @@ namespace World_Editor.FactionsEditor
 
         private void btnFctTplFrMask_Click(object sender, EventArgs e)
         {
-            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(ParseToUInt(txtFriendGrp.Text));
+            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(Misc.ParseToUInt(txtFriendGrp.Text));
             d.ShowDialog();
             if (d.DialogResult == DialogResult.OK)
                 txtFriendGrp.Text = d.BitMask.ToString();
@@ -754,7 +754,7 @@ namespace World_Editor.FactionsEditor
 
         private void btnFctTplEnyMask_Click(object sender, EventArgs e)
         {
-            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(ParseToUInt(txtEnyGrp.Text));
+            Dialogs.FactionGroupsMask d = new Dialogs.FactionGroupsMask(Misc.ParseToUInt(txtEnyGrp.Text));
             d.ShowDialog();
             if (d.DialogResult == DialogResult.OK)
                 txtEnyGrp.Text = d.BitMask.ToString();
@@ -762,7 +762,7 @@ namespace World_Editor.FactionsEditor
 
         private void btnFctTplFlags_Click(object sender, EventArgs e)
         {
-            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FlagFactionTemplateEnums), ParseToUInt(txtFactionTemplateFlags.Text));
+            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FlagFactionTemplateEnums), Misc.ParseToUInt(txtFactionTemplateFlags.Text));
             d.ShowDialog();
             if (d.DialogResult == DialogResult.OK)
                 txtFactionTemplateFlags.Text = d.bitmask.ToString();
@@ -772,7 +772,7 @@ namespace World_Editor.FactionsEditor
         private void btnHelpRace0_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskRaces d = new World_Editor.Dialogs.MaskRaces();
-            d.MaskRacesValue = ParseToUInt(txtRace0.Text);
+            d.MaskRacesValue = Misc.ParseToUInt(txtRace0.Text);
             d.ShowDialog();
             txtRace0.Text = d.MaskRacesValue.ToString();
         }
@@ -780,7 +780,7 @@ namespace World_Editor.FactionsEditor
         private void btnHelpRace1_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskRaces d = new World_Editor.Dialogs.MaskRaces();
-            d.MaskRacesValue = ParseToUInt(txtRace1.Text);
+            d.MaskRacesValue = Misc.ParseToUInt(txtRace1.Text);
             d.ShowDialog();
             txtRace1.Text = d.MaskRacesValue.ToString();
         }
@@ -788,7 +788,7 @@ namespace World_Editor.FactionsEditor
         private void btnHelpRace2_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskRaces d = new World_Editor.Dialogs.MaskRaces();
-            d.MaskRacesValue = ParseToUInt(txtRace2.Text);
+            d.MaskRacesValue = Misc.ParseToUInt(txtRace2.Text);
             d.ShowDialog();
             txtRace2.Text = d.MaskRacesValue.ToString();
         }
@@ -796,7 +796,7 @@ namespace World_Editor.FactionsEditor
         private void btnHelpRace3_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskRaces d = new World_Editor.Dialogs.MaskRaces();
-            d.MaskRacesValue = ParseToUInt(txtRace3.Text);
+            d.MaskRacesValue = Misc.ParseToUInt(txtRace3.Text);
             d.ShowDialog();
             txtRace3.Text = d.MaskRacesValue.ToString();
         }
@@ -804,7 +804,7 @@ namespace World_Editor.FactionsEditor
         private void btnHelpClass0_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskClasses d = new World_Editor.Dialogs.MaskClasses();
-            d.MaskClassesValue = ParseToUInt(txtClass0.Text);
+            d.MaskClassesValue = Misc.ParseToUInt(txtClass0.Text);
             d.ShowDialog();
             txtClass0.Text = d.MaskClassesValue.ToString();
         }
@@ -812,7 +812,7 @@ namespace World_Editor.FactionsEditor
         private void btnHelpClass1_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskClasses d = new World_Editor.Dialogs.MaskClasses();
-            d.MaskClassesValue = ParseToUInt(txtClass1.Text);
+            d.MaskClassesValue = Misc.ParseToUInt(txtClass1.Text);
             d.ShowDialog();
             txtClass1.Text = d.MaskClassesValue.ToString();
         }
@@ -820,7 +820,7 @@ namespace World_Editor.FactionsEditor
         private void btnHelpClass2_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskClasses d = new World_Editor.Dialogs.MaskClasses();
-            d.MaskClassesValue = ParseToUInt(txtClass2.Text);
+            d.MaskClassesValue = Misc.ParseToUInt(txtClass2.Text);
             d.ShowDialog();
             txtClass2.Text = d.MaskClassesValue.ToString();
         }
@@ -828,14 +828,14 @@ namespace World_Editor.FactionsEditor
         private void btnHelpClass3_Click(object sender, EventArgs e)
         {
             World_Editor.Dialogs.MaskClasses d = new World_Editor.Dialogs.MaskClasses();
-            d.MaskClassesValue = ParseToUInt(txtClass3.Text);
+            d.MaskClassesValue = Misc.ParseToUInt(txtClass3.Text);
             d.ShowDialog();
             txtClass3.Text = d.MaskClassesValue.ToString();
         }
 
         private void btnHelpFactionFlags0_Click(object sender, EventArgs e)
         {
-            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FactionFlagsEnums), ParseToUInt(txtOptions0.Text));
+            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FactionFlagsEnums), Misc.ParseToUInt(txtOptions0.Text));
             d.ShowDialog();
             if (d.DialogResult == DialogResult.OK)
                 txtOptions0.Text = d.bitmask.ToString();
@@ -843,7 +843,7 @@ namespace World_Editor.FactionsEditor
 
         private void btnHelpFactionFlags1_Click(object sender, EventArgs e)
         {
-            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FactionFlagsEnums), ParseToUInt(txtOptions1.Text));
+            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FactionFlagsEnums), Misc.ParseToUInt(txtOptions1.Text));
             d.ShowDialog();
             if (d.DialogResult == DialogResult.OK)
                 txtOptions1.Text = d.bitmask.ToString();
@@ -851,7 +851,7 @@ namespace World_Editor.FactionsEditor
 
         private void btnHelpFactionFlags2_Click(object sender, EventArgs e)
         {
-            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FactionFlagsEnums), ParseToUInt(txtOptions2.Text));
+            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FactionFlagsEnums), Misc.ParseToUInt(txtOptions2.Text));
             d.ShowDialog();
             if (d.DialogResult == DialogResult.OK)
                 txtOptions2.Text = d.bitmask.ToString();
@@ -859,7 +859,7 @@ namespace World_Editor.FactionsEditor
 
         private void btnHelpFactionFlags3_Click(object sender, EventArgs e)
         {
-            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FactionFlagsEnums), ParseToUInt(txtOptions3.Text));
+            World_Editor.Dialogs.FlagDialog d = new World_Editor.Dialogs.FlagDialog(typeof(FactionFlagsEnums), Misc.ParseToUInt(txtOptions3.Text));
             d.ShowDialog();
             if (d.DialogResult == DialogResult.OK)
                 txtOptions3.Text = d.bitmask.ToString();
@@ -876,27 +876,6 @@ namespace World_Editor.FactionsEditor
             {
                 MessageBox.Show("Erreur lors de la sauvegarde des fichiers DBCs : " + ex.Message);
             }
-        }
-
-        private uint ParseToUInt(string value)
-        {
-            uint tmp;
-            UInt32.TryParse(value, out tmp);
-            return tmp;
-        }
-
-        private int ParseToInt(string value)
-        {
-            int tmp;
-            Int32.TryParse(value, out tmp);
-            return tmp;
-        }
-
-        private float ParseToFloat(string value)
-        {
-            float tmp;
-            float.TryParse(value, out tmp);
-            return tmp;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

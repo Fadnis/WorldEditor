@@ -23,7 +23,7 @@ namespace World_Editor.TalentsEditor
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
         }
 
-        private static TalentsEditor.MainForm m_talentsEditor;
+        public static TalentsEditor.MainForm m_talentsEditor;
         public static TalentsEditor.MainForm GetChildInstance()
         {
             if (m_talentsEditor == null)
@@ -58,32 +58,32 @@ namespace World_Editor.TalentsEditor
                     Stormlib.MPQFile.Exists(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"))
                 {
                     blpFile = Blp2.FromStream(new Stormlib.MPQFile(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"));
-                    images.Add("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString(), ResizeBlp(blpFile, 40, 40));
+                    images.Add("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString(), ResizeBitmap(blpFile, 40, 40));
                 }
             }
 
             images.Add("TalentBack", Blp2.FromFile("Ressources\\DefaultTalentBack.blp"));
 
             blpFile = Blp2.FromFile("Ressources\\UI-TalentArrows.blp");
-            images.Add("TalentArrowsBottom", CropBlp((Bitmap)blpFile, new Rectangle(0, 0, 32, 32)));
-            images.Add("TalentArrowsRight", CropBlp((Bitmap)blpFile, new Rectangle(32, 0, 32, 32)));
-            images.Add("TalentArrowsLeft", RotateBlp(CropBlp((Bitmap)blpFile, new Rectangle(32, 0, 32, 32)), 180.0f));
+            images.Add("TalentArrowsBottom", CropBitmap((Bitmap)blpFile, new Rectangle(0, 0, 32, 32)));
+            images.Add("TalentArrowsRight", CropBitmap((Bitmap)blpFile, new Rectangle(32, 0, 32, 32)));
+            images.Add("TalentArrowsLeft", RotateBitmap(CropBitmap((Bitmap)blpFile, new Rectangle(32, 0, 32, 32)), 180.0f));
 
             images.Add("TalentRankBorder", Blp2.FromFile("Ressources\\TalentFrame-RankBorder.blp"));
 
             images.Add("TalentIdBorder", Blp2.FromFile("Ressources\\TalentFrame-IdBorder.blp"));
 
             blpFile = Blp2.FromFile("Ressources\\UI-TalentBranches.blp");
-            images.Add("TalentBarH", CropBlp((Bitmap)blpFile, new Rectangle(32, 0, 32, 32)));
-            images.Add("TalentBarHLittle", CropBlp((Bitmap)blpFile, new Rectangle(32, 0, 32, 20)));
-            images.Add("TalentBarV", CropBlp((Bitmap)blpFile, new Rectangle(64, 0, 32, 32)));
-            images.Add("TalentBarVLittle", CropBlp((Bitmap)blpFile, new Rectangle(64, 0, 28, 32)));
-            Bitmap bTmp = CropBlp((Bitmap)blpFile, new Rectangle(128, 0, 32, 32));
+            images.Add("TalentBarH", CropBitmap((Bitmap)blpFile, new Rectangle(32, 0, 32, 32)));
+            images.Add("TalentBarHLittle", CropBitmap((Bitmap)blpFile, new Rectangle(32, 0, 32, 20)));
+            images.Add("TalentBarV", CropBitmap((Bitmap)blpFile, new Rectangle(64, 0, 32, 32)));
+            images.Add("TalentBarVLittle", CropBitmap((Bitmap)blpFile, new Rectangle(64, 0, 28, 32)));
+            Bitmap bTmp = CropBitmap((Bitmap)blpFile, new Rectangle(128, 0, 32, 32));
             bTmp.RotateFlip(RotateFlipType.RotateNoneFlipX);
             images.Add("TalentBarCR", bTmp);
-            images.Add("TalentBarCL", CropBlp((Bitmap)blpFile, new Rectangle(128, 0, 32, 32)));
+            images.Add("TalentBarCL", CropBitmap((Bitmap)blpFile, new Rectangle(128, 0, 32, 32)));
 
-            images.Add("SpellIconDefault", ResizeBlp(Blp2.FromFile("Ressources\\DefaultTalentIcon.blp"), 45, 45));
+            images.Add("SpellIconDefault", ResizeBitmap(Blp2.FromFile("Ressources\\DefaultTalentIcon.blp"), 45, 45));
 
             LoadTalentTab();
 
@@ -99,7 +99,7 @@ namespace World_Editor.TalentsEditor
             return 0;
         }
 
-        private Bitmap ResizeBlp(Bitmap bitmap, uint x, uint y)
+        private Bitmap ResizeBitmap(Bitmap bitmap, uint x, uint y)
         {
             Bitmap b = new Bitmap((int)x, (int)y);
             Graphics graphic = Graphics.FromImage((Image)b);
@@ -110,7 +110,7 @@ namespace World_Editor.TalentsEditor
             return b;
         }
 
-        private static Bitmap CropBlp(Bitmap bitmap, Rectangle cropArea)
+        private static Bitmap CropBitmap(Bitmap bitmap, Rectangle cropArea)
         {
             Bitmap bmpImage = new Bitmap(bitmap);
             Bitmap bmpCrop = bmpImage.Clone(cropArea, bmpImage.PixelFormat);
@@ -118,7 +118,7 @@ namespace World_Editor.TalentsEditor
             return bmpCrop;
         }
 
-        private Bitmap RotateBlp(Bitmap bitmap, float angle)
+        private Bitmap RotateBitmap(Bitmap bitmap, float angle)
         {
             Bitmap returnBitmap = new Bitmap(bitmap.Width, bitmap.Height);
             Graphics g = Graphics.FromImage(returnBitmap);
@@ -130,6 +130,9 @@ namespace World_Editor.TalentsEditor
             return returnBitmap;
         }
 
+        /// <summary>
+        /// Permet de redessiner l'arbre de talents.
+        /// </summary>
         private void LoadTalentTab()
         {
             Bitmap _bitmapTemp = new Bitmap(panelIn.Width, panelIn.Height);
@@ -240,6 +243,11 @@ namespace World_Editor.TalentsEditor
             LoadTalentTab();
         }
 
+        /// <summary>
+        /// Permet de détecter quoi faire en fonction de la position de la souris.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panelIn_MouseUp(object sender, MouseEventArgs e)
         {
             foreach (TalentEntry t in listTalents.Items)
@@ -369,7 +377,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.Row = ParseToUInt(txtRow.Text);
+            t.Row = Misc.ParseToUInt(txtRow.Text);
             listTalents.Items[listTalents.SelectedIndex] = t;
 
             LoadTalentTab();
@@ -381,7 +389,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.Col = ParseToUInt(txtCol.Text);
+            t.Col = Misc.ParseToUInt(txtCol.Text);
             listTalents.Items[listTalents.SelectedIndex] = t;
 
             LoadTalentTab();
@@ -393,7 +401,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.RankId[0] = ParseToUInt(txtSpell0.Text);
+            t.RankId[0] = Misc.ParseToUInt(txtSpell0.Text);
         }
 
         private void txtSpell1_TextChanged(object sender, EventArgs e)
@@ -402,7 +410,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.RankId[1] = ParseToUInt(txtSpell1.Text);
+            t.RankId[1] = Misc.ParseToUInt(txtSpell1.Text);
         }
 
         private void txtSpell2_TextChanged(object sender, EventArgs e)
@@ -411,7 +419,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.RankId[2] = ParseToUInt(txtSpell2.Text);
+            t.RankId[2] = Misc.ParseToUInt(txtSpell2.Text);
         }
 
         private void txtSpell3_TextChanged(object sender, EventArgs e)
@@ -420,7 +428,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.RankId[3] = ParseToUInt(txtSpell3.Text);
+            t.RankId[3] = Misc.ParseToUInt(txtSpell3.Text);
         }
 
         private void txtSpell4_TextChanged(object sender, EventArgs e)
@@ -429,7 +437,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.RankId[4] = ParseToUInt(txtSpell4.Text);
+            t.RankId[4] = Misc.ParseToUInt(txtSpell4.Text);
         }
 
         private void checkFlags_CheckedChanged(object sender, EventArgs e)
@@ -450,7 +458,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.ReqTalent[0] = ParseToUInt(txtReqTalent.Text);
+            t.ReqTalent[0] = Misc.ParseToUInt(txtReqTalent.Text);
 
             LoadTalentTab();
         }
@@ -461,7 +469,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.ReqRank[0] = ParseToUInt(txtReqRank.Text);
+            t.ReqRank[0] = Misc.ParseToUInt(txtReqRank.Text);
         }
 
         private void txtPetFlags0_TextChanged(object sender, EventArgs e)
@@ -470,7 +478,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.AllowForPetFlags[0] = ParseToUInt(txtPetFlags0.Text);
+            t.AllowForPetFlags[0] = Misc.ParseToUInt(txtPetFlags0.Text);
         }
 
         private void txtPetFlags1_TextChanged(object sender, EventArgs e)
@@ -479,14 +487,7 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
-            t.AllowForPetFlags[1] = ParseToUInt(txtPetFlags1.Text);
-        }
-
-        private uint ParseToUInt(string value)
-        {
-            uint tmp;
-            UInt32.TryParse(value, out tmp);
-            return tmp;
+            t.AllowForPetFlags[1] = Misc.ParseToUInt(txtPetFlags1.Text);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

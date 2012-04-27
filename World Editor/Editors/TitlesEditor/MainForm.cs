@@ -17,7 +17,7 @@ namespace World_Editor.TitlesEditor
             InitializeComponent();
         }
 
-        private static TitlesEditor.MainForm m_titlesEditor;
+        public static TitlesEditor.MainForm m_titlesEditor;
         public static TitlesEditor.MainForm GetChildInstance()
         {
             if (m_titlesEditor == null)

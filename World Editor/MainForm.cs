@@ -80,25 +80,15 @@ namespace World_Editor
             }
             else if (btnValidateProject.Text == "Modifier")
             {
+                if (!AllEditorsClosed())
+                {
+                    MessageBox.Show("Vous devez fermer tous les éditeurs pour pouvoir changer de projet.");
+                    return;
+                }
                 ChangeEnableEditors(false);
                 listProjects.Enabled = true;
                 btnValidateProject.Text = "Valider";
             }
-        }
-
-        /// <summary>
-        /// Permet d'activer/désactiver tous les boutons des éditeurs selon la valeur de "value".
-        /// Utilisé lorsque le projet est chargé ou non.
-        /// </summary>
-        /// <param name="value">True pour activier, False pour les désactiver</param>
-        private void ChangeEnableEditors(bool value)
-        {
-            menuTalentsEditor.Enabled = value;
-            menuFactionsEditor.Enabled = value;
-            menuProfessionsEditor.Enabled = value;
-            menuTitlesEditor.Enabled = value;
-
-            menuProjectsEditor.Enabled = !value;
         }
 
         private void menuProjectsEditor_Click(object sender, EventArgs e)
@@ -176,6 +166,36 @@ namespace World_Editor
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        /// <summary>
+        /// Permet de tester si tous les éditeurs sont fermés
+        /// </summary>
+        /// <returns>Retourne true si tous les éditeurs sont fermés</returns>
+        private bool AllEditorsClosed()
+        {
+            if (FactionsEditor.MainForm.m_factionsEditor == null &&
+                ProfessionEditor.MainForm.m_professionsEditor == null &&
+                TalentsEditor.MainForm.m_talentsEditor == null &&
+                TitlesEditor.MainForm.m_titlesEditor == null)
+                return true;
+
+            return false;
+        }
+
+        /// <summary>
+        /// Permet d'activer/désactiver tous les boutons des éditeurs selon la valeur de "value".
+        /// Utilisé lorsque le projet est chargé ou non.
+        /// </summary>
+        /// <param name="value">True pour activier, False pour les désactiver</param>
+        private void ChangeEnableEditors(bool value)
+        {
+            menuTalentsEditor.Enabled = value;
+            menuFactionsEditor.Enabled = value;
+            menuProfessionsEditor.Enabled = value;
+            menuTitlesEditor.Enabled = value;
+
+            menuProjectsEditor.Enabled = !value;
         }
     }
 }

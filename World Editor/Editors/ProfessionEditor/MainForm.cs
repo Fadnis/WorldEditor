@@ -19,7 +19,7 @@ namespace World_Editor.ProfessionEditor
             InitializeComponent();
         }
 
-        private static ProfessionEditor.MainForm m_professionsEditor;
+        public static ProfessionEditor.MainForm m_professionsEditor;
         public static ProfessionEditor.MainForm GetChildInstance()
         {
             if (m_professionsEditor == null)
