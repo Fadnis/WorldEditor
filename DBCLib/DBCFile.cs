@@ -4,10 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace World_Editor.DBC
+namespace DBCLib
 {
-    public interface IDBCRowConverter<T>
-    where T : new()
+    public interface IDBCRowConverter<T> where T : new()
     {
         T Convert(object value);
     }
@@ -196,7 +195,7 @@ namespace World_Editor.DBC
             }
 
             mReader.Close(); // On peut sauvegarder par dessus notre mReader :D !
-             
+
             IsLoaded = true;
 
             return true;

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DBCLib.Structures335;
 using World_Editor.DBC;
 
 namespace World_Editor.ProfessionEditor

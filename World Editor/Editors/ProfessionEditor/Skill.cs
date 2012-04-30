@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DBCLib.Structures335;
 using World_Editor.DBC;
 
 namespace World_Editor.ProfessionEditor

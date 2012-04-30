@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DBCLib;
+using DBCLib.Structures335;
 
 namespace World_Editor.DBC
 {

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using World_Editor.DBC;
 using MDS.cBlp2;
 using World_Editor.Stormlib;
+using DBCLib.Structures335;
 
 namespace World_Editor.Dialogs
 {

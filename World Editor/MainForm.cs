@@ -197,5 +197,10 @@ namespace World_Editor
 
             menuProjectsEditor.Enabled = !value;
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

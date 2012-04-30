@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace World_Editor.DBC
+namespace DBCLib
 {
-    public class DBCWriter<T> where T : new()
+    internal class DBCWriter<T> where T : new()
     {
-        public void WriteDBC(DBCFile<T> file, string path)
+        internal void WriteDBC(DBCFile<T> file, string path)
         {
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             mFile = file;

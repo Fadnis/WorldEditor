@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace World_Editor.DBC
+namespace DBCLib.Structures335
 {
     public class AchievementEntry
     {
