@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="topMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>70</value>
-  </metadata>
+  <data name="AddTitleError" xml:space="preserve">
+    <value>Erreur lors de l'ajout du titre</value>
+  </data>
+  <data name="DelTitleError" xml:space="preserve">
+    <value>Erreur lors de la suppression du titre</value>
+  </data>
+  <data name="LoadDbcError" xml:space="preserve">
+    <value>Erreur lors du chargement des DBCs</value>
+  </data>
+  <data name="NewTitle" xml:space="preserve">
+    <value>Nouveau titre</value>
+  </data>
+  <data name="SaveDbcError" xml:space="preserve">
+    <value>Erreur lors de la sauvegarde du fichier</value>
+  </data>
 </root>

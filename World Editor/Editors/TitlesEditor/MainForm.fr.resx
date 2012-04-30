@@ -117,10 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="topMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>70</value>
-  </metadata>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Sauvegarder les fichiers</value>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 52</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Note : Les caractères %s seront 
+remplacés par le pseudo du joueur.
+Ex : "Soldat %s" sera remplacé par 
+"Soldat VotrePseudo".</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Titre féminin</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Titre masculin</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Editeur de titres</value>
+  </data>
 </root>

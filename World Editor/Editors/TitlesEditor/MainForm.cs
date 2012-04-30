@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 using DBCLib.Structures335;
@@ -13,6 +15,7 @@ namespace World_Editor.TitlesEditor
 {
     public partial class MainForm : Form
     {
+        ResourceManager Loc = new ResourceManager("World_Editor.Editors.TitlesEditor.TitlesEditorLocal", System.Reflection.Assembly.GetExecutingAssembly());
         public MainForm()
         {
             InitializeComponent();
@@ -35,7 +38,7 @@ namespace World_Editor.TitlesEditor
             }
             catch (Exception)
             {
-                MessageBox.Show("Erreur lors du chargement des DBCs");
+                MessageBox.Show(Loc.GetString("LoadDbcError"));
                 this.Close();
             }
 
@@ -67,8 +70,8 @@ namespace World_Editor.TitlesEditor
                 {
                     Id = DBCStores.CharTitles.MaxKey + 1,
                     ConditionId = 0,
-                    NameMale = "Nouveau titre",
-                    NameFemale = "Nouveau titre",
+                    NameMale = Loc.GetString("NewTitle"),
+                    NameFemale = Loc.GetString("NewTitle"),
                     TitleMaskId = DBCStores.CharTitles.Records.Max(ti => ti.TitleMaskId) + 1,
                 };
 
@@ -79,7 +82,7 @@ namespace World_Editor.TitlesEditor
             }
             catch (Exception)
             {
-                MessageBox.Show("Erreur lors de l'ajout du titre");
+                MessageBox.Show(Loc.GetString("AddTitleError"));
             }
         }
 
@@ -96,7 +99,7 @@ namespace World_Editor.TitlesEditor
             }
             catch (Exception)
             {
-                MessageBox.Show("Erreur lors de la suppression du titre");
+                MessageBox.Show(Loc.GetString("DelTitleError"));
             }
         }
 
@@ -108,7 +111,7 @@ namespace World_Editor.TitlesEditor
             }
             catch (Exception)
             {
-                MessageBox.Show("Erreur lors de la sauvegarde du fichier.");
+                MessageBox.Show(Loc.GetString("SaveDbcError"));
             }
         }
 
