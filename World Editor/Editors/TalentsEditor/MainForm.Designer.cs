@@ -475,6 +475,7 @@
             this.panelIn.Name = "panelIn";
             this.panelIn.Size = new System.Drawing.Size(300, 700);
             this.panelIn.TabIndex = 0;
+            this.panelIn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelIn_MouseDown);
             this.panelIn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelIn_MouseUp);
             // 
             // MainForm

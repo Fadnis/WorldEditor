@@ -256,6 +256,9 @@ namespace World_Editor.TalentsEditor
                 if ((e.X > 37 + 35 + 64 * t.Col) && (e.X < 47 + 35 + 64 * t.Col) &&
                     (e.Y > 16 + 60 * t.Row) && (e.Y < 25 + 60 * t.Row))
                 {
+                    talentMouseDown = null;
+                    if (talentMouseDown != null)
+                        return;
                     DBCStores.Talent.RemoveEntry(t.Id);
                     listTalents.Items.Remove(t);
                     listTalents.SelectedIndex = 0;
@@ -265,6 +268,7 @@ namespace World_Editor.TalentsEditor
                 else if ((e.X > 35 + 64 * t.Col) && (e.X < 35 + 35 + 64 * t.Col) &&
                     (e.Y > 20 + 60 * t.Row) && (e.Y < 35 + 20 + 60 * t.Row))
                 {
+                    talentMouseDown = null;
                     listTalents.SelectedItem = t;
                     return;
                 }
@@ -277,6 +281,26 @@ namespace World_Editor.TalentsEditor
                     if ((e.X > 35 + 64 * i) && (e.X < 35 + 35 + 64 * i) &&
                     (e.Y > 20 + 60 * j) && (e.Y < 35 + 20 + 60 * j))
                     {
+                        if (talentMouseDown != null)
+                        {
+                            if (images.ContainsKey("SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString()))
+                            {
+                                if (images.ContainsKey("SpellIcon." + j.ToString() + "." + i.ToString()))
+                                    images["SpellIcon." + j.ToString() + "." +i.ToString()]
+                                        = images["SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString()];
+                                else
+                                    images.Add("SpellIcon." + j.ToString() + "." + i.ToString(),
+                                        images["SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString()]);
+                                if (talentMouseDown.Row != j || talentMouseDown.Col != i)
+                                    images.Remove("SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString());
+                            }
+                            talentMouseDown.Row = j;
+                            talentMouseDown.Col = i;
+                            LoadTalentTab();
+                            talentMouseDown = null;
+                            return;
+                        }
+
                         TalentTabEntry tb = (TalentTabEntry)listTalentTab.SelectedItem;
                         TalentEntry newTalent = new TalentEntry
                         {
@@ -291,11 +315,26 @@ namespace World_Editor.TalentsEditor
                         };
                         DBCStores.Talent.AddEntry(newTalent.Id, newTalent);
                         listTalents.Items.Add(newTalent);
+                        LoadTalentTab();
 
                         listTalents.SelectedItem = newTalent;
 
                         return;
                     }
+                }
+            }
+        }
+
+        private TalentEntry talentMouseDown = null;
+        private void panelIn_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (TalentEntry t in listTalents.Items)
+            {
+                if ((e.X > 35 + 64 * t.Col) && (e.X < 35 + 35 + 64 * t.Col) &&
+                    (e.Y > 20 + 60 * t.Row) && (e.Y < 35 + 20 + 60 * t.Row))
+                {
+                    talentMouseDown = t;
+                    return;
                 }
             }
         }
@@ -378,6 +417,19 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
+
+            if (images.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()))
+            {
+                if (images.ContainsKey("SpellIcon." + Misc.ParseToUInt(txtRow.Text).ToString() + "." + t.Col.ToString()))
+                    images["SpellIcon." + Misc.ParseToUInt(txtRow.Text).ToString() + "." + t.Col.ToString()]
+                        = images["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()];
+                else
+                    images.Add("SpellIcon." + Misc.ParseToUInt(txtRow.Text).ToString() + "." + t.Col.ToString(), 
+                        images["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()]);
+                if (t.Row != Misc.ParseToUInt(txtRow.Text))
+                    images.Remove("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString());
+            }
+
             t.Row = Misc.ParseToUInt(txtRow.Text);
             listTalents.Items[listTalents.SelectedIndex] = t;
 
@@ -390,6 +442,19 @@ namespace World_Editor.TalentsEditor
                 return;
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
+
+            if (images.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()))
+            {
+                if (images.ContainsKey("SpellIcon." + t.Row.ToString() + "." + Misc.ParseToUInt(txtCol.Text).ToString()))
+                    images["SpellIcon." + t.Row.ToString() + "." + Misc.ParseToUInt(txtCol.Text).ToString()]
+                        = images["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()];
+                else
+                    images.Add("SpellIcon." + t.Row.ToString() + "." + Misc.ParseToUInt(txtCol.Text).ToString(),
+                        images["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()]);
+                if (t.Col != Misc.ParseToUInt(txtCol.Text))
+                    images.Remove("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString());
+            }
+
             t.Col = Misc.ParseToUInt(txtCol.Text);
             listTalents.Items[listTalents.SelectedIndex] = t;
 
@@ -495,5 +560,7 @@ namespace World_Editor.TalentsEditor
         {
             m_talentsEditor = null;
         }
+
+        
     }
 }
