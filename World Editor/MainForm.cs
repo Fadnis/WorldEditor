@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using World_Editor.DBC;
 using World_Editor.ProjectsEditor;
@@ -16,6 +17,8 @@ namespace World_Editor
         private ProjectSettings projConf = new ProjectSettings();
         private List<Project> projects = new List<Project>();
         private Project lastproject = null;
+
+        public delegate void FinChargement();
 
         public MainForm()
         {
@@ -119,15 +122,28 @@ namespace World_Editor
 
         private void menuTalentsEditor_Click(object sender, EventArgs e)
         {
-            TalentsEditor.MainForm d = TalentsEditor.MainForm.GetChildInstance();
-            d.MdiParent = this;
             lblInfos.ForeColor = Color.Red;
             lblInfos.Visible = true;
             lblInfos.Text = "Chargement en cours, cela peut prendre un certain temps.";
-            this.Refresh();
+            ChangeEnableEditors(false, true);
+            Thread t = new Thread(LoadTalentsEditorFiles);
+            t.IsBackground = true;
+            t.Start();
+        }
+
+        private void LoadTalentsEditorFiles()
+        {
             DBCStores.LoadTalentsEditorFiles();
+            Invoke((FinChargement)TalentsEditorFilesLoaded);
+        }
+
+        private void TalentsEditorFilesLoaded()
+        {
+            TalentsEditor.MainForm d = TalentsEditor.MainForm.GetChildInstance();
+            d.MdiParent = this;
             lblInfos.Visible = false;
             lblInfos.Text = "";
+            ChangeEnableEditors(true, true);
             d.Show();
             d.BringToFront();
         }
@@ -188,14 +204,22 @@ namespace World_Editor
         /// Utilisé lorsque le projet est chargé ou non.
         /// </summary>
         /// <param name="value">True pour activier, False pour les désactiver</param>
-        private void ChangeEnableEditors(bool value)
+        private void ChangeEnableEditors(bool value, bool all = false)
         {
             menuTalentsEditor.Enabled = value;
             menuFactionsEditor.Enabled = value;
             menuProfessionsEditor.Enabled = value;
             menuTitlesEditor.Enabled = value;
 
-            menuProjectsEditor.Enabled = !value;
+            if (all)
+            {
+                menuProjectsEditor.Enabled = false;
+                btnValidateProject.Enabled = value;
+            }
+            else
+            {
+                menuProjectsEditor.Enabled = !value;
+            }
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
