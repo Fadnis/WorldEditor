@@ -22,6 +22,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -221,6 +223,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Editors\TalentsEditor\Dialogs\TalentTabsEditor.resx">
       <DependentUpon>TalentTabsEditor.cs</DependentUpon>
@@ -251,6 +254,15 @@
       <Project>{3c2e2307-dbff-46ad-b36f-672eacafd581}</Project>
       <Name>BLPLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.factions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.talents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.titles.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

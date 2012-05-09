@@ -16,6 +16,7 @@ namespace World_Editor.TalentsEditor
     {
         private Graphics g;
         private Dictionary<string, Bitmap> images = new Dictionary<string, Bitmap>();
+        private Dictionary<string, Bitmap> icons = new Dictionary<string, Bitmap>();
 
         public MainForm()
         {
@@ -41,27 +42,7 @@ namespace World_Editor.TalentsEditor
             foreach (TalentTabEntry t in DBCStores.TalentTab.Records)
                 listTalentTab.Items.Add(t);
 
-            listTalentTab.SelectedIndex = 0;
-        }
-
-        private void listTalentTab_SelectedIndexChanged(object sender, EventArgs e)
-        {
             Blp2 blpFile = new Blp2();
-            images.Clear();
-
-            listTalents.Items.Clear();
-            TalentTabEntry tab = (TalentTabEntry)listTalentTab.SelectedItem;
-            foreach (TalentEntry t in DBCStores.Talent.Records.Where(th => th.TabId == tab.Id))
-            {
-                listTalents.Items.Add(t);
-                if (DBCStores.Spell.ContainsKey(t.RankId[0]) && 
-                    DBCStores.SpellIcon.ContainsKey(DBCStores.Spell[t.RankId[0]].SpellIconID) &&
-                    Stormlib.MPQFile.Exists(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"))
-                {
-                    blpFile = Blp2.FromStream(new Stormlib.MPQFile(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"));
-                    images.Add("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString(), ResizeBitmap(blpFile, 40, 40));
-                }
-            }
 
             images.Add("TalentBack", Blp2.FromFile("Ressources\\DefaultTalentBack.blp"));
 
@@ -86,9 +67,32 @@ namespace World_Editor.TalentsEditor
 
             images.Add("SpellIconDefault", ResizeBitmap(Blp2.FromFile("Ressources\\DefaultTalentIcon.blp"), 45, 45));
 
-            LoadTalentTab();
+            listTalentTab.SelectedIndex = 0;
+        }
+
+        private void listTalentTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Blp2 blpFile = new Blp2();
+            icons.Clear();
+
+            listTalents.Items.Clear();
+            TalentTabEntry tab = (TalentTabEntry)listTalentTab.SelectedItem;
+
+            foreach (TalentEntry t in DBCStores.Talent.Records.Where(th => th.TabId == tab.Id))
+            {
+                listTalents.Items.Add(t);
+                if (DBCStores.Spell.ContainsKey(t.RankId[0]) && 
+                    DBCStores.SpellIcon.ContainsKey(DBCStores.Spell[t.RankId[0]].SpellIconID) &&
+                    Stormlib.MPQFile.Exists(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp") &&
+                    !icons.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()))
+                {
+                    blpFile = Blp2.FromStream(new Stormlib.MPQFile(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"));
+                    icons.Add("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString(), ResizeBitmap(blpFile, 40, 40));
+                }
+            }
 
             listTalents.SelectedIndex = 0;
+            LoadTalentTab();
         }
 
         private uint TalentRanks(TalentEntry t)
@@ -136,112 +140,13 @@ namespace World_Editor.TalentsEditor
         /// </summary>
         private void LoadTalentTab()
         {
-            Bitmap _bitmapTemp = new Bitmap(panelIn.Width, panelIn.Height);
-
-            using (Graphics g = Graphics.FromImage(_bitmapTemp))
-            {
-                g.DrawImageUnscaled(images["TalentBack"], 0, talentTabScroll.Value);
-
-                foreach (TalentEntry t in listTalents.Items)
-                {
-                    if (images.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()))
-                        g.DrawImageUnscaled(images["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()], 35 + 64 * (int)t.Col, 20 + 60 * (int)t.Row);
-                    else
-                        g.DrawImageUnscaled(images["SpellIconDefault"], 35 + 64 * (int)t.Col, 20 + 60 * (int)t.Row);
-
-                    g.DrawImageUnscaled(images["TalentRankBorder"], 24 + 35 + 64 * (int)t.Col, 26 + 20 + 60 * (int)t.Row);
-                    g.DrawString(TalentRanks(t).ToString(), new Font("Arial", 8.0f, FontStyle.Regular, GraphicsUnit.Point), Brushes.White, (float)(35 + 35 + 64 * (int)t.Col), (float)(35 + 20 + 60 * (int)t.Row));
-                    g.DrawImageUnscaled(images["TalentRankBorder"], 26 + 35 + 64 * (int)t.Col, 6 + 60 * (int)t.Row);
-                    g.DrawString("X", new Font("Arial", 8.0f, FontStyle.Bold, GraphicsUnit.Point), Brushes.White, (float)(36 + 35 + 64 * (int)t.Col), (float)(20 - 5 + 60 * (int)t.Row));
-
-                    if (!DBCStores.Talent.ContainsKey(t.ReqTalent[0]))
-                        continue;
-
-                    TalentEntry reqTalent = DBCStores.Talent[t.ReqTalent[0]];
-
-                    // Talent 1 case au dessus
-                    if (((int)reqTalent.Row - t.Row == -1) && ((int)reqTalent.Col - t.Col == 0))
-                    {
-                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 20 - 16 + 35 + 64 * (int)t.Col, 20 - 12 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarHLittle"], 20 - 16 - 1 + 35 + 64 * (int)t.Col, 20 - 12 - 7 + 60 * (int)t.Row);
-                    }
-                    // Talent 2 cases au dessus
-                    else if (((int)reqTalent.Row - t.Row == -2) && ((int)reqTalent.Col - t.Col == 0))
-                    {
-                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 20 - 16 + 35 + 64 * (int)t.Col, 20 - 12 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarH"], 20 - 16 - 1 + 35 + 64 * (int)t.Col, 20 - 12 - 18 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarH"], 20 - 16 - 1 + 35 + 64 * (int)t.Col, 20 - 12 - 18 - 32 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarHLittle"], 20 - 16 - 1 + 35 + 64 * (int)t.Col, 20 - 12 - 4 - 64 + 60 * (int)t.Row);
-                    }
-                    // Talent 3 cases au dessus
-                    else if (((int)reqTalent.Row - t.Row == -3) && ((int)reqTalent.Col - t.Col == 0))
-                    {
-                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 39 + 64 * (int)t.Col, 8 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -10 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -42 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -74 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -106 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarHLittle"], 38 + 64 * (int)t.Col, -120 + 60 * (int)t.Row);
-                    }
-                    // Talent 1 case à droite
-                    else if (((int)reqTalent.Row - t.Row == 0) && ((int)reqTalent.Col - t.Col == 1))
-                    {
-                        g.DrawImageUnscaled(images["TalentArrowsLeft"], 20 - 16 + 20 + 35 - 4 + 64 * (int)t.Col, 20 - 12 - 4 + 20 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarVLittle"], 20 - 16 + 17 + 21 + 35 - 4 + 64 * (int)t.Col, 20 - 11 - 4 + 20 + 60 * (int)t.Row);
-                    }
-                    // Talent 1 case à gauche
-                    else if (((int)reqTalent.Row - t.Row == 0) && ((int)reqTalent.Col - t.Col == -1))
-                    {
-                        g.DrawImageUnscaled(images["TalentArrowsRight"], 20 - 16 - 16 + 35 + 64 * (int)t.Col, 20 - 12 + 16 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarVLittle"], 20 - 16 - 16 - 20 + 35 + 5 + 64 * (int)t.Col, 20 - 12 + 16 + 60 * (int)t.Row);
-                    }
-                    // Talent 1 case en haut à droite
-                    else if (((int)reqTalent.Row - t.Row == -1) && ((int)reqTalent.Col - t.Col == 1))
-                    {
-                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 39 + 64 * (int)t.Col, 8 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -10 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarCR"], 43 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarV"], 66 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
-                    }
-                    // Talent 1 case en haut à gauche
-                    else if (((int)reqTalent.Row - t.Row == -1) && ((int)reqTalent.Col - t.Col == -1))
-                    {
-                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 39 + 64 * (int)t.Col, 8 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -10 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarCL"], 35 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
-                        g.DrawImageUnscaled(images["TalentBarV"], 10 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
-                    }
-                }
-
-                foreach (TalentEntry t in listTalents.Items)
-                {
-                    Brush brush;
-                    if (listTalents.SelectedItem == t)
-                        brush = Brushes.Gold;
-                    else
-                        brush = Brushes.White;
-                    g.DrawImageUnscaled(images["TalentIdBorder"], 15 + 64 * (int)t.Col, 45 + 60 * (int)t.Row);
-                    if (t.Id > 999)
-                        g.DrawString(t.Id.ToString(), new Font("Arial", 7.5f, FontStyle.Regular, GraphicsUnit.Point), brush, (float)(34 + 64 * (int)t.Col), (float)(55 + 60 * (int)t.Row));
-                    else if (t.Id > 99)
-                        g.DrawString(t.Id.ToString(), new Font("Arial", 7.5f, FontStyle.Regular, GraphicsUnit.Point), brush, (float)(37 + 64 * (int)t.Col), (float)(55 + 60 * (int)t.Row));
-                    else if (t.Id > 9)
-                        g.DrawString(t.Id.ToString(), new Font("Arial", 7.5f, FontStyle.Regular, GraphicsUnit.Point), brush, (float)(40 + 64 * (int)t.Col), (float)(55 + 60 * (int)t.Row));
-                    else
-                        g.DrawString(t.Id.ToString(), new Font("Arial", 7.5f, FontStyle.Regular, GraphicsUnit.Point), brush, (float)(43 + 64 * (int)t.Col), (float)(55 + 60 * (int)t.Row));
-
-                }
-            }
-
-            this.g.DrawImage(_bitmapTemp, 0, 0);
-            _bitmapTemp.Dispose();
-            _bitmapTemp = null; 
+            //panelIn.Invalidate();
+            panelIn_Paint(null, null);
         }
 
         private void talentTabScroll_Scroll(object sender, ScrollEventArgs e)
         {
             panelIn.Top = -talentTabScroll.Value;
-            LoadTalentTab();
         }
 
         /// <summary>
@@ -260,6 +165,8 @@ namespace World_Editor.TalentsEditor
                     if (talentMouseDown != null)
                         return;
                     DBCStores.Talent.RemoveEntry(t.Id);
+                    if (icons.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()))
+                        icons.Remove("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString());
                     listTalents.Items.Remove(t);
                     listTalents.SelectedIndex = 0;
                     LoadTalentTab();
@@ -283,16 +190,15 @@ namespace World_Editor.TalentsEditor
                     {
                         if (talentMouseDown != null)
                         {
-                            if (images.ContainsKey("SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString()))
+                            if (icons.ContainsKey("SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString()) && (talentMouseDown.Row != j || talentMouseDown.Col != i))
                             {
-                                if (images.ContainsKey("SpellIcon." + j.ToString() + "." + i.ToString()))
-                                    images["SpellIcon." + j.ToString() + "." +i.ToString()]
-                                        = images["SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString()];
+                                if (icons.ContainsKey("SpellIcon." + j.ToString() + "." + i.ToString()))
+                                    icons["SpellIcon." + j.ToString() + "." + i.ToString()]
+                                        = icons["SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString()];
                                 else
-                                    images.Add("SpellIcon." + j.ToString() + "." + i.ToString(),
-                                        images["SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString()]);
-                                if (talentMouseDown.Row != j || talentMouseDown.Col != i)
-                                    images.Remove("SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString());
+                                    icons.Add("SpellIcon." + j.ToString() + "." + i.ToString(),
+                                        icons["SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString()]);
+                                icons.Remove("SpellIcon." + talentMouseDown.Row.ToString() + "." + talentMouseDown.Col.ToString());
                             }
                             talentMouseDown.Row = j;
                             talentMouseDown.Col = i;
@@ -418,16 +324,15 @@ namespace World_Editor.TalentsEditor
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
 
-            if (images.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()))
+            if (icons.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()) && t.Row != Misc.ParseToUInt(txtRow.Text))
             {
-                if (images.ContainsKey("SpellIcon." + Misc.ParseToUInt(txtRow.Text).ToString() + "." + t.Col.ToString()))
-                    images["SpellIcon." + Misc.ParseToUInt(txtRow.Text).ToString() + "." + t.Col.ToString()]
-                        = images["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()];
+                if (icons.ContainsKey("SpellIcon." + Misc.ParseToUInt(txtRow.Text).ToString() + "." + t.Col.ToString()))
+                    icons["SpellIcon." + Misc.ParseToUInt(txtRow.Text).ToString() + "." + t.Col.ToString()]
+                        = icons["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()];
                 else
-                    images.Add("SpellIcon." + Misc.ParseToUInt(txtRow.Text).ToString() + "." + t.Col.ToString(), 
-                        images["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()]);
-                if (t.Row != Misc.ParseToUInt(txtRow.Text))
-                    images.Remove("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString());
+                    icons.Add("SpellIcon." + Misc.ParseToUInt(txtRow.Text).ToString() + "." + t.Col.ToString(),
+                        icons["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()]);
+                icons.Remove("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString());
             }
 
             t.Row = Misc.ParseToUInt(txtRow.Text);
@@ -443,16 +348,15 @@ namespace World_Editor.TalentsEditor
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
 
-            if (images.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()))
+            if (icons.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()) && t.Col != Misc.ParseToUInt(txtCol.Text))
             {
-                if (images.ContainsKey("SpellIcon." + t.Row.ToString() + "." + Misc.ParseToUInt(txtCol.Text).ToString()))
-                    images["SpellIcon." + t.Row.ToString() + "." + Misc.ParseToUInt(txtCol.Text).ToString()]
-                        = images["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()];
+                if (icons.ContainsKey("SpellIcon." + t.Row.ToString() + "." + Misc.ParseToUInt(txtCol.Text).ToString()))
+                    icons["SpellIcon." + t.Row.ToString() + "." + Misc.ParseToUInt(txtCol.Text).ToString()]
+                        = icons["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()];
                 else
-                    images.Add("SpellIcon." + t.Row.ToString() + "." + Misc.ParseToUInt(txtCol.Text).ToString(),
-                        images["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()]);
-                if (t.Col != Misc.ParseToUInt(txtCol.Text))
-                    images.Remove("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString());
+                    icons.Add("SpellIcon." + t.Row.ToString() + "." + Misc.ParseToUInt(txtCol.Text).ToString(),
+                        icons["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()]);
+                icons.Remove("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString());
             }
 
             t.Col = Misc.ParseToUInt(txtCol.Text);
@@ -468,6 +372,19 @@ namespace World_Editor.TalentsEditor
 
             TalentEntry t = (TalentEntry)listTalents.SelectedItem;
             t.RankId[0] = Misc.ParseToUInt(txtSpell0.Text);
+
+            if (icons.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()))
+                icons.Remove("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString());
+
+            if (DBCStores.Spell.ContainsKey(t.RankId[0]) &&
+                    DBCStores.SpellIcon.ContainsKey(DBCStores.Spell[t.RankId[0]].SpellIconID) &&
+                    Stormlib.MPQFile.Exists(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"))
+            {
+                Blp2 blpFile = Blp2.FromStream(new Stormlib.MPQFile(DBCStores.SpellIcon[DBCStores.Spell[t.RankId[0]].SpellIconID].IconPath + ".blp"));
+                icons.Add("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString(), ResizeBitmap(blpFile, 40, 40));
+            }
+
+            LoadTalentTab();
         }
 
         private void txtSpell1_TextChanged(object sender, EventArgs e)
@@ -561,6 +478,115 @@ namespace World_Editor.TalentsEditor
             m_talentsEditor = null;
         }
 
-        
+        private void panelIn_Paint(object sender, PaintEventArgs e)
+        {
+            int start = System.Environment.TickCount;
+            Bitmap _bitmapTemp = new Bitmap(panelIn.Width, panelIn.Height);
+
+            using (Graphics g = Graphics.FromImage(_bitmapTemp))
+            {
+                g.DrawImageUnscaled(images["TalentBack"], 0, talentTabScroll.Value);
+
+                foreach (TalentEntry t in listTalents.Items)
+                {
+                    if (icons.ContainsKey("SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()))
+                        g.DrawImageUnscaled(icons["SpellIcon." + t.Row.ToString() + "." + t.Col.ToString()], 35 + 64 * (int)t.Col, 20 + 60 * (int)t.Row);
+                    else
+                        g.DrawImageUnscaled(images["SpellIconDefault"], 35 + 64 * (int)t.Col, 20 + 60 * (int)t.Row);
+
+                    g.DrawImageUnscaled(images["TalentRankBorder"], 24 + 35 + 64 * (int)t.Col, 26 + 20 + 60 * (int)t.Row);
+                    g.DrawString(TalentRanks(t).ToString(), new Font("Arial", 8.0f, FontStyle.Regular, GraphicsUnit.Point), Brushes.White, (float)(35 + 35 + 64 * (int)t.Col), (float)(35 + 20 + 60 * (int)t.Row));
+                    g.DrawImageUnscaled(images["TalentRankBorder"], 26 + 35 + 64 * (int)t.Col, 6 + 60 * (int)t.Row);
+                    g.DrawString("X", new Font("Arial", 8.0f, FontStyle.Bold, GraphicsUnit.Point), Brushes.White, (float)(36 + 35 + 64 * (int)t.Col), (float)(20 - 5 + 60 * (int)t.Row));
+
+                    if (!DBCStores.Talent.ContainsKey(t.ReqTalent[0]))
+                        continue;
+
+                    TalentEntry reqTalent = DBCStores.Talent[t.ReqTalent[0]];
+
+                    long diffRow = (int)reqTalent.Row - t.Row;
+                    long diffCol = (int)reqTalent.Col - t.Col;
+
+                    // Talent 1 case au dessus
+                    if ((diffRow == -1) && (diffCol == 0))
+                    {
+                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 39 + 64 * (int)t.Col, 8 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarHLittle"], 38 + 64 * (int)t.Col, 1 + 60 * (int)t.Row);
+                    }
+                    // Talent 1 case à droite
+                    else if ((diffRow == 0) && (diffCol == 1))
+                    {
+                        g.DrawImageUnscaled(images["TalentArrowsLeft"], 55 + 64 * (int)t.Col, 24 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarVLittle"], 73 + 64 * (int)t.Col, 25 + 60 * (int)t.Row);
+                    }
+                    // Talent 1 case à gauche
+                    else if ((diffRow == 0) && (diffCol == -1))
+                    {
+                        g.DrawImageUnscaled(images["TalentArrowsRight"], 23 + 64 * (int)t.Col, 24 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarVLittle"], 8 + 64 * (int)t.Col, 24 + 60 * (int)t.Row);
+                    }
+                    // Talent 2 cases au dessus
+                    else if ((diffRow == -2) && (diffCol == 0))
+                    {
+                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 20 - 16 + 35 + 64 * (int)t.Col, 20 - 12 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarH"], 20 - 16 - 1 + 35 + 64 * (int)t.Col, 20 - 12 - 18 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarH"], 20 - 16 - 1 + 35 + 64 * (int)t.Col, 20 - 12 - 18 - 32 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarHLittle"], 20 - 16 - 1 + 35 + 64 * (int)t.Col, 20 - 12 - 4 - 64 + 60 * (int)t.Row);
+                    }
+                    // Talent 1 case en haut à droite
+                    else if ((diffRow == -1) && (diffCol == 1))
+                    {
+                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 39 + 64 * (int)t.Col, 8 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -10 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarCR"], 43 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarV"], 66 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
+                    }
+                    // Talent 1 case en haut à gauche
+                    else if ((diffRow == -1) && (diffCol == -1))
+                    {
+                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 39 + 64 * (int)t.Col, 8 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -10 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarCL"], 35 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarV"], 10 + 64 * (int)t.Col, -35 + 60 * (int)t.Row);
+                    }
+                    // Talent 3 cases au dessus
+                    else if ((diffRow == -3) && (diffCol == 0))
+                    {
+                        g.DrawImageUnscaled(images["TalentArrowsBottom"], 39 + 64 * (int)t.Col, 8 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -10 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -42 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -74 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarH"], 38 + 64 * (int)t.Col, -106 + 60 * (int)t.Row);
+                        g.DrawImageUnscaled(images["TalentBarHLittle"], 38 + 64 * (int)t.Col, -120 + 60 * (int)t.Row);
+                    }
+                }
+
+                foreach (TalentEntry t in listTalents.Items)
+                {
+                    Brush brush = Brushes.White;
+                    if (listTalents.SelectedItem == t)
+                        brush = Brushes.Gold;
+
+                    float x = 43 + 64 * (int)t.Col;
+                    float y = 55 + 60 * (int)t.Row;
+
+                    if (t.Id > 999)
+                        x -= 9;
+                    else if (t.Id > 99)
+                        x -= 6;
+                    else if (t.Id > 9)
+                        x -= 3;
+
+                    g.DrawImageUnscaled(images["TalentIdBorder"], 15 + 64 * (int)t.Col, 45 + 60 * (int)t.Row);
+                    g.DrawString(t.Id.ToString(), new Font("Arial", 7.5f, FontStyle.Regular, GraphicsUnit.Point), brush, x, y);
+                }
+            }
+
+            this.g.DrawImage(_bitmapTemp, 0, 0);
+            _bitmapTemp.Dispose();
+            _bitmapTemp = null;
+            int end = System.Environment.TickCount;
+            lblRenderTime.Text = (end - start).ToString() + " ms";
+        }
     }
 }

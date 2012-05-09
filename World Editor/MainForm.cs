@@ -211,6 +211,10 @@ namespace World_Editor
             menuProfessionsEditor.Enabled = value;
             menuTitlesEditor.Enabled = value;
 
+            toolTalentsEditor.Enabled = value;
+            toolFactionsEditor.Enabled = value;
+            toolTitlesEditor.Enabled = value;
+
             if (all)
             {
                 menuProjectsEditor.Enabled = false;

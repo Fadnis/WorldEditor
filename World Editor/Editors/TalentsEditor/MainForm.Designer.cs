@@ -67,6 +67,7 @@
             this.talentTabScroll = new System.Windows.Forms.VScrollBar();
             this.panelOut = new System.Windows.Forms.Panel();
             this.panelIn = new System.Windows.Forms.Panel();
+            this.lblRenderTime = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -475,14 +476,25 @@
             this.panelIn.Name = "panelIn";
             this.panelIn.Size = new System.Drawing.Size(300, 700);
             this.panelIn.TabIndex = 0;
+            this.panelIn.Paint += new System.Windows.Forms.PaintEventHandler(this.panelIn_Paint);
             this.panelIn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelIn_MouseDown);
             this.panelIn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelIn_MouseUp);
+            // 
+            // lblRenderTime
+            // 
+            this.lblRenderTime.AutoSize = true;
+            this.lblRenderTime.Location = new System.Drawing.Point(17, 358);
+            this.lblRenderTime.Name = "lblRenderTime";
+            this.lblRenderTime.Size = new System.Drawing.Size(75, 13);
+            this.lblRenderTime.TabIndex = 24;
+            this.lblRenderTime.Text = "lblRenderTime";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 386);
+            this.Controls.Add(this.lblRenderTime);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -501,6 +513,7 @@
             this.groupBox1.ResumeLayout(false);
             this.panelOut.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -545,5 +558,6 @@
         private System.Windows.Forms.VScrollBar talentTabScroll;
         private System.Windows.Forms.Panel panelOut;
         private System.Windows.Forms.Panel panelIn;
+        private System.Windows.Forms.Label lblRenderTime;
     }
 }
