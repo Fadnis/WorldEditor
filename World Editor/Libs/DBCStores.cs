@@ -10,9 +10,9 @@ namespace World_Editor.DBC
     public static class DBCStores
     {
         #region Déclarations des DBCs
-        //public static DBCFile<AchievementEntry> Achievement { get; private set; }
-        //public static DBCFile<AchievementCategoryEntry> AchievementCategory { get; private set; }
-        //public static DBCFile<AchievementCriteriaEntry> AchievementCriteria { get; private set; }
+        public static DBCFile<AchievementEntry> Achievement { get; private set; }
+        public static DBCFile<AchievementCategoryEntry> AchievementCategory { get; private set; }
+        public static DBCFile<AchievementCriteriaEntry> AchievementCriteria { get; private set; }
         //public static DBCFile<AnimationDataEntry> AnimationData { get; private set; }
         //public static DBCFile<AreaGroupEntry> AreaGroup { get; private set; }
         //public static DBCFile<AreaPOIEntry> AreaPOI { get; private set; }
@@ -138,7 +138,7 @@ namespace World_Editor.DBC
         //public static DBCFile<LockEntry> Lock { get; private set; }
         //public static DBCFile<LockTypeEntry> LockType { get; private set; }
         //public static DBCFile<MailTemplateEntry> MailTemplate { get; private set; }
-        //public static DBCFile<MapEntry> Map { get; private set; }
+        public static DBCFile<MapEntry> Map { get; private set; }
         //public static DBCFile<MapDifficultyEntry> MapDifficulty { get; private set; }
         //public static DBCFile<MaterialEntry> Material { get; private set; }
         //public static DBCFile<MovieEntry> Movie { get; private set; }
@@ -263,9 +263,9 @@ namespace World_Editor.DBC
             string DbcFolder = Utils.ProjectManager.ProjectDirectory + "\\dbc\\";
 
             #region Initialisation des DBCs
-            //Achievement = new DBCFile<AchievementEntry>(DbcFolder + "Achievement.dbc");
-            //AchievementCategory = new DBCFile<AchievementCategoryEntry>(DbcFolder + "Achievement_Category.dbc");
-            //AchievementCriteria = new DBCFile<AchievementCriteriaEntry>(DbcFolder + "Achievement_Criteria.dbc");
+            Achievement = new DBCFile<AchievementEntry>(DbcFolder + "Achievement.dbc");
+            AchievementCategory = new DBCFile<AchievementCategoryEntry>(DbcFolder + "Achievement_Category.dbc");
+            AchievementCriteria = new DBCFile<AchievementCriteriaEntry>(DbcFolder + "Achievement_Criteria.dbc");
             //AnimationData = new DBCFile<AnimationDataEntry>(DbcFolder + "AnimationData.dbc");
             //AreaGroup = new DBCFile<AreaGroupEntry>(DbcFolder + "AreaGroup.dbc");
             //AreaPOI = new DBCFile<AreaPOIEntry>(DbcFolder + "AreaPOI.dbc");
@@ -391,7 +391,7 @@ namespace World_Editor.DBC
             //Lock = new DBCFile<LockEntry>(DbcFolder + "Lock.dbc");
             //LockType = new DBCFile<LockTypeEntry>(DbcFolder + "LockType.dbc");
             //MailTemplate = new DBCFile<MailTemplateEntry>(DbcFolder + "MailTemplate.dbc");
-            //Map = new DBCFile<MapEntry>(DbcFolder + "Map.dbc");
+            Map = new DBCFile<MapEntry>(DbcFolder + "Map.dbc");
             //MapDifficulty = new DBCFile<MapDifficultyEntry>(DbcFolder + "MapDifficulty.dbc");
             //Material = new DBCFile<MaterialEntry>(DbcFolder + "Material.dbc");
             //Movie = new DBCFile<MovieEntry>(DbcFolder + "Movie.dbc");
@@ -573,6 +573,22 @@ namespace World_Editor.DBC
         {
             Talent.SaveDBC();
             TalentTab.SaveDBC();
+        }
+
+        public static void LoadAchievementsEditor()
+        {
+            Achievement.LoadData();
+            AchievementCategory.LoadData();
+            AchievementCriteria.LoadData();
+            Map.LoadData();
+            SpellIcon.LoadData();
+        }
+
+        public static void SaveAchievementsEditor()
+        {
+            Achievement.SaveDBC();
+            AchievementCategory.SaveDBC();
+            AchievementCriteria.SaveDBC();
         }
     }
 }

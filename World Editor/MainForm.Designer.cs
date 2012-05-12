@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listProjects = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnValidateProject = new System.Windows.Forms.Button();
             this.lblInfos = new System.Windows.Forms.Label();
             this.topMenu = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,48 +35,23 @@
             this.editeursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTalentsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFactionsEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAchievementsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProfessionsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTitlesEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProjectsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.btnValidateProject = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listProjects = new System.Windows.Forms.ComboBox();
             this.toolTalentsEditor = new System.Windows.Forms.ToolStripButton();
             this.toolFactionsEditor = new System.Windows.Forms.ToolStripButton();
             this.toolTitlesEditor = new System.Windows.Forms.ToolStripButton();
+            this.toolAchievementsEditor = new System.Windows.Forms.ToolStripButton();
+            this.toolProfessionsEditor = new System.Windows.Forms.ToolStripButton();
             this.topMenu.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listProjects
-            // 
-            this.listProjects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.listProjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listProjects.FormattingEnabled = true;
-            this.listProjects.Location = new System.Drawing.Point(739, 1);
-            this.listProjects.Name = "listProjects";
-            this.listProjects.Size = new System.Drawing.Size(180, 21);
-            this.listProjects.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(647, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Projet de travail :";
-            // 
-            // btnValidateProject
-            // 
-            this.btnValidateProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnValidateProject.Location = new System.Drawing.Point(925, 1);
-            this.btnValidateProject.Name = "btnValidateProject";
-            this.btnValidateProject.Size = new System.Drawing.Size(71, 21);
-            this.btnValidateProject.TabIndex = 4;
-            this.btnValidateProject.Text = "Valider";
-            this.btnValidateProject.UseVisualStyleBackColor = true;
-            this.btnValidateProject.Click += new System.EventHandler(this.btnValidateProject_Click);
             // 
             // lblInfos
             // 
@@ -125,6 +97,7 @@
             this.editeursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuTalentsEditor,
             this.menuFactionsEditor,
+            this.menuAchievementsEditor,
             this.menuProfessionsEditor,
             this.menuTitlesEditor});
             this.editeursToolStripMenuItem.Name = "editeursToolStripMenuItem";
@@ -144,6 +117,13 @@
             this.menuFactionsEditor.Size = new System.Drawing.Size(210, 22);
             this.menuFactionsEditor.Text = "Editeur de factions";
             this.menuFactionsEditor.Click += new System.EventHandler(this.menuFactionsEditor_Click);
+            // 
+            // menuAchievementsEditor
+            // 
+            this.menuAchievementsEditor.Name = "menuAchievementsEditor";
+            this.menuAchievementsEditor.Size = new System.Drawing.Size(210, 22);
+            this.menuAchievementsEditor.Text = "Editeur de haut-faits";
+            this.menuAchievementsEditor.Click += new System.EventHandler(this.menuAchievementsEditor_Click);
             // 
             // menuProfessionsEditor
             // 
@@ -179,12 +159,45 @@
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolTalentsEditor,
             this.toolFactionsEditor,
-            this.toolTitlesEditor});
+            this.toolTitlesEditor,
+            this.toolProfessionsEditor,
+            this.toolAchievementsEditor});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(1008, 25);
             this.toolStrip.TabIndex = 14;
             this.toolStrip.Text = "toolStrip1";
+            // 
+            // btnValidateProject
+            // 
+            this.btnValidateProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnValidateProject.Location = new System.Drawing.Point(925, 27);
+            this.btnValidateProject.Name = "btnValidateProject";
+            this.btnValidateProject.Size = new System.Drawing.Size(71, 21);
+            this.btnValidateProject.TabIndex = 16;
+            this.btnValidateProject.Text = "Valider";
+            this.btnValidateProject.UseVisualStyleBackColor = true;
+            this.btnValidateProject.Click += new System.EventHandler(this.btnValidateProject_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(647, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Projet de travail :";
+            // 
+            // listProjects
+            // 
+            this.listProjects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.listProjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listProjects.FormattingEnabled = true;
+            this.listProjects.Location = new System.Drawing.Point(739, 27);
+            this.listProjects.Name = "listProjects";
+            this.listProjects.Size = new System.Drawing.Size(180, 21);
+            this.listProjects.TabIndex = 18;
             // 
             // toolTalentsEditor
             // 
@@ -219,16 +232,38 @@
             this.toolTitlesEditor.ToolTipText = "Editeur de titres";
             this.toolTitlesEditor.Click += new System.EventHandler(this.menuTitlesEditor_Click);
             // 
+            // toolAchievementsEditor
+            // 
+            this.toolAchievementsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolAchievementsEditor.Enabled = false;
+            this.toolAchievementsEditor.Image = global::World_Editor.Properties.Resources.icon_achievements;
+            this.toolAchievementsEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAchievementsEditor.Name = "toolAchievementsEditor";
+            this.toolAchievementsEditor.Size = new System.Drawing.Size(23, 22);
+            this.toolAchievementsEditor.ToolTipText = "Editeur de haut-faits";
+            this.toolAchievementsEditor.Click += new System.EventHandler(this.menuAchievementsEditor_Click);
+            // 
+            // toolProfessionsEditor
+            // 
+            this.toolProfessionsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolProfessionsEditor.Enabled = false;
+            this.toolProfessionsEditor.Image = global::World_Editor.Properties.Resources.icon_professions;
+            this.toolProfessionsEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolProfessionsEditor.Name = "toolProfessionsEditor";
+            this.toolProfessionsEditor.Size = new System.Drawing.Size(23, 22);
+            this.toolProfessionsEditor.ToolTipText = "Editeur de métiers";
+            this.toolProfessionsEditor.Click += new System.EventHandler(this.menuProfessionsEditor_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 734);
+            this.Controls.Add(this.listProjects);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnValidateProject);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.lblInfos);
-            this.Controls.Add(this.btnValidateProject);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.listProjects);
             this.Controls.Add(this.topMenu);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.topMenu;
@@ -247,9 +282,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox listProjects;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnValidateProject;
         private System.Windows.Forms.Label lblInfos;
         private System.Windows.Forms.MenuStrip topMenu;
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
@@ -265,6 +297,12 @@
         private System.Windows.Forms.ToolStripButton toolTalentsEditor;
         private System.Windows.Forms.ToolStripButton toolFactionsEditor;
         private System.Windows.Forms.ToolStripButton toolTitlesEditor;
+        private System.Windows.Forms.ToolStripMenuItem menuAchievementsEditor;
+        private System.Windows.Forms.Button btnValidateProject;
+        private System.Windows.Forms.ToolStripButton toolAchievementsEditor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox listProjects;
+        private System.Windows.Forms.ToolStripButton toolProfessionsEditor;
     }
 }
 

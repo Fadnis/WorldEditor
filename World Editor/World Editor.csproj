@@ -77,6 +77,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editors\AchievementsEditor\Criterias.cs" />
+    <Compile Include="Editors\AchievementsEditor\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\AchievementsEditor\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\TitlesEditor\TitlesEditorLocal.fr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -186,6 +193,9 @@
     <EmbeddedResource Include="Dialogs\SpellIconDialog.resx">
       <DependentUpon>SpellIconDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editors\AchievementsEditor\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editors\FactionsEditor\Dialogs\FactionGroupsEditor.resx">
       <DependentUpon>FactionGroupsEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +273,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.titles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.achievements.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.professions.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

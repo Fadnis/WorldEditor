@@ -60,9 +60,23 @@ namespace World_Editor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icon_achievements {
+            get {
+                object obj = ResourceManager.GetObject("icon_achievements", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icon_factions {
             get {
                 object obj = ResourceManager.GetObject("icon_factions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icon_professions {
+            get {
+                object obj = ResourceManager.GetObject("icon_professions", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

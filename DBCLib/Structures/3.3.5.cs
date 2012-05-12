@@ -8,8 +8,8 @@ namespace DBCLib.Structures335
     public class AchievementEntry
     {
         public uint Id;                             // 0
-        public uint FactionFlag;                    // 1 -1=all, 0=horde, 1=alliance
-        public uint MapId;                          // 2 -1=none / Only set if achievement is related to a zone
+        public int FactionFlag;                     // 1 -1=all, 0=horde, 1=alliance
+        public int MapId;                           // 2 -1=none / Only set if achievement is related to a zone
         public uint ParentAchievement;              // 3 its Achievement parent (can`t start while parent uncomplete, use its Criteria if don`t have own, use its progress on begin)
         [Localized]
         public string Name;                         // 4-20
@@ -34,7 +34,7 @@ namespace DBCLib.Structures335
     public class AchievementCategoryEntry
     {
         public uint Id;                             // 0
-        public uint ParentCategory;                 // 1 -1 for main category
+        public int ParentCategory;                  // 1 -1 for main category
         [Localized]
         public string Name;                         // 2-18
         public uint SortOrder;                      // 19
