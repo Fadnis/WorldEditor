@@ -58,6 +58,9 @@ namespace DBCLib
             bw.Write(fieldCount * 4);
             bw.Write(0);
 
+            // Ajout d'une string vide afin d'obtenir un format blizzlike
+            AddStringToTable("");
+
             foreach (var rec in file.Records)
             {
                 foreach (var field in fields)
@@ -95,8 +98,11 @@ namespace DBCLib
                                     }
 
                                     bw.Write(pos);
-                                    for (uint j = file.LocalePosition + 1; j < 17; ++j)
+                                    for (uint j = file.LocalePosition + 1; j < 16; ++j)
                                         bw.Write((int)0);
+
+                                    // 17ème champ de localisation
+                                    bw.Write((uint)file.LocaleFlag);
                                 }
                                 break;
                             }

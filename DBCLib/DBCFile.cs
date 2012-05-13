@@ -124,7 +124,7 @@ namespace DBCLib
                                 else
                                 {
                                     string strValue = "";
-                                    for (uint j = 0; j < 17; ++j)
+                                    for (uint j = 0; j < 16; ++j)
                                     {
                                         int offset = mReader.ReadInt32();
                                         if (strValue == "" && offset != 0 && stringTable.ContainsKey(offset))
@@ -133,6 +133,9 @@ namespace DBCLib
                                             LocalePosition = j;
                                         }
                                     }
+
+                                    // Flag de localisation, utile du côté client ?
+                                    LocaleFlag = mReader.ReadUInt32();
 
                                     field.SetValue(t, strValue);
                                 }
@@ -266,6 +269,7 @@ namespace DBCLib
         public Dictionary<uint, T>.ValueCollection Records { get { return mRecords.Values; } }
         public string FileName { get; private set; }
         public uint LocalePosition { get; private set; }
+        public uint LocaleFlag { get; private set; }
         private bool IsLoaded = false;
         private bool IsEdited = false;
     }
