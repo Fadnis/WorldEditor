@@ -266,6 +266,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon.achievements.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.professions.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\icon.factions.png" />
   </ItemGroup>
   <ItemGroup>
@@ -273,12 +279,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.titles.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.achievements.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.professions.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

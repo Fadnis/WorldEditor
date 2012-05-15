@@ -19,6 +19,46 @@ namespace World_Editor.AchievementsEditor
         private Graphics g;
         private Dictionary<string, Bitmap> images = new Dictionary<string, Bitmap>();
 
+        #region Enums
+
+        enum AchievementFlags
+        {
+            FLAG_STATISTIC              = 1,    // Just count statistic (never stop and complete)
+            FLAG_HIDDEN                 = 2,
+            FLAG_HIDDEN_TILL_AWARDED    = 4,    // Store only max value? used only in "Reach level xx"
+            FLAG_CUMULATIVE             = 8,    // Use summ criteria value from all requirements (and calculate max value)
+            FLAG_DISPLAY_HIGHEST        = 16,   // Show max criteria (and calculate max value ??)
+            FLAG_CRITERIA_COUNT         = 32,   // Use not zero req count (and calculate max value)
+            FLAG_AVG_PER_DAY            = 64,   // Show as average value (value / time_in_days) depend from other flag (by def use last criteria value)
+            FLAG_HAS_PROGRESS_BAR       = 128,  // Show as progress bar (value / max vale) depend from other flag (by def use last criteria value)
+            FLAG_REALM_FIRST_REACH      = 256,
+            FLAG_REALM_FIRST_KILL       = 512,
+        }
+
+        // /!\ Flags non cumulables
+        enum AchievementCriteriaFlags
+        {
+            CONDITION_NO_DEATH          = 1,
+            CONDITION_UNK1              = 2,    // only used in "Complete a daily quest every day for five consecutive days"
+            CONDITION_MAP               = 3,    // requires you to be on specific map
+            CONDITION_NO_LOOSE          = 4,    // only used in "Win 10 arenas without losing"
+            CONDITION_UNK2              = 9,    // unk
+            CONDITION_UNK3              = 13,   // unk
+        }
+
+        enum AchievementCriteriaCompletionFlags
+        {
+            FLAG_PROGRESS_BAR           = 1,    // Show progress as bar
+            FLAG_HIDDEN                 = 2,    // Not show criteria in client
+            FLAG_FAIL_ACHIEVEMENT       = 4,    // BG related??
+            FLAG_RESET_ON_START         = 8,    //
+            FLAG_IS_DATE                = 16,   // not used
+            FLAG_IS_MONEY               = 32,   // Displays counter as money
+            FLAG_IS_ACHIEVEMENT_ID      = 64,
+        }
+
+        #endregion
+
         public MainForm()
         {
             InitializeComponent();
@@ -268,7 +308,7 @@ namespace World_Editor.AchievementsEditor
 
             DBCStores.AchievementCategory[Misc.ParseToUInt(txtCatId.Text)].Name = txtCatName.Text;
 
-            //treeAchievements.Nodes.Find("c" + txtCatId.Text, true).First().Text = txtCatName.Text;
+            treeAchievements.Nodes.Find("c" + txtCatId.Text, true).First().Text = txtCatName.Text;
         }
 
         private void txtCatOrder_TextChanged(object sender, EventArgs e)

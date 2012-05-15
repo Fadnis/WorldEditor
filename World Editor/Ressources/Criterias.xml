@@ -40,6 +40,7 @@
   <Criteria Id="16" Name="DEATH_AT_MAP">
     <ReqType0>mapID</ReqType0>
   </Criteria>
+  <Criteria Id="17" Name="DEATH" />
   <Criteria Id="18" Name="DEATH_IN_DUNGEON">
     <ReqType0>manLimit</ReqType0>
   </Criteria>
@@ -49,6 +50,7 @@
   <Criteria Id="20" Name="KILLED_BY_CREATURE">
     <ReqType0>creatureEntry</ReqType0>
   </Criteria>
+  <Criteria Id="23" Name="KILLED_BY_PLAYER" />
   <Criteria Id="24" Name="FALL_WITHOUT_DYING">
     <ReqValue0>fallHeight</ReqValue0>
   </Criteria>
@@ -84,6 +86,7 @@
   <Criteria Id="34" Name="LEARN_SPELL">
     <ReqType0>spellID</ReqType0>
   </Criteria>
+  <Criteria Id="35" Name="HONORABLE_KILL" />
   <Criteria Id="36" Name="OWN_ITEM">
     <ReqType0>itemID</ReqType0>
     <ReqValue0>itemCount</ReqValue0>
@@ -166,10 +169,15 @@
     <ReqType0>itemID</ReqType0>
     <ReqValue0>count</ReqValue0>
   </Criteria>
-  <Criteria Id="59" Name="UNK" />
+  <Criteria Id="59" Name="MONEY_FROM_VENDORS" />
+  <Criteria Id="60" Name="GOLD_SPENT_FOR_TALENTS" />
+  <Criteria Id="61" Name="NUMBER_OF_TALENT_RESETS" />
   <Criteria Id="62" Name="MONEY_FROM_QUEST_REWARD">
     <ReqValue0>goldInCopper</ReqValue0>
   </Criteria>
+  <Criteria Id="63" Name="GOLD_SPENT_FOR_TRAVELLING" />
+  <Criteria Id="65" Name="GOLD_SPENT_AT_BARBER" />
+  <Criteria Id="66" Name="GOLD_SPENT_FOR_MAIL" />
   <Criteria Id="67" Name="LOOT_MONEY">
     <ReqValue0>goldInCopper</ReqValue0>
   </Criteria>
@@ -188,7 +196,7 @@
     <ReqType0>goEntry</ReqType0>
     <ReqValue0>lootCount</ReqValue0>
   </Criteria>
-  <Criteria Id="74" Name="UNK" />
+  <Criteria Id="74" Name="ON_LOGIN" />
   <Criteria Id="75" Name="LEARN_SKILLLINE_SPELLS">
     <ReqType0>skillLine</ReqType0>
     <ReqValue0>spellCount</ReqValue0>
@@ -196,6 +204,22 @@
   <Criteria Id="76" Name="WIN_DUEL">
     <ReqValue0>duelCount</ReqValue0>
   </Criteria>
+  <Criteria Id="77" Name="LOSE_DUEL" />
+  <Criteria Id="78" Name="KILL_CREATURE_TYPE" />
+  <Criteria Id="80" Name="GOLD_EARNED_BY_AUCTIONS" />
+  <Criteria Id="82" Name="CREATE_AUCTION" />
+  <Criteria Id="83" Name="HIGHEST_AUCTION_BID" />
+  <Criteria Id="84" Name="WON_AUCTIONS" />
+  <Criteria Id="85" Name="HIGHEST_AUCTION_SOLD" />
+  <Criteria Id="86" Name="HIGHEST_GOLD_VALUE_OWNED" />
+  <Criteria Id="87" Name="GAIN_REVERED_REPUTATION" />
+  <Criteria Id="88" Name="GAIN_HONORED_REPUTATION" />
+  <Criteria Id="89" Name="KNOWN_FACTIONS" />
+  <Criteria Id="90" Name="LOOT_EPIC_ITEM" />
+  <Criteria Id="91" Name="RECEIVE_EPIC_ITEM" />
+  <Criteria Id="93" Name="ROLL_NEED" />
+  <Criteria Id="94" Name="ROLL_GREED" />
+  <Criteria Id="95" Name="HIGHEST_HEALTH" />
   <Criteria Id="96" Name="HIGHEST_POWER">
     <ReqType0>powerType</ReqType0>
   </Criteria>
@@ -205,9 +229,18 @@
   <Criteria Id="98" Name="HIGHEST_SPELLPOWER">
     <ReqType0>spellSchool</ReqType0>
   </Criteria>
+  <Criteria Id="99" Name="HIGHEST_ARMOR" />
   <Criteria Id="100" Name="HIGHEST_RATING">
     <ReqType0>ratingType</ReqType0>
   </Criteria>
+  <Criteria Id="101" Name="HIGHEST_HIT_DEALT" />
+  <Criteria Id="102" Name="HIGHEST_HIT_RECEIVED" />
+  <Criteria Id="103" Name="TOTAL_DAMAGE_RECEIVED" />
+  <Criteria Id="104" Name="HIGHEST_HEAL_CASTED" />
+  <Criteria Id="105" Name="TOTAL_HEALING_RECEIVED" />
+  <Criteria Id="106" Name="HIGHEST_HEALING_RECEIVED" />
+  <Criteria Id="107" Name="QUEST_ABANDONED" />
+  <Criteria Id="108" Name="FLIGHT_PATHS_TAKEN" />
   <Criteria Id="109" Name="LOOT_TYPE">
     <ReqType0>lootType</ReqType0>
     <ReqValue0>lootTypeCount</ReqValue0>
