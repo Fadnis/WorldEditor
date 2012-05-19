@@ -501,6 +501,7 @@
             this.Controls.Add(this.talentTabScroll);
             this.Controls.Add(this.panelOut);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Editeur d\'abres de talents";

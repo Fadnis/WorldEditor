@@ -102,19 +102,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageCategory = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblCatParentId = new System.Windows.Forms.Label();
+            this.txtCatOrder = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtCatName = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtCatParentId = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtCatId = new System.Windows.Forms.TextBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtCatId = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txtCatParentId = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtCatName = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtCatOrder = new System.Windows.Forms.TextBox();
-            this.lblCatParentId = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabAchievement.SuspendLayout();
             this.tabPageAchievement.SuspendLayout();
             this.groupBoxCriterias.SuspendLayout();
@@ -610,6 +610,7 @@
             this.btnIcon.TabIndex = 28;
             this.btnIcon.Text = "+";
             this.btnIcon.UseVisualStyleBackColor = true;
+            this.btnIcon.Click += new System.EventHandler(this.btnIcon_Click);
             // 
             // btnFlags
             // 
@@ -619,6 +620,7 @@
             this.btnFlags.TabIndex = 27;
             this.btnFlags.Text = "+";
             this.btnFlags.UseVisualStyleBackColor = true;
+            this.btnFlags.Click += new System.EventHandler(this.btnFlags_Click);
             // 
             // txtParentAchievement
             // 
@@ -844,6 +846,112 @@
             this.tabPageCategory.Text = "Category";
             this.tabPageCategory.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.lblCatParentId);
+            this.groupBox1.Controls.Add(this.txtCatOrder);
+            this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Controls.Add(this.txtCatName);
+            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.txtCatParentId);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Controls.Add(this.label25);
+            this.groupBox1.Controls.Add(this.txtCatId);
+            this.groupBox1.Location = new System.Drawing.Point(82, 17);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(315, 130);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(115, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(22, 22);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "↩";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnReconstructTree_Click);
+            // 
+            // lblCatParentId
+            // 
+            this.lblCatParentId.Location = new System.Drawing.Point(143, 45);
+            this.lblCatParentId.Name = "lblCatParentId";
+            this.lblCatParentId.Size = new System.Drawing.Size(166, 20);
+            this.lblCatParentId.TabIndex = 8;
+            this.lblCatParentId.Text = "lblCatParentId";
+            this.lblCatParentId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtCatOrder
+            // 
+            this.txtCatOrder.Location = new System.Drawing.Point(59, 97);
+            this.txtCatOrder.Name = "txtCatOrder";
+            this.txtCatOrder.Size = new System.Drawing.Size(50, 20);
+            this.txtCatOrder.TabIndex = 7;
+            this.txtCatOrder.TextChanged += new System.EventHandler(this.txtCatOrder_TextChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(20, 100);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(33, 13);
+            this.label27.TabIndex = 6;
+            this.label27.Text = "Order";
+            // 
+            // txtCatName
+            // 
+            this.txtCatName.Location = new System.Drawing.Point(59, 71);
+            this.txtCatName.Name = "txtCatName";
+            this.txtCatName.Size = new System.Drawing.Size(250, 20);
+            this.txtCatName.TabIndex = 5;
+            this.txtCatName.TextChanged += new System.EventHandler(this.txtCatName_TextChanged);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(18, 74);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(35, 13);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "Name";
+            // 
+            // txtCatParentId
+            // 
+            this.txtCatParentId.Location = new System.Drawing.Point(59, 45);
+            this.txtCatParentId.Name = "txtCatParentId";
+            this.txtCatParentId.Size = new System.Drawing.Size(50, 20);
+            this.txtCatParentId.TabIndex = 3;
+            this.txtCatParentId.TextChanged += new System.EventHandler(this.txtCatParentId_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(37, 22);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(16, 13);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Id";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 48);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(47, 13);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "ParentId";
+            // 
+            // txtCatId
+            // 
+            this.txtCatId.Enabled = false;
+            this.txtCatId.Location = new System.Drawing.Point(59, 19);
+            this.txtCatId.Name = "txtCatId";
+            this.txtCatId.Size = new System.Drawing.Size(50, 20);
+            this.txtCatId.TabIndex = 1;
+            // 
             // btnRemove
             // 
             this.btnRemove.Location = new System.Drawing.Point(12, 500);
@@ -864,112 +972,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(37, 22);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(16, 13);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Id";
-            // 
-            // txtCatId
-            // 
-            this.txtCatId.Enabled = false;
-            this.txtCatId.Location = new System.Drawing.Point(59, 19);
-            this.txtCatId.Name = "txtCatId";
-            this.txtCatId.Size = new System.Drawing.Size(50, 20);
-            this.txtCatId.TabIndex = 1;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 48);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(47, 13);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "ParentId";
-            // 
-            // txtCatParentId
-            // 
-            this.txtCatParentId.Location = new System.Drawing.Point(59, 45);
-            this.txtCatParentId.Name = "txtCatParentId";
-            this.txtCatParentId.Size = new System.Drawing.Size(50, 20);
-            this.txtCatParentId.TabIndex = 3;
-            this.txtCatParentId.TextChanged += new System.EventHandler(this.txtCatParentId_TextChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.lblCatParentId);
-            this.groupBox1.Controls.Add(this.txtCatOrder);
-            this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.txtCatName);
-            this.groupBox1.Controls.Add(this.label26);
-            this.groupBox1.Controls.Add(this.txtCatParentId);
-            this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.txtCatId);
-            this.groupBox1.Location = new System.Drawing.Point(82, 17);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 130);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(18, 74);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(35, 13);
-            this.label26.TabIndex = 4;
-            this.label26.Text = "Name";
-            // 
-            // txtCatName
-            // 
-            this.txtCatName.Location = new System.Drawing.Point(59, 71);
-            this.txtCatName.Name = "txtCatName";
-            this.txtCatName.Size = new System.Drawing.Size(250, 20);
-            this.txtCatName.TabIndex = 5;
-            this.txtCatName.TextChanged += new System.EventHandler(this.txtCatName_TextChanged);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(20, 100);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(33, 13);
-            this.label27.TabIndex = 6;
-            this.label27.Text = "Order";
-            // 
-            // txtCatOrder
-            // 
-            this.txtCatOrder.Location = new System.Drawing.Point(59, 97);
-            this.txtCatOrder.Name = "txtCatOrder";
-            this.txtCatOrder.Size = new System.Drawing.Size(50, 20);
-            this.txtCatOrder.TabIndex = 7;
-            this.txtCatOrder.TextChanged += new System.EventHandler(this.txtCatOrder_TextChanged);
-            // 
-            // lblCatParentId
-            // 
-            this.lblCatParentId.Location = new System.Drawing.Point(143, 45);
-            this.lblCatParentId.Name = "lblCatParentId";
-            this.lblCatParentId.Size = new System.Drawing.Size(166, 20);
-            this.lblCatParentId.TabIndex = 8;
-            this.lblCatParentId.Text = "lblCatParentId";
-            this.lblCatParentId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(115, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 22);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "↩";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnReconstructTree_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -983,6 +985,7 @@
             this.Controls.Add(this.lblTimeRender);
             this.Controls.Add(this.treeAchievements);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Achievements Editor";

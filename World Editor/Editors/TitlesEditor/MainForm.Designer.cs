@@ -114,8 +114,8 @@
             // 
             // listTitles
             // 
-            resources.ApplyResources(this.listTitles, "listTitles");
             this.listTitles.FormattingEnabled = true;
+            resources.ApplyResources(this.listTitles, "listTitles");
             this.listTitles.Name = "listTitles";
             this.listTitles.SelectedIndexChanged += new System.EventHandler(this.listTitles_SelectedIndexChanged);
             // 
@@ -137,6 +137,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listTitles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);

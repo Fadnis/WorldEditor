@@ -1659,6 +1659,7 @@
             this.ClientSize = new System.Drawing.Size(555, 427);
             this.Controls.Add(this.tabFactions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Editeur de factions";
