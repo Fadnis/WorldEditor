@@ -81,6 +81,13 @@ namespace World_Editor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icon_races {
+            get {
+                object obj = ResourceManager.GetObject("icon_races", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icon_talents {
             get {
                 object obj = ResourceManager.GetObject("icon_talents", resourceCulture);

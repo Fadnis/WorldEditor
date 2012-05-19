@@ -590,5 +590,15 @@ namespace World_Editor.DBC
             AchievementCategory.SaveDBC();
             AchievementCriteria.SaveDBC();
         }
+
+        public static void LoadRacesEditorFiles()
+        {
+            ChrRaces.LoadData();
+        }
+
+        public static void SaveRacesEditorFiles()
+        {
+            ChrRaces.SaveDBC();
+        }
     }
 }
