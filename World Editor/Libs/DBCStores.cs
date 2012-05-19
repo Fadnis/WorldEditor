@@ -600,5 +600,15 @@ namespace World_Editor.DBC
         {
             ChrRaces.SaveDBC();
         }
+
+        public static void LoadClassesEditorFiles()
+        {
+            ChrClasses.LoadData();
+        }
+
+        public static void SaveClassesEditorFiles()
+        {
+            ChrClasses.SaveDBC();
+        }
     }
 }

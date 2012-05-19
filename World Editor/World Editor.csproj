@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editors\ClassesEditor\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\ClassesEditor\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\AchievementsEditor\Criterias.cs" />
     <Compile Include="Editors\AchievementsEditor\MainForm.cs">
       <SubType>Form</SubType>
@@ -177,16 +183,19 @@
     <Compile Include="Editors\TitlesEditor\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RacesEditor\MainForm.cs">
+    <Compile Include="Editors\RacesEditor\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RacesEditor\MainForm.Designer.cs">
+    <Compile Include="Editors\RacesEditor\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Misc.cs" />
     <Compile Include="Utils\ProjectManager.cs" />
     <Compile Include="Utils\Singleton.cs" />
     <Compile Include="Utils\StreamedMpq.cs" />
+    <EmbeddedResource Include="Editors\ClassesEditor\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\FlagDialog.resx">
       <DependentUpon>FlagDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,7 +259,7 @@
     <EmbeddedResource Include="Editors\TitlesEditor\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RacesEditor\MainForm.resx">
+    <EmbeddedResource Include="Editors\RacesEditor\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
@@ -291,6 +300,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.races.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.classes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

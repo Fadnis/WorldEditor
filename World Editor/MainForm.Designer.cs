@@ -34,24 +34,26 @@
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editeursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuTalentsEditor = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuFactionsEditor = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAchievementsEditor = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuProfessionsEditor = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuRacesEditor = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuTitlesEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProjectsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.btnValidateProject = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listProjects = new System.Windows.Forms.ComboBox();
             this.toolTalentsEditor = new System.Windows.Forms.ToolStripButton();
+            this.toolClassesEditor = new System.Windows.Forms.ToolStripButton();
             this.toolFactionsEditor = new System.Windows.Forms.ToolStripButton();
             this.toolAchievementsEditor = new System.Windows.Forms.ToolStripButton();
             this.toolProfessionsEditor = new System.Windows.Forms.ToolStripButton();
             this.toolRacesEditor = new System.Windows.Forms.ToolStripButton();
             this.toolTitlesEditor = new System.Windows.Forms.ToolStripButton();
-            this.btnValidateProject = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listProjects = new System.Windows.Forms.ComboBox();
+            this.menuTalentsEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuClassesEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFactionsEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAchievementsEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuProfessionsEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRacesEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTitlesEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.topMenu.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +101,7 @@
             // 
             this.editeursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuTalentsEditor,
+            this.menuClassesEditor,
             this.menuFactionsEditor,
             this.menuAchievementsEditor,
             this.menuProfessionsEditor,
@@ -107,54 +110,6 @@
             this.editeursToolStripMenuItem.Name = "editeursToolStripMenuItem";
             this.editeursToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.editeursToolStripMenuItem.Text = "Editeurs";
-            // 
-            // menuTalentsEditor
-            // 
-            this.menuTalentsEditor.Image = global::World_Editor.Properties.Resources.icon_talents;
-            this.menuTalentsEditor.Name = "menuTalentsEditor";
-            this.menuTalentsEditor.Size = new System.Drawing.Size(210, 22);
-            this.menuTalentsEditor.Text = "Editeur d\'arbres de talents";
-            this.menuTalentsEditor.Click += new System.EventHandler(this.menuTalentsEditor_Click);
-            // 
-            // menuFactionsEditor
-            // 
-            this.menuFactionsEditor.Image = global::World_Editor.Properties.Resources.icon_factions;
-            this.menuFactionsEditor.Name = "menuFactionsEditor";
-            this.menuFactionsEditor.Size = new System.Drawing.Size(210, 22);
-            this.menuFactionsEditor.Text = "Editeur de factions";
-            this.menuFactionsEditor.Click += new System.EventHandler(this.menuFactionsEditor_Click);
-            // 
-            // menuAchievementsEditor
-            // 
-            this.menuAchievementsEditor.Image = global::World_Editor.Properties.Resources.icon_achievements;
-            this.menuAchievementsEditor.Name = "menuAchievementsEditor";
-            this.menuAchievementsEditor.Size = new System.Drawing.Size(210, 22);
-            this.menuAchievementsEditor.Text = "Editeur de haut-faits";
-            this.menuAchievementsEditor.Click += new System.EventHandler(this.menuAchievementsEditor_Click);
-            // 
-            // menuProfessionsEditor
-            // 
-            this.menuProfessionsEditor.Image = global::World_Editor.Properties.Resources.icon_professions;
-            this.menuProfessionsEditor.Name = "menuProfessionsEditor";
-            this.menuProfessionsEditor.Size = new System.Drawing.Size(210, 22);
-            this.menuProfessionsEditor.Text = "Editeur de métiers";
-            this.menuProfessionsEditor.Click += new System.EventHandler(this.menuProfessionsEditor_Click);
-            // 
-            // menuRacesEditor
-            // 
-            this.menuRacesEditor.Image = global::World_Editor.Properties.Resources.icon_races;
-            this.menuRacesEditor.Name = "menuRacesEditor";
-            this.menuRacesEditor.Size = new System.Drawing.Size(210, 22);
-            this.menuRacesEditor.Text = "Editeur de races";
-            this.menuRacesEditor.Click += new System.EventHandler(this.menuRacesEditor_Click);
-            // 
-            // menuTitlesEditor
-            // 
-            this.menuTitlesEditor.Image = global::World_Editor.Properties.Resources.icon_titles;
-            this.menuTitlesEditor.Name = "menuTitlesEditor";
-            this.menuTitlesEditor.Size = new System.Drawing.Size(210, 22);
-            this.menuTitlesEditor.Text = "Editeur de titres";
-            this.menuTitlesEditor.Click += new System.EventHandler(this.menuTitlesEditor_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -175,6 +130,7 @@
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolTalentsEditor,
+            this.toolClassesEditor,
             this.toolFactionsEditor,
             this.toolAchievementsEditor,
             this.toolProfessionsEditor,
@@ -186,6 +142,37 @@
             this.toolStrip.TabIndex = 14;
             this.toolStrip.Text = "toolStrip1";
             // 
+            // btnValidateProject
+            // 
+            this.btnValidateProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnValidateProject.Location = new System.Drawing.Point(925, 27);
+            this.btnValidateProject.Name = "btnValidateProject";
+            this.btnValidateProject.Size = new System.Drawing.Size(71, 21);
+            this.btnValidateProject.TabIndex = 16;
+            this.btnValidateProject.Text = "Valider";
+            this.btnValidateProject.UseVisualStyleBackColor = true;
+            this.btnValidateProject.Click += new System.EventHandler(this.btnValidateProject_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(647, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Projet de travail :";
+            // 
+            // listProjects
+            // 
+            this.listProjects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.listProjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listProjects.FormattingEnabled = true;
+            this.listProjects.Location = new System.Drawing.Point(739, 27);
+            this.listProjects.Name = "listProjects";
+            this.listProjects.Size = new System.Drawing.Size(180, 21);
+            this.listProjects.TabIndex = 18;
+            // 
             // toolTalentsEditor
             // 
             this.toolTalentsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -196,6 +183,17 @@
             this.toolTalentsEditor.Size = new System.Drawing.Size(23, 22);
             this.toolTalentsEditor.ToolTipText = "Editeur d\'arbres de talents";
             this.toolTalentsEditor.Click += new System.EventHandler(this.menuTalentsEditor_Click);
+            // 
+            // toolClassesEditor
+            // 
+            this.toolClassesEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolClassesEditor.Enabled = false;
+            this.toolClassesEditor.Image = global::World_Editor.Properties.Resources.icon_classes;
+            this.toolClassesEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolClassesEditor.Name = "toolClassesEditor";
+            this.toolClassesEditor.Size = new System.Drawing.Size(23, 22);
+            this.toolClassesEditor.ToolTipText = "Editeur de classes";
+            this.toolClassesEditor.Click += new System.EventHandler(this.menuClassesEditor_Click);
             // 
             // toolFactionsEditor
             // 
@@ -252,36 +250,61 @@
             this.toolTitlesEditor.ToolTipText = "Editeur de titres";
             this.toolTitlesEditor.Click += new System.EventHandler(this.menuTitlesEditor_Click);
             // 
-            // btnValidateProject
+            // menuTalentsEditor
             // 
-            this.btnValidateProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnValidateProject.Location = new System.Drawing.Point(925, 27);
-            this.btnValidateProject.Name = "btnValidateProject";
-            this.btnValidateProject.Size = new System.Drawing.Size(71, 21);
-            this.btnValidateProject.TabIndex = 16;
-            this.btnValidateProject.Text = "Valider";
-            this.btnValidateProject.UseVisualStyleBackColor = true;
-            this.btnValidateProject.Click += new System.EventHandler(this.btnValidateProject_Click);
+            this.menuTalentsEditor.Image = global::World_Editor.Properties.Resources.icon_talents;
+            this.menuTalentsEditor.Name = "menuTalentsEditor";
+            this.menuTalentsEditor.Size = new System.Drawing.Size(210, 22);
+            this.menuTalentsEditor.Text = "Editeur d\'arbres de talents";
+            this.menuTalentsEditor.Click += new System.EventHandler(this.menuTalentsEditor_Click);
             // 
-            // label1
+            // menuClassesEditor
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(647, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Projet de travail :";
+            this.menuClassesEditor.Image = global::World_Editor.Properties.Resources.icon_classes;
+            this.menuClassesEditor.Name = "menuClassesEditor";
+            this.menuClassesEditor.Size = new System.Drawing.Size(210, 22);
+            this.menuClassesEditor.Text = "Editeur de classes";
+            this.menuClassesEditor.Click += new System.EventHandler(this.menuClassesEditor_Click);
             // 
-            // listProjects
+            // menuFactionsEditor
             // 
-            this.listProjects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.listProjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listProjects.FormattingEnabled = true;
-            this.listProjects.Location = new System.Drawing.Point(739, 27);
-            this.listProjects.Name = "listProjects";
-            this.listProjects.Size = new System.Drawing.Size(180, 21);
-            this.listProjects.TabIndex = 18;
+            this.menuFactionsEditor.Image = global::World_Editor.Properties.Resources.icon_factions;
+            this.menuFactionsEditor.Name = "menuFactionsEditor";
+            this.menuFactionsEditor.Size = new System.Drawing.Size(210, 22);
+            this.menuFactionsEditor.Text = "Editeur de factions";
+            this.menuFactionsEditor.Click += new System.EventHandler(this.menuFactionsEditor_Click);
+            // 
+            // menuAchievementsEditor
+            // 
+            this.menuAchievementsEditor.Image = global::World_Editor.Properties.Resources.icon_achievements;
+            this.menuAchievementsEditor.Name = "menuAchievementsEditor";
+            this.menuAchievementsEditor.Size = new System.Drawing.Size(210, 22);
+            this.menuAchievementsEditor.Text = "Editeur de haut-faits";
+            this.menuAchievementsEditor.Click += new System.EventHandler(this.menuAchievementsEditor_Click);
+            // 
+            // menuProfessionsEditor
+            // 
+            this.menuProfessionsEditor.Image = global::World_Editor.Properties.Resources.icon_professions;
+            this.menuProfessionsEditor.Name = "menuProfessionsEditor";
+            this.menuProfessionsEditor.Size = new System.Drawing.Size(210, 22);
+            this.menuProfessionsEditor.Text = "Editeur de métiers";
+            this.menuProfessionsEditor.Click += new System.EventHandler(this.menuProfessionsEditor_Click);
+            // 
+            // menuRacesEditor
+            // 
+            this.menuRacesEditor.Image = global::World_Editor.Properties.Resources.icon_races;
+            this.menuRacesEditor.Name = "menuRacesEditor";
+            this.menuRacesEditor.Size = new System.Drawing.Size(210, 22);
+            this.menuRacesEditor.Text = "Editeur de races";
+            this.menuRacesEditor.Click += new System.EventHandler(this.menuRacesEditor_Click);
+            // 
+            // menuTitlesEditor
+            // 
+            this.menuTitlesEditor.Image = global::World_Editor.Properties.Resources.icon_titles;
+            this.menuTitlesEditor.Name = "menuTitlesEditor";
+            this.menuTitlesEditor.Size = new System.Drawing.Size(210, 22);
+            this.menuTitlesEditor.Text = "Editeur de titres";
+            this.menuTitlesEditor.Click += new System.EventHandler(this.menuTitlesEditor_Click);
             // 
             // MainForm
             // 
@@ -335,6 +358,8 @@
         private System.Windows.Forms.ToolStripButton toolProfessionsEditor;
         private System.Windows.Forms.ToolStripMenuItem menuRacesEditor;
         private System.Windows.Forms.ToolStripButton toolRacesEditor;
+        private System.Windows.Forms.ToolStripMenuItem menuClassesEditor;
+        private System.Windows.Forms.ToolStripButton toolClassesEditor;
     }
 }
 

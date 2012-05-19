@@ -67,6 +67,13 @@ namespace World_Editor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icon_classes {
+            get {
+                object obj = ResourceManager.GetObject("icon_classes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icon_factions {
             get {
                 object obj = ResourceManager.GetObject("icon_factions", resourceCulture);

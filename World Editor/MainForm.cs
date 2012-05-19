@@ -195,6 +195,14 @@ namespace World_Editor
             d.BringToFront();
         }
 
+        private void menuClassesEditor_Click(object sender, EventArgs e)
+        {
+            ClassesEditor.MainForm d = ClassesEditor.MainForm.GetChildInstance();
+            d.MdiParent = this;
+            d.Show();
+            d.BringToFront();
+        }
+
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -211,7 +219,8 @@ namespace World_Editor
                 TalentsEditor.MainForm.m_talentsEditor == null &&
                 TitlesEditor.MainForm.m_titlesEditor == null &&
                 AchievementsEditor.MainForm.m_achievementsEditor == null &&
-                RacesEditor.MainForm.m_racesEditor == null)
+                RacesEditor.MainForm.m_racesEditor == null &&
+                ClassesEditor.MainForm.m_classesEditor == null)
                 return true;
 
             return false;
@@ -230,6 +239,7 @@ namespace World_Editor
             menuTitlesEditor.Enabled = value;
             menuAchievementsEditor.Enabled = value;
             menuRacesEditor.Enabled = value;
+            menuClassesEditor.Enabled = value;
 
             toolTalentsEditor.Enabled = value;
             toolFactionsEditor.Enabled = value;
@@ -237,6 +247,7 @@ namespace World_Editor
             toolAchievementsEditor.Enabled = value;
             toolProfessionsEditor.Enabled = value;
             toolRacesEditor.Enabled = value;
+            toolClassesEditor.Enabled = value;
 
             if (all)
             {
@@ -248,6 +259,8 @@ namespace World_Editor
                 menuProjectsEditor.Enabled = !value;
             }
         }
+
+        
 
         
     }
