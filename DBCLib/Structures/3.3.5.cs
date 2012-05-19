@@ -1702,6 +1702,16 @@ namespace DBCLib.Structures335
     {
         public uint Id;                             // 0
         public string IconPath;                     // 1
+
+        public override string ToString()
+        {
+            return IconPath;
+        }
+
+        public string ToStringIdNameFile
+        {
+            get { return Id.ToString() + " - " + System.IO.Path.GetFileNameWithoutExtension(IconPath); }
+        }
     }
 
     public class SpellItemEnchantmentEntry

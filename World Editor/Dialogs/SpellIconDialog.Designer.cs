@@ -30,63 +30,35 @@
         {
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lvIcons = new System.Windows.Forms.ListView();
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.path = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.txtPath = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.pbIcon = new System.Windows.Forms.PictureBox();
-            this.btnDel = new System.Windows.Forms.Button();
+            this.listIcons = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(308, 112);
+            this.btnOk.Location = new System.Drawing.Point(308, 82);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(64, 23);
             this.btnOk.TabIndex = 0;
             this.btnOk.Text = "Choisir";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(308, 141);
+            this.btnCancel.Location = new System.Drawing.Point(308, 111);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(64, 23);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // lvIcons
-            // 
-            this.lvIcons.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.id,
-            this.path});
-            this.lvIcons.FullRowSelect = true;
-            this.lvIcons.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvIcons.Location = new System.Drawing.Point(7, 62);
-            this.lvIcons.MultiSelect = false;
-            this.lvIcons.Name = "lvIcons";
-            this.lvIcons.Size = new System.Drawing.Size(295, 216);
-            this.lvIcons.TabIndex = 2;
-            this.lvIcons.UseCompatibleStateImageBehavior = false;
-            this.lvIcons.View = System.Windows.Forms.View.Details;
-            this.lvIcons.SelectedIndexChanged += new System.EventHandler(this.lvIcons_SelectedIndexChanged);
-            // 
-            // id
-            // 
-            this.id.Text = "ID";
-            this.id.Width = 34;
-            // 
-            // path
-            // 
-            this.path.Text = "Chemin";
-            this.path.Width = 194;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -122,15 +94,6 @@
             this.txtPath.Size = new System.Drawing.Size(237, 20);
             this.txtPath.TabIndex = 6;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(308, 226);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(64, 23);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Ajouter";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
             // pbIcon
             // 
             this.pbIcon.Location = new System.Drawing.Point(308, 12);
@@ -139,14 +102,15 @@
             this.pbIcon.TabIndex = 8;
             this.pbIcon.TabStop = false;
             // 
-            // btnDel
+            // listIcons
             // 
-            this.btnDel.Location = new System.Drawing.Point(308, 255);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(64, 23);
-            this.btnDel.TabIndex = 9;
-            this.btnDel.Text = "Supprimer";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.listIcons.DisplayMember = "8";
+            this.listIcons.FormattingEnabled = true;
+            this.listIcons.Location = new System.Drawing.Point(12, 62);
+            this.listIcons.Name = "listIcons";
+            this.listIcons.Size = new System.Drawing.Size(290, 212);
+            this.listIcons.TabIndex = 10;
+            this.listIcons.SelectedIndexChanged += new System.EventHandler(this.listIcons_SelectedIndexChanged);
             // 
             // SpellIconDialog
             // 
@@ -154,14 +118,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(384, 283);
-            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.listIcons);
             this.Controls.Add(this.pbIcon);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lvIcons);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -179,15 +141,11 @@
 
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ListView lvIcons;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.TextBox txtPath;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pbIcon;
-        private System.Windows.Forms.ColumnHeader id;
-        private System.Windows.Forms.ColumnHeader path;
-        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.ListBox listIcons;
     }
 }
