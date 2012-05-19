@@ -39,6 +39,7 @@
             this.txtWowFolder = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnWowFolder = new System.Windows.Forms.Button();
+            this.btnExtractDbc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listProjects
@@ -142,11 +143,22 @@
             this.btnWowFolder.UseVisualStyleBackColor = true;
             this.btnWowFolder.Click += new System.EventHandler(this.btnWowFolder_Click);
             // 
+            // btnExtractDbc
+            // 
+            this.btnExtractDbc.Location = new System.Drawing.Point(123, 158);
+            this.btnExtractDbc.Name = "btnExtractDbc";
+            this.btnExtractDbc.Size = new System.Drawing.Size(105, 22);
+            this.btnExtractDbc.TabIndex = 12;
+            this.btnExtractDbc.Text = "Extraire les DBCs";
+            this.btnExtractDbc.UseVisualStyleBackColor = true;
+            this.btnExtractDbc.Click += new System.EventHandler(this.btnExtractDbc_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 166);
+            this.ClientSize = new System.Drawing.Size(346, 184);
+            this.Controls.Add(this.btnExtractDbc);
             this.Controls.Add(this.btnWowFolder);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtWowFolder);
@@ -181,5 +193,6 @@
         private System.Windows.Forms.TextBox txtWowFolder;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnWowFolder;
+        private System.Windows.Forms.Button btnExtractDbc;
     }
 }
