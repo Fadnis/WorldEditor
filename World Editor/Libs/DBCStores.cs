@@ -623,5 +623,17 @@ namespace World_Editor.DBC
         {
             AreaPOI.SaveDBC();
         }
+
+        public static void LoadMapsEditorFiles()
+        {
+            WorldMapArea.LoadData();
+            WorldMapOverlay.LoadData();
+        }
+
+        public static void SaveMapsEditorFiles()
+        {
+            WorldMapArea.SaveDBC();
+            WorldMapOverlay.SaveDBC();
+        }
     }
 }

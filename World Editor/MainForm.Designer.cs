@@ -34,7 +34,7 @@
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editeursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPOIsEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMapsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProjectsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
@@ -42,10 +42,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listProjects = new System.Windows.Forms.ComboBox();
             this.toolTalentsEditor = new System.Windows.Forms.ToolStripButton();
+            this.toolMapsEditor = new System.Windows.Forms.ToolStripButton();
             this.toolClassesEditor = new System.Windows.Forms.ToolStripButton();
             this.toolFactionsEditor = new System.Windows.Forms.ToolStripButton();
             this.toolAchievementsEditor = new System.Windows.Forms.ToolStripButton();
             this.toolProfessionsEditor = new System.Windows.Forms.ToolStripButton();
+            this.toolPOIsEditor = new System.Windows.Forms.ToolStripButton();
             this.toolRacesEditor = new System.Windows.Forms.ToolStripButton();
             this.toolTitlesEditor = new System.Windows.Forms.ToolStripButton();
             this.menuTalentsEditor = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,9 +55,9 @@
             this.menuFactionsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAchievementsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProfessionsEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPOIsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRacesEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTitlesEditor = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolPOIsEditor = new System.Windows.Forms.ToolStripButton();
             this.topMenu.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +105,7 @@
             // 
             this.editeursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuTalentsEditor,
+            this.menuMapsEditor,
             this.menuClassesEditor,
             this.menuFactionsEditor,
             this.menuAchievementsEditor,
@@ -114,13 +117,13 @@
             this.editeursToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.editeursToolStripMenuItem.Text = "Editeurs";
             // 
-            // menuPOIsEditor
+            // menuMapsEditor
             // 
-            this.menuPOIsEditor.Image = global::World_Editor.Properties.Resources.icon_poi;
-            this.menuPOIsEditor.Name = "menuPOIsEditor";
-            this.menuPOIsEditor.Size = new System.Drawing.Size(215, 22);
-            this.menuPOIsEditor.Text = "Editeur de points d\'intérêts";
-            this.menuPOIsEditor.Click += new System.EventHandler(this.menuPOIsEditor_Click);
+            this.menuMapsEditor.Image = global::World_Editor.Properties.Resources.icon_maps;
+            this.menuMapsEditor.Name = "menuMapsEditor";
+            this.menuMapsEditor.Size = new System.Drawing.Size(215, 22);
+            this.menuMapsEditor.Text = "Editeur de cartes";
+            this.menuMapsEditor.Click += new System.EventHandler(this.menuMapsEditor_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -141,6 +144,7 @@
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolTalentsEditor,
+            this.toolMapsEditor,
             this.toolClassesEditor,
             this.toolFactionsEditor,
             this.toolAchievementsEditor,
@@ -188,7 +192,6 @@
             // toolTalentsEditor
             // 
             this.toolTalentsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolTalentsEditor.Enabled = false;
             this.toolTalentsEditor.Image = ((System.Drawing.Image)(resources.GetObject("toolTalentsEditor.Image")));
             this.toolTalentsEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolTalentsEditor.Name = "toolTalentsEditor";
@@ -196,10 +199,19 @@
             this.toolTalentsEditor.ToolTipText = "Editeur d\'arbres de talents";
             this.toolTalentsEditor.Click += new System.EventHandler(this.menuTalentsEditor_Click);
             // 
+            // toolMapsEditor
+            // 
+            this.toolMapsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolMapsEditor.Image = global::World_Editor.Properties.Resources.icon_maps;
+            this.toolMapsEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolMapsEditor.Name = "toolMapsEditor";
+            this.toolMapsEditor.Size = new System.Drawing.Size(23, 22);
+            this.toolMapsEditor.ToolTipText = "Editeur de cartes";
+            this.toolMapsEditor.Click += new System.EventHandler(this.menuMapsEditor_Click);
+            // 
             // toolClassesEditor
             // 
             this.toolClassesEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolClassesEditor.Enabled = false;
             this.toolClassesEditor.Image = global::World_Editor.Properties.Resources.icon_classes;
             this.toolClassesEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolClassesEditor.Name = "toolClassesEditor";
@@ -210,7 +222,6 @@
             // toolFactionsEditor
             // 
             this.toolFactionsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolFactionsEditor.Enabled = false;
             this.toolFactionsEditor.Image = ((System.Drawing.Image)(resources.GetObject("toolFactionsEditor.Image")));
             this.toolFactionsEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolFactionsEditor.Name = "toolFactionsEditor";
@@ -221,7 +232,6 @@
             // toolAchievementsEditor
             // 
             this.toolAchievementsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolAchievementsEditor.Enabled = false;
             this.toolAchievementsEditor.Image = global::World_Editor.Properties.Resources.icon_achievements;
             this.toolAchievementsEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolAchievementsEditor.Name = "toolAchievementsEditor";
@@ -232,7 +242,6 @@
             // toolProfessionsEditor
             // 
             this.toolProfessionsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolProfessionsEditor.Enabled = false;
             this.toolProfessionsEditor.Image = global::World_Editor.Properties.Resources.icon_professions;
             this.toolProfessionsEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolProfessionsEditor.Name = "toolProfessionsEditor";
@@ -240,10 +249,19 @@
             this.toolProfessionsEditor.ToolTipText = "Editeur de métiers";
             this.toolProfessionsEditor.Click += new System.EventHandler(this.menuProfessionsEditor_Click);
             // 
+            // toolPOIsEditor
+            // 
+            this.toolPOIsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolPOIsEditor.Image = global::World_Editor.Properties.Resources.icon_poi;
+            this.toolPOIsEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolPOIsEditor.Name = "toolPOIsEditor";
+            this.toolPOIsEditor.Size = new System.Drawing.Size(23, 22);
+            this.toolPOIsEditor.ToolTipText = "Editeur de points d\'intérêts";
+            this.toolPOIsEditor.Click += new System.EventHandler(this.menuPOIsEditor_Click);
+            // 
             // toolRacesEditor
             // 
             this.toolRacesEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolRacesEditor.Enabled = false;
             this.toolRacesEditor.Image = global::World_Editor.Properties.Resources.icon_races;
             this.toolRacesEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolRacesEditor.Name = "toolRacesEditor";
@@ -254,7 +272,6 @@
             // toolTitlesEditor
             // 
             this.toolTitlesEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolTitlesEditor.Enabled = false;
             this.toolTitlesEditor.Image = ((System.Drawing.Image)(resources.GetObject("toolTitlesEditor.Image")));
             this.toolTitlesEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolTitlesEditor.Name = "toolTitlesEditor";
@@ -302,6 +319,14 @@
             this.menuProfessionsEditor.Text = "Editeur de métiers";
             this.menuProfessionsEditor.Click += new System.EventHandler(this.menuProfessionsEditor_Click);
             // 
+            // menuPOIsEditor
+            // 
+            this.menuPOIsEditor.Image = global::World_Editor.Properties.Resources.icon_poi;
+            this.menuPOIsEditor.Name = "menuPOIsEditor";
+            this.menuPOIsEditor.Size = new System.Drawing.Size(215, 22);
+            this.menuPOIsEditor.Text = "Editeur de points d\'intérêts";
+            this.menuPOIsEditor.Click += new System.EventHandler(this.menuPOIsEditor_Click);
+            // 
             // menuRacesEditor
             // 
             this.menuRacesEditor.Image = global::World_Editor.Properties.Resources.icon_races;
@@ -317,17 +342,6 @@
             this.menuTitlesEditor.Size = new System.Drawing.Size(215, 22);
             this.menuTitlesEditor.Text = "Editeur de titres";
             this.menuTitlesEditor.Click += new System.EventHandler(this.menuTitlesEditor_Click);
-            // 
-            // toolPOIsEditor
-            // 
-            this.toolPOIsEditor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolPOIsEditor.Enabled = false;
-            this.toolPOIsEditor.Image = global::World_Editor.Properties.Resources.icon_poi;
-            this.toolPOIsEditor.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolPOIsEditor.Name = "toolPOIsEditor";
-            this.toolPOIsEditor.Size = new System.Drawing.Size(23, 22);
-            this.toolPOIsEditor.ToolTipText = "Editeur de points d\'intérêts";
-            this.toolPOIsEditor.Click += new System.EventHandler(this.menuPOIsEditor_Click);
             // 
             // MainForm
             // 
@@ -385,6 +399,8 @@
         private System.Windows.Forms.ToolStripButton toolClassesEditor;
         private System.Windows.Forms.ToolStripMenuItem menuPOIsEditor;
         private System.Windows.Forms.ToolStripButton toolPOIsEditor;
+        private System.Windows.Forms.ToolStripMenuItem menuMapsEditor;
+        private System.Windows.Forms.ToolStripButton toolMapsEditor;
     }
 }
 

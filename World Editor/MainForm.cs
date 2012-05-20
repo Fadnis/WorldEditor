@@ -211,6 +211,14 @@ namespace World_Editor
             d.BringToFront();
         }
 
+        private void menuMapsEditor_Click(object sender, EventArgs e)
+        {
+            MapsEditor.MainForm d = MapsEditor.MainForm.GetChildInstance();
+            d.MdiParent = this;
+            d.Show();
+            d.BringToFront();
+        }
+
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -229,7 +237,8 @@ namespace World_Editor
                 AchievementsEditor.MainForm.m_achievementsEditor == null &&
                 RacesEditor.MainForm.m_racesEditor == null &&
                 ClassesEditor.MainForm.m_classesEditor == null &&
-                POIsEditor.MainForm.m_poisEditor == null)
+                POIsEditor.MainForm.m_poisEditor == null &&
+                MapsEditor.MainForm.m_mapsEditor == null)
                 return true;
 
             return false;
@@ -250,6 +259,7 @@ namespace World_Editor
             menuRacesEditor.Enabled = value;
             menuClassesEditor.Enabled = value;
             menuPOIsEditor.Enabled = value;
+            menuMapsEditor.Enabled = value;
 
             toolTalentsEditor.Enabled = value;
             toolFactionsEditor.Enabled = value;
@@ -259,6 +269,7 @@ namespace World_Editor
             toolRacesEditor.Enabled = value;
             toolClassesEditor.Enabled = value;
             toolPOIsEditor.Enabled = value;
+            toolMapsEditor.Enabled = value;
 
             if (all)
             {
@@ -270,11 +281,5 @@ namespace World_Editor
                 menuProjectsEditor.Enabled = !value;
             }
         }
-
-        
-
-        
-
-        
     }
 }
