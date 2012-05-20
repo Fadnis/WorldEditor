@@ -1977,7 +1977,22 @@ namespace DBCLib.Structures335
 
     public class WorldMapAreaEntry
     {
+        public uint Id;                             // 0
+        public uint MapId;                          // 1
+        public uint AreaId;                         // 2 continent 0 areas ignored
+        public string InternalName;                 // 3
+        public float locLeft;                       // 4
+        public float locRight;                      // 5
+        public float locTop;                        // 6
+        public float locBottom;                     // 7
+        public int VirtualMapId;                    // 8 -1 (map_id have correct map) other: virtual map where zone show (map_id - where zone in fact internally)
+        public int DungeonMapId;                    // 9 DungeonMap.dbc
+        public uint ParentWorldMapId;               // 10
 
+        public override string ToString()
+        {
+            return InternalName;
+        }
     }
 
     public class WorldMapContinentEntry
@@ -1987,7 +2002,26 @@ namespace DBCLib.Structures335
 
     public class WorldMapOverlayEntry
     {
+        public uint Id;                             // 0 Internal overlay id, probably not used anywhere
+        public uint WorldMapAreaId;                 // 1 WorldMapArea.dbc
+        [Array(4)]
+        public uint[] AreaTableId;                  // 2-5
+        public uint MapPointX;                      // 6 always 0
+        public uint MapPointY;                      // 7 always 0
+        public string TextureName;                  // 8
+        public uint TextureWidth;                   // 9
+        public uint TextureHeight;                  // 10
+        public uint OffsetX;                        // 11
+        public uint OffsetY;                        // 12
+        public uint HitRectTop;                     // 13
+        public uint HitRectLeft;                    // 14
+        public uint HitRectBottom;                  // 15
+        public uint HitRectRight;                   // 16
 
+        public override string ToString()
+        {
+            return TextureName;
+        }
     }
 
     public class WorldMapTransformsEntry

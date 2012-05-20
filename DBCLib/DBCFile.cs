@@ -85,7 +85,7 @@ namespace DBCLib
             mReader.BaseStream.Position = 20;
 
             if (numFields != fieldCount)
-                throw new Exception("numFields != fieldCount in DBC file!");
+                throw new Exception("numFields != fieldCount in " + FileName + "!");
 
             for (uint i = 0; i < numRecords; ++i)
             {

@@ -156,6 +156,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Editors\ProfessionEditor\Skill.cs" />
+    <Compile Include="Editors\POIsEditor\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\POIsEditor\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectsEditor\MainForm.cs">
       <SubType>Form</SubType>
@@ -237,6 +243,9 @@
     <EmbeddedResource Include="Editors\ProfessionEditor\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editors\POIsEditor\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProjectsEditor\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +312,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.classes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.poi.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

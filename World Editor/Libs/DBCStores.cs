@@ -15,7 +15,7 @@ namespace World_Editor.DBC
         public static DBCFile<AchievementCriteriaEntry> AchievementCriteria { get; private set; }
         //public static DBCFile<AnimationDataEntry> AnimationData { get; private set; }
         //public static DBCFile<AreaGroupEntry> AreaGroup { get; private set; }
-        //public static DBCFile<AreaPOIEntry> AreaPOI { get; private set; }
+        public static DBCFile<AreaPOIEntry> AreaPOI { get; private set; }
         //public static DBCFile<AreaTableEntry> AreaTable { get; private set; }
         //public static DBCFile<AreaTriggerEntry> AreaTrigger { get; private set; }
         //public static DBCFile<AttackAnimKitsEntry> AttackAnimKits { get; private set; }
@@ -246,9 +246,9 @@ namespace World_Editor.DBC
         //public static DBCFile<WeatherEntry> Weather { get; private set; }
         //public static DBCFile<WMOAreaTableEntry> WMOAreaTable { get; private set; }
         //public static DBCFile<WorldChunkSoundsEntry> WorldChunkSounds { get; private set; }
-        //public static DBCFile<WorldMapAreaEntry> WorldMapArea { get; private set; }
+        public static DBCFile<WorldMapAreaEntry> WorldMapArea { get; private set; }
         //public static DBCFile<WorldMapContinentEntry> WorldMapContinent { get; private set; }
-        //public static DBCFile<WorldMapOverlayEntry> WorldMapOverlay { get; private set; }
+        public static DBCFile<WorldMapOverlayEntry> WorldMapOverlay { get; private set; }
         //public static DBCFile<WorldMapTransformsEntry> WorldMapTransforms { get; private set; }
         //public static DBCFile<WorldSafeLocsEntry> WorldSafeLocs { get; private set; }
         //public static DBCFile<WorldStateUIEntry> WorldStateUI { get; private set; }
@@ -268,7 +268,7 @@ namespace World_Editor.DBC
             AchievementCriteria = new DBCFile<AchievementCriteriaEntry>(DbcFolder + "Achievement_Criteria.dbc");
             //AnimationData = new DBCFile<AnimationDataEntry>(DbcFolder + "AnimationData.dbc");
             //AreaGroup = new DBCFile<AreaGroupEntry>(DbcFolder + "AreaGroup.dbc");
-            //AreaPOI = new DBCFile<AreaPOIEntry>(DbcFolder + "AreaPOI.dbc");
+            AreaPOI = new DBCFile<AreaPOIEntry>(DbcFolder + "AreaPOI.dbc");
             //AreaTable = new DBCFile<AreaTableEntry>(DbcFolder + "AreaTable.dbc");
             //AreaTrigger = new DBCFile<AreaTriggerEntry>(DbcFolder + "AreaTrigger.dbc");
             //AttackAnimKits = new DBCFile<AttackAnimKitsEntry>(DbcFolder + "AttackAnimKits.dbc");
@@ -499,9 +499,9 @@ namespace World_Editor.DBC
             //Weather = new DBCFile<WeatherEntry>(DbcFolder + "Weather.dbc");
             //WMOAreaTable = new DBCFile<WMOAreaTableEntry>(DbcFolder + "WMOAreaTable.dbc");
             //WorldChunkSounds = new DBCFile<WorldChunkSoundsEntry>(DbcFolder + "WorldChunkSounds.dbc");
-            //WorldMapArea = new DBCFile<WorldMapAreaEntry>(DbcFolder + "WorldMapArea.dbc");
+            WorldMapArea = new DBCFile<WorldMapAreaEntry>(DbcFolder + "WorldMapArea.dbc");
             //WorldMapContinent = new DBCFile<WorldMapContinentEntry>(DbcFolder + "WorldMapContinent.dbc");
-            //WorldMapOverlay = new DBCFile<WorldMapOverlayEntry>(DbcFolder + "WorldMapOverlay.dbc");
+            WorldMapOverlay = new DBCFile<WorldMapOverlayEntry>(DbcFolder + "WorldMapOverlay.dbc");
             //WorldMapTransforms = new DBCFile<WorldMapTransformsEntry>(DbcFolder + "WorldMapTransforms.dbc");
             //WorldSafeLocs = new DBCFile<WorldSafeLocsEntry>(DbcFolder + "WorldSafeLocs.dbc");
             //WorldStateUI = new DBCFile<WorldStateUIEntry>(DbcFolder + "WorldStateUI.dbc");
@@ -609,6 +609,19 @@ namespace World_Editor.DBC
         public static void SaveClassesEditorFiles()
         {
             ChrClasses.SaveDBC();
+        }
+
+        public static void LoadPOIsEditorFiles()
+        {
+            AreaPOI.LoadData();
+            Map.LoadData();
+            WorldMapArea.LoadData();
+            WorldMapOverlay.LoadData();
+        }
+
+        public static void SavePOIsEditorFiles()
+        {
+            AreaPOI.SaveDBC();
         }
     }
 }
