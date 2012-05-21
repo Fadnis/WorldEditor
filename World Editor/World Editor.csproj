@@ -90,6 +90,12 @@
     <Compile Include="Editors\AchievementsEditor\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editors\POIsEditor\Icons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\POIsEditor\Icons.Designer.cs">
+      <DependentUpon>Icons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\TitlesEditor\TitlesEditorLocal.fr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -232,6 +238,9 @@
     <EmbeddedResource Include="Editors\FactionsEditor\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editors\POIsEditor\Icons.resx">
+      <DependentUpon>Icons.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editors\TitlesEditor\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +336,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.maps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.delete.little.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no.icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select.square.18.18.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

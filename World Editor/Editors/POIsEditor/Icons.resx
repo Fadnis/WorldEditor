@@ -117,41 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icon_achievements" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.achievements.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_classes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.classes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_delete_little" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.delete.little.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_factions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.factions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_maps" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.maps.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_poi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.poi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_professions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.professions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_races" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.races.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_talents" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.talents.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_titles" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.titles.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="no_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\no.icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="select_square_18_18" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\select.square.18.18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

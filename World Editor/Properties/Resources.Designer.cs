@@ -74,6 +74,13 @@ namespace World_Editor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icon_delete_little {
+            get {
+                object obj = ResourceManager.GetObject("icon_delete_little", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icon_factions {
             get {
                 object obj = ResourceManager.GetObject("icon_factions", resourceCulture);
@@ -119,6 +126,20 @@ namespace World_Editor.Properties {
         internal static System.Drawing.Bitmap icon_titles {
             get {
                 object obj = ResourceManager.GetObject("icon_titles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap no_icon {
+            get {
+                object obj = ResourceManager.GetObject("no_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap select_square_18_18 {
+            get {
+                object obj = ResourceManager.GetObject("select_square_18_18", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
