@@ -10,9 +10,10 @@ using MDS.cBlp2;
 using World_Editor.Stormlib;
 
 namespace World_Editor.Editors.POIsEditor
-{
+{ 
     public partial class Icons : Form
     {
+        public static int IconIdSelected { get; set; }
         private Graphics g;
         private Point iconSelect = new Point(0, 0);
         public Icons()
@@ -55,7 +56,7 @@ namespace World_Editor.Editors.POIsEditor
         private void panelIcons_MouseUp(object sender, MouseEventArgs e)
         {
             MouseIsDown = false;
-            for (int y = 0; y <= 12; ++y)
+            for (int y = 0; y <= 13; ++y)
             {
                 for (int x = 0; x <= 13; ++x)
                 {
@@ -63,6 +64,7 @@ namespace World_Editor.Editors.POIsEditor
                     if (rectIcon.Contains(e.Location))
                     {
                         txtIconId.Text = (x + 14 * y).ToString();
+                        IconIdSelected = x + 14 * y;
                         iconSelect = new Point(x, y);
 
                         panelIcons_Paint(null, null);
@@ -77,7 +79,7 @@ namespace World_Editor.Editors.POIsEditor
             if (!MouseIsDown)
                 return;
 
-            for (int y = 0; y <= 12; ++y)
+            for (int y = 0; y <= 13; ++y)
             {
                 for (int x = 0; x <= 13; ++x)
                 {
@@ -86,12 +88,20 @@ namespace World_Editor.Editors.POIsEditor
                     {
                         txtIconId.Text = (x + 14 * y).ToString();
                         iconSelect = new Point(x, y);
+                        IconIdSelected = x + 14 * y;
 
                         panelIcons_Paint(null, null);
                         return;
                     }
                 }
             }
+        }
+
+        public static Icons m_poisIconsEditor;
+
+        private void Icons_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_poisIconsEditor = null;
         }
     }
 }

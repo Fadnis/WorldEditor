@@ -75,15 +75,18 @@
             this.txtArea = new System.Windows.Forms.TextBox();
             this.txtContinentId = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.barDestruct = new System.Windows.Forms.TrackBar();
-            this.listFaction = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.listFaction = new System.Windows.Forms.ComboBox();
+            this.barDestruct = new System.Windows.Forms.TrackBar();
+            this.label22 = new System.Windows.Forms.Label();
+            this.numLayer = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barDestruct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLayer)).BeginInit();
             this.SuspendLayout();
             // 
             // panelIn
@@ -487,6 +490,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.numLayer);
+            this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label19);
@@ -498,6 +503,47 @@
             this.groupBox3.TabIndex = 44;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Display Options";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(98, 47);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(27, 13);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "50%";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(8, 47);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(21, 13);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "0%";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(181, 47);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(33, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "100%";
+            // 
+            // listFaction
+            // 
+            this.listFaction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listFaction.FormattingEnabled = true;
+            this.listFaction.Items.AddRange(new object[] {
+            "Normal",
+            "Horde",
+            "Alliance"});
+            this.listFaction.Location = new System.Drawing.Point(8, 63);
+            this.listFaction.Name = "listFaction";
+            this.listFaction.Size = new System.Drawing.Size(117, 21);
+            this.listFaction.TabIndex = 1;
+            this.listFaction.SelectedIndexChanged += new System.EventHandler(this.listFaction_SelectedIndexChanged);
             // 
             // barDestruct
             // 
@@ -511,46 +557,28 @@
             this.barDestruct.Value = 2;
             this.barDestruct.Scroll += new System.EventHandler(this.barDestruct_Scroll);
             // 
-            // listFaction
+            // label22
             // 
-            this.listFaction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listFaction.FormattingEnabled = true;
-            this.listFaction.Items.AddRange(new object[] {
-            "Normal",
-            "Horde",
-            "Alliance"});
-            this.listFaction.Location = new System.Drawing.Point(6, 63);
-            this.listFaction.Name = "listFaction";
-            this.listFaction.Size = new System.Drawing.Size(208, 21);
-            this.listFaction.TabIndex = 1;
-            this.listFaction.SelectedIndexChanged += new System.EventHandler(this.listFaction_SelectedIndexChanged);
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(130, 66);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(33, 13);
+            this.label22.TabIndex = 5;
+            this.label22.Text = "Layer";
             // 
-            // label19
+            // numLayer
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(181, 47);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(33, 13);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "100%";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(8, 47);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(21, 13);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "0%";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(98, 47);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(27, 13);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "50%";
+            this.numLayer.Enabled = false;
+            this.numLayer.Location = new System.Drawing.Point(169, 63);
+            this.numLayer.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLayer.Name = "numLayer";
+            this.numLayer.Size = new System.Drawing.Size(45, 20);
+            this.numLayer.TabIndex = 6;
+            this.numLayer.ValueChanged += new System.EventHandler(this.numLayer_ValueChanged);
             // 
             // MainForm
             // 
@@ -595,6 +623,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barDestruct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLayer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,5 +683,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown numLayer;
+        private System.Windows.Forms.Label label22;
     }
 }

@@ -58,7 +58,7 @@ namespace World_Editor.DBC
         //public static DBCFile<DeclinedWordCasesEntry> DeclinedWordCases { get; private set; }
         //public static DBCFile<DestructibleModelDataEntry> DestructibleModelData { get; private set; }
         //public static DBCFile<DungeonEncounterEntry> DungeonEncounter { get; private set; }
-        //public static DBCFile<DungeonMapEntry> DungeonMap { get; private set; }
+        public static DBCFile<DungeonMapEntry> DungeonMap { get; private set; }
         //public static DBCFile<DungeonMapChunkEntry> DungeonMapChunk { get; private set; }
         //public static DBCFile<DurabilityCostsEntry> DurabilityCosts { get; private set; }
         //public static DBCFile<DurabilityQualityEntry> DurabilityQuality { get; private set; }
@@ -311,7 +311,7 @@ namespace World_Editor.DBC
             //DeclinedWordCases = new DBCFile<DeclinedWordCasesEntry>(DbcFolder + "DeclinedWordCases.dbc");
             //DestructibleModelData = new DBCFile<DestructibleModelDataEntry>(DbcFolder + "DestructibleModelData.dbc");
             //DungeonEncounter = new DBCFile<DungeonEncounterEntry>(DbcFolder + "DungeonEncounter.dbc");
-            //DungeonMap = new DBCFile<DungeonMapEntry>(DbcFolder + "DungeonMap.dbc");
+            DungeonMap = new DBCFile<DungeonMapEntry>(DbcFolder + "DungeonMap.dbc");
             //DungeonMapChunk = new DBCFile<DungeonMapChunkEntry>(DbcFolder + "DungeonMapChunk.dbc");
             //DurabilityCosts = new DBCFile<DurabilityCostsEntry>(DbcFolder + "DurabilityCosts.dbc");
             //DurabilityQuality = new DBCFile<DurabilityQualityEntry>(DbcFolder + "DurabilityQuality.dbc");
@@ -614,6 +614,7 @@ namespace World_Editor.DBC
         public static void LoadPOIsEditorFiles()
         {
             AreaPOI.LoadData();
+            DungeonMap.LoadData();
             Map.LoadData();
             WorldMapArea.LoadData();
             WorldMapOverlay.LoadData();

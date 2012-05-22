@@ -560,7 +560,17 @@ namespace DBCLib.Structures335
 
     public class DungeonMapEntry
     {
+        public uint Id;                             // 0
+        public uint Map;                            // 1
+        public uint Layer;                          // 2 for instances with multiple floors 
+        [Array(4)]
+        public float[] Coordonates;                 // 3-6 in which range in x and y is this shown. used for scaling.
+        public uint Area;                           // 7 if only used in a specific area. see the northrend one.
 
+        public override string ToString()
+        {
+            return Id.ToString();
+        }
     }
 
     public class DungeonMapChunkEntry

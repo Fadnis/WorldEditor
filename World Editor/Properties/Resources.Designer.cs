@@ -130,6 +130,13 @@ namespace World_Editor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap MiniArrow_Right {
+            get {
+                object obj = ResourceManager.GetObject("MiniArrow_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap no_icon {
             get {
                 object obj = ResourceManager.GetObject("no_icon", resourceCulture);
