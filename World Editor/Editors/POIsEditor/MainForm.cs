@@ -462,5 +462,189 @@ namespace World_Editor.POIsEditor
             RePaintMap();
         }
         #endregion
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.Name = txtName.Text;
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.Description = txtDescription.Text;
+        }
+
+        private void txtNormalIcon50_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.NormalIcon50p = Misc.ParseToUInt(txtNormalIcon50.Text);
+        }
+
+        private void txtNormalIcon0_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.NormalIcon0p = Misc.ParseToUInt(txtNormalIcon0.Text);
+        }
+
+        private void txtHordeIcon_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.HordeIcon = Misc.ParseToUInt(txtHordeIcon.Text);
+        }
+
+        private void txtHordeIcon50_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.HordeIcon50p = Misc.ParseToUInt(txtHordeIcon50.Text);
+        }
+
+        private void txtHordeIcon0_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.HordeIcon0p = Misc.ParseToUInt(txtHordeIcon0.Text);
+        }
+
+        private void txtAllianceIcon_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.AllianceIcon = Misc.ParseToUInt(txtAllianceIcon.Text);
+        }
+
+        private void txtAllianceIcon50_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.AllianceIcon50p = Misc.ParseToUInt(txtAllianceIcon50.Text);
+        }
+
+        private void txtAllianceIcon0_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.AllianceIcon0p = Misc.ParseToUInt(txtAllianceIcon0.Text);
+        }
+
+        private void txtX_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.X = Misc.ParseToFloat(txtX.Text);
+
+            RePaintMap();
+        }
+
+        private void txtY_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.Y = Misc.ParseToFloat(txtY.Text);
+
+            RePaintMap();
+        }
+
+        private void txtZ_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.Z = Misc.ParseToFloat(txtZ.Text);
+        }
+
+        private void txtContinentId_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.ContinentId = Misc.ParseToUInt(txtContinentId.Text);
+        }
+
+        private void txtArea_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.Area = Misc.ParseToUInt(txtArea.Text);
+        }
+
+        private void txtImportance_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.Importance = Misc.ParseToUInt(txtImportance.Text);
+        }
+
+        private void txtFactionId_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.FactionId = Misc.ParseToUInt(txtFactionId.Text);
+        }
+
+        private void txtWorldState_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.WorldState = Misc.ParseToUInt(txtWorldState.Text);
+        }
+
+        private void txtFlags_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.Flags = Misc.ParseToUInt(txtFlags.Text);
+        }
+
+        private void txtWorldMapLink_TextChanged(object sender, EventArgs e)
+        {
+            if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
+                return;
+
+            AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
+            p.WorldMapLink = Misc.ParseToUInt(txtWorldMapLink.Text);
+        }
     }
 }

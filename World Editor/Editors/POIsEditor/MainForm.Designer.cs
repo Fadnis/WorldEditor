@@ -151,6 +151,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(112, 20);
             this.txtName.TabIndex = 8;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtDescription
             // 
@@ -159,6 +160,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(220, 50);
             this.txtDescription.TabIndex = 9;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // label5
             // 
@@ -228,6 +230,7 @@
             this.txtNormalIcon0.Name = "txtNormalIcon0";
             this.txtNormalIcon0.Size = new System.Drawing.Size(39, 20);
             this.txtNormalIcon0.TabIndex = 19;
+            this.txtNormalIcon0.TextChanged += new System.EventHandler(this.txtNormalIcon0_TextChanged);
             // 
             // txtNormalIcon50
             // 
@@ -235,6 +238,7 @@
             this.txtNormalIcon50.Name = "txtNormalIcon50";
             this.txtNormalIcon50.Size = new System.Drawing.Size(39, 20);
             this.txtNormalIcon50.TabIndex = 20;
+            this.txtNormalIcon50.TextChanged += new System.EventHandler(this.txtNormalIcon50_TextChanged);
             // 
             // txtHordeIcon50
             // 
@@ -242,6 +246,7 @@
             this.txtHordeIcon50.Name = "txtHordeIcon50";
             this.txtHordeIcon50.Size = new System.Drawing.Size(39, 20);
             this.txtHordeIcon50.TabIndex = 23;
+            this.txtHordeIcon50.TextChanged += new System.EventHandler(this.txtHordeIcon50_TextChanged);
             // 
             // txtHordeIcon0
             // 
@@ -249,6 +254,7 @@
             this.txtHordeIcon0.Name = "txtHordeIcon0";
             this.txtHordeIcon0.Size = new System.Drawing.Size(39, 20);
             this.txtHordeIcon0.TabIndex = 22;
+            this.txtHordeIcon0.TextChanged += new System.EventHandler(this.txtHordeIcon0_TextChanged);
             // 
             // txtHordeIcon
             // 
@@ -256,6 +262,7 @@
             this.txtHordeIcon.Name = "txtHordeIcon";
             this.txtHordeIcon.Size = new System.Drawing.Size(39, 20);
             this.txtHordeIcon.TabIndex = 21;
+            this.txtHordeIcon.TextChanged += new System.EventHandler(this.txtHordeIcon_TextChanged);
             // 
             // txtAllianceIcon50
             // 
@@ -263,6 +270,7 @@
             this.txtAllianceIcon50.Name = "txtAllianceIcon50";
             this.txtAllianceIcon50.Size = new System.Drawing.Size(39, 20);
             this.txtAllianceIcon50.TabIndex = 26;
+            this.txtAllianceIcon50.TextChanged += new System.EventHandler(this.txtAllianceIcon50_TextChanged);
             // 
             // txtAllianceIcon0
             // 
@@ -270,6 +278,7 @@
             this.txtAllianceIcon0.Name = "txtAllianceIcon0";
             this.txtAllianceIcon0.Size = new System.Drawing.Size(39, 20);
             this.txtAllianceIcon0.TabIndex = 25;
+            this.txtAllianceIcon0.TextChanged += new System.EventHandler(this.txtAllianceIcon0_TextChanged);
             // 
             // txtAllianceIcon
             // 
@@ -277,6 +286,7 @@
             this.txtAllianceIcon.Name = "txtAllianceIcon";
             this.txtAllianceIcon.Size = new System.Drawing.Size(39, 20);
             this.txtAllianceIcon.TabIndex = 24;
+            this.txtAllianceIcon.TextChanged += new System.EventHandler(this.txtAllianceIcon_TextChanged);
             // 
             // btnIcons
             // 
@@ -348,10 +358,11 @@
             // 
             // txtX
             // 
-            this.txtX.Location = new System.Drawing.Point(33, 19);
+            this.txtX.Location = new System.Drawing.Point(98, 19);
             this.txtX.Name = "txtX";
             this.txtX.Size = new System.Drawing.Size(39, 20);
             this.txtX.TabIndex = 28;
+            this.txtX.TextChanged += new System.EventHandler(this.txtX_TextChanged);
             // 
             // txtZ
             // 
@@ -359,6 +370,7 @@
             this.txtZ.Name = "txtZ";
             this.txtZ.Size = new System.Drawing.Size(39, 20);
             this.txtZ.TabIndex = 32;
+            this.txtZ.TextChanged += new System.EventHandler(this.txtZ_TextChanged);
             // 
             // label11
             // 
@@ -371,10 +383,11 @@
             // 
             // txtY
             // 
-            this.txtY.Location = new System.Drawing.Point(96, 19);
+            this.txtY.Location = new System.Drawing.Point(33, 19);
             this.txtY.Name = "txtY";
             this.txtY.Size = new System.Drawing.Size(39, 20);
             this.txtY.TabIndex = 31;
+            this.txtY.TextChanged += new System.EventHandler(this.txtY_TextChanged);
             // 
             // label12
             // 
@@ -445,6 +458,7 @@
             this.txtWorldMapLink.Name = "txtWorldMapLink";
             this.txtWorldMapLink.Size = new System.Drawing.Size(39, 20);
             this.txtWorldMapLink.TabIndex = 37;
+            this.txtWorldMapLink.TextChanged += new System.EventHandler(this.txtWorldMapLink_TextChanged);
             // 
             // txtFlags
             // 
@@ -452,6 +466,7 @@
             this.txtFlags.Name = "txtFlags";
             this.txtFlags.Size = new System.Drawing.Size(39, 20);
             this.txtFlags.TabIndex = 38;
+            this.txtFlags.TextChanged += new System.EventHandler(this.txtFlags_TextChanged);
             // 
             // txtWorldState
             // 
@@ -459,6 +474,7 @@
             this.txtWorldState.Name = "txtWorldState";
             this.txtWorldState.Size = new System.Drawing.Size(39, 20);
             this.txtWorldState.TabIndex = 39;
+            this.txtWorldState.TextChanged += new System.EventHandler(this.txtWorldState_TextChanged);
             // 
             // txtFactionId
             // 
@@ -466,6 +482,7 @@
             this.txtFactionId.Name = "txtFactionId";
             this.txtFactionId.Size = new System.Drawing.Size(39, 20);
             this.txtFactionId.TabIndex = 40;
+            this.txtFactionId.TextChanged += new System.EventHandler(this.txtFactionId_TextChanged);
             // 
             // txtImportance
             // 
@@ -473,6 +490,7 @@
             this.txtImportance.Name = "txtImportance";
             this.txtImportance.Size = new System.Drawing.Size(39, 20);
             this.txtImportance.TabIndex = 41;
+            this.txtImportance.TextChanged += new System.EventHandler(this.txtImportance_TextChanged);
             // 
             // txtArea
             // 
@@ -480,6 +498,7 @@
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(39, 20);
             this.txtArea.TabIndex = 42;
+            this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
             // 
             // txtContinentId
             // 
@@ -487,6 +506,7 @@
             this.txtContinentId.Name = "txtContinentId";
             this.txtContinentId.Size = new System.Drawing.Size(39, 20);
             this.txtContinentId.TabIndex = 43;
+            this.txtContinentId.TextChanged += new System.EventHandler(this.txtContinentId_TextChanged);
             // 
             // groupBox3
             // 
