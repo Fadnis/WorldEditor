@@ -45,11 +45,8 @@ namespace World_Editor.POIsEditor
             {
                 WorldMapAreaEntry a = (WorldMapAreaEntry)listWorldMapAreas.SelectedItem;
 
-                int i = 1;
-                for (int y = 0; y < 3; ++y)
-                    for (int x = 0; x < 4; ++x, ++i)
-                        if (images.ContainsKey(a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp"))
-                            g.DrawImageUnscaled(images[a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp"], x * MAX_TEXTURE_SIZE, y * MAX_TEXTURE_SIZE);
+                if (images.ContainsKey("BackWorldMap"))
+                    g.DrawImageUnscaled(images["BackWorldMap"], 0, 0);
 
                 foreach (WorldMapOverlayEntry o in DBCStores.WorldMapOverlay.Records.Where(op => op.WorldMapAreaId == a.Id))
                 {
@@ -58,9 +55,15 @@ namespace World_Editor.POIsEditor
 
                     int index = 1;
                     for (int y = 0; y < nbY; ++y)
+                    {
                         for (int x = 0; x < nbX; ++x, ++index)
+                        {
                             if (images.ContainsKey(a.InternalName + "\\" + o.TextureName + index.ToString() + ".blp"))
+                            {
                                 g.DrawImageUnscaled(images[a.InternalName + "\\" + o.TextureName + index.ToString() + ".blp"], (int)o.OffsetX + x * MAX_TEXTURE_SIZE, (int)o.OffsetY + y * MAX_TEXTURE_SIZE);
+                            }
+                        }
+                    }
                 }
                 /* 
                  * Coordonnées WoW              Coordonnées WinForms
@@ -72,7 +75,8 @@ namespace World_Editor.POIsEditor
                  */
                 Rectangle coordsMap = getBordersCoordinates();
 
-                foreach (AreaPOIEntry poi in DBCStores.AreaPOI.Records.Where(poip => coordsMap.Contains(new Point((int)poip.Y, (int)poip.X)) && poip.ContinentId == a.MapId))
+                foreach (AreaPOIEntry poi in DBCStores.AreaPOI.Records.Where(poip => coordsMap.Contains((int)poip.Y, (int)poip.X) && poip.ContinentId == a.MapId))
+                {
                     if (iconsPoi.ContainsKey(poi.NormalIcon))
                     {
                         Point ptBase = new Point(
@@ -84,6 +88,7 @@ namespace World_Editor.POIsEditor
                             g.DrawImage(World_Editor.Properties.Resources.MiniArrow_Right, new Rectangle(ptBase.X - 16, ptBase.Y, 18, 18), new Rectangle(0, 0, 18, 18), GraphicsUnit.Pixel);
                         g.DrawImage(World_Editor.Properties.Resources.icon_delete_little, ptBase.X + 15, ptBase.Y - 3);
                     }
+                }
             }
 
             this.g.DrawImage(_bitmapTemp, 0, 0);
@@ -94,39 +99,48 @@ namespace World_Editor.POIsEditor
             lblRenderTime.Text = (end - start).ToString() + " ms";
         }
 
+        private bool InModification;
         private void listMaps_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listWorldMapAreas.SelectedItem == null)
                 return;
-
+            InModification = true;
             images.Clear();
 
             WorldMapAreaEntry a = (WorldMapAreaEntry)listWorldMapAreas.SelectedItem;
+            Bitmap backImage = new Bitmap(1024, 768);
 
-            int i = 1;
-            for (int y = 0; y < 3; ++y)
+            using (Graphics g = Graphics.FromImage(backImage))
             {
-                for (int x = 0; x < 4; ++x, ++i)
+                int i = 1;
+                for (int y = 0; y < 3; ++y)
                 {
-                    if (MPQFile.Exists("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp"))
+                    for (int x = 0; x < 4; ++x, ++i)
                     {
-                        images.Add(a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp", Blp2.FromStream(new MPQFile("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp")));
-                        NbLayerMap = 0;
-                    }
-                    else if (MPQFile.Exists("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + "1_" + i.ToString() + ".blp"))
-                    {
-                        images.Add(a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp", Blp2.FromStream(new MPQFile("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + "1_" + i.ToString() + ".blp")));
-                        // Boucle pour détecter le nombre d'étages de la map
-                        for (uint index = 1; ; ++index)
+                        if (MPQFile.Exists("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp"))
                         {
-                            if (MPQFile.Exists("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + index.ToString() + "_" + i.ToString() + ".blp"))
-                                NbLayerMap = index;
-                            else
-                                break;
+                            g.DrawImage(Blp2.FromStream(new MPQFile("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp")), x * 256, y * 256);
                         }
+                        else if (MPQFile.Exists("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + "1_" + i.ToString() + ".blp"))
+                        {
+                            g.DrawImage(Blp2.FromStream(new MPQFile("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + "1_" + i.ToString() + ".blp")), x * 256, y * 256);
+                        }
+
                     }
-                        
                 }
+            }
+
+            images.Add("BackWorldMap", backImage);
+
+            // Boucle pour détecter le nombre d'étages de la map
+            //NbLayerMap = (uint)DBCStores.DungeonMap.Records.Count(dmp => dmp.Map == a.MapId);
+            NbLayerMap = 0;
+            for (uint index = 1; ; ++index)
+            {
+                if (MPQFile.Exists("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + index.ToString() + "_1.blp"))
+                    NbLayerMap = index;
+                else
+                    break;
             }
 
             if (NbLayerMap == 0)
@@ -159,6 +173,7 @@ namespace World_Editor.POIsEditor
             }
 
             RePaintMap();
+            InModification = false;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -240,7 +255,8 @@ namespace World_Editor.POIsEditor
                     txtFactionId.Text = poi.FactionId.ToString();
                     txtWorldState.Text = poi.WorldState.ToString();
                     txtFlags.Text = poi.Flags.ToString();
-                    txtWorldMapLink.Text = poi.WorldMapLink.ToString();
+                    // Valeur non utilisée, toujours 0
+                    //txtWorldMapLink.Text = poi.WorldMapLink.ToString();
 
                     panelIn_Paint(null, null);
 
@@ -253,7 +269,7 @@ namespace World_Editor.POIsEditor
             {
                 Id = DBCStores.AreaPOI.MaxKey + 1,
                 NormalIcon = (Editors.POIsEditor.Icons.m_poisIconsEditor == null) ? 45 : (uint)Editors.POIsEditor.Icons.IconIdSelected,
-                X = coordsMap.Height + coordsMap.Y - (e.Y + 15) * coordsMap.Height / MAX_MAP_HEIGHT,
+                X = coordsMap.Height + coordsMap.Y - (e.Y + 15 - 9) * coordsMap.Height / MAX_MAP_HEIGHT,
                 Y = coordsMap.Width + coordsMap.X - (e.X + 11 - 9) * coordsMap.Width / MAX_MAP_WIDTH,
                 ContinentId = a.MapId,
                 Name = "Nouveau point d'intérêt",
@@ -287,27 +303,47 @@ namespace World_Editor.POIsEditor
             }
         }
 
+        private void panelIn_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (ClickIsDown)
+            {
+                WorldMapAreaEntry a = (WorldMapAreaEntry)listWorldMapAreas.SelectedItem;
+                Rectangle coordsMap = getBordersCoordinates();
+
+                PoiSelected.X = coordsMap.Height + coordsMap.Y - (e.Y + 15 - 9) * coordsMap.Height / MAX_MAP_HEIGHT;
+                PoiSelected.Y = coordsMap.Width + coordsMap.X - (e.X + 11 - 9) * coordsMap.Width / MAX_MAP_WIDTH;
+
+                RePaintMap();
+            }
+        }
+
         private void numLayer_ValueChanged(object sender, EventArgs e)
         {
-            if (listWorldMapAreas.SelectedItem == null || numLayer.Value == 0)
+            if (listWorldMapAreas.SelectedItem == null || numLayer.Value == 0 || InModification)
                 return;
 
             images.Clear();
 
             WorldMapAreaEntry a = (WorldMapAreaEntry)listWorldMapAreas.SelectedItem;
 
-            int i = 1;
-            for (int y = 0; y < 3; ++y)
+            Bitmap backImage = new Bitmap(1024, 768);
+            using (Graphics g = Graphics.FromImage(backImage))
             {
-                for (int x = 0; x < 4; ++x, ++i)
+                int i = 1;
+                for (int y = 0; y < 3; ++y)
                 {
-                    if (MPQFile.Exists("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + numLayer.Value + "_" + i.ToString() + ".blp"))
+                    for (int x = 0; x < 4; ++x, ++i)
                     {
-                        images.Add(a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp", Blp2.FromStream(new MPQFile("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + numLayer.Value + "_" + i.ToString() + ".blp")));
-                    }
+                        if (MPQFile.Exists("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + numLayer.Value + "_" + i.ToString() + ".blp"))
+                        {
+                            //images.Add(a.InternalName + "\\" + a.InternalName + i.ToString() + ".blp", Blp2.FromStream(new MPQFile("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + numLayer.Value + "_" + i.ToString() + ".blp")));
+                            g.DrawImage(Blp2.FromStream(new MPQFile("Interface\\WorldMap\\" + a.InternalName + "\\" + a.InternalName + numLayer.Value + "_" + i.ToString() + ".blp")), x * 256, y * 256);
+                        }
 
+                    }
                 }
             }
+            images.Add("BackWorldMap", backImage);
 
             foreach (WorldMapOverlayEntry o in DBCStores.WorldMapOverlay.Records.Where(op => op.WorldMapAreaId == a.Id))
             {
@@ -319,6 +355,7 @@ namespace World_Editor.POIsEditor
                         images.Add(a.InternalName + "\\" + o.TextureName + index.ToString() + ".blp", Blp2.FromStream(new MPQFile("Interface\\WorldMap\\" + a.InternalName + "\\" + o.TextureName + index.ToString() + ".blp")));
             }
 
+            NbLayerMap = (uint)numLayer.Value;
             RePaintMap();
         }
 
@@ -339,7 +376,15 @@ namespace World_Editor.POIsEditor
             }
             else
             {
-                DungeonMapEntry d = DBCStores.DungeonMap.Records.First(dp => dp.Map == worldMapArea.MapId && dp.Layer == NbLayerMap);
+                DungeonMapEntry d;
+                try
+                {
+                    d = DBCStores.DungeonMap.Records.First(dp => dp.Map == worldMapArea.MapId && dp.Layer == NbLayerMap);
+                }
+                catch (InvalidOperationException)
+                {
+                    return new Rectangle((int)worldMapArea.locRight, (int)worldMapArea.locBottom, (int)worldMapArea.locLeft - (int)worldMapArea.locRight, (int)worldMapArea.locTop - (int)worldMapArea.locBottom);
+                }
                 //                              x1                     y1                             x2 - x1                                        y2 - y1
                 return new Rectangle((int)d.Coordonates[0], (int)d.Coordonates[2], (int)d.Coordonates[1] - (int)d.Coordonates[0], (int)d.Coordonates[3] - (int)d.Coordonates[2]);
             }
@@ -414,20 +459,6 @@ namespace World_Editor.POIsEditor
             ClickIsDown = false;
         }
 
-        private void panelIn_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (ClickIsDown)
-            {
-                WorldMapAreaEntry a = (WorldMapAreaEntry)listWorldMapAreas.SelectedItem;
-                Rectangle coordsMap = getBordersCoordinates();
-
-                PoiSelected.X = coordsMap.Height + coordsMap.Y - (e.Y + 15) * coordsMap.Height / MAX_MAP_HEIGHT;
-                PoiSelected.Y = coordsMap.Width + coordsMap.X - (e.X + 11 - 9) * coordsMap.Width / MAX_MAP_WIDTH;
-
-                RePaintMap();
-            }
-        }
-
         private static Bitmap cropBitmap(Bitmap img, Rectangle cropArea)
         {
             Bitmap bmpImage = new Bitmap(img);
@@ -461,7 +492,6 @@ namespace World_Editor.POIsEditor
 
             RePaintMap();
         }
-        #endregion
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
@@ -488,6 +518,8 @@ namespace World_Editor.POIsEditor
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.NormalIcon50p = Misc.ParseToUInt(txtNormalIcon50.Text);
+
+            RePaintMap();
         }
 
         private void txtNormalIcon0_TextChanged(object sender, EventArgs e)
@@ -497,6 +529,8 @@ namespace World_Editor.POIsEditor
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.NormalIcon0p = Misc.ParseToUInt(txtNormalIcon0.Text);
+
+            RePaintMap();
         }
 
         private void txtHordeIcon_TextChanged(object sender, EventArgs e)
@@ -506,6 +540,8 @@ namespace World_Editor.POIsEditor
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.HordeIcon = Misc.ParseToUInt(txtHordeIcon.Text);
+
+            RePaintMap();
         }
 
         private void txtHordeIcon50_TextChanged(object sender, EventArgs e)
@@ -515,6 +551,8 @@ namespace World_Editor.POIsEditor
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.HordeIcon50p = Misc.ParseToUInt(txtHordeIcon50.Text);
+
+            RePaintMap();
         }
 
         private void txtHordeIcon0_TextChanged(object sender, EventArgs e)
@@ -524,6 +562,8 @@ namespace World_Editor.POIsEditor
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.HordeIcon0p = Misc.ParseToUInt(txtHordeIcon0.Text);
+
+            RePaintMap();
         }
 
         private void txtAllianceIcon_TextChanged(object sender, EventArgs e)
@@ -533,6 +573,8 @@ namespace World_Editor.POIsEditor
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.AllianceIcon = Misc.ParseToUInt(txtAllianceIcon.Text);
+
+            RePaintMap();
         }
 
         private void txtAllianceIcon50_TextChanged(object sender, EventArgs e)
@@ -542,6 +584,8 @@ namespace World_Editor.POIsEditor
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.AllianceIcon50p = Misc.ParseToUInt(txtAllianceIcon50.Text);
+
+            RePaintMap();
         }
 
         private void txtAllianceIcon0_TextChanged(object sender, EventArgs e)
@@ -551,6 +595,8 @@ namespace World_Editor.POIsEditor
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.AllianceIcon0p = Misc.ParseToUInt(txtAllianceIcon0.Text);
+
+            RePaintMap();
         }
 
         private void txtX_TextChanged(object sender, EventArgs e)
@@ -638,6 +684,9 @@ namespace World_Editor.POIsEditor
             p.Flags = Misc.ParseToUInt(txtFlags.Text);
         }
 
+        /*
+         * Non utilisé
+         * 
         private void txtWorldMapLink_TextChanged(object sender, EventArgs e)
         {
             if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
@@ -646,5 +695,7 @@ namespace World_Editor.POIsEditor
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.WorldMapLink = Misc.ParseToUInt(txtWorldMapLink.Text);
         }
+        */
+        #endregion
     }
 }

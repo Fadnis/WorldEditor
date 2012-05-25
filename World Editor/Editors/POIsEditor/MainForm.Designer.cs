@@ -53,7 +53,6 @@
             this.txtAllianceIcon = new System.Windows.Forms.TextBox();
             this.btnIcons = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtX = new System.Windows.Forms.TextBox();
@@ -61,13 +60,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtY = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtWorldMapLink = new System.Windows.Forms.TextBox();
             this.txtFlags = new System.Windows.Forms.TextBox();
             this.txtWorldState = new System.Windows.Forms.TextBox();
             this.txtFactionId = new System.Windows.Forms.TextBox();
@@ -75,18 +72,18 @@
             this.txtArea = new System.Windows.Forms.TextBox();
             this.txtContinentId = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numLayer = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.listFaction = new System.Windows.Forms.ComboBox();
             this.barDestruct = new System.Windows.Forms.TrackBar();
-            this.label22 = new System.Windows.Forms.Label();
-            this.numLayer = new System.Windows.Forms.NumericUpDown();
+            this.label23 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barDestruct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barDestruct)).BeginInit();
             this.SuspendLayout();
             // 
             // panelIn
@@ -122,7 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 314);
+            this.label1.Location = new System.Drawing.Point(9, 329);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 13);
             this.label1.TabIndex = 5;
@@ -131,7 +128,7 @@
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(31, 311);
+            this.txtId.Location = new System.Drawing.Point(31, 326);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(39, 20);
             this.txtId.TabIndex = 6;
@@ -139,7 +136,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 314);
+            this.label2.Location = new System.Drawing.Point(9, 303);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 7;
@@ -147,25 +144,24 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(117, 311);
+            this.txtName.Location = new System.Drawing.Point(50, 300);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(112, 20);
+            this.txtName.Size = new System.Drawing.Size(182, 20);
             this.txtName.TabIndex = 8;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(9, 337);
-            this.txtDescription.Multiline = true;
+            this.txtDescription.Location = new System.Drawing.Point(113, 326);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(220, 50);
+            this.txtDescription.Size = new System.Drawing.Size(119, 20);
             this.txtDescription.TabIndex = 9;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(142, 19);
+            this.label5.Location = new System.Drawing.Point(138, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(21, 13);
             this.label5.TabIndex = 12;
@@ -174,7 +170,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(95, 19);
+            this.label6.Location = new System.Drawing.Point(91, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 13);
             this.label6.TabIndex = 13;
@@ -183,7 +179,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(50, 19);
+            this.label7.Location = new System.Drawing.Point(46, 10);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 14;
@@ -192,7 +188,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 90);
+            this.label8.Location = new System.Drawing.Point(3, 81);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 15;
@@ -201,7 +197,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 64);
+            this.label9.Location = new System.Drawing.Point(3, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 13);
             this.label9.TabIndex = 16;
@@ -210,7 +206,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 38);
+            this.label10.Location = new System.Drawing.Point(3, 29);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 17;
@@ -218,7 +214,7 @@
             // 
             // txtNormalIcon
             // 
-            this.txtNormalIcon.Location = new System.Drawing.Point(53, 35);
+            this.txtNormalIcon.Location = new System.Drawing.Point(49, 26);
             this.txtNormalIcon.Name = "txtNormalIcon";
             this.txtNormalIcon.Size = new System.Drawing.Size(39, 20);
             this.txtNormalIcon.TabIndex = 18;
@@ -226,7 +222,7 @@
             // 
             // txtNormalIcon0
             // 
-            this.txtNormalIcon0.Location = new System.Drawing.Point(143, 35);
+            this.txtNormalIcon0.Location = new System.Drawing.Point(139, 26);
             this.txtNormalIcon0.Name = "txtNormalIcon0";
             this.txtNormalIcon0.Size = new System.Drawing.Size(39, 20);
             this.txtNormalIcon0.TabIndex = 19;
@@ -234,7 +230,7 @@
             // 
             // txtNormalIcon50
             // 
-            this.txtNormalIcon50.Location = new System.Drawing.Point(98, 35);
+            this.txtNormalIcon50.Location = new System.Drawing.Point(94, 26);
             this.txtNormalIcon50.Name = "txtNormalIcon50";
             this.txtNormalIcon50.Size = new System.Drawing.Size(39, 20);
             this.txtNormalIcon50.TabIndex = 20;
@@ -242,7 +238,7 @@
             // 
             // txtHordeIcon50
             // 
-            this.txtHordeIcon50.Location = new System.Drawing.Point(98, 61);
+            this.txtHordeIcon50.Location = new System.Drawing.Point(94, 52);
             this.txtHordeIcon50.Name = "txtHordeIcon50";
             this.txtHordeIcon50.Size = new System.Drawing.Size(39, 20);
             this.txtHordeIcon50.TabIndex = 23;
@@ -250,7 +246,7 @@
             // 
             // txtHordeIcon0
             // 
-            this.txtHordeIcon0.Location = new System.Drawing.Point(143, 61);
+            this.txtHordeIcon0.Location = new System.Drawing.Point(139, 52);
             this.txtHordeIcon0.Name = "txtHordeIcon0";
             this.txtHordeIcon0.Size = new System.Drawing.Size(39, 20);
             this.txtHordeIcon0.TabIndex = 22;
@@ -258,7 +254,7 @@
             // 
             // txtHordeIcon
             // 
-            this.txtHordeIcon.Location = new System.Drawing.Point(53, 61);
+            this.txtHordeIcon.Location = new System.Drawing.Point(49, 52);
             this.txtHordeIcon.Name = "txtHordeIcon";
             this.txtHordeIcon.Size = new System.Drawing.Size(39, 20);
             this.txtHordeIcon.TabIndex = 21;
@@ -266,7 +262,7 @@
             // 
             // txtAllianceIcon50
             // 
-            this.txtAllianceIcon50.Location = new System.Drawing.Point(98, 87);
+            this.txtAllianceIcon50.Location = new System.Drawing.Point(94, 78);
             this.txtAllianceIcon50.Name = "txtAllianceIcon50";
             this.txtAllianceIcon50.Size = new System.Drawing.Size(39, 20);
             this.txtAllianceIcon50.TabIndex = 26;
@@ -274,7 +270,7 @@
             // 
             // txtAllianceIcon0
             // 
-            this.txtAllianceIcon0.Location = new System.Drawing.Point(143, 87);
+            this.txtAllianceIcon0.Location = new System.Drawing.Point(139, 78);
             this.txtAllianceIcon0.Name = "txtAllianceIcon0";
             this.txtAllianceIcon0.Size = new System.Drawing.Size(39, 20);
             this.txtAllianceIcon0.TabIndex = 25;
@@ -282,7 +278,7 @@
             // 
             // txtAllianceIcon
             // 
-            this.txtAllianceIcon.Location = new System.Drawing.Point(53, 87);
+            this.txtAllianceIcon.Location = new System.Drawing.Point(49, 78);
             this.txtAllianceIcon.Name = "txtAllianceIcon";
             this.txtAllianceIcon.Size = new System.Drawing.Size(39, 20);
             this.txtAllianceIcon.TabIndex = 24;
@@ -290,7 +286,7 @@
             // 
             // btnIcons
             // 
-            this.btnIcons.Location = new System.Drawing.Point(188, 32);
+            this.btnIcons.Location = new System.Drawing.Point(184, 23);
             this.btnIcons.Name = "btnIcons";
             this.btnIcons.Size = new System.Drawing.Size(23, 75);
             this.btnIcons.TabIndex = 27;
@@ -316,32 +312,17 @@
             this.groupBox1.Controls.Add(this.txtNormalIcon);
             this.groupBox1.Controls.Add(this.txtNormalIcon50);
             this.groupBox1.Controls.Add(this.txtNormalIcon0);
-            this.groupBox1.Location = new System.Drawing.Point(9, 393);
+            this.groupBox1.Location = new System.Drawing.Point(15, 352);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(220, 117);
+            this.groupBox1.Size = new System.Drawing.Size(211, 104);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Icons";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtX);
-            this.groupBox2.Controls.Add(this.txtZ);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txtY);
-            this.groupBox2.Location = new System.Drawing.Point(9, 516);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(220, 55);
-            this.groupBox2.TabIndex = 29;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Coords";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(78, 22);
+            this.label4.Location = new System.Drawing.Point(85, 465);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 13);
             this.label4.TabIndex = 31;
@@ -350,7 +331,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 22);
+            this.label3.Location = new System.Drawing.Point(9, 465);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 30;
@@ -358,24 +339,24 @@
             // 
             // txtX
             // 
-            this.txtX.Location = new System.Drawing.Point(98, 19);
+            this.txtX.Location = new System.Drawing.Point(98, 462);
             this.txtX.Name = "txtX";
-            this.txtX.Size = new System.Drawing.Size(39, 20);
+            this.txtX.Size = new System.Drawing.Size(50, 20);
             this.txtX.TabIndex = 28;
             this.txtX.TextChanged += new System.EventHandler(this.txtX_TextChanged);
             // 
             // txtZ
             // 
-            this.txtZ.Location = new System.Drawing.Point(163, 19);
+            this.txtZ.Location = new System.Drawing.Point(176, 462);
             this.txtZ.Name = "txtZ";
-            this.txtZ.Size = new System.Drawing.Size(39, 20);
+            this.txtZ.Size = new System.Drawing.Size(50, 20);
             this.txtZ.TabIndex = 32;
             this.txtZ.TextChanged += new System.EventHandler(this.txtZ_TextChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(143, 22);
+            this.label11.Location = new System.Drawing.Point(161, 465);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(14, 13);
             this.label11.TabIndex = 32;
@@ -383,9 +364,9 @@
             // 
             // txtY
             // 
-            this.txtY.Location = new System.Drawing.Point(33, 19);
+            this.txtY.Location = new System.Drawing.Point(23, 462);
             this.txtY.Name = "txtY";
-            this.txtY.Size = new System.Drawing.Size(39, 20);
+            this.txtY.Size = new System.Drawing.Size(50, 20);
             this.txtY.TabIndex = 31;
             this.txtY.TextChanged += new System.EventHandler(this.txtY_TextChanged);
             // 
@@ -397,15 +378,6 @@
             this.label12.Size = new System.Drawing.Size(60, 13);
             this.label12.TabIndex = 30;
             this.label12.Text = "Importance";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 658);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 13);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "WorldMapLink";
             // 
             // label14
             // 
@@ -419,20 +391,20 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(137, 580);
+            this.label15.Location = new System.Drawing.Point(12, 517);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 13);
+            this.label15.Size = new System.Drawing.Size(38, 13);
             this.label15.TabIndex = 33;
-            this.label15.Text = "Area";
+            this.label15.Text = "AreaId";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(16, 580);
+            this.label16.Location = new System.Drawing.Point(12, 491);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 13);
+            this.label16.Size = new System.Drawing.Size(37, 13);
             this.label16.TabIndex = 34;
-            this.label16.Text = "ContinentId";
+            this.label16.Text = "MapId";
             // 
             // label17
             // 
@@ -451,14 +423,6 @@
             this.label18.Size = new System.Drawing.Size(51, 13);
             this.label18.TabIndex = 36;
             this.label18.Text = "FactionId";
-            // 
-            // txtWorldMapLink
-            // 
-            this.txtWorldMapLink.Location = new System.Drawing.Point(88, 655);
-            this.txtWorldMapLink.Name = "txtWorldMapLink";
-            this.txtWorldMapLink.Size = new System.Drawing.Size(39, 20);
-            this.txtWorldMapLink.TabIndex = 37;
-            this.txtWorldMapLink.TextChanged += new System.EventHandler(this.txtWorldMapLink_TextChanged);
             // 
             // txtFlags
             // 
@@ -494,7 +458,7 @@
             // 
             // txtArea
             // 
-            this.txtArea.Location = new System.Drawing.Point(181, 577);
+            this.txtArea.Location = new System.Drawing.Point(55, 514);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(39, 20);
             this.txtArea.TabIndex = 42;
@@ -502,7 +466,7 @@
             // 
             // txtContinentId
             // 
-            this.txtContinentId.Location = new System.Drawing.Point(88, 577);
+            this.txtContinentId.Location = new System.Drawing.Point(55, 488);
             this.txtContinentId.Name = "txtContinentId";
             this.txtContinentId.Size = new System.Drawing.Size(39, 20);
             this.txtContinentId.TabIndex = 43;
@@ -523,6 +487,29 @@
             this.groupBox3.TabIndex = 44;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Display Options";
+            // 
+            // numLayer
+            // 
+            this.numLayer.Enabled = false;
+            this.numLayer.Location = new System.Drawing.Point(169, 63);
+            this.numLayer.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLayer.Name = "numLayer";
+            this.numLayer.Size = new System.Drawing.Size(45, 20);
+            this.numLayer.TabIndex = 6;
+            this.numLayer.ValueChanged += new System.EventHandler(this.numLayer_ValueChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(130, 66);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(33, 13);
+            this.label22.TabIndex = 5;
+            this.label22.Text = "Layer";
             // 
             // label21
             // 
@@ -577,52 +564,42 @@
             this.barDestruct.Value = 2;
             this.barDestruct.Scroll += new System.EventHandler(this.barDestruct_Scroll);
             // 
-            // label22
+            // label23
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(130, 66);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(33, 13);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "Layer";
-            // 
-            // numLayer
-            // 
-            this.numLayer.Enabled = false;
-            this.numLayer.Location = new System.Drawing.Point(169, 63);
-            this.numLayer.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numLayer.Name = "numLayer";
-            this.numLayer.Size = new System.Drawing.Size(45, 20);
-            this.numLayer.TabIndex = 6;
-            this.numLayer.ValueChanged += new System.EventHandler(this.numLayer_ValueChanged);
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(76, 329);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(35, 13);
+            this.label23.TabIndex = 45;
+            this.label23.Text = "Desc.";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1248, 686);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.txtX);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.txtZ);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtContinentId);
+            this.Controls.Add(this.txtY);
             this.Controls.Add(this.txtArea);
             this.Controls.Add(this.txtImportance);
             this.Controls.Add(this.txtFactionId);
             this.Controls.Add(this.txtWorldState);
             this.Controls.Add(this.txtFlags);
-            this.Controls.Add(this.txtWorldMapLink);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtId);
@@ -638,12 +615,10 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barDestruct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barDestruct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -676,7 +651,6 @@
         private System.Windows.Forms.TextBox txtAllianceIcon;
         private System.Windows.Forms.Button btnIcons;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtX;
@@ -684,13 +658,11 @@
         private System.Windows.Forms.TextBox txtY;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtWorldMapLink;
         private System.Windows.Forms.TextBox txtFlags;
         private System.Windows.Forms.TextBox txtWorldState;
         private System.Windows.Forms.TextBox txtFactionId;
@@ -705,5 +677,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.NumericUpDown numLayer;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
     }
 }
