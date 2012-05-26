@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using World_Editor.Database;
 using World_Editor.Stormlib;
 
 namespace World_Editor.ProjectsEditor
@@ -65,6 +66,18 @@ namespace World_Editor.ProjectsEditor
             txtProjectName.Text = p.Name;
             txtProjectPath.Text = p.Path;
             txtWowFolder.Text = p.WowDir;
+            try
+            {
+                listCores.SelectedIndex = p.Core - 1;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                listCores.SelectedIndex = 0;
+            }
+            txtDbHost.Text = p.Host;
+            txtDbDatabase.Text = p.Database;
+            txtDbUser.Text = p.User;
+            txtDbPassword.Text = p.Password;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -140,7 +153,7 @@ namespace World_Editor.ProjectsEditor
             if (!Directory.Exists(txtProjectPath.Text) || !Directory.Exists(txtWowFolder.Text))
                 return;
 
-            Utils.ProjectManager.WowDirectory = txtWowFolder.Text;
+            ProjectManager.WowDirectory = txtWowFolder.Text;
             Stormlib.MPQArchiveLoader.Instance.Init();
             Directory.CreateDirectory(txtProjectPath.Text + "\\dbc");
             if (Directory.GetFiles(txtProjectPath.Text + "\\dbc").Count() > 0)
@@ -443,6 +456,67 @@ namespace World_Editor.ProjectsEditor
             else
                 MessageBox.Show("Extraction des fichiers terminés.");
         }
+
+        private void listCores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listProjects.SelectedItem == null)
+                return;
+
+            Project p = (Project)listProjects.Items[listProjects.SelectedIndex];
+            p.Core = listCores.SelectedIndex + 1;
+        }
+
+        private void txtDbHost_TextChanged(object sender, EventArgs e)
+        {
+            if (listProjects.SelectedItem == null)
+                return;
+
+            Project p = (Project)listProjects.Items[listProjects.SelectedIndex];
+            p.Host = txtDbHost.Text;
+        }
+
+        private void txtDbDatabase_TextChanged(object sender, EventArgs e)
+        {
+            if (listProjects.SelectedItem == null)
+                return;
+
+            Project p = (Project)listProjects.Items[listProjects.SelectedIndex];
+            p.Database = txtDbDatabase.Text;
+        }
+
+        private void txtDbUser_TextChanged(object sender, EventArgs e)
+        {
+            if (listProjects.SelectedItem == null)
+                return;
+
+            Project p = (Project)listProjects.Items[listProjects.SelectedIndex];
+            p.User = txtDbUser.Text;
+        }
+
+        private void txtDbPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (listProjects.SelectedItem == null)
+                return;
+
+            Project p = (Project)listProjects.Items[listProjects.SelectedIndex];
+            p.Password = txtDbPassword.Text;
+        }
+
+        private void btnTestDatabase_Click(object sender, EventArgs e)
+        {
+            MySqlConnector conn = new Database.MySqlConnector(txtDbHost.Text,
+                            txtDbDatabase.Text, txtDbUser.Text, txtDbPassword.Text, null);
+            try
+            {
+                conn.Connect();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur de connexion : " + ex.Message);
+                return;
+            }
+            MessageBox.Show("Connexion établie.");
+        }
     }
 
     public class Project
@@ -451,6 +525,11 @@ namespace World_Editor.ProjectsEditor
         public string Path { get; set; }
         public string WowDir { get; set; }
         public bool IsLast { get; set; }
+        public string Host { get; set; }
+        public string Database { get; set; }
+        public string User { get; set; }
+        public string Password { get; set; }
+        public int Core { get; set; }
 
         public override string ToString()
         {

@@ -50,7 +50,7 @@ namespace World_Editor.Stormlib
 
         public bool Init()
         {
-            string basePath = Utils.ProjectManager.WowDirectory;
+            string basePath = ProjectManager.WowDirectory;
             basePath += "\\data";
             LoadArchivesFromDir(basePath);
 

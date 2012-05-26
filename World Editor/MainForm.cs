@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using World_Editor.Database;
+using World_Editor.Database.Emulators;
 using World_Editor.DBC;
 using World_Editor.ProjectsEditor;
 
@@ -39,7 +41,7 @@ namespace World_Editor
 
                 foreach (Project p in projects)
                 {
-                    listProjects.Items.Add(p);
+                    listProjects.Items.Add(p); 
 
                     if (p.IsLast)
                         lastproject = p;
@@ -54,23 +56,50 @@ namespace World_Editor
         {
             if (btnValidateProject.Text == "Valider")
             {
+                Project selectedProject = null;
                 foreach (Project p in projects)
                 {
                     p.IsLast = false;
 
                     if (listProjects.Items[listProjects.SelectedIndex] == p)
                     {
-                        p.IsLast = true;
-                        Utils.ProjectManager.ProjectName = p.Name;
-                        Utils.ProjectManager.ProjectDirectory = p.Path;
-                        Utils.ProjectManager.WowDirectory = p.WowDir;
+                        selectedProject = p;
                     }
                 }
+
+                selectedProject.IsLast = true;
+                ProjectManager.ProjectName = selectedProject.Name;
+                ProjectManager.ProjectDirectory = selectedProject.Path;
+                ProjectManager.WowDirectory = selectedProject.WowDir;
+
                 projConf.Projects = projects;
                 projConf.Save();
 
                 try
                 {
+                    if (World_Editor.Properties.Settings.Default.OptionUseDatabase)
+                    {
+                        Core c = null;
+                        switch (selectedProject.Core)
+                        {
+                            case 1:
+                                c = new Arcemu();
+                                break;
+                            case 2:
+                                c = new Mangos();
+                                break;
+                            case 3:
+                                c = new Trinity();
+                                break;
+                            default:
+                                throw new Exception("No Core defined");
+                        }
+
+                        ProjectManager.Connection = new Database.MySqlConnector(selectedProject.Host,
+                            selectedProject.Database, selectedProject.User, selectedProject.Password, c);
+                        ProjectManager.Connection.Connect();
+                    }
+
                     DBCStores.InitFiles();
 
                     Stormlib.MPQArchiveLoader.Instance.Init();
@@ -79,7 +108,14 @@ namespace World_Editor
                     listProjects.Enabled = false;
                     btnValidateProject.Text = "Modifier";
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                catch (Exception ex) 
+                { 
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    ProjectManager.Connection = null;
+                }
             }
             else if (btnValidateProject.Text == "Modifier")
             {

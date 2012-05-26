@@ -65,6 +65,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -77,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Core.cs" />
+    <Compile Include="Database\Emulators\Arcemu.cs" />
+    <Compile Include="Database\Emulators\Mangos.cs" />
+    <Compile Include="Database\Emulators\Trinity.cs" />
+    <Compile Include="Database\MySqlConnector.cs" />
+    <Compile Include="Database\Structures.cs" />
     <Compile Include="Editors\ClassesEditor\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +356,7 @@
   <ItemGroup>
     <None Include="Resources\MiniArrow-Right.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

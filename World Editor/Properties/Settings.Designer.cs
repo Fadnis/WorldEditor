@@ -22,5 +22,17 @@ namespace World_Editor.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OptionUseDatabase {
+            get {
+                return ((bool)(this["OptionUseDatabase"]));
+            }
+            set {
+                this["OptionUseDatabase"] = value;
+            }
+        }
     }
 }

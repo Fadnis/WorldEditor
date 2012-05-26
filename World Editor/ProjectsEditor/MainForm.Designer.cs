@@ -40,6 +40,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnWowFolder = new System.Windows.Forms.Button();
             this.btnExtractDbc = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDbPassword = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDbUser = new System.Windows.Forms.TextBox();
+            this.txtDbDatabase = new System.Windows.Forms.TextBox();
+            this.txtDbHost = new System.Windows.Forms.TextBox();
+            this.btnTestDatabase = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.listCores = new System.Windows.Forms.ComboBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listProjects
@@ -145,7 +158,7 @@
             // 
             // btnExtractDbc
             // 
-            this.btnExtractDbc.Location = new System.Drawing.Point(123, 158);
+            this.btnExtractDbc.Location = new System.Drawing.Point(60, 323);
             this.btnExtractDbc.Name = "btnExtractDbc";
             this.btnExtractDbc.Size = new System.Drawing.Size(105, 22);
             this.btnExtractDbc.TabIndex = 12;
@@ -153,11 +166,133 @@
             this.btnExtractDbc.UseVisualStyleBackColor = true;
             this.btnExtractDbc.Click += new System.EventHandler(this.btnExtractDbc_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtDbHost);
+            this.groupBox1.Controls.Add(this.txtDbDatabase);
+            this.groupBox1.Controls.Add(this.txtDbUser);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtDbPassword);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(16, 190);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(318, 127);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Base de données";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Host";
+            // 
+            // txtDbPassword
+            // 
+            this.txtDbPassword.Location = new System.Drawing.Point(65, 97);
+            this.txtDbPassword.Name = "txtDbPassword";
+            this.txtDbPassword.Size = new System.Drawing.Size(247, 20);
+            this.txtDbPassword.TabIndex = 1;
+            this.txtDbPassword.TextChanged += new System.EventHandler(this.txtDbPassword_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Database";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "User";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 100);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Password";
+            // 
+            // txtDbUser
+            // 
+            this.txtDbUser.Location = new System.Drawing.Point(65, 71);
+            this.txtDbUser.Name = "txtDbUser";
+            this.txtDbUser.Size = new System.Drawing.Size(247, 20);
+            this.txtDbUser.TabIndex = 5;
+            this.txtDbUser.TextChanged += new System.EventHandler(this.txtDbUser_TextChanged);
+            // 
+            // txtDbDatabase
+            // 
+            this.txtDbDatabase.Location = new System.Drawing.Point(65, 45);
+            this.txtDbDatabase.Name = "txtDbDatabase";
+            this.txtDbDatabase.Size = new System.Drawing.Size(247, 20);
+            this.txtDbDatabase.TabIndex = 6;
+            this.txtDbDatabase.TextChanged += new System.EventHandler(this.txtDbDatabase_TextChanged);
+            // 
+            // txtDbHost
+            // 
+            this.txtDbHost.Location = new System.Drawing.Point(65, 19);
+            this.txtDbHost.Name = "txtDbHost";
+            this.txtDbHost.Size = new System.Drawing.Size(247, 20);
+            this.txtDbHost.TabIndex = 7;
+            this.txtDbHost.TextChanged += new System.EventHandler(this.txtDbHost_TextChanged);
+            // 
+            // btnTestDatabase
+            // 
+            this.btnTestDatabase.Location = new System.Drawing.Point(171, 323);
+            this.btnTestDatabase.Name = "btnTestDatabase";
+            this.btnTestDatabase.Size = new System.Drawing.Size(105, 22);
+            this.btnTestDatabase.TabIndex = 14;
+            this.btnTestDatabase.Text = "Tester BDD";
+            this.btnTestDatabase.UseVisualStyleBackColor = true;
+            this.btnTestDatabase.Click += new System.EventHandler(this.btnTestDatabase_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 166);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Emulateur";
+            // 
+            // listCores
+            // 
+            this.listCores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listCores.FormattingEnabled = true;
+            this.listCores.Items.AddRange(new object[] {
+            "Arcemu",
+            "Mangos",
+            "Trinity"});
+            this.listCores.Location = new System.Drawing.Point(73, 163);
+            this.listCores.Name = "listCores";
+            this.listCores.Size = new System.Drawing.Size(260, 21);
+            this.listCores.TabIndex = 15;
+            this.listCores.SelectedIndexChanged += new System.EventHandler(this.listCores_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 184);
+            this.ClientSize = new System.Drawing.Size(346, 353);
+            this.Controls.Add(this.listCores);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnTestDatabase);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExtractDbc);
             this.Controls.Add(this.btnWowFolder);
             this.Controls.Add(this.label3);
@@ -175,6 +310,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestion des projets";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +331,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnWowFolder;
         private System.Windows.Forms.Button btnExtractDbc;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtDbHost;
+        private System.Windows.Forms.TextBox txtDbDatabase;
+        private System.Windows.Forms.TextBox txtDbUser;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDbPassword;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnTestDatabase;
+        private System.Windows.Forms.ComboBox listCores;
     }
 }
