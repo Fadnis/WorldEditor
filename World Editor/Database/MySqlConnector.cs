@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,16 +15,14 @@ namespace World_Editor.Database
 
         public MySqlConnector(string host, string database, string user, string password, Core c)
         {
-            this.ConnectionStr = "SERVER=" + host + ";DATABASE=" + database + ";UID=" + user + ";PASSWORD=" + password +";";
+            this.ConnectionStr = "SERVER=" + host + ";DATABASE=" + database + ";UID=" + user + ";PASSWORD=" + password + ";";
             this.Core = c;
+            Connection = new MySqlConnection(ConnectionStr);
+            Connection.Open();
         }
 
         public void Connect()
         {
-            if (Connection == null)
-            {
-                Connection = new MySqlConnection(ConnectionStr);
-            }
             Connection.Open();
         }
 
@@ -45,6 +44,7 @@ namespace World_Editor.Database
             MySqlCommand Command = Connection.CreateCommand();
             Command.CommandText = Core.GetCreatureTemplate(entry);
             MySqlDataReader Reader = Command.ExecuteReader();
+
             CreatureTemplate ct = null;
 
             while (Reader.Read())
@@ -62,6 +62,64 @@ namespace World_Editor.Database
             Command.Dispose();
 
             return ct;
+        }
+
+        /// <summary>
+        /// Récupère tous les objets de la base de données.
+        /// </summary>
+        /// <returns></returns>
+        public ItemTemplate[] GetItemTemplate()
+        {
+            MySqlCommand Command = Connection.CreateCommand();
+            Command.CommandText = Core.GetItemTemplate();
+            MySqlDataReader Reader = Command.ExecuteReader();
+
+            ArrayList Items = new ArrayList();
+
+            while (Reader.Read())
+            {
+                object[] row = new object[Reader.FieldCount];
+                for (int i = 0; i < Reader.FieldCount; ++i)
+                {
+                    row[i] = Reader.GetValue(i);
+                }
+                Items.Add(Core.CreateItemTemplate(row));
+            }
+
+            Reader.Close();
+            Command.Dispose();
+
+            return (ItemTemplate[])Items.ToArray(typeof(ItemTemplate));
+        }
+
+        /// <summary>
+        /// Récupère tous les objets de la base de données contenus entre 2 ids.
+        /// </summary>
+        /// <param name="from">Identifiant de départ</param>
+        /// <param name="to">Identifiant de fin</param>
+        /// <returns></returns>
+        public ItemTemplate[] GetItemTemplate(uint from, uint to)
+        {
+            MySqlCommand Command = Connection.CreateCommand();
+            Command.CommandText = Core.GetItemTemplate(from, to);
+            MySqlDataReader Reader = Command.ExecuteReader();
+
+            ArrayList Items = new ArrayList();
+
+            while (Reader.Read())
+            {
+                object[] row = new object[Reader.FieldCount];
+                for (int i = 0; i < Reader.FieldCount; ++i)
+                {
+                    row[i] = Reader.GetValue(i);
+                }
+                Items.Add(Core.CreateItemTemplate(row));
+            }
+
+            Reader.Close();
+            Command.Dispose();
+
+            return (ItemTemplate[])Items.ToArray(typeof(ItemTemplate));
         }
     }
 }

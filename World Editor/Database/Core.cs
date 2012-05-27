@@ -9,6 +9,11 @@ namespace World_Editor.Database
     {
         string GetCreatureTemplate(uint entry);
 
+        string GetItemTemplate();
+        string GetItemTemplate(uint from, uint to);
+
         CreatureTemplate CreateCreatureTemplate(object[] data);
+
+        ItemTemplate CreateItemTemplate(object[] data);
     }
 }

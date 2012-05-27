@@ -104,7 +104,7 @@ namespace World_Editor.DBC
         //public static DBCFile<HolidayDescriptionsEntry> HolidayDescriptions { get; private set; }
         //public static DBCFile<HolidayNamesEntry> HolidayNames { get; private set; }
         //public static DBCFile<HolidaysEntry> Holidays { get; private set; }
-        //public static DBCFile<ItemEntry> Item { get; private set; }
+        public static DBCFile<ItemEntry> Item { get; private set; }
         //public static DBCFile<ItemBagFamilyEntry> ItemBagFamily { get; private set; }
         //public static DBCFile<ItemClassEntry> ItemClass { get; private set; }
         //public static DBCFile<ItemCondExtCostsEntry> ItemCondExtCosts { get; private set; }
@@ -357,7 +357,7 @@ namespace World_Editor.DBC
             //HolidayDescriptions = new DBCFile<HolidayDescriptionsEntry>(DbcFolder + "HolidayDescriptions.dbc");
             //HolidayNames = new DBCFile<HolidayNamesEntry>(DbcFolder + "HolidayNames.dbc");
             //Holidays = new DBCFile<HolidaysEntry>(DbcFolder + "Holidays.dbc");
-            //Item = new DBCFile<ItemEntry>(DbcFolder + "Item.dbc");
+            Item = new DBCFile<ItemEntry>(DbcFolder + "Item.dbc");
             //ItemBagFamily = new DBCFile<ItemBagFamilyEntry>(DbcFolder + "ItemBagFamily.dbc");
             //ItemClass = new DBCFile<ItemClassEntry>(DbcFolder + "ItemClass.dbc");
             //ItemCondExtCosts = new DBCFile<ItemCondExtCostsEntry>(DbcFolder + "ItemCondExtCosts.dbc");

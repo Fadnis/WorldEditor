@@ -108,6 +108,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TitlesEditorLocal.fr.resx</DependentUpon>
     </Compile>
+    <Compile Include="ItemDbcGenerator\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemDbcGenerator\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Libs\DBCStores.cs" />
     <Compile Include="Dialogs\FlagDialog.cs">
       <SubType>Form</SubType>
@@ -260,6 +266,9 @@
     <EmbeddedResource Include="Editors\TitlesEditor\TitlesEditorLocal.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>TitlesEditorLocal.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemDbcGenerator\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

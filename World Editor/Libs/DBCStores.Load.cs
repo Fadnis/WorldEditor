@@ -76,5 +76,10 @@ namespace World_Editor.DBC
             WorldMapArea.LoadData();
             WorldMapOverlay.LoadData();
         }
+
+        public static void LoadItemDbcGeneratorFiles()
+        {
+            Item.LoadData();
+        }
     }
 }

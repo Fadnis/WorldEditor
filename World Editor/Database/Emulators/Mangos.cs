@@ -9,7 +9,17 @@ namespace World_Editor.Database.Emulators
     {
         public string GetCreatureTemplate(uint entry)
         {
-            return @"SELECT * FROM creature_template WHERE entry = " + entry + ";";
+            return @"SELECT * FROM `creature_template` WHERE `entry` = '" + entry + "';";
+        }
+
+        public string GetItemTemplate()
+        {
+            return @"SELECT entry, class, subclass, displayid, InventoryType, Material, sheath FROM `item_template`;";
+        }
+
+        public string GetItemTemplate(uint from, uint to)
+        {
+            return @"SELECT entry, class, subclass, displayid, InventoryType, Material, sheath FROM `item_template` WHERE `entry` BETWEEN " + from + " AND " + to + ";";
         }
 
         public CreatureTemplate CreateCreatureTemplate(object[] data)
@@ -31,6 +41,21 @@ namespace World_Editor.Database.Emulators
             CreatureTemplate ct = new CreatureTemplate(entry, name, subname, minlevel, maxlevel, mindmg, maxdmg, health, mana, modelids);
 
             return ct;
+        }
+
+        public ItemTemplate CreateItemTemplate(object[] data)
+        {
+            long Entry = long.Parse(data[0].ToString());
+            int Class = int.Parse(data[1].ToString());
+            int SubClass = int.Parse(data[2].ToString());
+            int DisplayId = int.Parse(data[3].ToString());
+            int InventoryType = int.Parse(data[4].ToString());
+            int Material = int.Parse(data[5].ToString());
+            int Sheath = int.Parse(data[6].ToString());
+
+            ItemTemplate it = new ItemTemplate(Entry, Class, SubClass, DisplayId, Material, Sheath, InventoryType);
+
+            return it;
         }
     }
 }

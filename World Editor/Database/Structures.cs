@@ -32,4 +32,27 @@ namespace World_Editor.Database
             this.modelids = modelids;
         }
     }
+
+    public class ItemTemplate
+    {
+        public long Entry;
+        public int Class;
+        public int SubClass;
+        public int DisplayId;
+        public int Material;
+        public int Sheath;
+        public int InventoryType;
+
+        public ItemTemplate(long Entry, int Class, int SubClass, int DisplayId, int Material,
+            int Sheath, int InventoryType)
+        {
+            this.Entry = Entry;
+            this.Class = Class;
+            this.SubClass = SubClass;
+            this.DisplayId = DisplayId;
+            this.Material = Material;
+            this.Sheath = Sheath;
+            this.InventoryType = InventoryType;
+        }
+    }
 }

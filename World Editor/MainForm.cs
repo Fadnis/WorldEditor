@@ -97,7 +97,6 @@ namespace World_Editor
 
                         ProjectManager.Connection = new Database.MySqlConnector(selectedProject.Host,
                             selectedProject.Database, selectedProject.User, selectedProject.Password, c);
-                        ProjectManager.Connection.Connect();
                     }
 
                     DBCStores.InitFiles();
@@ -111,10 +110,6 @@ namespace World_Editor
                 catch (Exception ex) 
                 { 
                     MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    ProjectManager.Connection = null;
                 }
             }
             else if (btnValidateProject.Text == "Modifier")
@@ -307,6 +302,8 @@ namespace World_Editor
             toolPOIsEditor.Enabled = value;
             toolMapsEditor.Enabled = value;
 
+            générerUnItemdbcToolStripMenuItem.Enabled = value;
+
             if (all)
             {
                 menuProjectsEditor.Enabled = false;
@@ -316,6 +313,12 @@ namespace World_Editor
             {
                 menuProjectsEditor.Enabled = !value;
             }
+        }
+
+        private void générerUnItemdbcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemDbcGenerator.MainForm d = new ItemDbcGenerator.MainForm();
+            d.ShowDialog();
         }
     }
 }

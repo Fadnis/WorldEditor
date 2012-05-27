@@ -61,5 +61,10 @@ namespace World_Editor.DBC
             WorldMapArea.SaveDBC();
             WorldMapOverlay.SaveDBC();
         }
+
+        public static void SaveItemDbcGeneratorFiles()
+        {
+            Item.SaveDBC();
+        }
     }
 }

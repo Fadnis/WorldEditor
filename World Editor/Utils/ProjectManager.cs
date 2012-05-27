@@ -11,6 +11,6 @@ namespace World_Editor
         public static string ProjectName = "";
         public static string ProjectDirectory = "";
         public static string WowDirectory = "";
-        public static MySqlConnector Connection = null;
+        public static MySqlConnector Connection;
     }
 }

@@ -16,5 +16,20 @@ namespace World_Editor.Database.Emulators
         {
             throw new NotImplementedException();
         }
+
+        public string GetItemTemplate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ItemTemplate CreateItemTemplate(object[] data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetItemTemplate(uint from, uint to)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -42,6 +42,7 @@
             this.menuProfessionsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPOIsEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRacesEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuTitlesEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProjectsEditor = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +59,7 @@
             this.btnValidateProject = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listProjects = new System.Windows.Forms.ComboBox();
+            this.générerUnItemdbcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topMenu.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +114,9 @@
             this.menuProfessionsEditor,
             this.menuPOIsEditor,
             this.menuRacesEditor,
-            this.menuTitlesEditor});
+            this.menuTitlesEditor,
+            this.toolStripSeparator1,
+            this.générerUnItemdbcToolStripMenuItem});
             this.editeursToolStripMenuItem.Name = "editeursToolStripMenuItem";
             this.editeursToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.editeursToolStripMenuItem.Text = "Editeurs";
@@ -180,6 +184,11 @@
             this.menuRacesEditor.Size = new System.Drawing.Size(215, 22);
             this.menuRacesEditor.Text = "Editeur de races";
             this.menuRacesEditor.Click += new System.EventHandler(this.menuRacesEditor_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(212, 6);
             // 
             // menuTitlesEditor
             // 
@@ -343,6 +352,13 @@
             this.listProjects.Size = new System.Drawing.Size(180, 21);
             this.listProjects.TabIndex = 18;
             // 
+            // générerUnItemdbcToolStripMenuItem
+            // 
+            this.générerUnItemdbcToolStripMenuItem.Name = "générerUnItemdbcToolStripMenuItem";
+            this.générerUnItemdbcToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.générerUnItemdbcToolStripMenuItem.Text = "Générer un Item.dbc";
+            this.générerUnItemdbcToolStripMenuItem.Click += new System.EventHandler(this.générerUnItemdbcToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,6 +417,8 @@
         private System.Windows.Forms.ToolStripButton toolPOIsEditor;
         private System.Windows.Forms.ToolStripMenuItem menuMapsEditor;
         private System.Windows.Forms.ToolStripButton toolMapsEditor;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem générerUnItemdbcToolStripMenuItem;
     }
 }
 
