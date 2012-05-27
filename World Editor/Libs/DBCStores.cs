@@ -7,7 +7,7 @@ using DBCLib.Structures335;
 
 namespace World_Editor.DBC
 {
-    public static class DBCStores
+    public static partial class DBCStores
     {
         #region Déclarations des DBCs
         public static DBCFile<AchievementEntry> Achievement { get; private set; }
@@ -510,132 +510,6 @@ namespace World_Editor.DBC
             //ZoneIntroMusicTable = new DBCFile<ZoneIntroMusicTableEntry>(DbcFolder + "ZoneIntroMusicTable.dbc");
             //ZoneMusic = new DBCFile<ZoneMusicEntry>(DbcFolder + "ZoneMusic.dbc");
             #endregion
-        }
-
-        public static void LoadTitlesEditorFiles()
-        {
-            CharTitles.LoadData();
-        }
-
-        public static void LoadProfessionEditorFiles()
-        {
-            Spell.LoadData();
-            SkillLine.LoadData();
-            SkillLineAbility.LoadData();
-            SkillRaceClassInfo.LoadData();
-            SpellFocusObject.LoadData();
-            ChrRaces.LoadData();
-            ChrClasses.LoadData();
-        }
-
-
-        public static void SaveTitlesEditorFiles()
-        {
-            CharTitles.SaveDBC();
-        }
-
-        public static void LoadFactionsEditorFiles()
-        {
-            ChrClasses.LoadData();
-            ChrRaces.LoadData();
-            Faction.LoadData();
-            FactionGroup.LoadData();
-            FactionTemplate.LoadData();
-        }
-
-        public static void SaveFactionsEditorFiles()
-        {
-            Faction.SaveDBC();
-            FactionGroup.SaveDBC();
-            FactionTemplate.SaveDBC();
-        }
-        
-        public static void SaveProfessionEditorFiles()
-        {
-            Spell.SaveDBC();
-            SkillLine.SaveDBC();
-            SkillLineAbility.SaveDBC();
-            SkillRaceClassInfo.SaveDBC();
-            SpellFocusObject.SaveDBC();
-        }
-
-        public static void LoadTalentsEditorFiles()
-        {
-            ChrClasses.LoadData();
-            ChrRaces.LoadData();
-            Spell.LoadData();
-            SpellIcon.LoadData();
-            Talent.LoadData();
-            TalentTab.LoadData();
-        }
-
-        public static void SaveTalentsEditorFiles()
-        {
-            Talent.SaveDBC();
-            TalentTab.SaveDBC();
-        }
-
-        public static void LoadAchievementsEditor()
-        {
-            Achievement.LoadData();
-            AchievementCategory.LoadData();
-            AchievementCriteria.LoadData();
-            Map.LoadData();
-            SpellIcon.LoadData();
-        }
-
-        public static void SaveAchievementsEditor()
-        {
-            Achievement.SaveDBC();
-            AchievementCategory.SaveDBC();
-            AchievementCriteria.SaveDBC();
-        }
-
-        public static void LoadRacesEditorFiles()
-        {
-            ChrRaces.LoadData();
-        }
-
-        public static void SaveRacesEditorFiles()
-        {
-            ChrRaces.SaveDBC();
-        }
-
-        public static void LoadClassesEditorFiles()
-        {
-            ChrClasses.LoadData();
-        }
-
-        public static void SaveClassesEditorFiles()
-        {
-            ChrClasses.SaveDBC();
-        }
-
-        public static void LoadPOIsEditorFiles()
-        {
-            AreaPOI.LoadData();
-            AreaTable.LoadData();
-            DungeonMap.LoadData();
-            Map.LoadData();
-            WorldMapArea.LoadData();
-            WorldMapOverlay.LoadData();
-        }
-
-        public static void SavePOIsEditorFiles()
-        {
-            AreaPOI.SaveDBC();
-        }
-
-        public static void LoadMapsEditorFiles()
-        {
-            WorldMapArea.LoadData();
-            WorldMapOverlay.LoadData();
-        }
-
-        public static void SaveMapsEditorFiles()
-        {
-            WorldMapArea.SaveDBC();
-            WorldMapOverlay.SaveDBC();
         }
     }
 }

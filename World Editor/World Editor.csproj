@@ -156,6 +156,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TitlesEditorLocal.resx</DependentUpon>
     </Compile>
+    <Compile Include="Libs\DBCStores.Load.cs" />
+    <Compile Include="Libs\DBCStores.Save.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
