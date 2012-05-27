@@ -189,6 +189,13 @@ namespace World_Editor.POIsEditor
 
             listWorldMapAreas.Items.Clear();
             listWorldMapAreas.Items.AddRange(DBCStores.WorldMapArea.Records.ToArray());
+
+            listMaps.Items.Clear();
+            listMaps.Items.AddRange(DBCStores.Map.Records.ToArray());
+
+            listAreas.Items.Clear();
+            listAreas.Items.AddRange(DBCStores.AreaTable.Records.ToArray());
+
             iconsPoi.Clear();
             // Chargement des icones des POIs
             Bitmap icons = Blp2.FromStream(new MPQFile("Interface\\Minimap\\POIIcons.blp"));
@@ -635,6 +642,9 @@ namespace World_Editor.POIsEditor
             if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
                 return;
 
+            if (DBCStores.Map.ContainsKey(Misc.ParseToUInt(txtContinentId.Text)))
+                listMaps.SelectedItem = DBCStores.Map[Misc.ParseToUInt(txtContinentId.Text)];
+
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.ContinentId = Misc.ParseToUInt(txtContinentId.Text);
         }
@@ -643,6 +653,9 @@ namespace World_Editor.POIsEditor
         {
             if (!DBCStores.AreaPOI.ContainsKey(Misc.ParseToUInt(txtId.Text)))
                 return;
+
+            if (DBCStores.AreaTable.ContainsKey(Misc.ParseToUInt(txtArea.Text)))
+                listAreas.SelectedItem = DBCStores.AreaTable[Misc.ParseToUInt(txtArea.Text)];
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.Area = Misc.ParseToUInt(txtArea.Text);
@@ -682,6 +695,52 @@ namespace World_Editor.POIsEditor
 
             AreaPOIEntry p = DBCStores.AreaPOI[Misc.ParseToUInt(txtId.Text)];
             p.Flags = Misc.ParseToUInt(txtFlags.Text);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DBCStores.SavePOIsEditorFiles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la sauvegarde : " + ex.Message);
+            }
+        }
+
+        private void listMaps_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            MapEntry m = (MapEntry) listMaps.SelectedItem;
+            txtContinentId.Text = m.ID.ToString();
+        }
+
+        private void listAreas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AreaTableEntry a = (AreaTableEntry) listAreas.SelectedItem;
+            txtArea.Text = a.Id.ToString();
+        }
+
+        enum AreaPoiFlags
+        {
+            FLAG_UNK1   = 1,            //
+            FLAG_UNK2   = 2,            //
+            FLAG_UNK3   = 4,            //
+            FLAG_UNK4   = 8,            //
+            FLAG_UNK5   = 16,           //
+            FLAG_UNK6   = 32,           //
+            FLAG_UNK7   = 64,           //
+            FLAG_UNK8   = 128,          //
+            FLAG_UNK9   = 256,          //
+            FLAG_UNK10  = 512,          //
+        }
+
+        private void btnFlags_Click(object sender, EventArgs e)
+        {
+            Dialogs.FlagDialog d = new Dialogs.FlagDialog(typeof(AreaPoiFlags), Misc.ParseToUInt(txtFlags.Text));
+            d.ShowDialog();
+            if (d.DialogResult == DialogResult.OK)
+                txtFlags.Text = d.bitmask.ToString();
         }
 
         /*

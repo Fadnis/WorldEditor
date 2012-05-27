@@ -150,7 +150,7 @@ namespace DBCLib.Structures335
         public string AreaName;                     // 11-27
         public uint RefFactionGroup;                // 28
         [Array(4)]
-        public uint LiquidType;                     // 29-32 [0]: Water, [1]: Ocean, [2]: Magma, [3]: Slime
+        public uint[] LiquidType;                   // 29-32 [0]: Water, [1]: Ocean, [2]: Magma, [3]: Slime
         public float MinElevation;                  // 33
         public float AmbientMultiplier;             // 34
         public uint LightId;                        // 35

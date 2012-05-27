@@ -16,7 +16,7 @@ namespace World_Editor.DBC
         //public static DBCFile<AnimationDataEntry> AnimationData { get; private set; }
         //public static DBCFile<AreaGroupEntry> AreaGroup { get; private set; }
         public static DBCFile<AreaPOIEntry> AreaPOI { get; private set; }
-        //public static DBCFile<AreaTableEntry> AreaTable { get; private set; }
+        public static DBCFile<AreaTableEntry> AreaTable { get; private set; }
         //public static DBCFile<AreaTriggerEntry> AreaTrigger { get; private set; }
         //public static DBCFile<AttackAnimKitsEntry> AttackAnimKits { get; private set; }
         //public static DBCFile<AttackAnimTypesEntry> AttackAnimTypes { get; private set; }
@@ -269,7 +269,7 @@ namespace World_Editor.DBC
             //AnimationData = new DBCFile<AnimationDataEntry>(DbcFolder + "AnimationData.dbc");
             //AreaGroup = new DBCFile<AreaGroupEntry>(DbcFolder + "AreaGroup.dbc");
             AreaPOI = new DBCFile<AreaPOIEntry>(DbcFolder + "AreaPOI.dbc");
-            //AreaTable = new DBCFile<AreaTableEntry>(DbcFolder + "AreaTable.dbc");
+            AreaTable = new DBCFile<AreaTableEntry>(DbcFolder + "AreaTable.dbc");
             //AreaTrigger = new DBCFile<AreaTriggerEntry>(DbcFolder + "AreaTrigger.dbc");
             //AttackAnimKits = new DBCFile<AttackAnimKitsEntry>(DbcFolder + "AttackAnimKits.dbc");
             //AttackAnimTypes = new DBCFile<AttackAnimTypesEntry>(DbcFolder + "AttackAnimTypes.dbc");
@@ -614,6 +614,7 @@ namespace World_Editor.DBC
         public static void LoadPOIsEditorFiles()
         {
             AreaPOI.LoadData();
+            AreaTable.LoadData();
             DungeonMap.LoadData();
             Map.LoadData();
             WorldMapArea.LoadData();
